@@ -657,3 +657,217 @@ private:
 	uint8_t _currentScreen;
 };
 
+
+/// Represents a collection of menus forming a menu system.
+/**
+A menu system is made up of LiquidMenu objects. It holds pointers to them
+and calls their functions depending on which one is active. This class is
+uses the same public methods as LiquidMenu with the addition of a method
+for adding a LiquidMenu object and a method for chaning the currently
+active menu. This class is optional, it is used only if there is a need
+for multiple menus.
+
+@see LiquidMenu
+*/
+class LiquidSystem {
+public:
+
+private:
+
+	/// @name Constructors
+	/**@{*/
+
+	/// The main constructor.
+	/**
+	This is the main constructor that gets called every time.
+
+	@param startingMenu - the number of the menu that will be shown first
+	*/
+	LiquidSystem(uint8_t startingMenu = 1);
+
+	/// Constructor for 2 LiquidMenu objects.
+	/**
+	@param &liquidMenu1 - pointer to a LiquidMenu object
+	@param &liquidMenu2 - pointer to a LiquidMenu object
+	@param startingMenu - the number of the menu that will be shown first
+	*/
+	LiquidSystem(LiquidMenu &liquidMenu1, LiquidMenu &liquidMenu2,
+	             uint8_t startingMenu = 1);
+
+	/// Constructor for 3 LiquidMenu objects.
+	/**
+	@param &liquidMenu1 - pointer to a LiquidMenu object
+	@param &liquidMenu2 - pointer to a LiquidMenu object
+	@param &liquidMenu3 - pointer to a LiquidMenu object
+	@param startingMenu - the number of the menu that will be shown first
+	*/
+	LiquidSystem(LiquidMenu &liquidMenu1, LiquidMenu &liquidMenu2,
+	             LiquidMenu &liquidMenu3, uint8_t startingMenu = 1);
+
+	/// Constructor for 4 LiquidMenu objects.
+	/**
+	@param &liquidMenu1 - pointer to a LiquidMenu object
+	@param &liquidMenu2 - pointer to a LiquidMenu object
+	@param &liquidMenu3 - pointer to a LiquidMenu object
+	@param &liquidMenu4 - pointer to a LiquidMenu object
+	@param startingMenu - the number of the menu that will be shown first
+	*/
+	LiquidSystem(LiquidMenu &liquidMenu1, LiquidMenu &liquidMenu2,
+	             LiquidMenu &liquidMenu3, LiquidMenu &liquidMenu4,
+	             uint8_t startingMenu = 1);
+
+	/**@}*/
+
+	/// @name Public methods
+	/**@{*/
+
+	/// Adds a LiquidMenu object to the menu system.
+	/**
+	@param &liquidMenu - pointer to a LiquidMenu object
+	@returns true on success and false if the maximum amount of menus
+	has been reached
+
+	@note The maximum amount of menus per menu system is specified in
+	LiquidMenu_config.h as `MAX_MENUS`. The default is 12.
+
+	@see LiquidMenu_config.h
+	@see MAX_MENUS
+	*/
+	bool add_menu(LiquidMenu &liquidMenu);
+
+	/// Switches to the specified menu.
+	/**
+	@param *p_liquidMenu - pointer to the LiquidMenu object
+	@returns true on success and false if the menu is not found
+	*/
+	bool change_menu(LiquidMenu &p_liquidMenu);
+
+	/// Switches to the next screen.
+	void next_screen();
+
+	/// Switches to the next screen.
+	/**
+	@note Prefix increment operator overloading.
+	*/
+	void operator++();
+
+	/// Switches to the next screen.
+	/**
+	@note Postfix increment operator overloading.
+	*/
+	void operator++(int);
+
+	/// Switches to the previous screen.
+	void previous_screen();
+
+	/// Switches to the previous screen.
+	/**
+	@note Prefix decrement operator overloading.
+	*/
+	void operator--();
+
+	/// Switches to the previous screen.
+	/**
+	@note Postfix decrement operator overloading.
+	*/
+	void operator--(int);
+
+	/// Switches to the specified screen.
+	/**
+	@param *p_liquidScreen - pointer to the LiquidScreen object
+	@returns true on success and false if the screen is not found
+	*/
+	bool change_screen(LiquidScreen *p_liquidScreen);
+
+	/// Switches to the specified screen.
+	/**
+	@param number - the number of the screen
+	@returns true on success and false if the
+	number of the screen is invalid.
+	*/
+	bool change_screen(uint8_t number);
+
+	/// Switches to the specified screen.
+	/**
+	@param &p_liquidScreen - pointer to the screen
+	@returns true on success and false if the screen is not found
+	*/
+	bool operator=(LiquidScreen &p_liquidScreen);
+
+	/// Switches to the specified screen.
+	/**
+	@param number - the number of the screen
+	@returns true on success and false if the
+	number of the screen is invalid.
+	*/
+	bool operator=(uint8_t number);
+
+	/// Switches the focus
+	/**
+	Switches the focus to the next or previous line
+	according to the passed parameter.
+
+	@param forward - true for forward, false for backward
+	*/
+	void switch_focus(bool forward = true);
+
+	/// Sets the focus position for the whole menu at once.
+	/**
+	The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid
+	for this function because it needs individual colum and row for
+	every line.
+
+	@param position - `LEFT` or `RIGHT`
+	@returns true on success and false if the position specified is
+	invalid
+
+	@note The `Position` is enum class. Use `Position::(member)` when
+	specifeing the position.
+
+	@see Position
+	*/
+	bool set_focusPosition(Position position);
+
+	/// Changes the focus indicator's symbol.
+	/**
+	The symbol is changed for a particular position.
+
+	@param position - the position for which the symbol	will be changed
+	@param symbol[] - the symbol
+	@returns true on success and false if the position specified is
+	invalid
+
+	@note The `Position` is enum class. Use `Position::(member)` when
+	specifeing the position.
+
+	@see Position
+	*/
+	bool set_focusSymbol(Position position, uint8_t symbol[8]);
+
+	/// Calls an attached function specified by the number.
+	/**
+	Calls the function specified by the number argument for the current
+	screen and for the focused line.
+
+	@param number - number of the function in the array
+	@returns true if there is a function at the specified number
+
+	@note Function numbering starts from 1.
+
+	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
+	*/
+	bool call_function(uint8_t number) const;
+
+	/// Prints the current screen to the display.
+	/**
+	Call this method when there is a change in some of the variable attached.
+	*/
+	void update() const;
+
+	/**@}*/
+
+private:
+	LiquidMenu *_p_liquidMenu[MAX_MENUS]; ///< The LiquidMenu objects
+	uint8_t _menuCount; ///< Count of the LiquidMenu objects
+	uint8_t _currentMenu;
+};
