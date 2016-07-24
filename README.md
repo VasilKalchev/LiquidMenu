@@ -281,9 +281,9 @@ More examples are available [here][].
 
 More information
 ----------------
-[Examples](https://github.com/VasilKalchev/LiquidMenu/tree/master/doc/html/examples.html)
+[Examples](https://github.com/VasilKalchev/LiquidMenu/doc/html/examples.html)
 
-[Documentation](https://github.com/VasilKalchev/LiquidMenu/tree/master/doc/html)
+[Documentation](https://github.com/VasilKalchev/LiquidMenu/doc/html)
 
 
 License
