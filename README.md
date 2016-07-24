@@ -2,9 +2,7 @@ LiquidMenu
 ==========
 *Menu creation Arduino library for LCDs, extends <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a>.*
 
-[![Code Climate](https://codeclimate.com/github/VasilKalchev/LiquidMenu/badges/gpa.svg)](https://codeclimate.com/github/VasilKalchev/LiquidMenu)
-
-![logo](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/logo.png)
+![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/logo.png)
 
 
 **LiquidMenu** extends the Arduino's LiquidCrystal library with the ability to create menus.
@@ -32,9 +30,9 @@ This library uses hierarchically structured classes to represent the different e
 
 *Basic class hierarchy diagram:*
 
-![Basic class hierarchy diagram](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/basic_diagram.png "Basic class hierarchy diagram")
+![Basic class hierarchy diagram](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/basic_diagram.png "Basic class hierarchy diagram")
 
-*Click [here](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/diagram.png) for a complete hierarchy diagram.*
+*Click [here](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/diagram.png) for a complete hierarchy diagram.*
 
 The **LiquidLine** class represents a **line** of text/variables on the display.
 
@@ -81,7 +79,8 @@ LiquidMenu menu(lcd, screen1, screen2);
 
 ```c++
 /*
-This example demonstrates how to make a menu system of 3 menus, how to add the screens to the menus with functions and how to implement a variable text.
+This example demonstrates how to make a menu system of 3 menus, how to add the
+screens to the menus with functions and how to implement a variable text.
 */
 
 LiquidCrystal lcd(RS, E, D4, D5, D6, D7);
@@ -282,8 +281,9 @@ More examples are available [here][].
 
 More information
 ----------------
-[Examples]()
-[Documentation]()
+[Examples](https://github.com/VasilKalchev/LiquidMenu/tree/master/doc/html/examples.html)
+
+[Documentation](https://github.com/VasilKalchev/LiquidMenu/tree/master/doc/html)
 
 
 License
