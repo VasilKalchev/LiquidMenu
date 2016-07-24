@@ -2,13 +2,14 @@ LiquidMenu
 ==========
 *Menu creation Arduino library for LCDs, extends <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a>.*
 
+[![Code Climate](https://codeclimate.com/github/VasilKalchev/LiquidMenu/badges/gpa.svg)](https://codeclimate.com/github/VasilKalchev/LiquidMenu)
+
 ![logo](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/logo.png)
 
 
 **LiquidMenu** extends the Arduino's LiquidCrystal library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
 
----
 
 Features
 --------
@@ -16,24 +17,23 @@ Features
  - Selectable lines
  - Callback functions
 
----
 
 Requirements
 ------------
  - The Arduino's <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> library.
- - LCD supported by <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> (* with Hitachi HD44780 or a compatible chipset*)
+ - LCD supported by <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> (*with Hitachi HD44780 or a compatible chipset*)
  - Arduino board or a compatible microcontroller
  - Input device/s is recommended (*buttons, rotary encoder, etc.*)
 
----
-
-Quick start
+How to use
 -----------
 ### Classes organization
 This library uses hierarchically structured classes to represent the different elements of a menu.
 
 *Basic class hierarchy diagram:*
+
 ![Basic class hierarchy diagram](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/basic_diagram.png "Basic class hierarchy diagram")
+
 *Click [here](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/diagram.png) for a complete hierarchy diagram.*
 
 The **LiquidLine** class represents a **line** of text/variables on the display.
@@ -279,25 +279,36 @@ void setup() {
 ```
 More examples are available [here][].
 
----
 
 More information
 ----------------
 [Examples]()
 [Documentation]()
 
----
-
-Documentation
--------------
-The documentation is available[here][].
-
-
----
 
 License
 -------
+The MIT License (MIT)
 
+Copyright (c) 2016 Vasil Kalchev
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
 [LC]: https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal
