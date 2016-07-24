@@ -1,3 +1,6 @@
+#Doxygen temp files
+*.tmp
+
 # Compiled Object files
 *.slo
 *.lo
