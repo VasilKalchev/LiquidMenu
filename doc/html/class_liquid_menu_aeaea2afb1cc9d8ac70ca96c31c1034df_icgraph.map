@@ -1,0 +1,4 @@
+<map id="LiquidMenu::change_screen" name="LiquidMenu::change_screen">
+<area shape="rect" id="node2" href="$class_liquid_menu.html#aa2da4a0f2c4406befe7f214e98ba5a48" title="Switches to the specified screen. " alt="" coords="212,5,363,49"/>
+<area shape="rect" id="node3" href="$class_liquid_menu.html#a1e5bff5dbee74b17db98c1b8ce582d74" title="Switches to the specified screen. " alt="" coords="204,73,371,101"/>
+</map>

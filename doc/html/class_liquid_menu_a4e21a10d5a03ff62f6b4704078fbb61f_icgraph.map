@@ -1,0 +1,9 @@
+<map id="LiquidMenu::update" name="LiquidMenu::update">
+<area shape="rect" id="node2" href="$class_liquid_menu.html#a6046bb5792ad188b25a5b0e2d7e27fc0" title="Switches to the next screen. " alt="" coords="201,5,383,33"/>
+<area shape="rect" id="node4" href="$class_liquid_menu.html#a3924794ce6e3e95bb7b94c3c18d6d9a9" title="Switches to the previous screen. " alt="" coords="213,57,371,101"/>
+<area shape="rect" id="node6" href="$class_liquid_menu.html#aa2da4a0f2c4406befe7f214e98ba5a48" title="Switches to the specified screen. " alt="" coords="217,125,367,169"/>
+<area shape="rect" id="node7" href="$class_liquid_menu.html#a558e3573fca7d6774ada70709c1dc2c3" title="Switches the focus. " alt="" coords="219,193,365,237"/>
+<area shape="rect" id="node8" href="$class_liquid_menu.html#a4c1c98768f697fc50d18340f58ba95b5" title="Calls an attached function specified by the number. " alt="" coords="200,261,384,289"/>
+<area shape="rect" id="node3" href="$class_liquid_menu.html#a12b1b75ac4d82d992213b7d66a73ba63" title="Switches to the next screen. " alt="" coords="432,5,607,33"/>
+<area shape="rect" id="node5" href="$class_liquid_menu.html#a16eb7e91ce25eca66d8b21574a53b50a" title="Switches to the previous screen. " alt="" coords="436,65,603,93"/>
+</map>

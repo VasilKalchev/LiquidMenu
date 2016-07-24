@@ -1,0 +1,6 @@
+<map id="LiquidLine::LiquidLine" name="LiquidLine::LiquidLine">
+<area shape="rect" id="node2" href="$_liquid_menu_8h.html#a43ce352b01d201ddd165bd97a4f5ad2b" title="recognizeType" alt="" coords="269,5,388,33"/>
+<area shape="rect" id="node3" href="$class_liquid_screen.html#a6b025aaf4ba5d0749aa828a303e64415" title="Sets the focus position for the whole screen at once. " alt="" coords="213,57,444,85"/>
+<area shape="rect" id="node4" href="$_liquid_menu_8h.html#a098c1bcb7abac7e1a1c0f8ecd23f8158" title="Prints the number passed to it in a specific way. " alt="" coords="751,57,829,85"/>
+<area shape="rect" id="node5" href="$class_liquid_line.html#a84f19c3724695929a6a6cc3ef6083865" title="Configures the focus indicator position for the line. " alt="" coords="492,83,703,111"/>
+</map>
