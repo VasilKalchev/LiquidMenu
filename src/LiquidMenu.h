@@ -444,3 +444,216 @@ private:
 	uint8_t _focus; ///< Number representing the focus position
 };
 
+
+/// Represents a collection of screens forming a menu.
+/**
+A menu is made up of LiquidScreen objects. It holds pointers to them and
+calls their functions depending on which one is active. This is the class
+used for control. It is possible to use multiple menus, it that case this
+classes' objects go into a LiquidSystem object which controls them using
+the same public methods.
+
+@see LiquidScreen
+*/
+class LiquidMenu {
+	friend class LiquidSystem;
+
+public:
+
+	/// @name Constructors
+	/**@{*/
+
+	/// The main constructor.
+	/**
+	This is the main constructor that gets called every time.
+
+	@param &liquidCrystal - pointer to the LiquidCrystal object
+	@param startingScreen - the number of the screen that will be shown
+	first
+	*/
+	LiquidMenu(LiquidCrystal &liquidCrystal, uint8_t startingScreen = 1);
+
+	/// Constructor for 1 LiquidScreen object.
+	/**
+	@param &liquidCrystal - pointer to the LiquidCrystal object
+	@param &liquidScreen - pointer to a LiquidScreen object
+	@param startingScreen - the number of the screen that will be shown
+	first
+	*/
+	LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen,
+	           uint8_t startingScreen = 1);
+
+	/// Constructor for 2 LiquidScreen objects.
+	/**
+	@param &liquidCrystal - pointer to the LiquidCrystal object
+	@param &liquidScreen1 - pointer to a LiquidScreen object
+	@param &liquidScreen2 - pointer to a LiquidScreen object
+	@param startingScreen - the number of the screen that will be shown
+	first
+	*/
+	LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1,
+	           LiquidScreen &liquidScreen2, uint8_t startingScreen = 1);
+
+	/// Constructor for 3 LiquidScreen objects.
+	/**
+	@param &liquidCrystal - pointer to the LiquidCrystal object
+	@param &liquidScreen1 - pointer to a LiquidScreen object
+	@param &liquidScreen2 - pointer to a LiquidScreen object
+	@param &liquidScreen3 - pointer to a LiquidScreen object
+	@param startingScreen - the number of the screen that will be shown
+	first
+	*/
+	LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1,
+	           LiquidScreen &liquidScreen2, LiquidScreen &liquidScreen3,
+	           uint8_t startingScreen = 1);
+
+	/**@}*/
+
+	/// @name Public methods
+	/**@{*/
+
+	/// Adds a LiquidScreen object to the menu.
+	/**
+	@param &liquidScreen - pointer to a LiquidScreen object
+	@returns true on success and false if the maximum amount of screens
+	has been reached
+
+	@note The maximum amount of screens per menu is specified in
+	LiquidMenu_config.h as `MAX_SCREENS`. The default is 16.
+
+	@see LiquidMenu_config.h
+	@see MAX_SCREENS
+	*/
+	bool add_screen(LiquidScreen &liquidScreen);
+
+	/// Switches to the next screen.
+	void next_screen();
+
+	/// Switches to the next screen.
+	/**
+	@note Prefix increment operator overloading.
+	*/
+	void operator++();
+
+	/// Switches to the next screen.
+	/**
+	@note Postfix increment operator overloading.
+	*/
+	void operator++(int);
+
+	/// Switches to the previous screen.
+	void previous_screen();
+
+	/// Switches to the previous screen.
+	/**
+	@note Prefix decrement operator overloading.
+	*/
+	void operator--();
+
+	/// Switches to the previous screen.
+	/**
+	@note Postfix decrement operator overloading.
+	*/
+	void operator--(int);
+
+	/// Switches to the specified screen.
+	/**
+	@param *p_liquidScreen - pointer to the LiquidScreen object
+	@returns true on success and false if the screen is not found
+	*/
+	bool change_screen(LiquidScreen *p_liquidScreen);
+
+	/// Switches to the specified screen.
+	/**
+	@param number - the number of the screen
+	@returns true on success and false if the
+	number of the screen is invalid.
+	*/
+	bool change_screen(uint8_t number);
+
+	/// Switches to the specified screen.
+	/**
+	@param &p_liquidScreen - pointer to the screen
+	@returns true on success and false if the screen is not found
+	*/
+	bool operator=(LiquidScreen &p_liquidScreen);
+
+	/// Switches to the specified screen.
+	/**
+	@param number - the number of the screen
+	@returns true on success and false if the
+	number of the screen is invalid.
+	*/
+	bool operator=(uint8_t number);
+
+	/// Switches the focus
+	/**
+	Switches the focus to the next or previous line
+	according to the passed parameter.
+
+	@param forward - true for forward, false for backward
+	*/
+	void switch_focus(bool forward = true);
+
+	/// Sets the focus position for the whole menu at once.
+	/**
+	The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid
+	for this function because it needs individual colum and row for
+	every line.
+
+	@param position - `LEFT` or `RIGHT`
+	@returns true on success and false if the position specified is
+	invalid
+
+	@note The `Position` is enum class. Use `Position::(member)` when
+	specifeing the position.
+
+	@see Position
+	*/
+	bool set_focusPosition(Position position);
+
+	/// Changes the focus indicator's symbol.
+	/**
+	The symbol is changed for a particular position.
+
+	@param position - the position for which the symbol	will be changed
+	@param symbol[] - the symbol
+	@returns true on success and false if the position specified is
+	invalid
+
+	@note The `Position` is enum class. Use `Position::(member)` when
+	specifeing the position.
+
+	@see Position
+	*/
+	bool set_focusSymbol(Position position, uint8_t symbol[8]);
+
+	/// Calls an attached function specified by the number.
+	/**
+	Calls the function specified by the number argument for the current
+	screen and for the focused line.
+
+	@param number - number of the function in the array
+	@returns true if there is a function at the specified number
+
+	@note Function numbering starts from 1.
+
+	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
+	*/
+	bool call_function(uint8_t number) const;
+
+	/// Prints the current screen to the display.
+	/**
+	Call this method when there is a change in some of the variable attached.
+	*/
+	void update() const;
+
+	/**@}*/
+
+private:
+	LiquidCrystal *_p_liquidCrystal; ///< Pointer to the LiquidCrystal object
+	LiquidScreen *_p_liquidScreen[MAX_SCREENS]; ///< The LiquidScreen objects
+	uint8_t _screenCount; ///< Count of the LiquidScreen objects
+	uint8_t _currentScreen;
+};
+
