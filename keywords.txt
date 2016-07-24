@@ -1,0 +1,97 @@
+########################################
+# Syntax Coloring Map For LiquidMenu
+########################################
+
+########################################
+# Datatypes (KEYWORD1)
+########################################
+
+# Enumerators
+DataType						KEYWORD1
+Position						KEYWORD1
+
+# Classes
+LiquidLine						KEYWORD1
+LiquidScreen					KEYWORD1
+LiquidMenu						KEYWORD1
+LiquidSystem					KEYWORD1
+
+########################################
+# Methods and Functions (KEYWORD2)
+########################################
+
+# Global functions
+recognizeType					KEYWORD2
+print_me						KEYWORD2
+PRINT							KEYWORD2
+PRINTLN							KEYWORD2
+DEBUG							KEYWORD2
+DEBUG2							KEYWORD2
+DEBUGLN							KEYWORD2
+DEBUGLN2						KEYWORD2
+
+# class LiquidLine
+attach_function					KEYWORD2
+set_focusPosition				KEYWORD2
+print							KEYWORD2
+call_function					KEYWORD2
+print_variable					KEYWORD2
+
+# class LiquidScreen
+add_line						KEYWORD2
+set_focusPosition				KEYWORD2
+switch_focus					KEYWORD2
+
+# class LiquidMenu
+add_screen						KEYWORD2
+next_screen						KEYWORD2
+previous_screen					KEYWORD2
+change_screen					KEYWORD2
+set_focusPosition				KEYWORD2
+set_focusSymbol					KEYWORD2
+call_function					KEYWORD2
+update							KEYWORD2
+
+# class LiquidSystem
+add_menu						KEYWORD2
+change_menu						KEYWORD2
+
+########################################
+# Constants (LITERAL1)
+########################################
+
+# enum DataType
+NOT_USED						LITERAL1
+BOOL							LITERAL1
+BOOLEAN							LITERAL1
+INT8_T							LITERAL1
+UINT8_T							LITERAL1
+INT16_T							LITERAL1
+UINT16_T						LITERAL1
+INT32_T							LITERAL1
+UINT32_T						LITERAL1
+FLOAT							LITERAL1
+DOUBLE							LITERAL1
+CHAR							LITERAL1
+CHAR_PTR						LITERAL1
+CONST_CHAR_PTR					LITERAL1
+
+# enum Position
+NORMAL							LITERAL1
+RIGHT							LITERAL1
+LEFT							LITERAL1
+CUSTOM							LITERAL1
+
+# Global constants
+MAX_FUNCTIONS					LITERAL1
+MAX_LINES						LITERAL1
+MAX_SCREENS						LITERAL1
+MAX_MENUS						LITERAL1
+
+ESSENTIAL_MESSAGES				LITERAL1
+DEBUGGIN_MESSAGES				LITERAL1
+
+VERSION							LITERAL1
+MAX_VARIABLES					LITERAL1
+DIVISION_LINE_LENGTH			LITERAL1
+NOTHING							LITERAL1
