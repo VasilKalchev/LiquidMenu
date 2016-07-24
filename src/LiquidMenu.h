@@ -134,14 +134,15 @@ Used for convenience when printing the class' address for indentification.
 */
 void print_me(uint16_t address);
 
+
 /// Represents the individual lines printed on the display.
 /**
 This is the lowest class in the hierarchy, it holds pointers to the
-variables/constants that will be printed, where the line is positioned, where
-the focus indicator is positioned and pointers to the callback functions.
+variables/constants that will be printed, where the line is positioned,
+where the focus indicator is positioned and pointers to the callback
+functions. This classes' objects go into a LiquidScreen object which
+which controls them. The public methods are for configuration only.
 */
-
-
 class LiquidLine {
 	friend class LiquidScreen;
 
@@ -232,16 +233,16 @@ public:
 	identification. The callback function can later be called when the
 	line is focused with `LiquidMenu::call_function(uint8_t number)`.
 
-    @param number - function number used for identification
-    @param *function - pointer to the function
-    @returns true on success and false if maximum amount of function
-    has been reached
+	@param number - function number used for identification
+	@param *function - pointer to the function
+	@returns true on success and false if maximum amount of functions
+	has been reached
 
 	@note Function numbering starts from 1.
 	@note The maximum amount of functions per line is specified in
 	LiquidMenu_config.h as `MAX_FUNCTIONS`. The default is 8.
 
-    @see LiquidMenu_config.h
+	@see LiquidMenu_config.h
 	@see MAX_FUNCTIONS
 	@see LiquidMenu::call_function(uint8_t number)
 	*/
@@ -249,20 +250,20 @@ public:
 
 	/// Configures the focus indicator position for the line.
 	/**
-    The valid positions are `LEFT`, `RIGHT` and `CUSTOM`. The `CUSTOM`
-    position is absolute so it also needs to know the column and row
-    that it will be shown on.
+	The valid positions are `LEFT`, `RIGHT` and `CUSTOM`. The `CUSTOM`
+	position is absolute so it also needs the column and row that it
+	will be printed on.
 
-    @param position - `LEFT`, `RIGHT` or `CUSTOM`
-    @param column - if using `CUSTOM` this specifies the column
-    @param row - if using `CUSTOM` this specifies the row
-    @returns true on success and false if the position specified is
-    invalid
+	@param position - `LEFT`, `RIGHT` or `CUSTOM`
+	@param column - if using `CUSTOM` this specifies the column
+	@param row - if using `CUSTOM` this specifies the row
+	@returns true on success and false if the position specified is
+	invalid
 
-    @note The `Position` is enum class. Use `Position::(member)` when
-    specifeing the position.
+	@note The `Position` is enum class. Use `Position::(member)` when
+	specifeing the position.
 
-    @see Position
+	@see Position
 	*/
 	bool set_focusPosition(Position position,
 	                       uint8_t column = 0, uint8_t row = 0);
@@ -272,34 +273,34 @@ public:
 private:
 	/// Prints the line to the display.
 	/**
-    Sets the cursor to the starting position. Then goes through a loop
-    calling `print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number)`.
-    And finally displays the focus indicator if the line is focused.
+	Sets the cursor to the starting position. Then goes through a loop
+	calling `print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number)`.
+	And finally displays the focus indicator if the line is focused.
 
 	@param *p_liquidCrystal - pointer to the LiquidCrystal object
 	@param isFocused - true if this line is focused
 	*/
 	void print(LiquidCrystal *p_liquidCrystal, bool isFocused);
 
-    /// Prints a variable to the display.
-    /**
-    Casts the variable pointer specified by the number to its data type
-    and prints it to the display.
+	/// Prints a variable to the display.
+	/**
+	Casts the variable pointer specified by the number to its data type
+	and prints it to the display.
 
-    @param *p_liquidCrystal - pointer to the LiquidCrystal object
-    @param number - number identifeing the variable
-    */
+	@param *p_liquidCrystal - pointer to the LiquidCrystal object
+	@param number - number identifeing the variable
+	*/
 	void print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number);
 
-    /// Calls an attached function specified by the number.
-    /**
-    @param number - number identifeing the function
-    @returns true if there is a function at the specified number
+	/// Calls an attached function specified by the number.
+	/**
+	@param number - number identifeing the function
+	@returns true if there is a function at the specified number
 
-    @note Function numbering starts from 1.
+	@note Function numbering starts from 1.
 
-    @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
-    */
+	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
+	*/
 	bool call_function(uint8_t number) const;
 
 	uint8_t _row, _column, _focusRow, _focusColumn;
@@ -309,3 +310,4 @@ private:
 	DataType _variableType[MAX_VARIABLES]; ///< Data type of the variables
 	bool _focusable; ///< Determines wheter the line is focusable
 };
+
