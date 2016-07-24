@@ -49,3 +49,87 @@ enum class Position : uint8_t {
 	LEFT = 2,
 	CUSTOM = 3,
 };
+
+/// @name recognizeType overloaded function
+/**
+Used to recognize the data type of a variable received in a template function.
+@see DataType
+*/
+/**@{*/
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(bool variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(char variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(char* variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(const char* variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int8_t variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint8_t variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int16_t variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint16_t variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int32_t variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint32_t variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(float variable);
+
+/**@}*/
+
+
+/// Prints the number passed to it in a specific way.
+/**
+Used for convenience when printing the class' address for indentification.
+
+@param address - number to be printed
+*/
+void print_me(uint16_t address);
