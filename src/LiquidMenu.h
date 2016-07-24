@@ -128,7 +128,7 @@ DataType recognizeType(float variable);
 
 /// Prints the number passed to it in a specific way.
 /**
-Used for convenience when printing the class' address for indentification.
+Used for convenience when printing the class's address for indentification.
 
 @param address - number to be printed
 */
@@ -309,5 +309,138 @@ private:
 	const void *_variable[MAX_VARIABLES]; ///< Pointers to the variables
 	DataType _variableType[MAX_VARIABLES]; ///< Data type of the variables
 	bool _focusable; ///< Determines wheter the line is focusable
+};
+
+
+/// Represents a screen shown on the display.
+/**
+A screen is made up of LiquidLine objects. It holds pointers to them and
+calls their functions when it is active. It also knows on which line the
+focus is. This classes' objects go into a LiquidMenu object which controls
+them. The public methods are for configuration only.
+
+@see LiquidLine
+*/
+class LiquidScreen {
+	friend class LiquidMenu;
+
+public:
+
+	/// @name Constructors
+	/**@{*/
+
+	/// The main constructor.
+	/**
+	This is the main constructor that gets called every time.
+	*/
+	LiquidScreen();
+
+	/// Constructor for 1 LiquidLine object.
+	/**
+	@param &liquidLine - pointer to a LiquidLine object
+	*/
+	LiquidScreen(LiquidLine &liquidLine);
+
+	/// Constructor for 2 LiquidLine object.
+	/**
+	@param &liquidLine1 - pointer to a LiquidLine object
+	@param &liquidLine2 - pointer to a LiquidLine object
+	*/
+	LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2);
+
+	/// Constructor for 3 LiquidLine object.
+	/**
+	@param &liquidLine1 - pointer to a LiquidLine object
+	@param &liquidLine2 - pointer to a LiquidLine object
+	@param &liquidLine3 - pointer to a LiquidLine object
+	*/
+	LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
+	             LiquidLine &liquidLine3);
+
+	/// Constructor for 4 LiquidLine object.
+	/**
+	@param &liquidLine1 - pointer to a LiquidLine object
+	@param &liquidLine2 - pointer to a LiquidLine object
+	@param &liquidLine3 - pointer to a LiquidLine object
+	@param &liquidLine4 - pointer to a LiquidLine object
+	*/
+	LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
+	             LiquidLine &liquidLine3, LiquidLine &liquidLine4);
+
+	/**@}*/
+
+	/// @name Public methods
+	/**@{*/
+
+	/// Adds a LiquidLine object to the screen.
+	/**
+	@param &liquidLine - pointer to a LiquidLine object
+	@returns true on success and false if the maximum amount of lines
+	has been reached
+
+	@note The maximum amount of lines per screen is specified in
+	LiquidMenu_config.h as `MAX_LINES`. The default is 8.
+
+	@see LiquidMenu_config.h
+	@see MAX_LINES
+	*/
+	bool add_line(LiquidLine &liquidLine);
+
+	/// Sets the focus position for the whole screen at once.
+	/**
+	The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid
+	for this function because it needs individual colum and row for
+	every line.
+
+	@param position - `LEFT` or `RIGHT`
+	@returns true on success and false if the position specified is
+	invalid
+
+	@note The `Position` is enum class. Use `Position::(member)` when
+	specifeing the position.
+
+	@see Position
+	*/
+	bool set_focusPosition(Position position);
+
+	/**@}*/
+
+private:
+	/// Prints the lines pointed by the screen.
+	/**
+	Calls the `LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused)`
+	for every line pointed by the screen.
+
+	@param *p_liquidCrystal - pointer to the LiquidCrystal object
+	*/
+	void print(LiquidCrystal *p_liquidCrystal) const;
+
+	/// Switches the focus
+	/**
+	Switches the focus to the next or previous line
+	according to the passed parameter.
+
+	@param forward - true for forward, false for backward
+	*/
+	void switch_focus(bool forward = true);
+
+
+
+	/// Calls an attached function specified by the number.
+	/**
+	Calls the function specified by the number argument for the focused line.
+
+	@param number - number of the function in the array
+	@returns true if there is a function at the specified number
+
+	@note Function numbering starts from 1.
+
+	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
+	*/
+	bool call_function(uint8_t number) const;
+
+	LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
+	uint8_t _lineCount; ///< Count of the LiquidLine objects
+	uint8_t _focus; ///< Number representing the focus position
 };
 
