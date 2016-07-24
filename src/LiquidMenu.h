@@ -230,13 +230,14 @@ public:
 		_variableType[2] = recognizeType(variableC);
 	}
 
-	/// Constructor for three variables/constants.
+	/// Constructor for four variables/constants.
 	/**
 	@param column - the column at which the line starts
 	@param row - the row at which the line is printed
 	@param &variableA - variable/constant to be printed
 	@param &variableB - variable/constant to be printed
 	@param &variableC - variable/constant to be printed
+	@param &variableD - variable/constant to be printed
 	*/
 	template <typename A, typename B, typename C, typename D>
 	LiquidLine(uint8_t column, uint8_t row,
@@ -586,7 +587,7 @@ public:
 	@param *p_liquidScreen - pointer to the LiquidScreen object
 	@returns true on success and false if the screen is not found
 	*/
-	bool change_screen(LiquidScreen *p_liquidScreen);
+	bool change_screen(LiquidScreen &p_liquidScreen);
 
 	/// Switches to the specified screen.
 	/**
@@ -802,7 +803,7 @@ private:
 	@param *p_liquidScreen - pointer to the LiquidScreen object
 	@returns true on success and false if the screen is not found
 	*/
-	bool change_screen(LiquidScreen *p_liquidScreen);
+	bool change_screen(LiquidScreen &p_liquidScreen);
 
 	/// Switches to the specified screen.
 	/**

@@ -118,7 +118,7 @@ bool LiquidMenu::change_screen(uint8_t number) {
 	}
 }
 
-bool LiquidSystem::change_screen(LiquidScreen &p_liquidScreen) {
+bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
 	_p_liquidCrystal->clear();
 	// _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
 	for (uint8_t s = 0; s < _screenCount; s++) {
