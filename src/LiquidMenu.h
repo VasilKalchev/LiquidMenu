@@ -27,7 +27,9 @@ SOFTWARE.
 Include file for LiquidMenu library.
 
 @author Vasil Kalchev
-
+@date 2016
+@version 1.0.0
+@copyright The MIT License
 */
 
 #pragma once
