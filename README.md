@@ -7,25 +7,25 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
 
-**LiquidMenu** extends the Arduino's LiquidCrystal library with the ability to create menus.
+**LiquidMenu** extends the Arduino's [LiquidCrystal][lc] library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
 
 
 Features
 --------
- - Intuitive menu organization
- - Selectable lines
- - Callback functions
+ - Fast and easy menu creation.
+ - Selectable menu items.
+ - Callback functions.
 
 
 Requirements
 ------------
- - The Arduino's <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> library.
- - LCD supported by <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> (*with Hitachi HD44780 or a compatible chipset*)
- - Arduino board or a compatible microcontroller
- - Input device/s is recommended (*buttons, rotary encoder, etc.*)
+ - The Arduino's [LiquidCrystal][lc] library.
+ - LCD supported by <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> (*with Hitachi HD44780 or a compatible chipset*).
+ - Arduino board or a compatible microcontroller.
+ - Input device/s is recommended (*buttons, rotary encoder, etc.*).
 
-How to use
+How to use it
 -----------
 ### Classes organization
 This library uses hierarchically structured classes to represent the different elements of a menu.
@@ -40,9 +40,9 @@ The **LiquidLine** class represents a **line** of text/variables on the display.
 
 The **LiquidScreen** class represents a collection of **lines** that are shown together at the same time on the display (*i.e. "the current screen"*).
 
-The **LiquidMenu** class combines the **screens** to form a **menu**. It can switch between the them, call attached functions, etc.
+The **LiquidMenu** class combines the **screens** to form a **menu**. It can switch between them, call attached functions, etc.
  
-The **LiquidSystem** is an optional class that combines **menus** to form a **menu system** (*e.g. Main menu, Outputs, Settings, etc.*). It has the same public interface as **LiquidMenu**.
+The **LiquidSystem** is an optional class that combines **menus** to form a **menu system** (*e.g. Main menu, Settings, etc.*). It has the same public interface as **LiquidMenu**.
 
 
 ### Creating a menu
@@ -310,3 +310,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[lc]: https://github.com/arduino-libraries/LiquidCrystal
