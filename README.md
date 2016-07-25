@@ -50,6 +50,18 @@ Menu creation is all about structure. First there are variables/constants that g
 This structure can be established on object instantiation or later with functions:
 
 ##### Methods used:
+```c++
+LiquidLine(byte column, byte row, A &variableA, B &variableB...); //takes up to 4 variables
+```
+```c++
+LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2...); //takes up to 4 lines
+```
+```c++
+LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1, LiquidScreen &liquidScreen2..., byte startingScreen = 1); //takes up to 3 screens
+```
+```c++
+LiquidSystem(LiquidMenu &liquidMenu1, LiquidMenu &liquidMenu2, byte startingMenu = 1); //takes up to 3 menus
+```
  - `LiquidLine(byte column, byte row, A &variableA, B &variableB...); //takes up to 4 variables`
  - `LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2...); //takes up to 4 lines`
  - `LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1, LiquidScreen &liquidScreen2..., byte startingScreen = 1); //takes up to 3 screens`
@@ -85,8 +97,8 @@ LiquidMenu menu(lcd, screen1, screen2);
 ###### Menu system example:
 ```c++
 /*
-This example demonstrates how to make a menu system of 3 menus, how to add the
-screens to the menus with functions and how to implement a variable text.
+This example demonstrates how to make a menu system of 3 menus, how to add a
+screen to a menu with a function and how to implement a variable text.
 */
 
 LiquidCrystal lcd(RS, E, D4, D5, D6, D7);
