@@ -1,8 +1,3 @@
-/**
-@file
-Function definitions for recognizing the data type of a variable.
-*/
-
 #include "LiquidMenu.h"
 
 DataType recognizeType(bool variable) {
