@@ -1,12 +1,10 @@
-LiquidMenu
-==========
+![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/logo.png)
+
 *Menu creation Arduino library for LCDs, extends <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a>.*
 
 [![release](https://img.shields.io/badge/release-1.0.0-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
 [![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
-
-![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/logo.png)
 
 
 **LiquidMenu** extends the Arduino's LiquidCrystal library with the ability to create menus.
