@@ -1,12 +1,15 @@
 /**
 @mainpage LiquidMenu
-[Class documentation][lc_classes]
-[Examples][docs_examples]
-[Git page](https://github.com/VasilKalchev/LiquidMenu)
-[Web site](https://vasilkalchev.github.io/LiquidMenu/)
+![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/logo.png)
+*Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc].*
 
-[docs_classes]: https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html
-[docs_examples]: https://vasilkalchev.github.io/LiquidMenu/doc/html/examples.html
+[Class documentation](https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html)
+
+[Examples](https://vasilkalchev.github.io/LiquidMenu/doc/html/examples.html)
+
+[Git page](https://github.com/VasilKalchev/LiquidMenu)
+
+[Web page](https://vasilkalchev.github.io/LiquidMenu/)
 */
 
 /**
@@ -21,7 +24,7 @@ few seconds.
 @example serial_menu.ino
 
 Demonstrates the usage of four screens which are controlled
-through serial...
+through serial.
  */
 
 /**
@@ -48,5 +51,5 @@ focus indicator.
 /**
 @example system_menu.ino
 
-Demonstrates how to implement a system of menus.
+Demonstrates how to implement a menu system.
  */

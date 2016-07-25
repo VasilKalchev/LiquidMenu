@@ -29,16 +29,12 @@ LiquidLine line41(4, 0, "Screen 4");
 LiquidLine line42(1, 1, "update");
 LiquidScreen screen4(line41, line42);
 
-LiquidMenu menu(lcd);
+LiquidMenu menu(lcd, welcome_screen, screen2, screen3, screen4);
 
 void setup() {
 	Serial.begin(250000);
 	lcd.begin(16, 2);
 
-	menu.add_screen(welcome_screen);
-	menu.add_screen(screen2);
-	menu.add_screen(screen3);
-	menu.add_screen(screen4);
 	menu.update();
 }
 
