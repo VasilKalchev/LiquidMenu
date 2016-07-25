@@ -3,12 +3,12 @@
 #include "Button.h"
 
 // Pin mapping for the display
-const byte LCD_RS = 2;
-const byte LCD_E = 7;
-const byte LCD_D4 = A0;
-const byte LCD_D5 = A1;
-const byte LCD_D6 = A3;
-const byte LCD_D7 = A4;
+const byte LCD_RS = 12;
+const byte LCD_E = 11;
+const byte LCD_D4 = 5;
+const byte LCD_D5 = 4;
+const byte LCD_D6 = 3;
+const byte LCD_D7 = 2;
 //LCD R/W pin to ground
 //10K potentiometer to VO
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
