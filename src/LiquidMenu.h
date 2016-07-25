@@ -81,7 +81,7 @@ enum class Position : uint8_t {
 Used to recognize the data type of a variable received in a template function.
 @see DataType
 */
-/**@{*/
+///@{
 
 /**
 @param variable - variable to be checked
@@ -149,7 +149,7 @@ DataType recognizeType(uint32_t variable);
 */
 DataType recognizeType(float variable);
 
-/**@}*/
+///@}
 
 
 /// Prints the number passed to it in a specific way.
@@ -174,7 +174,7 @@ class LiquidLine {
 
 public:
 	/// @name Constructors
-	/**@{*/
+	///@{
 
 	/// Constructor for one variable/constant.
 	/**
@@ -248,11 +248,11 @@ public:
 		_variableType[3] = recognizeType(variableD);
 	}
 
-	/**@}*/
+	///@}
 
 
 	/// @name Public methods
-	/**@{*/
+	///@{
 
 	/// Attaches a callback function to the line.
 	/**
@@ -271,7 +271,7 @@ public:
 
 	@see LiquidMenu_config.h
 	@see MAX_FUNCTIONS
-	@see LiquidMenu::call_function(uint8_t number)
+	@see bool LiquidMenu::call_function(uint8_t number)
 	*/
 	bool attach_function(uint8_t number, void (*function)(void));
 
@@ -295,7 +295,7 @@ public:
 	bool set_focusPosition(Position position,
 	                       uint8_t column = 0, uint8_t row = 0);
 
-	/**@}*/
+	///@}
 
 private:
 	/// Prints the line to the display.
@@ -354,7 +354,7 @@ class LiquidScreen {
 public:
 
 	/// @name Constructors
-	/**@{*/
+	///@{
 
 	/// The main constructor.
 	/**
@@ -394,10 +394,10 @@ public:
 	LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
 	             LiquidLine &liquidLine3, LiquidLine &liquidLine4);
 
-	/**@}*/
+	///@}
 
 	/// @name Public methods
-	/**@{*/
+	///@{
 
 	/// Adds a LiquidLine object to the screen.
 	/**
@@ -430,7 +430,7 @@ public:
 	*/
 	bool set_focusPosition(Position position);
 
-	/**@}*/
+	///@}
 
 private:
 	/// Prints the lines pointed by the screen.
@@ -488,7 +488,7 @@ class LiquidMenu {
 public:
 
 	/// @name Constructors
-	/**@{*/
+	///@{
 
 	/// The main constructor.
 	/**
@@ -548,10 +548,10 @@ public:
 	           LiquidScreen &liquidScreen2, LiquidScreen &liquidScreen3,
 	           LiquidScreen &liquidScreen4, uint8_t startingScreen = 1);
 
-	/**@}*/
+	///@}
 
 	/// @name Public methods
-	/**@{*/
+	///@{
 
 	/// Adds a LiquidScreen object to the menu.
 	/**
@@ -689,7 +689,7 @@ public:
 	*/
 	void update() const;
 
-	/**@}*/
+	///@}
 
 private:
 	LiquidCrystal *_p_liquidCrystal; ///< Pointer to the LiquidCrystal object
@@ -716,7 +716,7 @@ public:
 private:
 
 	/// @name Constructors
-	/**@{*/
+	///@{
 
 	/// The main constructor.
 	/**
@@ -757,10 +757,10 @@ private:
 	             LiquidMenu &liquidMenu3, LiquidMenu &liquidMenu4,
 	             uint8_t startingMenu = 1);
 
-	/**@}*/
+	///@}
 
 	/// @name Public methods
-	/**@{*/
+	///@{
 
 	/// Adds a LiquidMenu object to the menu system.
 	/**
@@ -905,7 +905,7 @@ private:
 	*/
 	void update() const;
 
-	/**@}*/
+	///@}
 
 private:
 	LiquidMenu *_p_liquidMenu[MAX_MENUS]; ///< The LiquidMenu objects
