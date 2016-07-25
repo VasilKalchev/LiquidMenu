@@ -46,8 +46,6 @@ Include file for LiquidMenu library.
 
 const char VERSION[] = "1.0"; ///< The version of the library.
 const uint8_t MAX_VARIABLES = 4; ///< Sets the size of the `void*` array.
-const uint8_t DIVISION_LINE_LENGTH = 40; ///< Sets the length of the division line.
-const char NOTHING[] = "                    "; ///< 20 spaces, used to clear the display.
 
 /// Data type enum.
 /**

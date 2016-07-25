@@ -25,6 +25,7 @@ SOFTWARE.
 #include "LiquidMenu.h"
 #include "symbols.h"
 
+const uint8_t DIVISION_LINE_LENGTH = 40; ///< Sets the length of the division line.
 
 LiquidMenu::LiquidMenu(LiquidCrystal &liquidCrystal, uint8_t startingScreen)
 	: _p_liquidCrystal(&liquidCrystal), _screenCount(0),

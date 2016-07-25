@@ -24,6 +24,8 @@ SOFTWARE.
 
 #include "LiquidMenu.h"
 
+const char NOTHING[] = "                    "; ///< 20 spaces, used to clear the display.
+
 void print_me(uint16_t address) {
 	DEBUG(F("Line (0x")); DEBUG2(address, OCT); DEBUG(F("): "));
 	return;
