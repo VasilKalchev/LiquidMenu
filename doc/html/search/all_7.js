@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['operator_2b_2b',['operator++',['../class_liquid_menu.html#a12b1b75ac4d82d992213b7d66a73ba63',1,'LiquidMenu::operator++()'],['../class_liquid_menu.html#aebc8843b6d91e49741d2be5fde02b03f',1,'LiquidMenu::operator++(int)']]],
-  ['operator_2d_2d',['operator--',['../class_liquid_menu.html#a16eb7e91ce25eca66d8b21574a53b50a',1,'LiquidMenu::operator--()'],['../class_liquid_menu.html#a61134f032b157c57e9a7d798565bf20f',1,'LiquidMenu::operator--(int)']]],
-  ['operator_3d',['operator=',['../class_liquid_menu.html#a7f62e0068d1d1c1f38d3bdab01222f8f',1,'LiquidMenu::operator=(LiquidScreen &amp;p_liquidScreen)'],['../class_liquid_menu.html#a1e5bff5dbee74b17db98c1b8ce582d74',1,'LiquidMenu::operator=(uint8_t number)']]]
+  ['position',['Position',['../_liquid_menu_8h.html#a67752aed4021e5d9f292a38f9df18ab2',1,'LiquidMenu.h']]],
+  ['previous_5fscreen',['previous_screen',['../class_liquid_menu.html#a3924794ce6e3e95bb7b94c3c18d6d9a9',1,'LiquidMenu']]],
+  ['print_5fme',['print_me',['../_liquid_menu_8h.html#a098c1bcb7abac7e1a1c0f8ecd23f8158',1,'LiquidLine.cpp']]]
 ];

@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>LiquidMenu: LiquidMenu_config.h File Reference</title>
+        <title>LiquidMenu: serial_debugging.h File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -94,110 +94,122 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">LiquidMenu_config.h File Reference</div>  </div>
+<div class="title">serial_debugging.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="_liquid_menu__config_8h_source.html">Go to the source code of this file.</a></p>
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+</div>
+<p><a href="serial__debugging_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac4d97528173442254a2532cc132ceb13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#ac4d97528173442254a2532cc132ceb13">DEBUGGING_MESSAGES</a>&#160;&#160;&#160;true</td></tr>
-<tr class="separator:ac4d97528173442254a2532cc132ceb13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aedd2637cf600dbab38e5164475ee8cd8"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#aedd2637cf600dbab38e5164475ee8cd8">MAX_FUNCTIONS</a> = 8</td></tr>
-<tr class="memdesc:aedd2637cf600dbab38e5164475ee8cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the number of available functions per line.  <a href="#aedd2637cf600dbab38e5164475ee8cd8">More...</a><br /></td></tr>
-<tr class="separator:aedd2637cf600dbab38e5164475ee8cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae19922bb51de39e7ba005c83c75bc4f9"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#ae19922bb51de39e7ba005c83c75bc4f9">MAX_LINES</a> = 8</td></tr>
-<tr class="memdesc:ae19922bb51de39e7ba005c83c75bc4f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the number of available lines per screen.  <a href="#ae19922bb51de39e7ba005c83c75bc4f9">More...</a><br /></td></tr>
-<tr class="separator:ae19922bb51de39e7ba005c83c75bc4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada3126ed8819086bcaf2a574e20e6c7b"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#ada3126ed8819086bcaf2a574e20e6c7b">MAX_SCREENS</a> = 16</td></tr>
-<tr class="memdesc:ada3126ed8819086bcaf2a574e20e6c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the number of available screens per menu.  <a href="#ada3126ed8819086bcaf2a574e20e6c7b">More...</a><br /></td></tr>
-<tr class="separator:ada3126ed8819086bcaf2a574e20e6c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaae1f275043c460c78e2c76026f7654"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#aaaae1f275043c460c78e2c76026f7654">MAX_MENUS</a> = 12</td></tr>
-<tr class="memdesc:aaaae1f275043c460c78e2c76026f7654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the number of available manus per menus system.  <a href="#aaaae1f275043c460c78e2c76026f7654">More...</a><br /></td></tr>
-<tr class="separator:aaaae1f275043c460c78e2c76026f7654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dfa58b1c5c2943dd49d8aa1981d377d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial__debugging_8h.html#a3dfa58b1c5c2943dd49d8aa1981d377d">DEBUG</a>(x)</td></tr>
+<tr class="memdesc:a3dfa58b1c5c2943dd49d8aa1981d377d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints to serial.  <a href="#a3dfa58b1c5c2943dd49d8aa1981d377d">More...</a><br /></td></tr>
+<tr class="separator:a3dfa58b1c5c2943dd49d8aa1981d377d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a020aacec0582e285f02d31f24f2bb24d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial__debugging_8h.html#a020aacec0582e285f02d31f24f2bb24d">DEBUGLN</a>(x)</td></tr>
+<tr class="memdesc:a020aacec0582e285f02d31f24f2bb24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints to serial and starts a new line.  <a href="#a020aacec0582e285f02d31f24f2bb24d">More...</a><br /></td></tr>
+<tr class="separator:a020aacec0582e285f02d31f24f2bb24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f82d3960e54e6f2c2f6f17186bf6e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial__debugging_8h.html#ae1f82d3960e54e6f2c2f6f17186bf6e6">DEBUG2</a>(x,  y)</td></tr>
+<tr class="memdesc:ae1f82d3960e54e6f2c2f6f17186bf6e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints two variables to serial.  <a href="#ae1f82d3960e54e6f2c2f6f17186bf6e6">More...</a><br /></td></tr>
+<tr class="separator:ae1f82d3960e54e6f2c2f6f17186bf6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d45d536a859df5c32b99b48801d39a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial__debugging_8h.html#a6d45d536a859df5c32b99b48801d39a5">DEBUGLN2</a>(x,  y)</td></tr>
+<tr class="memdesc:a6d45d536a859df5c32b99b48801d39a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints two variables to serial and starts a new line.  <a href="#a6d45d536a859df5c32b99b48801d39a5">More...</a><br /></td></tr>
+<tr class="separator:a6d45d536a859df5c32b99b48801d39a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Configuration file for <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> library.</p>
-<p>Contains global constants the configure the size of some of the arrays used in the library, also configures the messages output. </p>
+<div class="textblock"><p>Macros for serial debugging messages. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ac4d97528173442254a2532cc132ceb13"></a>
+<a class="anchor" id="a3dfa58b1c5c2943dd49d8aa1981d377d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEBUGGING_MESSAGES&#160;&#160;&#160;true</td>
+          <td class="memname">#define DEBUG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section note"><dt>Note</dt><dd>Default: false </dd></dl>
+
+<p>Prints to serial. </p>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="aedd2637cf600dbab38e5164475ee8cd8"></a>
+<a class="anchor" id="ae1f82d3960e54e6f2c2f6f17186bf6e6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t MAX_FUNCTIONS = 8</td>
+          <td class="memname">#define DEBUG2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configures the number of available functions per line. </p>
-<dl class="section note"><dt>Note</dt><dd>Default: 8 </dd></dl>
+<p>Prints two variables to serial. </p>
 
 </div>
 </div>
-<a class="anchor" id="ae19922bb51de39e7ba005c83c75bc4f9"></a>
+<a class="anchor" id="a020aacec0582e285f02d31f24f2bb24d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t MAX_LINES = 8</td>
+          <td class="memname">#define DEBUGLN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configures the number of available lines per screen. </p>
-<dl class="section note"><dt>Note</dt><dd>Default: 8 </dd></dl>
+<p>Prints to serial and starts a new line. </p>
 
 </div>
 </div>
-<a class="anchor" id="aaaae1f275043c460c78e2c76026f7654"></a>
+<a class="anchor" id="a6d45d536a859df5c32b99b48801d39a5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t MAX_MENUS = 12</td>
+          <td class="memname">#define DEBUGLN2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configures the number of available manus per menus system. </p>
-<dl class="section note"><dt>Note</dt><dd>Defaul: 12 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ada3126ed8819086bcaf2a574e20e6c7b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">const uint8_t MAX_SCREENS = 16</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configures the number of available screens per menu. </p>
-<dl class="section note"><dt>Note</dt><dd>Default: 16 </dd></dl>
+<p>Prints two variables to serial and starts a new line. </p>
 
 </div>
 </div>

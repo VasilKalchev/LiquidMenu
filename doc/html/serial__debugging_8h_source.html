@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>LiquidMenu: File Members</title>
+        <title>LiquidMenu: serial_debugging.h Source File</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -70,19 +70,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li class="current"><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="globals.html"><span>All</span></a></li>
-      <li><a href="globals_func.html"><span>Functions</span></a></li>
-      <li><a href="globals_vars.html"><span>Variables</span></a></li>
-      <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
-      <li class="current"><a href="globals_defs.html"><span>Macros</span></a></li>
-    </ul>
-  </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -97,25 +87,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">serial_debugging.h</div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>DEBUG
-: <a class="el" href="serial__debugging_8h.html#a3dfa58b1c5c2943dd49d8aa1981d377d">serial_debugging.h</a>
-</li>
-<li>DEBUG2
-: <a class="el" href="serial__debugging_8h.html#ae1f82d3960e54e6f2c2f6f17186bf6e6">serial_debugging.h</a>
-</li>
-<li>DEBUGGING_MESSAGES
-: <a class="el" href="_liquid_menu__config_8h.html#ac4d97528173442254a2532cc132ceb13">LiquidMenu_config.h</a>
-</li>
-<li>DEBUGLN
-: <a class="el" href="serial__debugging_8h.html#a020aacec0582e285f02d31f24f2bb24d">serial_debugging.h</a>
-</li>
-<li>DEBUGLN2
-: <a class="el" href="serial__debugging_8h.html#a6d45d536a859df5c32b99b48801d39a5">serial_debugging.h</a>
-</li>
-</ul>
-</div><!-- contents -->
+<a href="serial__debugging_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#if DEBUGGING_MESSAGES</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define DEBUG(x) Serial.print(x);</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define DEBUGLN(x) Serial.println(x);</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define DEBUG2(x, y) Serial.print(x, y);</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define DEBUGLN2(x, y) Serial.println(x, y);</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="serial__debugging_8h.html#a3dfa58b1c5c2943dd49d8aa1981d377d">   27</a></span>&#160;<span class="preprocessor">#define DEBUG(x)</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="serial__debugging_8h.html#a020aacec0582e285f02d31f24f2bb24d">   30</a></span>&#160;<span class="preprocessor">#define DEBUGLN(x)</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="serial__debugging_8h.html#ae1f82d3960e54e6f2c2f6f17186bf6e6">   33</a></span>&#160;<span class="preprocessor">#define DEBUG2(x, y)</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="serial__debugging_8h.html#a6d45d536a859df5c32b99b48801d39a5">   36</a></span>&#160;<span class="preprocessor">#define DEBUGLN2(x, y)</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div></div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
 </div>

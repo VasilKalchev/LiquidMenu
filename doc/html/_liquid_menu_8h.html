@@ -104,6 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;LiquidCrystal.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_liquid_menu__config_8h_source.html">LiquidMenu_config.h</a>&quot;</code><br />
+<code>#include &quot;serial_debuggins.h&quot;</code><br />
 </div>
 <p><a href="_liquid_menu_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -136,11 +137,12 @@ Enumerations</h2></td></tr>
 <b>UINT16_T</b> = 17, 
 <br />
 &#160;&#160;<b>INT32_T</b> = 32, 
+<b>UINT32_T</b> = 33, 
 <b>FLOAT</b> = 50, 
 <b>DOUBLE</b> = 50, 
-<b>CHAR</b> = 60, 
 <br />
-&#160;&#160;<b>CHAR_PTR</b> = 61, 
+&#160;&#160;<b>CHAR</b> = 60, 
+<b>CHAR_PTR</b> = 61, 
 <b>CONST_CHAR_PTR</b> = 62
 <br />
  }<tr class="memdesc:a75e7df7c4007df61cf3716ba2d3ed8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type enum.  <a href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">More...</a><br /></td></tr>
@@ -191,12 +193,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a391500ead9260b43f8cb31151c74d65e"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a391500ead9260b43f8cb31151c74d65e">MAX_VARIABLES</a> = 4</td></tr>
 <tr class="memdesc:a391500ead9260b43f8cb31151c74d65e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the size of the <code>void*</code> array.  <a href="#a391500ead9260b43f8cb31151c74d65e">More...</a><br /></td></tr>
 <tr class="separator:a391500ead9260b43f8cb31151c74d65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73104fd23ce5f11afb2bdc56e49663aa"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a73104fd23ce5f11afb2bdc56e49663aa">DIVISION_LINE_LENGTH</a> = 40</td></tr>
-<tr class="memdesc:a73104fd23ce5f11afb2bdc56e49663aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the length of the division line.  <a href="#a73104fd23ce5f11afb2bdc56e49663aa">More...</a><br /></td></tr>
-<tr class="separator:a73104fd23ce5f11afb2bdc56e49663aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa19f42f5248bc45fcd453d0a3f094328"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#aa19f42f5248bc45fcd453d0a3f094328">NOTHING</a> [] = &quot; &quot;</td></tr>
-<tr class="memdesc:aa19f42f5248bc45fcd453d0a3f094328"><td class="mdescLeft">&#160;</td><td class="mdescRight">20 spaces, used to clear the display.  <a href="#aa19f42f5248bc45fcd453d0a3f094328">More...</a><br /></td></tr>
-<tr class="separator:aa19f42f5248bc45fcd453d0a3f094328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Include file for <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> library.</p>
@@ -563,20 +559,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a73104fd23ce5f11afb2bdc56e49663aa"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t DIVISION_LINE_LENGTH = 40</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the length of the division line. </p>
-
-</div>
-</div>
 <a class="anchor" id="a391500ead9260b43f8cb31151c74d65e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -588,20 +570,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the size of the <code>void*</code> array. </p>
-
-</div>
-</div>
-<a class="anchor" id="aa19f42f5248bc45fcd453d0a3f094328"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char NOTHING[] = &quot; &quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>20 spaces, used to clear the display. </p>
 
 </div>
 </div>
