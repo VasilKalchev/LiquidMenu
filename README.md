@@ -25,6 +25,7 @@ Requirements
  - Arduino board or a compatible microcontroller.
  - Input device/s is recommended (*buttons, rotary encoder, etc.*).
 
+
 How to use it
 =============
 Classes organization
@@ -51,7 +52,7 @@ Creating a menu
 Menu creation is all about structure. First there are variables/constants that go into the **LiquidLine** objects. Then the **LiquidLine** objects go into the **LiquidScreen** objects. Then **LiquidScreen** objects go into the **LiquidMenu** object/s. And optionally the **LiquidMenu** objects go into the **LiquidSystem** object.
 This structure can be established on object instantiation or later with functions:
 
-#### Methods used:
+###### Methods used:
 ```c++
 LiquidLine(byte column, byte row, A &variableA...);
 ```
@@ -77,7 +78,7 @@ LiquidSystem(LiquidMenu &liquidMenu1..., byte startingMenu = 1);
 
 
 
-#### Menu example:
+###### Menu example:
 ```c++
 // This example demonstrates how to make a menu of 2 screens and 3 lines.
 
@@ -105,7 +106,7 @@ LiquidMenu menu(lcd, screen1, screen2);
 ```
 
 
-#### Menu system example:
+###### Menu system example:
 ```c++
 // This example demonstrates how to make a menu system of 3 menus, how to add
 // a screen to a menu with a function and how to implement variable text.
@@ -166,7 +167,7 @@ Navigating the menu
 -------------------
 The menu is navigated from the **LiquidMenu** object or if there are multiple menus - the **LiquidSystem** object.
 
-#### Methods used:
+###### Methods used:
 ```c++
 void LiquidMenu::next_screen();
 ```
@@ -183,7 +184,7 @@ bool LiquidMenu::change_screen(LiquidScreen &liquidScreen);
 Go to a specific screen. Takes a **LiquidScreen** object reference.
 
 
-#### Navigation example:
+###### Navigation example:
 ```c++
 // This example demonstrates how to switch to the next/previous screen
 // using some condition.
@@ -217,14 +218,14 @@ Callback functions
 ### Attaching a function
 Callback functions are attached to some **LiquidLine** object. Later they can be called on some event (*e.g. button press*), the function is identified by the **line** on which the focus is and by the number that is passed.
 
-#### Methods used:
+###### Methods used:
 ```c++
 bool LiquidLine::attach_function(byte number, void (*function)(void));
 ```
 Attaches a function to a **LiquidLine** object. Takes a number and a pointer to a function. The number is used later to identify the function when is is called.
 
 
-#### Attaching a function example:
+###### Attaching a function example:
 ```c++
 // This example demonstrates how to attach a function to some line. The
 // callback function will change a variable and write its value to a
@@ -257,7 +258,7 @@ void setup() {
 To call an attached function it needs to be focused (selected) using the `void LiquidMenu::switch_focus()` function. When the function is selected, it can be called with `bool LiquidMenu::call_function(byte functionNumber)`.
 Similar functions should be attached with the same number to the different lines. For example 'incrementing functions' can be attached with the number 1, then with a button press (*button 'UP' preferably*), the focused line's incrementing function will be called.
 
-#### Methods used:
+###### Methods used:
 ```c++
 void LiquidMenu::switch_focus();
 ```
@@ -269,7 +270,7 @@ void LiquidMenu::call_function(byte functionNumber);
 Calls the attached function for the currently focused line identified by `functionNumber`.
 
 
-#### Calling a function example:
+###### Calling a function example:
 ```c++
 /// This example demonstrates how to call an attached function.
 ...
@@ -293,7 +294,7 @@ The **focus indicator** on default appears just after the line.
 It can be configured to appear before the line or in a custom absolute position.
 If it appears after the line the symbol used is '<', before the line - '>', in a custom position - the symbol a square. These symbols can be changed individually.
 
-#### Methods used:
+###### Methods used:
 ```c++
 bool LiquidLine::set_focusPosition(Position position, byte column = 0, byte row = 0);
 ```
@@ -325,7 +326,7 @@ bool LiquidMenu::set_focusSymbol(Position position, byte symbol[8])
 Same as above (*because of the way the symbol is stored*).
 
 
-#### Customizing the focus indicator example:
+###### Customizing the focus indicator example:
 ```c++
 // This example demonstrates how to customize the focus indicator
 // position and appearance.
