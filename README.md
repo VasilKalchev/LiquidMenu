@@ -2,6 +2,13 @@ LiquidMenu
 ==========
 *Menu creation Arduino library for LCDs, extends <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a>.*
 
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000)]()
+[![documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
+
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 ![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/logo.png)
 
 
