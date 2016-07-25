@@ -1,0 +1,6 @@
+<map id="LiquidSystem::set_focusPosition" name="LiquidSystem::set_focusPosition">
+<area shape="rect" id="node2" href="$class_liquid_menu.html#acdce4caf01ad04fcbb8b7bbc91db98b2" title="Sets the focus position for the whole menu at once. " alt="" coords="288,5,507,33"/>
+<area shape="rect" id="node3" href="$_liquid_menu_8h.html#a098c1bcb7abac7e1a1c0f8ecd23f8158" title="Prints the number passed to it in a specific way. " alt="" coords="1092,29,1171,57"/>
+<area shape="rect" id="node4" href="$class_liquid_screen.html#a6b025aaf4ba5d0749aa828a303e64415" title="Sets the focus position for the whole screen at once. " alt="" coords="555,31,785,59"/>
+<area shape="rect" id="node5" href="$class_liquid_line.html#a84f19c3724695929a6a6cc3ef6083865" title="Configures the focus indicator position for the line. " alt="" coords="833,81,1044,109"/>
+</map>

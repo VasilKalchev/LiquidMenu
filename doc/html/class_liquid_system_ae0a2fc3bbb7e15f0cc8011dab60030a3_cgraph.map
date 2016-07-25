@@ -1,0 +1,4 @@
+<map id="LiquidSystem::switch_focus" name="LiquidSystem::switch_focus">
+<area shape="rect" id="node2" href="$class_liquid_menu.html#a558e3573fca7d6774ada70709c1dc2c3" title="Switches the focus. " alt="" coords="213,5,359,49"/>
+<area shape="rect" id="node3" href="$class_liquid_menu.html#a4e21a10d5a03ff62f6b4704078fbb61f" title="Prints the current screen to the display. " alt="" coords="407,13,553,41"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="LiquidSystem::change_menu" name="LiquidSystem::change_menu">
+<area shape="rect" id="node2" href="$class_liquid_system.html#ae971a398fd7d18a0f7511855a38d001e" title="Prints the current screen to the display. " alt="" coords="264,5,427,33"/>
+<area shape="rect" id="node3" href="$class_liquid_menu.html#a4e21a10d5a03ff62f6b4704078fbb61f" title="Prints the current screen to the display. " alt="" coords="475,5,621,33"/>
+</map>

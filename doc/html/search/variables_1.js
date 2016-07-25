@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['leftfocus',['leftFocus',['../symbols_8h.html#a3f79203fb8d8fd586eef1d8a25512b3e',1,'symbol']]]
+  ['version',['VERSION',['../_liquid_menu_8h.html#a4fc6b3191f12c558fa2b775c61e4afca',1,'LiquidMenu.h']]]
 ];

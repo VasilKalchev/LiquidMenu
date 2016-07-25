@@ -258,7 +258,7 @@ public:
 	/**
 	Attaches a callback function to this line. The number is used for
 	identification. The callback function can later be called when the
-	line is focused with `LiquidMenu::call_function(uint8_t number)`.
+	line is focused with `LiquidMenu::call_function(uint8_t number) const;`.
 
 	@param number - function number used for identification
 	@param *function - pointer to the function
@@ -271,7 +271,7 @@ public:
 
 	@see LiquidMenu_config.h
 	@see MAX_FUNCTIONS
-	@see bool LiquidMenu::call_function(uint8_t number)
+	@see bool LiquidMenu::call_function(uint8_t number) const;
 	*/
 	bool attach_function(uint8_t number, void (*function)(void));
 
@@ -712,8 +712,6 @@ for multiple menus.
 */
 class LiquidSystem {
 public:
-
-private:
 
 	/// @name Constructors
 	///@{

@@ -1,4 +1,5 @@
 <map id="LiquidScreen::set_focusPosition" name="LiquidScreen::set_focusPosition">
 <area shape="rect" id="node2" href="$class_liquid_menu.html#acdce4caf01ad04fcbb8b7bbc91db98b2" title="Sets the focus position for the whole menu at once. " alt="" coords="284,5,503,33"/>
-<area shape="rect" id="node3" href="$class_liquid_line.html#a29cd61001ecc4993979f8629bc037dd5" title="Constructor for four variables/constants. " alt="" coords="313,57,473,85"/>
+<area shape="rect" id="node4" href="$class_liquid_line.html#a29cd61001ecc4993979f8629bc037dd5" title="Constructor for four variables/constants. " alt="" coords="313,57,473,85"/>
+<area shape="rect" id="node3" href="$class_liquid_system.html#af261a981d86b320ba57c392bd1b65432" title="Sets the focus position for the whole menu at once. " alt="" coords="551,5,785,33"/>
 </map>

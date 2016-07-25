@@ -1,0 +1,4 @@
+<map id="LiquidSystem::update" name="LiquidSystem::update">
+<area shape="rect" id="node2" href="$class_liquid_system.html#a88c0956003931a95180a4140ebce048d" title="Switches to the specified menu. " alt="" coords="216,5,427,33"/>
+<area shape="rect" id="node3" href="$class_liquid_system.html#aa7625c753d1b4f42af879bed26ae0b63" title="Calls an attached function specified by the number. " alt="" coords="251,57,391,101"/>
+</map>
