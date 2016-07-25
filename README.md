@@ -57,14 +57,14 @@ This structure can be established on object instantiation or later with the clas
 // in the program, string literals passed direrctly or a char* for changing text.
 LiquidLine(byte column, byte row, A &variableA...);
 
-// Takes 0 to 4 **LiquidLine** objects.
+// Takes 0 to 4 LiquidLine objects.
 LiquidScreen(LiquidLine &liquidLine1...);
 
-// Takes a reference to the **LiquidCrystal** object, 0 to 4 **LiquidScreen** objects and
+// Takes a reference to the LiquidCrystal object, 0 to 4 LiquidScreen objects and
 // the number of the screen that will be shown first.
 LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1..., byte startingScreen = 1);
 
-// Takes 0 to 4 **LiquidMenu** objects and the number of the menu that will be shown first.
+// Takes 0 to 4 LiquidMenu objects and the number of the menu that will be shown first.
 LiquidSystem(LiquidMenu &liquidMenu1..., byte startingMenu = 1);
 ```
 
@@ -92,25 +92,25 @@ void LiquidMenu::call_function(byte number);
 ```
 The `number` specifies which one of the attached functions should be called.
 
-*Similar functions can be attached under the same number to different **lines** and then called on a similar events. For example if we are printing on the display the state of four LEDs. The four LEDs are instantiated in four **LiquidLine** objects with their name and their state. The functions used to turn them on can be attached under number 1 and the functions for turning them off - under number 2. Then if we have 3 buttons, one can be used to switch the focus, the second (say 'UP') button can be used to call function 1 and the third (say 'DOWN') button can be used to call function 2.*
+_Similar functions can be attached under the same number to different **lines** and then called on a similar events. For example if we are printing on the display the state of four LEDs. The four LEDs are instantiated in four **LiquidLine** objects with their name and their state. The functions used to turn them on can be attached under number 1 and the functions for turning them off - under number 2. Then if we have 3 buttons, one can be used to switch the focus, the second (say 'UP') button can be used to call function 1 and the third (say 'DOWN') button can be used to call function 2._
 
 For more detailed explanation go to the [documentation][docs_home].
 
 ### Basic example
 ```c++
 ...
-// First we need to instantiate the **LiquidCrystal** object.
+// First we need to instantiate the LiquidCrystal object.
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 // ----- WELCOME SCREEN -----
-/// Instantiating a **line** with one string literal.
+/// Instantiating a line with one string literal.
 LiquidLine welcome_line1(1, 0, "Hello Menu");
 
-/// Instantiating a **line** with an integer variable.
+/// Instantiating a line with an integer variable.
 byte oneTwoThree = 123;
 LiquidLine welcome_line2(2, 1, oneTwoThree);
 
-/// Forming a **screen** from the above two **lines**.
+/// Forming a screen from the above two lines.
 LiquidScreen welcome_screen(welcome_line1, welcome_line2);
 // --------------------------
 
@@ -147,9 +147,7 @@ void loop() {
 More information
 ================
 [Documentation][docs_home]
-
 [More examples][docs_examples]
-
 
 
 License
