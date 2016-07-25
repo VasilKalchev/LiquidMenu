@@ -3,13 +3,14 @@
 *Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc].*
 
 [![release](https://img.shields.io/badge/release-1.0.0-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
-[![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html)
+[![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
 
 **LiquidMenu** extends the Arduino's [LiquidCrystal][lc] library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
 
+[TOC]
 
 Features
 ========
@@ -239,7 +240,7 @@ LiquidLine led_line(0, 0, "LED: ", ledState);
 
 /*
 Callback functions for changing some state need to change the variable that
-is printed on the display and in this case write in to the appropriate pin.
+is printed on the display and in this case write it to the appropriate pin.
 */
 void inc_led() {
 	ledState += 10;
@@ -359,7 +360,7 @@ void setup() {
 
 More information
 ================
-[Documentation](https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html)
+[Documentation](https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html)
 
 [More examples](https://vasilkalchev.github.io/LiquidMenu/doc/html/examples.html)
 
