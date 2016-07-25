@@ -10,8 +10,6 @@
 **LiquidMenu** extends the Arduino's [LiquidCrystal][lc] library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
 
-// Show small example here
-// and move the big examples to doxygen
 
 Features
 ========
@@ -45,7 +43,7 @@ To create a new **LiquidLine** object use its constructor:
 
 The **LiquidScreen** class represents a collection of **lines** that are shown together at the same time on the display (*i.e. "the current screen"*).
 
-The **LiquidMenu** class combines the **screens** to form a **menu**. This class is used for controlling the menu (*switching **screens**, selecting **lines**, calling functions etc.*).
+The **LiquidMenu** class combines the **screens** to form a **menu**. This class is used for controlling the **menu** (_switching **screens**, selecting **lines**, calling functions etc._).
  
 The **LiquidSystem** is an optional class that combines **menus** to form a **menu system** (*e.g. Main menu, Settings, etc.*). It has the same public interface as **LiquidMenu**.
 
@@ -94,7 +92,9 @@ void LiquidMenu::call_function(byte number);
 ```
 The `number` specifies which one of the attached functions should be called.
 
-Similar functions can be attached under the same number to different **lines** and then called on a similar events. For example if we are printing on the display the state of four LEDs. The four LEDs are instantiated in four **LiquidLine** objects with their name and their state. The functions used to turn them on can be attached under number 1 and the functions for turning them off - under number 2. Then if we have 3 buttons, one can be used to switch the focus, the second (*say 'UP'*) button can be used to call function 1 and the third (*say 'DOWN'*) button can be used to call function 2.
+*Similar functions can be attached under the same number to different **lines** and then called on a similar events. For example if we are printing on the display the state of four LEDs. The four LEDs are instantiated in four **LiquidLine** objects with their name and their state. The functions used to turn them on can be attached under number 1 and the functions for turning them off - under number 2. Then if we have 3 buttons, one can be used to switch the focus, the second (say 'UP') button can be used to call function 1 and the third (say 'DOWN') button can be used to call function 2.*
+
+For more detailed explanation go to the [documentation][docs_home].
 
 ### Basic example
 ```c++
@@ -146,9 +146,9 @@ void loop() {
 
 More information
 ================
-[Documentation](https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html)
+[Documentation][docs_home]
 
-[More examples](https://vasilkalchev.github.io/LiquidMenu/doc/html/examples.html)
+[More examples][docs_examples]
 
 
 
@@ -177,3 +177,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [lc]: https://github.com/arduino-libraries/LiquidCrystal
+[docs_home]: https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html
+[docs_classes]: https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html
+[docs_examples]: https://vasilkalchev.github.io/LiquidMenu/doc/html/examples.html
