@@ -61,6 +61,7 @@ enum class DataType : uint8_t {
 	INT16_T = 16,
 	UINT16_T = 17,
 	INT32_T = 32,
+	UINT32_T = 33,
 	FLOAT = 50, DOUBLE = 50,
 	CHAR = 60,
 	CHAR_PTR = 61,
@@ -187,8 +188,8 @@ public:
 	*/
 	template <typename A>
 	LiquidLine(uint8_t column, uint8_t row, A &variableA)
-		: _row(row), _column(column), focusRow(row - 1),
-		  _fcousColumn(column - 1), _focusPosition(Position::NORMAL),
+		: _row(row), _column(column), _focusRow(row - 1),
+		  _focusColumn(column - 1), _focusPosition(Position::NORMAL),
 		  _focusable(false) {
 		for (uint8_t i = 0; i < MAX_VARIABLES; i++) {
 			_variable[i] = nullptr;

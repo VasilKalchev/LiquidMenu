@@ -122,12 +122,12 @@ void LiquidSystem::switch_focus(bool forward) {
 	_p_liquidMenu[_currentMenu]->switch_focus(forward);
 }
 
-void LiquidSystem::set_focusPosition(Position position) {
-	_p_liquidMenu[_currentMenu]->set_focusPosition(position);
+bool LiquidSystem::set_focusPosition(Position position) {
+	return _p_liquidMenu[_currentMenu]->set_focusPosition(position);
 }
 
-void LiquidSystem::set_focusSymbol(Position position, uint8_t symbol[8]) {
-	_p_liquidMenu[_currentMenu]->set_focusSymbol(position, symbol);
+bool LiquidSystem::set_focusSymbol(Position position, uint8_t symbol[8]) {
+	return _p_liquidMenu[_currentMenu]->set_focusSymbol(position, symbol);
 }
 
 bool LiquidSystem::call_function(uint8_t number) const {
