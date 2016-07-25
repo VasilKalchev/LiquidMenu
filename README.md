@@ -23,7 +23,7 @@ Requirements
  - The Arduino's [LiquidCrystal][lc] library.
  - LCD supported by <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> (*with Hitachi HD44780 or a compatible chipset*).
  - Arduino board or a compatible microcontroller.
- - Input device/s is recommended (*buttons, rotary encoder, etc.*).
+ - Input device is recommended (*buttons, rotary encoder, etc.*).
 
 
 Quick start
@@ -94,7 +94,6 @@ The `number` specifies which one of the attached functions should be called.
 
 _Similar functions can be attached under the same number to different **lines** and then called on a similar events. For example if we are printing on the display the state of four LEDs. The four LEDs are instantiated in four **LiquidLine** objects with their name and their state. The functions used to turn them on can be attached under number 1 and the functions for turning them off - under number 2. Then if we have 3 buttons, one can be used to switch the focus, the second (say 'UP') button can be used to call function 1 and the third (say 'DOWN') button can be used to call function 2._
 
-For more detailed explanation go to the [documentation][docs_home].
 
 ### Basic example
 ```c++
@@ -147,6 +146,7 @@ void loop() {
 More information
 ================
 [Documentation][docs_home]
+
 [More examples][docs_examples]
 
 
