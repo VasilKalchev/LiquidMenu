@@ -1,7 +1,7 @@
 /**
 @mainpage LiquidMenu
 ![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/logo.png)
-*Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc].*
+_Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc]._
 
 [Class documentation](https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html)
 
