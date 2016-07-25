@@ -1,6 +1,6 @@
 ![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/logo.png)
 
-*Menu creation Arduino library for LCDs, extends <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a>.*
+*Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc].*
 
 [![release](https://img.shields.io/badge/release-1.0.0-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
 [![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html)
@@ -36,7 +36,7 @@ This library uses hierarchically structured classes to represent the different e
 
 *Click [here](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/diagram.png) for a complete hierarchy diagram.*
 
-The **LiquidLine** class represents a **line** of text/variables on the display.
+The **LiquidLine** class represents a **line** of text/numbers on the display.
 
 The **LiquidScreen** class represents a collection of **lines** that are shown together at the same time on the display (*i.e. "the current screen"*).
 
@@ -49,36 +49,40 @@ The **LiquidSystem** is an optional class that combines **menus** to form a **me
 Menu creation is all about structure. First there are variables/constants that go into the **LiquidLine** objects. Then the **LiquidLine** objects go into the **LiquidScreen** objects. Then **LiquidScreen** objects go into the **LiquidMenu** object/s. And optionally the **LiquidMenu** objects go into the **LiquidSystem** object.
 This structure can be established on object instantiation or later with functions:
 
- - `LiquidLine::LiquidLine(byte column, byte row, A &variableA, B &variableB...); //takes up to 4 variables`
- - `LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2...); //takes up to 4 lines`
- - `LiquidMenu::LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1, LiquidScreen &liquidScreen2..., byte startingScreen = 1); //takes up to 3 screens`
+##### Methods used:
+ - `LiquidLine(byte column, byte row, A &variableA, B &variableB...); //takes up to 4 variables`
+ - `LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2...); //takes up to 4 lines`
+ - `LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1, LiquidScreen &liquidScreen2..., byte startingScreen = 1); //takes up to 3 screens`
+ - `LiquidSystem(LiquidMenu &liquidMenu1, LiquidMenu &liquidMenu2, byte startingMenu = 1); //takes up to 3 menus`
 
+###### Menu example:
 ```c++
-/*
-This example demonstrates how to make a menu of 2 screens and 3 lines.
-*/
+// This example demonstrates how to make a menu of 2 screens and 3 lines.
 
 LiquidCrystal lcd(RS, E, D4, D5, D6, D7);
 
+// ---------- SCREEN 1 ----------
 // Instantiate a LiquidLine object on column 4, row 0, printing "Hello".
 LiquidLine line1(4, 0, "Hello");
 LiquidLine line2(4, 1, "World");
 // Put the above two lines into a LiquidScreen object.
 LiquidScreen screen1(line1, line2);
+// ------------------------------
 
+// ---------- SCREEN 2 ----------
 int variable1 = 123;
 // Instantiate a line with text and variable.
 LiquidLine var1_line(0, 0, "Variable 1: ", variable1);
 // This screen will only have one line.
 LiquidScreen screen2(var1_line);
+// ------------------------------
 
 // The menu object takes a reference to the LiquidCrystal object and the screens.
 LiquidMenu menu(lcd, screen1, screen2);
 
 ```
 
- - `LiquidSystem::LiquidSystem(LiquidMenu &liquidMenu1, LiquidMenu &liquidMenu2, byte startingMenu = 1); //takes up to 3 menus`
-
+###### Menu system example:
 ```c++
 /*
 This example demonstrates how to make a menu system of 3 menus, how to add the
