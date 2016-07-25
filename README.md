@@ -49,26 +49,30 @@ The **LiquidSystem** is an optional class that combines **menus** to form a **me
 Menu creation is all about structure. First there are variables/constants that go into the **LiquidLine** objects. Then the **LiquidLine** objects go into the **LiquidScreen** objects. Then **LiquidScreen** objects go into the **LiquidMenu** object/s. And optionally the **LiquidMenu** objects go into the **LiquidSystem** object.
 This structure can be established on object instantiation or later with functions:
 
-##### Methods used:
+#### Methods used:
 ```c++
 LiquidLine(byte column, byte row, A &variableA...);
 ```
 **LiquidLine's** contructor. Takes a column, a row and 1 to 4 variable references.
+
 
 ```c++
 LiquidScreen(LiquidLine &liquidLine1...);
 ```
 **LiquidScreen's** constructor. Takes 0 to 4 **LiquidLine** objects.
 
+
 ```c++
 LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1..., byte startingScreen = 1);
 ```
 **LiquidMenu's** constructor. Takes a reference to the **LiquidCrystal** object, 0 to 4 **LiquidScreen** objects and the number of the screen that will be shown first.
 
+
 ```c++
 LiquidSystem(LiquidMenu &liquidMenu1..., byte startingMenu = 1);
 ```
 **LiquidSystem's** constructor. Takes 0 to 4 **LiquidMenu** objects and the number of the menu that will be shown first.
+
 
 
 ###### Menu example:
@@ -159,7 +163,7 @@ void setup() {
 ### Navigating the menu
 The menu is navigated from the **LiquidMenu** object or if there are multiple menus - the **LiquidSystem** object.
 
-##### Methods used:
+#### Methods used:
 ```c++
 void LiquidMenu::next_screen();
 ```
@@ -209,7 +213,7 @@ void loop() {
 #### Attaching a function
 Callback functions are attached to some **LiquidLine** object. Later they can be called on some event (*e.g. button press*), the function is identified by the **line** on which the focus is and by the number that is passed.
 
-##### Methods used:
+#### Methods used:
 ```c++
 bool LiquidLine::attach_function(byte number, void (*function)(void));
 ```
@@ -246,10 +250,10 @@ void setup() {
 ```
 
 #### Calling a function
-To call an attached function it needs to be focused (selected) using the `LiquidMenu::switch_focus()` function. When the function is selected, it can be called with `LiquidMenu::call_function(byte functionNumber)`.
+To call an attached function it needs to be focused (selected) using the `void LiquidMenu::switch_focus()` function. When the function is selected, it can be called with `bool LiquidMenu::call_function(byte functionNumber)`.
 Similar functions should be attached with the same number to the different lines. For example 'incrementing functions' can be attached with the number 1, then with a button press (*button 'UP' preferably*), the focused line's incrementing function will be called.
 
-##### Methods used:
+#### Methods used:
 ```c++
 void LiquidMenu::switch_focus();
 ```
@@ -284,7 +288,7 @@ The **focus indicator** on default appears just after the line.
 It can be configured to appear before the line or in a custom absolute position.
 If it appears after the line the symbol used is '<', before the line - '>', in a custom position - the symbol a square. These symbols can be changed individually.
 
-##### Methods used:
+#### Methods used:
 ```c++
 bool LiquidLine::set_focusPosition(Position position, byte column = 0, byte row = 0);
 ```
@@ -318,9 +322,9 @@ Same as above (*because of the way the symbol is stored*).
 
 ###### Customizing the focus indicator example:
 ```c++
-/*
-This example demonstrates how to customize the focus indicator position and appearance.
-*/
+// This example demonstrates how to customize the focus indicator
+// position and appearance.
+
 ...
 // Indicator symbol definition. Create a new one from [here](http://omerk.github.io/lcdchargen/).
 byte lFocus[8] = {
