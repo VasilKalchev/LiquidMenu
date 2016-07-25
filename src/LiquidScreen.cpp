@@ -58,8 +58,8 @@ bool LiquidScreen::add_line(LiquidLine &liquidLine) {
 		_focus++;
 		return true;
 	}
-	PRINT(F("Adding line ")); PRINT(_lineCount);
-	PRINT(F(" failed, edit LiquidMenu_config.h to allow for more lines"));
+	DEBUG(F("Adding line ")); DEBUG(_lineCount);
+	DEBUG(F(" failed, edit LiquidMenu_config.h to allow for more lines"));
 	return false;
 }
 
@@ -84,7 +84,7 @@ void LiquidScreen::print(LiquidCrystal *p_liquidCrystal) const {
 			focus = false;
 			DEBUG(F("|"));
 		} else {
-			PRINT(F("|   -->"));
+			DEBUG(F("|   -->"));
 		}
 		DEBUG(F("\tLine ")); DEBUG(l);
 		_p_liquidLine[l]->print(p_liquidCrystal, focus);

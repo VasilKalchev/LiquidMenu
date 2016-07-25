@@ -61,8 +61,8 @@ bool LiquidMenu::add_screen(LiquidScreen &liquidScreen) {
 		_screenCount++;
 		return true;
 	}
-	PRINT(F("Adding screen ")); PRINT(_screenCount);
-	PRINTLN(F(" failed, edit LiquidMenu_config.h to allow for more screens"));
+	DEBUG(F("Adding screen ")); DEBUG(_screenCount);
+	DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more screens"));
 	return false;
 }
 
@@ -113,7 +113,7 @@ bool LiquidMenu::change_screen(uint8_t number) {
 		DEBUG(_currentScreen); DEBUGLN(F(")"));
 		return true;
 	} else {
-		PRINT(F("Invalid request for screen change to ")); PRINTLN(number);
+		DEBUG(F("Invalid request for screen change to ")); DEBUGLN(number);
 		return false;
 	}
 }
@@ -131,7 +131,7 @@ bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
 			return true;
 		}
 	}
-	PRINT(F("Invalid request for screen change to ")); PRINTLN((uint16_t)&p_liquidScreen);
+	DEBUG(F("Invalid request for screen change to ")); DEBUGLN((uint16_t)&p_liquidScreen);
 	return false;
 }
 
@@ -203,13 +203,13 @@ void LiquidMenu::update() const {
 	// _p_liquidCrystal->clear();
 	DEBUGLN(F("Updating the LCD"));
 	for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++) {
-		PRINT(F("-"));
+		DEBUG(F("-"));
 	}
-	PRINTLN();
+	DEBUGLN();
 	DEBUG(F("|Screen ")); DEBUGLN(_currentScreen);
 	_p_liquidScreen[_currentScreen]->print(_p_liquidCrystal);
 	for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++) {
-		PRINT(F("-"));
+		DEBUG(F("-"));
 	}
-	PRINTLN("\n");
+	DEBUGLN("\n");
 }

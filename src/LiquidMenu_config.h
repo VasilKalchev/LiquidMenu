@@ -20,8 +20,5 @@ const uint8_t MAX_SCREENS = 16; ///< @note Default: 16
 /// Configures the number of available manus per menus system.
 const uint8_t MAX_MENUS = 12; ///< @note Defaul: 12
 
-// Turns the essential messages on or off.
-#define ESSENTIAL_MESSAGES true ///< @note Default: true
-
 // Turns the debuggin messages on or off.
 #define DEBUGGING_MESSAGES true ///< @note Default: false

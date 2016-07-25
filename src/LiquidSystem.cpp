@@ -58,8 +58,8 @@ bool LiquidSystem::add_menu(LiquidMenu &liquidMenu) {
 		_menuCount++;
 		return true;
 	}
-	PRINT(F("Adding menu ")); PRINT(_menuCount);
-	PRINTLN(F(" failed, edit LiquidMenu_config.h to allow for more menus"));
+	DEBUG(F("Adding menu ")); DEBUG(_menuCount);
+	DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more menus"));
 	return false;
 }
 
@@ -74,7 +74,7 @@ bool LiquidSystem::change_menu(LiquidMenu &p_liquidMenu) {
 			return true;
 		}
 	}
-	PRINT(F("Invalid request for menu change to ")); PRINTLN((uint16_t)&p_liquidMenu);
+	DEBUG(F("Invalid request for menu change to ")); DEBUGLN((uint16_t)&p_liquidMenu);
 	return false;
 }
 

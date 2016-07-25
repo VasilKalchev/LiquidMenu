@@ -39,8 +39,8 @@ bool LiquidLine::attach_function(uint8_t number, void (*function)(void)) {
 		_focusable = true;
 		return true;
 	} else {
-		PRINT(F("Attaching function ")); PRINT(number);
-		PRINTLN(F(" failed, edit LiquidMenu_config.h to allow for more functions"));
+		DEBUG(F("Attaching function ")); DEBUG(number);
+		DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more functions"));
 		return false;
 	}
 }
@@ -68,11 +68,11 @@ void LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused) {
 	p_liquidCrystal->setCursor(_column, _row);
 	DEBUG(F(" (")); DEBUG(_column); DEBUG(F(", ")); DEBUG(_row); DEBUGLN(F(")"));
 
-	PRINT(F("|\t"));
+	DEBUG(F("|\t"));
 	for (uint8_t v = 0; v < MAX_VARIABLES; v++) {
 		print_variable(p_liquidCrystal, v);
 	}
-	PRINTLN();
+	DEBUGLN();
 
 	if (isFocused) {
 		DEBUG(F("\tFocus position: "));
@@ -117,72 +117,72 @@ void LiquidLine::print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number) 
 
 	case DataType::CONST_CHAR_PTR: {
 		const char* variable = reinterpret_cast<const char*>(_variable[number]);
-		DEBUG(F("(const char*)")); PRINT(variable);
+		DEBUG(F("(const char*)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case CONST_CHAR_PTR
 	case DataType::CHAR_PTR: {
 		char* variable = *reinterpret_cast<char**>( const_cast<void*>(_variable[number]) );
-		DEBUG(F("(char*)")); PRINT(variable);
+		DEBUG(F("(char*)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case CHAR_PTR
 	case DataType::CHAR: {
 		const char variable = *static_cast<const char*>(_variable[number]);
-		DEBUG(F("(char)")); PRINT(variable);
+		DEBUG(F("(char)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case CHAR
 
 	case DataType::INT8_T: {
 		const int8_t variable = *static_cast<const int8_t*>(_variable[number]);
-		DEBUG(F("(int8_t)")); PRINT(variable);
+		DEBUG(F("(int8_t)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case INT8_T
 	case DataType::UINT8_T: {
 		const uint8_t variable = *static_cast<const uint8_t*>(_variable[number]);
-		DEBUG(F("(uint8_t)")); PRINT(variable);
+		DEBUG(F("(uint8_t)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case UINT8_T
 
 	case DataType::INT16_T: {
 		const int16_t variable = *static_cast<const int16_t*>(_variable[number]);
-		DEBUG(F("(int16_t)")); PRINT(variable);
+		DEBUG(F("(int16_t)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case INT16_T
 	case DataType::UINT16_T: {
 		const uint16_t variable = *static_cast<const uint16_t*>(_variable[number]);
-		DEBUG(F("(uint16_t)")); PRINT(variable);
+		DEBUG(F("(uint16_t)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case UINT16_T
 
 	case DataType::INT32_T: {
 		const int32_t variable = *static_cast<const int32_t*>(_variable[number]);
-		DEBUG(F("(int32_t)")); PRINT(variable);
+		DEBUG(F("(int32_t)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case INT32_T
 	case DataType::UINT32_T: {
 		const uint32_t variable = *static_cast<const uint32_t*>(_variable[number]);
-		DEBUG(F("(uint32_t)")); PRINT(variable);
+		DEBUG(F("(uint32_t)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case UINT32_T
 
 	case DataType::FLOAT: {
 		const float variable = *static_cast<const float*>(_variable[number]);
-		DEBUG(F("(float)")); PRINT(variable);
+		DEBUG(F("(float)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case FLOAT
 
 	case DataType::BOOL: {
 		const bool variable = *static_cast<const bool*>(_variable[number]);
-		DEBUG(F("(bool)")); PRINT(variable);
+		DEBUG(F("(bool)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case BOOL
