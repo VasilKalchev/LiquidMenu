@@ -54,6 +54,14 @@ LiquidMenu::LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1
 	add_screen(liquidScreen3);
 }
 
+LiquidMenu::LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1,
+                       LiquidScreen &liquidScreen2, LiquidScreen &liquidScreen3,
+                       LiquidScreen &liquidScreen3, uint8_t startingScreen)
+	: LiquidMenu(liquidCrystal, liquidScreen1, liquidScreen2, liquidScreen3,
+	             startingScreen) {
+	add_screen(liquidScreen3);
+}
+
 bool LiquidMenu::add_screen(LiquidScreen &liquidScreen) {
 	print_me((uint16_t)this);
 	if (_screenCount < MAX_SCREENS) {
@@ -125,9 +133,9 @@ bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
 	for (uint8_t s = 0; s < _screenCount; s++) {
 		if ((uint16_t)&p_liquidScreen == (uint16_t) & (*_p_liquidScreen[s])) {
 			_currentScreen = s;
-		update();
-		DEBUG(F("Switched to screen ("));
-		DEBUG(_currentScreen); DEBUGLN(F(")"));
+			update();
+			DEBUG(F("Switched to screen ("));
+			DEBUG(_currentScreen); DEBUGLN(F(")"));
 			update();
 			return true;
 		}

@@ -534,6 +534,20 @@ public:
 	           LiquidScreen &liquidScreen2, LiquidScreen &liquidScreen3,
 	           uint8_t startingScreen = 1);
 
+	/// Constructor for 4 LiquidScreen objects.
+	/**
+	@param &liquidCrystal - pointer to the LiquidCrystal object
+	@param &liquidScreen1 - pointer to a LiquidScreen object
+	@param &liquidScreen2 - pointer to a LiquidScreen object
+	@param &liquidScreen3 - pointer to a LiquidScreen object
+	@param &liquidScreen4 - pointer to a LiquidScreen object
+	@param startingScreen - the number of the screen that will be shown
+	first
+	*/
+	LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1,
+	           LiquidScreen &liquidScreen2, LiquidScreen &liquidScreen3,
+	           LiquidScreen &liquidScreen4, uint8_t startingScreen = 1);
+
 	/**@}*/
 
 	/// @name Public methods
