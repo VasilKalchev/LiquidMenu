@@ -258,7 +258,7 @@ public:
 	/**
 	Attaches a callback function to this line. The number is used for
 	identification. The callback function can later be called when the
-	line is focused with `LiquidMenu::call_function(uint8_t number) const;`.
+	line is focused with `LiquidMenu::call_function(uint8_t number) const`.
 
 	@param number - function number used for identification
 	@param *function - pointer to the function
@@ -271,7 +271,7 @@ public:
 
 	@see LiquidMenu_config.h
 	@see MAX_FUNCTIONS
-	@see bool LiquidMenu::call_function(uint8_t number) const;
+	@see bool LiquidMenu::call_function(uint8_t number) const
 	*/
 	bool attach_function(uint8_t number, void (*function)(void));
 
@@ -326,7 +326,7 @@ private:
 
 	@note Function numbering starts from 1.
 
-	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
+	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
 	*/
 	bool call_function(uint8_t number) const;
 
@@ -462,7 +462,7 @@ private:
 
 	@note Function numbering starts from 1.
 
-	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
+	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
 	*/
 	bool call_function(uint8_t number) const;
 
@@ -679,7 +679,7 @@ public:
 
 	@note Function numbering starts from 1.
 
-	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
+	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
 	*/
 	bool call_function(uint8_t number) const;
 
@@ -893,7 +893,7 @@ public:
 
 	@note Function numbering starts from 1.
 
-	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void));
+	@see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
 	*/
 	bool call_function(uint8_t number) const;
 
