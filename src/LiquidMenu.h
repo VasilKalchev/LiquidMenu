@@ -38,7 +38,7 @@ Include file for LiquidMenu library.
 
 #include "LiquidMenu_config.h"
 
-#include "serial_debuggins.h"
+#include "serial_debugging.h"
 
 #ifndef LiquidCrystal_h
 #warning "LiquidCrystal library is required!"
