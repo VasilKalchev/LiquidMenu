@@ -56,10 +56,10 @@ LiquidMenu::LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1
 
 LiquidMenu::LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1,
                        LiquidScreen &liquidScreen2, LiquidScreen &liquidScreen3,
-                       LiquidScreen &liquidScreen3, uint8_t startingScreen)
+                       LiquidScreen &liquidScreen4, uint8_t startingScreen)
 	: LiquidMenu(liquidCrystal, liquidScreen1, liquidScreen2, liquidScreen3,
 	             startingScreen) {
-	add_screen(liquidScreen3);
+	add_screen(liquidScreen4);
 }
 
 bool LiquidMenu::add_screen(LiquidScreen &liquidScreen) {
