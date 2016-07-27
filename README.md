@@ -3,7 +3,7 @@
 *Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc].*
 
 [![Build Status](https://travis-ci.org/VasilKalchev/LiquidMenu.svg?branch=master)](https://travis-ci.org/VasilKalchev/LiquidMenu)
-[![release](https://img.shields.io/badge/release-1.0.1-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
+[![release](https://img.shields.io/badge/release-1.0.2-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
 [![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
