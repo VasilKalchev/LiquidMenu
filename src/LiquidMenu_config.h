@@ -21,4 +21,4 @@ const uint8_t MAX_SCREENS = 16; ///< @note Default: 16
 const uint8_t MAX_MENUS = 12; ///< @note Defaul: 12
 
 // Turns the debuggin messages on or off.
-#define DEBUGGING_MESSAGES true ///< @note Default: false
+#define DEBUGGING_MESSAGES false ///< @note Default: false
