@@ -120,10 +120,8 @@ void LiquidScreen::switch_focus(bool forward) {
 }
 
 bool LiquidScreen::call_function(uint8_t number) const {
-	// for (uint8_t l = 0; l < _lineCount; l++) {
-	// 	if (_focus == l) {
-	// 		return _p_liquidLine[l]->call_function(number);
-	// 	}
-	// }
-	return _p_liquidLine[_focus]->call_function(number);
+	if (_focus != _lineCount) {
+		return _p_liquidLine[_focus]->call_function(number);
+	}
+	return false;
 }
