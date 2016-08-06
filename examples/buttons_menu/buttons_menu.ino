@@ -144,7 +144,7 @@ void loop() {
 
 	// Periodically switches the state of the LED.
 	static unsigned long lastMillis = 0;
-	static unsigned int period = 1000;
+	static unsigned int period = 2000;
 	if (millis() - lastMillis > period) {
 		lastMillis = millis();
 

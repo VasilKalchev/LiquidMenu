@@ -28,8 +28,12 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.0.0
+@version 1.1.4
 @copyright The MIT License
+
+@todo: Change/Remove variables/screens/menus maybe
+@todo: screen wide glyphs
+@todo: Shorten the examples and add a setAsGlyph example
 */
 
 #pragma once
@@ -44,7 +48,7 @@ Include file for LiquidMenu library.
 #warning "LiquidCrystal library is required!"
 #endif
 
-const char VERSION[] = "1.0"; ///< The version of the library.
+const char VERSION[] = "1.1"; ///< The version of the library.
 
 /// Data type enum.
 /**
@@ -302,9 +306,9 @@ public:
 
 	/// Attaches a callback function to the line.
 	/**
-	Attaches a callback function to this line. The number is used for
-	identification. The callback function can later be called when the
-	line is focused with `LiquidMenu::call_function(uint8_t number) const`.
+	The number is used for identification. The callback function can
+	later be called when the line is focused with
+	`LiquidMenu::call_function(uint8_t number) const`.
 
 	@param number - function number used for identification
 	@param *function - pointer to the function

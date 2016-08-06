@@ -28,7 +28,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">LiquidMenu 1.0.0</a>
+                    <a class="navbar-brand">LiquidMenu 1.1.4</a>
                 </div>
             </div>
         </nav>
@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="examples.html"><span>Examples</span></a></li>
@@ -105,15 +106,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac4d97528173442254a2532cc132ceb13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#ac4d97528173442254a2532cc132ceb13">DEBUGGING_MESSAGES</a>&#160;&#160;&#160;true</td></tr>
+<tr class="memitem:ac4d97528173442254a2532cc132ceb13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#ac4d97528173442254a2532cc132ceb13">DEBUGGING_MESSAGES</a>&#160;&#160;&#160;false</td></tr>
 <tr class="separator:ac4d97528173442254a2532cc132ceb13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a391500ead9260b43f8cb31151c74d65e"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#a391500ead9260b43f8cb31151c74d65e">MAX_VARIABLES</a> = 5</td></tr>
+<tr class="memdesc:a391500ead9260b43f8cb31151c74d65e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the numer of available variables per line.  <a href="#a391500ead9260b43f8cb31151c74d65e">More...</a><br /></td></tr>
+<tr class="separator:a391500ead9260b43f8cb31151c74d65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedd2637cf600dbab38e5164475ee8cd8"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#aedd2637cf600dbab38e5164475ee8cd8">MAX_FUNCTIONS</a> = 8</td></tr>
 <tr class="memdesc:aedd2637cf600dbab38e5164475ee8cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the number of available functions per line.  <a href="#aedd2637cf600dbab38e5164475ee8cd8">More...</a><br /></td></tr>
 <tr class="separator:aedd2637cf600dbab38e5164475ee8cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae19922bb51de39e7ba005c83c75bc4f9"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#ae19922bb51de39e7ba005c83c75bc4f9">MAX_LINES</a> = 8</td></tr>
+<tr class="memitem:ae19922bb51de39e7ba005c83c75bc4f9"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#ae19922bb51de39e7ba005c83c75bc4f9">MAX_LINES</a> = 12</td></tr>
 <tr class="memdesc:ae19922bb51de39e7ba005c83c75bc4f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the number of available lines per screen.  <a href="#ae19922bb51de39e7ba005c83c75bc4f9">More...</a><br /></td></tr>
 <tr class="separator:ae19922bb51de39e7ba005c83c75bc4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada3126ed8819086bcaf2a574e20e6c7b"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#ada3126ed8819086bcaf2a574e20e6c7b">MAX_SCREENS</a> = 16</td></tr>
@@ -132,7 +136,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEBUGGING_MESSAGES&#160;&#160;&#160;true</td>
+          <td class="memname">#define DEBUGGING_MESSAGES&#160;&#160;&#160;false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -161,13 +165,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t MAX_LINES = 8</td>
+          <td class="memname">const uint8_t MAX_LINES = 12</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Configures the number of available lines per screen. </p>
-<dl class="section note"><dt>Note</dt><dd>Default: 8 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Default: 12 </dd></dl>
 
 </div>
 </div>
@@ -198,6 +202,21 @@ Variables</h2></td></tr>
 
 <p>Configures the number of available screens per menu. </p>
 <dl class="section note"><dt>Note</dt><dd>Default: 16 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a391500ead9260b43f8cb31151c74d65e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t MAX_VARIABLES = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the numer of available variables per line. </p>
+<dl class="section note"><dt>Note</dt><dd>Default: 5 </dd></dl>
 
 </div>
 </div>

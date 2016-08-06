@@ -1,3 +1,4 @@
 <map id="LiquidMenu::switch_focus" name="LiquidMenu::switch_focus">
 <area shape="rect" id="node2" href="$class_liquid_menu.html#a4e21a10d5a03ff62f6b4704078fbb61f" title="Prints the current screen to the display. " alt="" coords="199,13,345,41"/>
+<area shape="rect" id="node3" href="$class_liquid_menu.html#ab143b64e34133fb1c0f1691cb628077c" title="Prints the current screen to the display (without clearing). " alt="" coords="393,13,567,41"/>
 </map>
