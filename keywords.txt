@@ -21,10 +21,8 @@ LiquidSystem					KEYWORD1
 ########################################
 
 # Global functions
-recognizeType					KEYWORD2
-set_asGlyph						KEYWORD2
-PRINT							KEYWORD2
-PRINTLN							KEYWORD2
+# recognizeType					KEYWORD2
+# print_me						KEYWORD2
 DEBUG							KEYWORD2
 DEBUG2							KEYWORD2
 DEBUGLN							KEYWORD2
@@ -36,6 +34,7 @@ set_focusPosition				KEYWORD2
 print							KEYWORD2
 call_function					KEYWORD2
 print_variable					KEYWORD2
+set_asGlyph						KEYWORD2
 
 # class LiquidScreen
 add_line						KEYWORD2
@@ -89,10 +88,8 @@ MAX_LINES						LITERAL1
 MAX_SCREENS						LITERAL1
 MAX_MENUS						LITERAL1
 
-ESSENTIAL_MESSAGES				LITERAL1
 DEBUGGIN_MESSAGES				LITERAL1
 
 VERSION							LITERAL1
 MAX_VARIABLES					LITERAL1
-DIVISION_LINE_LENGTH			LITERAL1
-NOTHING							LITERAL1
+NOTHING							LITERAL1DIVISION_LINE_LENGTH			LITERAL1
