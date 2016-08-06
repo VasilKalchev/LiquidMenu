@@ -77,32 +77,33 @@ void LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused) {
 	DEBUGLN();
 
 	if (isFocused) {
-		DEBUG(F("\tFocus position: "));
+		DEBUG(F("\t\t<Focus position: "));
 		switch (_focusPosition) {
 		case Position::RIGHT: {
 			p_liquidCrystal->write((uint8_t)15);
-			DEBUGLN(F("right"));
 			p_liquidCrystal->print(NOTHING);
+			DEBUGLN(F("right>"));
 			break;
 		} //case RIGHT
 		case Position::LEFT: {
 			p_liquidCrystal->print(NOTHING);
 			p_liquidCrystal->setCursor(_column - 1, _row);
 			p_liquidCrystal->write((uint8_t)14);
-			DEBUGLN(F("left"));
+			DEBUGLN(F("left>"));
 			break;
 		} //case LEFT
 		case Position::CUSTOM: {
 			p_liquidCrystal->print(NOTHING);
+			//p_liquidCrystal->print(NOTHING);
 			p_liquidCrystal->setCursor(_focusColumn, _focusRow);
 			p_liquidCrystal->write((uint8_t)13);
 			DEBUGLN(F("custom (")); DEBUG(_focusColumn);
-			DEBUG(F(", ")); DEBUG(_focusRow); DEBUGLN(F(")"));
+			DEBUG(F(", ")); DEBUG(_focusRow); DEBUGLN(F(")>"));
 			break;
 		} //case CUSTOM
 		default: {
 			DEBUG(F("invalid (")); DEBUG((uint8_t)_focusPosition);
-			DEBUGLN(F("), switching to default"));
+			DEBUGLN(F("), switching to default>"));
 			_focusPosition = Position::NORMAL;
 			p_liquidCrystal->write((uint8_t)15);
 			p_liquidCrystal->print(NOTHING);
