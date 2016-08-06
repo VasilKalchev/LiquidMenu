@@ -448,6 +448,19 @@ public:
 	*/
 	bool set_focusPosition(Position position);
 
+	/// Hides the screen.
+	/**
+	Hiding a screen means that it will be skipped when cycling the
+	screens.
+
+	@param hide - true for hidding and false for unhidding
+
+	@note It can still be shown using the `change_screen` methods.
+
+	@see LiquidMenu::change_screen(LiquidScreen p_liquidScreen)
+	@see LiquidMenu::change_screen(uint8_t number)
+	*/
+	void hide(bool hide);
 	///@}
 
 private:
@@ -469,8 +482,6 @@ private:
 	*/
 	void switch_focus(bool forward = true);
 
-
-
 	/// Calls an attached function specified by the number.
 	/**
 	Calls the function specified by the number argument for the focused line.
@@ -487,6 +498,7 @@ private:
 	LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
 	uint8_t _lineCount; ///< Count of the LiquidLine objects
 	uint8_t _focus; ///< Number representing the focus position
+	bool _hidden; ///< If hiddes skips this screen when cycling
 };
 
 

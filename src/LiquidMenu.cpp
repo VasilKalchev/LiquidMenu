@@ -77,11 +77,13 @@ bool LiquidMenu::add_screen(LiquidScreen &liquidScreen) {
 
 void LiquidMenu::next_screen() {
 	_p_liquidCrystal->clear();
-	if (_currentScreen < _screenCount - 1)  {
-		_currentScreen++;
-	} else {
-		_currentScreen = 0;
-	}
+	do {
+		if (_currentScreen < _screenCount - 1)  {
+			_currentScreen++;
+		} else {
+			_currentScreen = 0;
+		}
+	} while (_p_liquidScreen[_currentScreen]->_hidden == true);
 	update();
 	DEBUG(F("Switched to the next screen (")); DEBUG(_currentScreen); DEBUG(F(")"));
 }
@@ -96,11 +98,13 @@ void LiquidMenu::operator++(int) {
 
 void LiquidMenu::previous_screen() {
 	_p_liquidCrystal->clear();
-	if (_currentScreen > 0) {
-		_currentScreen--;
-	} else {
-		_currentScreen = _screenCount - 1;
-	}
+	do {
+		if (_currentScreen > 0) {
+			_currentScreen--;
+		} else {
+			_currentScreen = _screenCount - 1;
+		}
+	} while (_p_liquidScreen[_currentScreen]->_hidden == true);
 	update();
 	DEBUG(F("Switched to the previous screen (")); DEBUG(_currentScreen); DEBUGLN(F(")"));
 }

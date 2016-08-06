@@ -25,7 +25,7 @@ SOFTWARE.
 #include "LiquidMenu.h"
 
 LiquidScreen::LiquidScreen()
-	: _lineCount(0), _focus(1) {}
+	: _lineCount(0), _focus(0), hidden(false) {}
 
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine)
 	: LiquidScreen() {
@@ -75,6 +75,10 @@ bool LiquidScreen::set_focusPosition(Position position) {
 		}
 		return true;
 	}
+}
+
+void LiquidScreen::hide(bool hide) {
+	_hidden = hide;
 }
 
 void LiquidScreen::print(LiquidCrystal *p_liquidCrystal) const {
