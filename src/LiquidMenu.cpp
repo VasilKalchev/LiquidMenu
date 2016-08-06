@@ -118,9 +118,10 @@ void LiquidMenu::operator--(int) {
 }
 
 bool LiquidMenu::change_screen(uint8_t number) {
-	_p_liquidCrystal->clear();
-	if (number <= _screenCount) {
-		_currentScreen = number;
+	uint8_t index = number - 1;
+	if (index <= _screenCount) {
+		_p_liquidCrystal->clear();
+		_currentScreen = index;
 		update();
 		DEBUG(F("Switched to screen ("));
 		DEBUG(_currentScreen); DEBUGLN(F(")"));
@@ -132,9 +133,9 @@ bool LiquidMenu::change_screen(uint8_t number) {
 }
 
 bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
-		_p_liquidCrystal->clear();
 	// _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
 	for (uint8_t s = 0; s < _screenCount; s++) {
+		_p_liquidCrystal->clear();
 		if ((uint16_t)&p_liquidScreen == (uint16_t) & (*_p_liquidScreen[s])) {
 			_currentScreen = s;
 			update();
