@@ -149,6 +149,12 @@ DataType recognizeType(uint32_t variable);
 */
 DataType recognizeType(float variable);
 
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(double variable);
+
 ///@}
 
 
