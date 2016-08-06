@@ -203,7 +203,7 @@ bool LiquidMenu::set_focusSymbol(Position position, uint8_t symbol[8]) {
 }
 
 bool LiquidMenu::call_function(uint8_t number) const {
-	bool returnValue = _p_liquidScreen[_currentScreen]->call_function(number - 1);
+	bool returnValue = _p_liquidScreen[_currentScreen]->call_function(number);
 	update();
 	return returnValue;
 }
