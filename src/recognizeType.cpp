@@ -54,3 +54,8 @@ DataType recognizeType(float variable) {
 	return DataType::FLOAT;
 	variable = variable;
 }
+
+DataType recognizeType(double variable) {
+	return DataType::DOUBLE;
+	variable = variable;
+}
