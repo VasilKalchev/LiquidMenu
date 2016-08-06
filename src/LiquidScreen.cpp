@@ -101,12 +101,16 @@ void LiquidScreen::switch_focus(bool forward) {
 		if (forward) {
 			if (_focus < _lineCount) {
 				_focus++;
+				if (_focus == _lineCount) {
+					break;
+				}
 			} else {
 				_focus = 0;
 			}
 		} else { //else (forward)
 			if (_focus == 0) {
-				_focus = _lineCount - 1;
+				_focus = _lineCount;
+				break;
 			} else {
 				_focus--;
 			}
