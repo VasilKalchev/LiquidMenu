@@ -197,8 +197,8 @@ void LiquidLine::print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number) 
 }
 
 bool LiquidLine::call_function(uint8_t number) const {
-	if (_function[number]) {
-		(*_function[number])();
+	if (_function[number - 1]) {
+		(*_function[number - 1])();
 		return true;
 	} else {
 		return false;
