@@ -22,7 +22,7 @@ LiquidSystem					KEYWORD1
 
 # Global functions
 recognizeType					KEYWORD2
-print_me						KEYWORD2
+set_asGlyph						KEYWORD2
 PRINT							KEYWORD2
 PRINTLN							KEYWORD2
 DEBUG							KEYWORD2
@@ -75,6 +75,7 @@ DOUBLE							LITERAL1
 CHAR							LITERAL1
 CHAR_PTR						LITERAL1
 CONST_CHAR_PTR					LITERAL1
+GLYPH							LITERAL1
 
 # enum Position
 NORMAL							LITERAL1

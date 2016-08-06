@@ -60,10 +60,11 @@ enum class DataType : uint8_t {
 	UINT16_T = 17,
 	INT32_T = 32,
 	UINT32_T = 33,
-	FLOAT = 50, DOUBLE = 50,
+	FLOAT = 50,	DOUBLE = 50,
 	CHAR = 60,
 	CHAR_PTR = 61,
 	CONST_CHAR_PTR = 62,
+	GLYPH = 70,
 };
 
 /// Position enum.
@@ -301,6 +302,17 @@ public:
 	bool set_focusPosition(Position position,
 	                       uint8_t column = 0, uint8_t row = 0);
 
+	/// Converts a byte variable into a glyph index.
+	/**
+	If a custom character (glyph) was created using
+	`LiquidCrystal::createChar(byte index, byte character[8])` it
+	can be displayed as a normal variable using this method.
+
+	@param number - the variable number that will be converted to an index
+	@returns true on success and false if the variable with that number is
+	not a `byte`.
+	*/
+	bool set_asGlyph(uint8_t number);
 	///@}
 
 private:

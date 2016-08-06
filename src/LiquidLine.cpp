@@ -66,6 +66,18 @@ bool LiquidLine::set_focusPosition(Position position, uint8_t column, uint8_t ro
 	}
 }
 
+bool LiquidLine::set_asGlyph(uint8_t number) {
+	uint8_t index = number - 1;
+	if ( (index < MAX_VARIABLES) && (_variableType[index] == DataType::UINT8_T) ) {
+		_variableType[index] = DataType::GLYPH;
+		return true;
+	} else {
+		DEBUG(F("Setting variable ")); DEBUG(number);
+		DEBUGLN(F(" as glyph failed, the variable must be of 'byte' data type"))
+		return false;
+	}
+}
+
 void LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused) {
 	p_liquidCrystal->setCursor(_column, _row);
 	DEBUG(F(" (")); DEBUG(_column); DEBUG(F(", ")); DEBUG(_row); DEBUGLN(F(")"));
@@ -187,6 +199,13 @@ void LiquidLine::print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number) 
 		const bool variable = *static_cast<const bool*>(_variable[number]);
 		DEBUG(F("(bool)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
+		break;
+	} //case BOOL
+
+	case DataType::GLYPH: {
+		const uint8_t variable = *static_cast<const uint8_t*>(_variable[number]);
+		DEBUG(F("(glyph)")); DEBUG(variable);
+		p_liquidCrystal->write((uint8_t)variable);
 		break;
 	} //case BOOL
 
