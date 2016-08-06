@@ -294,7 +294,7 @@ public:
 	invalid
 
 	@note The `Position` is enum class. Use `Position::(member)` when
-	specifeing the position.
+	specifying the position.
 
 	@see Position
 	*/
