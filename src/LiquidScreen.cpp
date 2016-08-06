@@ -25,7 +25,7 @@ SOFTWARE.
 #include "LiquidMenu.h"
 
 LiquidScreen::LiquidScreen()
-	: _lineCount(0), _focus(0), hidden(false) {}
+	: _lineCount(0), _focus(0), _hidden(false) {}
 
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine)
 	: LiquidScreen() {
