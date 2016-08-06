@@ -40,6 +40,7 @@ set_asGlyph						KEYWORD2
 add_line						KEYWORD2
 set_focusPosition				KEYWORD2
 switch_focus					KEYWORD2
+hide							KEYWORD2
 
 # class LiquidMenu
 add_screen						KEYWORD2
@@ -93,4 +94,3 @@ DEBUGGIN_MESSAGES				LITERAL1
 
 VERSION							LITERAL1
 MAX_VARIABLES					LITERAL1
-NOTHING							LITERAL1DIVISION_LINE_LENGTH			LITERAL1
