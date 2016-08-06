@@ -45,7 +45,6 @@ Include file for LiquidMenu library.
 #endif
 
 const char VERSION[] = "1.0"; ///< The version of the library.
-const uint8_t MAX_VARIABLES = 4; ///< Sets the size of the `void*` array.
 
 /// Data type enum.
 /**
@@ -183,19 +182,17 @@ public:
 	/// @name Constructors
 	///@{
 
-	/// Constructor for one variable/constant.
+	/// The main constructor.
 	/**
 	This is the main constructor that gets called every time.
 
 	@param column - the column at which the line starts
 	@param row - the row at which the line is printed
-	@param &variableA - variable/constant to be printed
 	*/
-	template <typename A>
-	LiquidLine(uint8_t column, uint8_t row, A &variableA)
+	LiquidLine(uint8_t column, uint8_t row)
 		: _row(row), _column(column), _focusRow(row - 1),
 		  _focusColumn(column - 1), _focusPosition(Position::NORMAL),
-		  _focusable(false) {
+		  _variableCount(0), _focusable(false) {
 		for (uint8_t i = 0; i < MAX_VARIABLES; i++) {
 			_variable[i] = nullptr;
 			_variableType[i] = DataType::NOT_USED;
@@ -203,8 +200,20 @@ public:
 		for (uint8_t f = 0; f < MAX_FUNCTIONS; f++) {
 			_function[f] = 0;
 		}
-		_variable[0] = (void*)&variableA;
-		_variableType[0] = recognizeType(variableA);
+	}
+
+	/// Constructor for one variable/constant.
+	/**
+	@param column - the column at which the line starts
+	@param row - the row at which the line is printed
+	@param &variableA - variable/constant to be printed
+	*/
+	template <typename A>
+	LiquidLine(uint8_t column, uint8_t row, A &variableA)
+		: LiquidLine(column, row) {
+		add_variable(variableA);
+		//_variable[0] = (void*)&variableA;
+		//_variableType[0] = recognizeType(variableA);
 	}
 
 	/// Constructor for two variables/constants.
@@ -218,8 +227,9 @@ public:
 	LiquidLine(uint8_t column, uint8_t row,
 	           A &variableA, B &variableB)
 		: LiquidLine(column, row, variableA) {
-		_variable[1] = (void*)&variableB;
-		_variableType[1] = recognizeType(variableB);
+		add_variable(variableB);
+		//_variable[1] = (void*)&variableB;
+		//_variableType[1] = recognizeType(variableB);
 	}
 
 	/// Constructor for three variables/constants.
@@ -234,8 +244,9 @@ public:
 	LiquidLine(uint8_t column, uint8_t row,
 	           A &variableA, B &variableB, C &variableC)
 		: LiquidLine(column, row, variableA, variableB) {
-		_variable[2] = (void*)&variableC;
-		_variableType[2] = recognizeType(variableC);
+		add_variable(variableC);
+		//_variable[2] = (void*)&variableC;
+		//_variableType[2] = recognizeType(variableC);
 	}
 
 	/// Constructor for four variables/constants.
@@ -251,8 +262,9 @@ public:
 	LiquidLine(uint8_t column, uint8_t row,
 	           A &variableA, B &variableB, C &variableC, D &variableD)
 		: LiquidLine(column, row, variableA, variableB, variableC) {
-		_variable[3] = (void*)&variableD;
-		_variableType[3] = recognizeType(variableD);
+		add_variable(variableD);
+		//_variable[3] = (void*)&variableD;
+		//_variableType[3] = recognizeType(variableD);
 	}
 
 	///@}
@@ -260,6 +272,33 @@ public:
 
 	/// @name Public methods
 	///@{
+
+	/// Adds a variable to the line.
+	/**
+	@param &variable - reference to the variable
+	@returns true on success and false if the maximum amount of variables
+	has been reached
+
+	@note The maximum amount of variable per line is specified in
+	LiquidMenu_config.h as `MAX_VARIABLES`. The default is 5.
+
+	@see LiquidMenu_config.h
+	@see MAX_VARIABLES
+	*/
+	template <typename T>
+	bool add_variable(T &variable) {
+		print_me((uint16_t)this);
+		if (_variableCount < MAX_VARIABLES) {
+			_variable[_variableCount] = (void*)&variable;
+			_variableType[_variableCount] = recognizeType(variable);
+			DEBUG(F("Added variable '")); DEBUG(variable); DEBUGLN(F("'"));
+			_variableCount++;
+			return true;
+		}
+		DEBUG(F("Adding variable ")); DEBUG(variable);
+		DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more variables"));
+		return false;
+	}
 
 	/// Attaches a callback function to the line.
 	/**
@@ -350,6 +389,7 @@ private:
 
 	uint8_t _row, _column, _focusRow, _focusColumn;
 	Position _focusPosition;
+	uint8_t _variableCount; ///< Count of the variables
 	void (*_function[MAX_FUNCTIONS])(void); ///< Pointers to the functions
 	const void *_variable[MAX_VARIABLES]; ///< Pointers to the variables
 	DataType _variableType[MAX_VARIABLES]; ///< Data type of the variables

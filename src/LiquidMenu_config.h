@@ -8,6 +8,9 @@ used in the library, also configures the messages output.
 
 #pragma once
 
+/// Configures the numer of available variables per line.
+const uint8_t MAX_VARIABLES = 5; ///< @note Default: 5
+
 /// Configures the number of available functions per line.
 const uint8_t MAX_FUNCTIONS = 8; ///< @note Default: 8
 

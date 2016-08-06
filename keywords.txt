@@ -29,6 +29,7 @@ DEBUGLN							KEYWORD2
 DEBUGLN2						KEYWORD2
 
 # class LiquidLine
+add_variable					KEYWORD2
 attach_function					KEYWORD2
 set_focusPosition				KEYWORD2
 print							KEYWORD2
@@ -85,6 +86,7 @@ LEFT							LITERAL1
 CUSTOM							LITERAL1
 
 # Global constants
+MAX_VARIABLES					LITERAL1
 MAX_FUNCTIONS					LITERAL1
 MAX_LINES						LITERAL1
 MAX_SCREENS						LITERAL1
