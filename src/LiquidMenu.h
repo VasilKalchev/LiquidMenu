@@ -719,6 +719,15 @@ public:
 	*/
 	void update() const;
 
+	/// Prints the current screen to the display (without clearing).
+	/**
+	Call this method when there is a change in some of the variable attached
+	and the new symbols cover all of the old symbols.
+
+	@note This method doesn't clear the display.
+	*/
+	void softUpdate() const;
+
 	///@}
 
 private:
@@ -932,6 +941,15 @@ public:
 	Call this method when there is a change in some of the variable attached.
 	*/
 	void update() const;
+
+	/// Prints the current screen to the display (without clearing).
+	/**
+	Call this method when there is a change in some of the variable attached
+	and the new symbols cover all of the old symbols.
+
+	@note This method doesn't clear the display.
+	*/
+	void softUpdate() const;
 
 	///@}
 

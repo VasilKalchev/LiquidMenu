@@ -50,6 +50,7 @@ set_focusPosition				KEYWORD2
 set_focusSymbol					KEYWORD2
 call_function					KEYWORD2
 update							KEYWORD2
+softUpdate						KEYWORD2
 
 # class LiquidSystem
 add_menu						KEYWORD2

@@ -140,3 +140,7 @@ bool LiquidSystem::call_function(uint8_t number) const {
 void LiquidSystem::update() const {
 	_p_liquidMenu[_currentMenu]->update();
 }
+
+void LiquidSystem::softUpdate() const {
+	_p_liquidMenu[_currentMenu]->softUpdate();
+}

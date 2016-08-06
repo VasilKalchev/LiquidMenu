@@ -24,7 +24,7 @@ SOFTWARE.
 
 #include "LiquidMenu.h"
 
-const char NOTHING[] = "                    "; ///< 20 spaces, used to clear the display.
+//const char NOTHING[] = "                    "; ///< 20 spaces, used to clear the display.
 
 void print_me(uint16_t address) {
 	DEBUG(F("Line (0x")); DEBUG2(address, OCT); DEBUG(F("): "));
@@ -93,19 +93,18 @@ void LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused) {
 		switch (_focusPosition) {
 		case Position::RIGHT: {
 			p_liquidCrystal->write((uint8_t)15);
-			p_liquidCrystal->print(NOTHING);
 			DEBUGLN(F("right>"));
+			//p_liquidCrystal->print(NOTHING);
 			break;
 		} //case RIGHT
 		case Position::LEFT: {
-			p_liquidCrystal->print(NOTHING);
+			//p_liquidCrystal->print(NOTHING);
 			p_liquidCrystal->setCursor(_column - 1, _row);
 			p_liquidCrystal->write((uint8_t)14);
 			DEBUGLN(F("left>"));
 			break;
 		} //case LEFT
 		case Position::CUSTOM: {
-			p_liquidCrystal->print(NOTHING);
 			//p_liquidCrystal->print(NOTHING);
 			p_liquidCrystal->setCursor(_focusColumn, _focusRow);
 			p_liquidCrystal->write((uint8_t)13);
@@ -118,12 +117,12 @@ void LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused) {
 			DEBUGLN(F("), switching to default>"));
 			_focusPosition = Position::NORMAL;
 			p_liquidCrystal->write((uint8_t)15);
-			p_liquidCrystal->print(NOTHING);
+			//p_liquidCrystal->print(NOTHING);
 			break;
 		} //default
 		} //switch (_focusPosition)
 	} else {
-		p_liquidCrystal->print(NOTHING);
+		//p_liquidCrystal->print(NOTHING);
 	}
 }
 

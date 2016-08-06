@@ -132,7 +132,7 @@ bool LiquidMenu::change_screen(uint8_t number) {
 }
 
 bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
-	_p_liquidCrystal->clear();
+		_p_liquidCrystal->clear();
 	// _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
 	for (uint8_t s = 0; s < _screenCount; s++) {
 		if ((uint16_t)&p_liquidScreen == (uint16_t) & (*_p_liquidScreen[s])) {
@@ -213,7 +213,11 @@ bool LiquidMenu::call_function(uint8_t number) const {
 }
 
 void LiquidMenu::update() const {
-	// _p_liquidCrystal->clear();
+	_p_liquidCrystal->clear();
+	softUpdate();
+}
+
+void LiquidMenu::softUpdate() const {
 	DEBUGLN(F("Updating the LCD"));
 	for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++) {
 		DEBUG(F("-"));
