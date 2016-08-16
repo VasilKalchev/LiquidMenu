@@ -168,7 +168,7 @@ Used for convenience when printing the class's address for indentification.
 
 @param address - number to be printed
 */
-void print_me(uint16_t address);
+void print_me(uintptr_t address);
 
 
 /// Represents the individual lines printed on the display.
@@ -291,7 +291,7 @@ public:
 	*/
 	template <typename T>
 	bool add_variable(T &variable) {
-		print_me((uint16_t)this);
+		print_me((uintptr_t)this);
 		if (_variableCount < MAX_VARIABLES) {
 			_variable[_variableCount] = (void*)&variable;
 			_variableType[_variableCount] = recognizeType(variable);

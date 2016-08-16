@@ -50,7 +50,7 @@ LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
 }
 
 bool LiquidScreen::add_line(LiquidLine &liquidLine) {
-	print_me((uint16_t)this);
+	print_me((uintptr_t)this);
 	if (_lineCount < MAX_LINES) {
 		_p_liquidLine[_lineCount] = &liquidLine;
 		DEBUG(F("Added a new line (")); DEBUG(_lineCount); DEBUGLN(F(")"));
@@ -64,7 +64,7 @@ bool LiquidScreen::add_line(LiquidLine &liquidLine) {
 }
 
 bool LiquidScreen::set_focusPosition(Position position) {
-	print_me((uint16_t)this);
+	print_me((uintptr_t)this);
 	if (position == Position::CUSTOM) {
 		DEBUGLN(F("Can't set focus position to 'CUSTOM' for the whole screen at once"));
 		return false;
@@ -96,7 +96,7 @@ void LiquidScreen::print(LiquidCrystal *p_liquidCrystal) const {
 }
 
 void LiquidScreen::switch_focus(bool forward) {
-	print_me((uint16_t)this);
+	print_me((uintptr_t)this);
 	do {
 		if (forward) {
 			if (_focus < _lineCount) {

@@ -51,7 +51,7 @@ LiquidSystem::LiquidSystem(LiquidMenu &liquidMenu1, LiquidMenu &liquidMenu2,
 
 
 bool LiquidSystem::add_menu(LiquidMenu &liquidMenu) {
-	print_me((uint16_t)this);
+	print_me((uintptr_t)this);
 	if (_menuCount < MAX_MENUS) {
 		_p_liquidMenu[_menuCount] = &liquidMenu;
 		DEBUG(F("Added a new menu (")); DEBUG(_menuCount); DEBUGLN(F(")"));
@@ -67,14 +67,14 @@ bool LiquidSystem::add_menu(LiquidMenu &liquidMenu) {
 bool LiquidSystem::change_menu(LiquidMenu &p_liquidMenu) {
 	// _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
 	for (uint8_t m = 0; m < _menuCount; m++) {
-		if ((uint16_t)&p_liquidMenu == (uint16_t) & (*_p_liquidMenu[m])) {
+		if ((uintptr_t)&p_liquidMenu == (uintptr_t) & (*_p_liquidMenu[m])) {
 			_currentMenu = m;
 			DEBUG(F("Menu changed to ")); DEBUGLN(_currentMenu);
 			update();
 			return true;
 		}
 	}
-	DEBUG(F("Invalid request for menu change to ")); DEBUGLN((uint16_t)&p_liquidMenu);
+	DEBUG(F("Invalid request for menu change to ")); DEBUGLN((uintptr_t)&p_liquidMenu);
 	return false;
 }
 
