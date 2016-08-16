@@ -28,7 +28,7 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.1.4
+@version 1.1.5
 @copyright The MIT License
 
 @todo: Change/Remove variables/screens/menus maybe
