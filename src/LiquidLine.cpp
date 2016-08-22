@@ -78,6 +78,19 @@ bool LiquidLine::set_asGlyph(uint8_t number) {
 	}
 }
 
+bool LiquidLine::set_asProgmem(uint8_t number) {
+	uint8_t index = number - 1;
+	if ((index < MAX_VARIABLES) && (_variableType[index] == DataType::CONST_CHAR_PTR)) {
+		_variableType[index] = DataType::PROG_CONST_CHAR_PTR;
+		return true;
+	}
+	else {
+		DEBUG(F("Setting variable ")); DEBUG(number);
+		DEBUGLN(F(" as PROG_CONST_CHAR failed, the variable must be of 'const char[]' data type"))
+			return false;
+	}
+}
+
 void LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused) {
 	p_liquidCrystal->setCursor(_column, _row);
 	DEBUG(F(" (")); DEBUG(_column); DEBUG(F(", ")); DEBUG(_row); DEBUGLN(F(")"));
@@ -207,6 +220,19 @@ void LiquidLine::print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number) 
 		p_liquidCrystal->write((uint8_t)variable);
 		break;
 	} //case BOOL
+
+	case DataType::PROG_CONST_CHAR_PTR: {
+		const char* variable = reinterpret_cast<const char*>(_variable[number]);
+		volatile const int len = strlen_P(variable);
+		char buffer[len];
+		for (uint8_t i = 0; i < len; i++) {
+			buffer[i] = pgm_read_byte_near(variable + i);
+		}
+		buffer[len] = '\0';
+		DEBUG(F("(const char*)")); DEBUG(buffer);
+		p_liquidCrystal->print(buffer);
+		break;
+	} //case PROG_CONST_CHAR_PTR
 
 	default: { break; }
 

@@ -39,6 +39,10 @@ Include file for LiquidMenu library.
 #pragma once
 
 #include <LiquidCrystal.h>
+#include <inttypes.h>
+#include <avr/pgmspace.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "LiquidMenu_config.h"
 
@@ -67,6 +71,7 @@ enum class DataType : uint8_t {
 	CHAR = 60,
 	CHAR_PTR = 61,
 	CONST_CHAR_PTR = 62,
+	PROG_CONST_CHAR_PTR = 65,
 	GLYPH = 70,
 };
 
@@ -158,7 +163,6 @@ DataType recognizeType(float variable);
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(double variable);
-
 ///@}
 
 
@@ -356,6 +360,17 @@ public:
 	not a `byte`.
 	*/
 	bool set_asGlyph(uint8_t number);
+
+	/// Converts a const char pointer variable into const char pointer PROGMEM one.
+	/**
+	Use this function to tell the object that the attached const char pointer
+	variable is saved in flash memory rather than in RAM like a normal variable.
+
+	@param number - the variable number that will be converted
+	@returns true on success and false if the variable with that number is
+	not a `const char[]`.
+	*/
+	bool set_asProgmem(uint8_t number);
 	///@}
 
 private:
