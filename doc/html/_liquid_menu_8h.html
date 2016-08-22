@@ -28,7 +28,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">LiquidMenu 1.1.5</a>
+                    <a class="navbar-brand">LiquidMenu 1.1.6</a>
                 </div>
             </div>
         </nav>
@@ -104,6 +104,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;LiquidCrystal.h&gt;</code><br />
+<code>#include &lt;inttypes.h&gt;</code><br />
+<code>#include &lt;avr/pgmspace.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_liquid_menu__config_8h_source.html">LiquidMenu_config.h</a>&quot;</code><br />
 <code>#include &quot;serial_debugging.h&quot;</code><br />
 </div>
@@ -145,7 +149,9 @@ Enumerations</h2></td></tr>
 &#160;&#160;<b>CHAR</b> = 60, 
 <b>CHAR_PTR</b> = 61, 
 <b>CONST_CHAR_PTR</b> = 62, 
-<b>GLYPH</b> = 70
+<b>PROG_CONST_CHAR_PTR</b> = 65, 
+<br />
+&#160;&#160;<b>GLYPH</b> = 70
 <br />
  }<tr class="memdesc:a75e7df7c4007df61cf3716ba2d3ed8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type enum.  <a href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">More...</a><br /></td></tr>
 </td></tr>
@@ -270,10 +276,11 @@ Variables</h2></td></tr>
 <p>Used for convenience when printing the class's address for indentification.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">address</td><td>- number to be printed </td></tr>
+    <tr><td class="paramname">address</td><td>- number to be printed</td></tr>
   </table>
   </dd>
 </dl>
+<p>Prints the number passed to it in a specific way. </p>
 
 <p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>

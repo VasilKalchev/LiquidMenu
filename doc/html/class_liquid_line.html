@@ -28,7 +28,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">LiquidMenu 1.1.5</a>
+                    <a class="navbar-brand">LiquidMenu 1.1.6</a>
                 </div>
             </div>
         </nav>
@@ -139,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe542895a93ee3cbd85a4785b5274a9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_line.html#afe542895a93ee3cbd85a4785b5274a9c">set_asGlyph</a> (uint8_t number)</td></tr>
 <tr class="memdesc:afe542895a93ee3cbd85a4785b5274a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a byte variable into a glyph index.  <a href="#afe542895a93ee3cbd85a4785b5274a9c">More...</a><br /></td></tr>
 <tr class="separator:afe542895a93ee3cbd85a4785b5274a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e780de58fdd558d41952a377e812c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_line.html#a48e780de58fdd558d41952a377e812c4">set_asProgmem</a> (uint8_t number)</td></tr>
+<tr class="memdesc:a48e780de58fdd558d41952a377e812c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a const char pointer variable into const char pointer PROGMEM one.  <a href="#a48e780de58fdd558d41952a377e812c4">More...</a><br /></td></tr>
+<tr class="separator:a48e780de58fdd558d41952a377e812c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -581,6 +584,32 @@ bool <a class="el" href="class_liquid_menu.html#a4c1c98768f697fc50d18340f58ba95b
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success and false if the variable with that number is not a <code>byte</code>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a48e780de58fdd558d41952a377e812c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LiquidLine::set_asProgmem </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a const char pointer variable into const char pointer PROGMEM one. </p>
+<p>Use this function to tell the object that the attached const char pointer variable is saved in flash memory rather than in RAM like a normal variable.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>- the variable number that will be converted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success and false if the variable with that number is not a <code>const char[]</code>. </dd></dl>
 
 </div>
 </div>
