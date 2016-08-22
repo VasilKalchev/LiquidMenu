@@ -33,7 +33,7 @@ Include file for LiquidMenu library.
 
 @todo: Change/Remove variables/screens/menus maybe
 @todo: screen wide glyphs
-@todo: Shorten the examples and add a setAsGlyph example
+@todo: Shorten the examples and add a set_asGlyph and set_asProgmem examples
 */
 
 #pragma once
