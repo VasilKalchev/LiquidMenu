@@ -2,11 +2,6 @@ language: c++
 env:
   global:
     - IDE_VERSION=1.6.9
-    # Coverity scan:
-    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-    # via the "travis encrypt" command using the project repo's public key
-    - secure: "02Qltp3BlI/2Bl4HDgGwg4k6F/1ROFoQkEZrBCeS9ftG1hQJ+3byctE/Yb5raG+D6k0Qsl40kNJGihB5GOmCeryBheyFJemUrZNE2sIH0u1EZoc97RuTS8RXgtTyOJ8QbValc7LD/fF9A4k8E1/cZ/1Qa75vqI9CtIwebvDV5Nrhb+sH/Fk+lIYzqQriOJgvOqIfzZPJeLtShY7EMxZC1FjTg2G5V4VInwolq5Mb0sQFWAWGlrLeVsnl+6XG2neIHYOKIlZdbFvjNVjwttLOm6W2dyYqgvckaQnI11pFPlPtmOxqJIOgMz/KQlW97cD2tv3JBefLb4ij/PXxdrUS9ih7O3JNQBNIhhzuISD6oB/rbFAjFqyfoY0oWaI/m7TGF41oL4AH1wBdvSh86cFcaxvsn4JmGMQm3aPdFf5zGEhbM9BbfT6i1rV9TE/essctwqOcGvFTccJ4cqUAyU58EkPS4+WIrleOFkvd2JHNnlk8Nh41nCyI20r3jQmng3T39AKqFQTPreMrtAULxU7/cmrQsIGBZ7bpBBxhCiZG2qaIEqGk0qPN/JHbucMbl0OXfjc9DEeYztKrmhC5SYXB2rykRhIzKfdWZiadrkOOSyxywh+5JLdbb6pGkgKMG7MC5l7MgeJ2jwECQRCTQmPP9raBjcfxnqweE5m9v+oSS6k="
- 
   matrix:
     - BOARD="arduino:avr:uno"
     - BOARD="arduino:avr:leonardo"
@@ -14,9 +9,6 @@ env:
 matrix:
   allow_failures:
 before_install:
-  # Coverity scan:
-  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-  
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16
   - sleep 3
   - export DISPLAY=:1.0
@@ -44,14 +36,3 @@ script:
   - buildExampleSketch functions_menu
   - buildExampleSketch focus_menu
   - buildExampleSketch system_menu
-
-# Coverity scan:
-addons:
-  coverity_scan:
-    project:
-      name: "VasilKalchev/LiquidMenu"
-      description: "<Your project description here>"
-    notification_email: usraccs@gmail.com
-    build_command_prepend: "./configure; make clean"
-    build_command:   "make -j 4"
-    branch_pattern: coverity_scan
