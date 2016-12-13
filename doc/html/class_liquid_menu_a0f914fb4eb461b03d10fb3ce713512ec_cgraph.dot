@@ -1,0 +1,9 @@
+digraph "LiquidMenu::add_screen"
+{
+  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
+  node [fontname="Helvetica",fontsize="11",shape=record];
+  rankdir="LR";
+  Node18 [label="LiquidMenu::add_screen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node18 -> Node19 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node19 [label="print_me",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_liquid_menu_8h.html#afdff178c8b0daebe2b907aad7637ac8c",tooltip="Prints the number passed to it in a specific way. "];
+}

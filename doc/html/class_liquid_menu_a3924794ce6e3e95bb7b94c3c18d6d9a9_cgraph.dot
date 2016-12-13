@@ -1,0 +1,11 @@
+digraph "LiquidMenu::previous_screen"
+{
+  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
+  node [fontname="Helvetica",fontsize="11",shape=record];
+  rankdir="LR";
+  Node74 [label="LiquidMenu::previous\l_screen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node74 -> Node75 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node75 [label="LiquidMenu::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#af6935b3a7c65918abaf5594e7742af70",tooltip="Prints the current screen to the display. "];
+  Node75 -> Node76 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node76 [label="LiquidMenu::softUpdate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#a506aa5f8822031096a881aed7c6e45e5",tooltip="Prints the current screen to the display (without clearing). "];
+}

@@ -1,0 +1,9 @@
+digraph "LiquidSystem::change_screen"
+{
+  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
+  node [fontname="Helvetica",fontsize="11",shape=record];
+  rankdir="LR";
+  Node33 [label="LiquidSystem::change\l_screen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node33 -> Node34 [dir="back",color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node34 [label="LiquidSystem::operator=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_system.html#a0b333fc7958e07befc5e75d4b0e9e6a5",tooltip="Switches to the specified screen. "];
+}

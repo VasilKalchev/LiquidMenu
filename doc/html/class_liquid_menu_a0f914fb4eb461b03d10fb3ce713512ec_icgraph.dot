@@ -1,0 +1,9 @@
+digraph "LiquidMenu::add_screen"
+{
+  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
+  node [fontname="Helvetica",fontsize="11",shape=record];
+  rankdir="LR";
+  Node20 [label="LiquidMenu::add_screen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node20 -> Node21 [dir="back",color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node21 [label="LiquidMenu::LiquidMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#af35805d052ef3f26fa722859f540b78e",tooltip="Constructor for 1 LiquidScreen object. "];
+}

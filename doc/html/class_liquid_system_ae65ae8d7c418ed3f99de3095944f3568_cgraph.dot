@@ -1,0 +1,13 @@
+digraph "LiquidSystem::change_screen"
+{
+  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
+  node [fontname="Helvetica",fontsize="11",shape=record];
+  rankdir="LR";
+  Node35 [label="LiquidSystem::change\l_screen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node35 -> Node36 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node36 [label="LiquidMenu::change\l_screen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#a406b6d717f642b116e4bba998f27393c",tooltip="Switches to the specified screen. "];
+  Node36 -> Node37 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node37 [label="LiquidMenu::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#af6935b3a7c65918abaf5594e7742af70",tooltip="Prints the current screen to the display. "];
+  Node37 -> Node38 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node38 [label="LiquidMenu::softUpdate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#a506aa5f8822031096a881aed7c6e45e5",tooltip="Prints the current screen to the display (without clearing). "];
+}

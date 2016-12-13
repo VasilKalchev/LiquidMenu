@@ -1,0 +1,14 @@
+digraph "LiquidLine::add_variable"
+{
+  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
+  node [fontname="Helvetica",fontsize="11",shape=record];
+  rankdir="LR";
+  Node10 [label="LiquidLine::add_variable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node10 -> Node11 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node11 [label="print_me",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_liquid_menu_8h.html#afdff178c8b0daebe2b907aad7637ac8c",tooltip="Prints the number passed to it in a specific way. "];
+  Node10 -> Node12 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node12 [label="recognizeType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_liquid_menu_8h.html#a43ce352b01d201ddd165bd97a4f5ad2b"];
+  Node10 -> Node13 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node13 [label="LiquidScreen::set_focusPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_screen.html#a6b025aaf4ba5d0749aa828a303e64415",tooltip="Sets the focus position for the whole screen at once. "];
+  Node13 -> Node11 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+}

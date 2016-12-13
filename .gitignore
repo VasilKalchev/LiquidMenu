@@ -1,3 +1,7 @@
+#Static analyzers
+#Cppcheck
+*.cppcheck
+
 #Doxygen temp files
 *.tmp
 

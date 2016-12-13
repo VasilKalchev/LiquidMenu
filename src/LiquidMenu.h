@@ -443,7 +443,7 @@ public:
 	/**
 	@param &liquidLine - pointer to a LiquidLine object
 	*/
-	LiquidScreen(LiquidLine &liquidLine);
+	explicit LiquidScreen(LiquidLine &liquidLine);
 
 	/// Constructor for 2 LiquidLine object.
 	/**
@@ -820,7 +820,7 @@ public:
 
 	@param startingMenu - the number of the menu that will be shown first
 	*/
-	LiquidSystem(uint8_t startingMenu = 1);
+	explicit LiquidSystem(uint8_t startingMenu = 1);
 
 	/// Constructor for 2 LiquidMenu objects.
 	/**

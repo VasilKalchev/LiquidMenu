@@ -197,7 +197,6 @@ bool LiquidMenu::set_focusSymbol(Position position, uint8_t symbol[8]) {
 	default: {
 		DEBUGLN(F("Invalid focus position, options are 'RIGHT', 'LEFT' and 'CUSTOM'"));
 		return false;
-		break;
 	} //default
 	} //switch (position)
 	DEBUGLN(F("Focus symbol changed to:"));

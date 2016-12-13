@@ -1,0 +1,9 @@
+digraph "LiquidSystem::add_menu"
+{
+  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
+  node [fontname="Helvetica",fontsize="11",shape=record];
+  rankdir="LR";
+  Node16 [label="LiquidSystem::add_menu",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node17 [label="LiquidSystem::LiquidSystem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_system.html#a40d07c7650ed405ae6efde2309de6fea",tooltip="Constructor for 2 LiquidMenu objects. "];
+}

@@ -1,0 +1,16 @@
+digraph "LiquidSystem::call_function"
+{
+  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
+  node [fontname="Helvetica",fontsize="11",shape=record];
+  rankdir="LR";
+  Node18 [label="LiquidSystem::call\l_function",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node18 -> Node19 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node19 [label="LiquidMenu::call_function",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#adc48665ed45cc8b7a688547c2711bee1",tooltip="Calls an attached function specified by the number. "];
+  Node19 -> Node20 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node20 [label="LiquidMenu::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#af6935b3a7c65918abaf5594e7742af70",tooltip="Prints the current screen to the display. "];
+  Node20 -> Node21 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node21 [label="LiquidMenu::softUpdate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_menu.html#a506aa5f8822031096a881aed7c6e45e5",tooltip="Prints the current screen to the display (without clearing). "];
+  Node18 -> Node22 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+  Node22 [label="LiquidSystem::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_system.html#a7731917ccc713c153cdcaf3af9894fd7",tooltip="Prints the current screen to the display. "];
+  Node22 -> Node20 [color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
+}
