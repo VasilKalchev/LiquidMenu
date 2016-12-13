@@ -36,6 +36,7 @@ print							KEYWORD2
 call_function					KEYWORD2
 print_variable					KEYWORD2
 set_asGlyph						KEYWORD2
+set_asProgmem                   KEYWORD2
 
 # class LiquidScreen
 add_line						KEYWORD2
