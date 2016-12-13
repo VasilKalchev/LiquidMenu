@@ -3,7 +3,7 @@
 *Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc].*
 
 [![Build Status](https://travis-ci.org/VasilKalchev/LiquidMenu.svg?branch=master)](https://travis-ci.org/VasilKalchev/LiquidMenu)
-[![release](https://img.shields.io/badge/release-1.1.5-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
+[![release](https://img.shields.io/badge/release-1.1.6-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
 [![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
@@ -45,7 +45,7 @@ To create a new **LiquidLine** object use its constructor:
 The **LiquidScreen** class represents a collection of **lines** that are shown together at the same time on the display (*i.e. "the current screen"*).
 
 The **LiquidMenu** class combines the **screens** to form a **menu**. This class is used for controlling the **menu** (_switching **screens**, selecting **lines**, calling functions etc._).
- 
+
 The **LiquidSystem** is an optional class that combines **menus** to form a **menu system** (*e.g. Main menu, Settings, etc.*). It has the same public interface as **LiquidMenu**.
 
 
