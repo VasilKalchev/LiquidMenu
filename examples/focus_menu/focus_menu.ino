@@ -1,3 +1,53 @@
+/*
+ * LiquidMenu library - focus_menu.ino
+ *
+ * This example demonstrates the use of buttons, callback
+ * functions and changing text variables.
+ *
+ * The example creates three screens. The first one displays static
+ * information. The second displays the analog reading and the
+ * state of the LED on pin 13. And the third one displays the
+ * PWM value applied on pin 3. The analog value is read periodically
+ * and assigned to the attached variable "const short analogValue".
+ * The LED on pin 13 is changing its state periodically and its
+ * attached variable is changed also. The PWM output pin 3 is
+ * controlled via the callback functions attached to its line:
+ * "void pwm_up()" and "void pwm_down()". To call the functions
+ * navigate to the third screen using the "left" or "right" buttons,
+ * focus the line using the "enter" button and then click the "up" or
+ * "down" buttons.
+ *
+ * The circuit:
+ * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/focus_menu/focus_menu.png
+ * - LCD RS pin to Arduino pin 12
+ * - LCD E pin to Arduino pin 11
+ * - LCD D4 pin to Arduino pin 5
+ * - LCD D5 pin to Arduino pin 4
+ * - LCD D6 pin to Arduino pin 3
+ * - LCD D7 pin to Arduino pin 2
+ * - LCD R/W pin to ground
+ * - LCD VSS pin to ground
+ * - LCD VCC pin to  5V
+ * - 10k ohm potentiometer: ends to 5V and ground, wiper to LCD V0
+ * - 150 ohm resistor from 5V to LCD Anode
+ * - LCD Cathode to ground
+ * - ----
+ * - Button (left) to Arduino pin 4
+ * - Button (right) to Arduino pin 5
+ * - Button (up) to Arduino pin 6
+ * - Button (down) to Arduino pin 7
+ * - Button (enter) to Arduino pin 8
+ * - A PWM controlled device (LED...) to Arduino pin 3
+ * - An LED to Arduino pin 13 (optional)
+ * - some analog input to Arduino pin A5 (unconnected also works)
+ *
+ * Created July 24, 2016
+ * by Vasil Kalchev
+ *
+ * https://github.com/VasilKalchev/LiquidMenu
+ *
+ */
+
 #include <LiquidCrystal.h>
 #include <LiquidMenu.h>
 #include "Button.h"
