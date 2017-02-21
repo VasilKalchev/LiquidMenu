@@ -1,4 +1,37 @@
+/*
+ * LiquidMenu library - hello_menu.ino
+ *
+ * This is the get started example demonstrating how to create
+ * a menu of 2 screens with dynamically changing information.
+ *
+ * The circuit:
+ * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/hello_menu/hello_menu.png
+ * - LCD RS pin to Arduino pin 12
+ * - LCD E pin to Arduino pin 11
+ * - LCD D4 pin to Arduino pin 5
+ * - LCD D5 pin to Arduino pin 4
+ * - LCD D6 pin to Arduino pin 3
+ * - LCD D7 pin to Arduino pin 2
+ * - LCD R/W pin to ground
+ * - LCD VSS pin to ground
+ * - LCD VCC pin to  5V
+ * - 10k ohm potentiometer: ends to 5V and ground, wiper to LCD V0
+ * - 150 ohm resistor from 5V to LCD Anode
+ * - LCD Cathode to ground
+ * - ----
+ * - some analog input to Arduino pin A1 (unconnected also works)
+ * - some analog input to Arduino pin A2 (unconnected also works)
+ *
+ * Created July 24, 2016
+ * by Vasil Kalchev
+ *
+ * https://github.com/VasilKalchev/LiquidMenu
+ *
+ */
+
+// The official LCD library
 #include <LiquidCrystal.h>
+// This library
 #include <LiquidMenu.h>
 
 // Pin mapping for the display
@@ -71,42 +104,42 @@ LiquidMenu menu(lcd);
 
 
 void setup() {
-	Serial.begin(250000);
+  Serial.begin(250000);
 
-	pinMode(analogPin1, INPUT);
-	pinMode(analogPin2, INPUT);
+  pinMode(analogPin1, INPUT);
+  pinMode(analogPin2, INPUT);
 
-	lcd.begin(16, 2);
+  lcd.begin(16, 2);
 
-	// This is the method used to add a screen object to the menu.
-	menu.add_screen(welcome_screen);
-	menu.add_screen(secondary_screen);
+  // This is the method used to add a screen object to the menu.
+  menu.add_screen(welcome_screen);
+  menu.add_screen(secondary_screen);
 }
 
 void loop() {
-	/*
-	 * Check if the analog values have changed
-	 * and update the display if they have.
-	 */
-	if (analogReading1 != lastAnalogReading1) {
-		lastAnalogReading1 = analogReading1;
-		menu.update();
-	}
-	if (analogReading2 != lastAnalogReading2) {
-		lastAnalogReading2 = analogReading2;
-		menu.update();
-	}
+  /*
+   * Check if the analog values have changed
+   * and update the display if they have.
+   */
+  if (analogReading1 != lastAnalogReading1) {
+    lastAnalogReading1 = analogReading1;
+    menu.update();
+  }
+  if (analogReading2 != lastAnalogReading2) {
+    lastAnalogReading2 = analogReading2;
+    menu.update();
+  }
 
-	// Periodic reading of the analog pins.
-	if (millis() - lastMs_check > period_check) {
-		lastMs_check = millis();
-		analogReading1 = analogRead(analogPin1);
-		analogReading2 = analogRead(analogPin2);
-	}
+  // Periodic reading of the analog pins.
+  if (millis() - lastMs_check > period_check) {
+    lastMs_check = millis();
+    analogReading1 = analogRead(analogPin1);
+    analogReading2 = analogRead(analogPin2);
+  }
 
-	// Periodic switching to the next screen.
-	if (millis() - lastMs_next > period_next) {
-		lastMs_next = millis();
-		menu.next_screen();
-	}
+  // Periodic switching to the next screen.
+  if (millis() - lastMs_next > period_next) {
+    lastMs_next = millis();
+    menu.next_screen();
+  }
 }

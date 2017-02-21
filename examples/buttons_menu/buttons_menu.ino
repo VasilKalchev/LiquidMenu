@@ -1,3 +1,53 @@
+/*
+ * LiquidMenu library - buttons_menu.ino
+ *
+ * This example demonstrates the use of buttons, callback
+ * functions and changing text variables.
+ *
+ * The example creates three screens. The first one displays static
+ * information. The second displays the analog reading and the
+ * state of the LED on pin 13. And the third one displays the
+ * PWM value applied on pin 3. The analog value is read periodically
+ * and assigned to the attached variable "const short analogValue".
+ * The LED on pin 13 is changing its state periodically and its
+ * attached variable is changed also. The PWM output pin 3 is
+ * controlled via the callback functions attached to its line:
+ * "void pwm_up()" and "void pwm_down()". To call the functions
+ * navigate to the third screen using the "left" or "right" buttons,
+ * focus the line using the "enter" button and then click the "up" or
+ * "down" buttons.
+ *
+ * The circuit:
+ * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/buttons_menu/buttons_menu.png
+ * - LCD RS pin to Arduino pin 12
+ * - LCD E pin to Arduino pin 11
+ * - LCD D4 pin to Arduino pin 5
+ * - LCD D5 pin to Arduino pin 4
+ * - LCD D6 pin to Arduino pin 3
+ * - LCD D7 pin to Arduino pin 2
+ * - LCD R/W pin to ground
+ * - LCD VSS pin to ground
+ * - LCD VCC pin to  5V
+ * - 10k ohm potentiometer: ends to 5V and ground, wiper to LCD V0
+ * - 150 ohm resistor from 5V to LCD Anode
+ * - LCD Cathode to ground
+ * - ----
+ * - Button (left) to Arduino pin A0 and ground
+ * - Button (right) to Arduino pin 7 and ground
+ * - Button (up) to Arduino pin 8 and ground
+ * - Button (down) to Arduino pin 9 and ground
+ * - Button (enter) to Arduino pin 10 and ground
+ * - A PWM controlled device (LED...) to Arduino pin 3
+ * - An LED to Arduino pin 13 (optional)
+ * - some analog input to Arduino pin A5 (unconnected also works)
+ *
+ * Created July 24, 2016
+ * by Vasil Kalchev
+ *
+ * https://github.com/VasilKalchev/LiquidMenu
+ *
+ */
+
 #include <LiquidCrystal.h>
 #include <LiquidMenu.h>
 #include "Button.h"
@@ -16,16 +66,16 @@ LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 /*
  * The Button class is not a part of the LiquidMenu library. The first
  * parameter is the button's pin, the second enables or disables the
- * internal pullup resistor (not reuired) and the third is the debounce
+ * internal pullup resistor (not required) and the third is the debounce
  * time (not required).
  */
 // Button objects instantiation
 const bool pullup = true;
-Button left(4, pullup);
-Button right(5, pullup);
-Button up(6, pullup);
-Button down(7, pullup);
-Button enter(8, pullup);
+Button left(A0, pullup);
+Button right(7, pullup);
+Button up(8, pullup);
+Button down(9, pullup);
+Button enter(10, pullup);
 
 // Variables used to demonstrate PWM control with callback functions.
 /*
@@ -36,7 +86,7 @@ Button enter(8, pullup);
  * menu.call_function(2) is called on some event e.g. button press, the
  * function identified with 2 for the focused line is called. Similar
  * functions (e.g. for incrementing) can be attached to the different
- * LiquidLine objects with the sameidentification number and then called
+ * LiquidLine objects with the same identification number and then called
  * on some event (e.g. 'UP' button) with menu.call_function(2), that will
  * call only the function for the focused line that is identified with
  * the number 2.
