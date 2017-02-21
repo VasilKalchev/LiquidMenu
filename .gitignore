@@ -40,6 +40,7 @@
 
 LiquidMenu.ino
 
+*.sublime-project
 *.sln
 *.vcxproj
 *.vcxproj.filters

@@ -28,7 +28,7 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.1.5
+@version 1.1.6
 @copyright The MIT License
 
 @todo: Change/Remove variables/screens/menus maybe
@@ -557,7 +557,7 @@ private:
 	LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
 	uint8_t _lineCount; ///< Count of the LiquidLine objects
 	uint8_t _focus; ///< Number representing the focus position
-	bool _hidden; ///< If hiddes skips this screen when cycling
+	bool _hidden; ///< If hidden skips this screen when cycling
 };
 
 
