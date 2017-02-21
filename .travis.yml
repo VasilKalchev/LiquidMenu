@@ -1,7 +1,7 @@
 language: c++
 env:
   global:
-    - IDE_VERSION=1.6.9
+    - IDE_VERSION=1.6.11
   matrix:
     - BOARD="arduino:avr:uno"
     - BOARD="arduino:avr:leonardo"
