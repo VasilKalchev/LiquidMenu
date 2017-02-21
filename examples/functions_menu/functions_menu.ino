@@ -1,14 +1,72 @@
+/*
+ * LiquidMenu library - functions_menu.ino
+ *
+ * This example demonstrates how to attach functions to the
+ * "lines" in the menu.
+ *
+ * Attaching functions to the different "lines" in the menu makes it
+ * possible to execute an action while browsing the menu (e.g. dimming
+ * an LED, adjusting preferences...). To attach a function to a line
+ * you need to create with signature "void functionName(void)". After
+ * creating it, the function is ready to be attached to a line. To do
+ * that call bool LiquidLine::attach_function(uint8_t number, void (*function)(void)).
+ * LiquidLine is the line object you wish to attach the function to,
+ * number is the "id" of the function for that line, void (*function)(void)
+ * is just the name of the function without the "()". The "id" of the function
+ * makes possible attaching multiple functions to a single line. An example use
+ * of multiple functions on a single line is for incrementing or decrementing
+ * some value (e.g. dimming an LED). It is convenient to attach all the different
+ * incrementing functions (e.g. increase_brightness(), increase_volume()) to the
+ * different lines (e.g. LED brightness: 5, Sound volume: 10) using the same id
+ * (e.g. 1). Same goes for the decrementing functions (e.g. LED brightness: 5 (line)
+ * with attached function decrease_brightness() (function) with id 2,
+ * Sound volume: 10 (line) with attached function decrease_volume() (function) with id 2).
+ * Similar functions should be attached to their corresponding lines with the same "id",
+ * because then they can be called from the same event (e.g. pressing button "UP"
+ * calls the incrementing function of whatever the focused line is).
+ * This example has a line that shows the current PWM of the LED and lines
+ * that allow a fade or blink loop to be turned ON/OFF and configured.
+ *
+ * The circuit:
+ * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/functions_menu/functions_menu.png
+ * - LCD RS pin to Arduino pin 12
+ * - LCD E pin to Arduino pin 11
+ * - LCD D4 pin to Arduino pin 5
+ * - LCD D5 pin to Arduino pin 4
+ * - LCD D6 pin to Arduino pin 3
+ * - LCD D7 pin to Arduino pin 2
+ * - LCD R/W pin to ground
+ * - LCD VSS pin to ground
+ * - LCD VCC pin to 5V
+ * - 10k ohm potentiometer: ends to 5V and ground, wiper to LCD V0
+ * - 150 ohm resistor from 5V to LCD Anode
+ * - LCD Cathode to ground
+ * - ----
+ * - Button (left) to Arduino pin A0 and ground
+ * - Button (right) to Arduino pin 7 and ground
+ * - Button (up) to Arduino pin 8 and ground
+ * - Button (down) to Arduino pin 9 and ground
+ * - Button (enter) to Arduino pin 10 and ground
+ * - A PWM controlled device (LED...) to Arduino pin 6
+ *
+ * Created July 24, 2016
+ * by Vasil Kalchev
+ *
+ * https://github.com/VasilKalchev/LiquidMenu
+ *
+ */
+
 #include <LiquidCrystal.h>
 #include <LiquidMenu.h>
 #include "Button.h"
 
-// An array holding linearized 8bit PWM values.
-const uint8_t log_8bit[11] PROGMEM = {0, 1, 2, 3, 6, 12, 22, 40, 74, 138, 255};
+// // An array holding linearized 8bit PWM values.
+// const uint8_t log_8bit[11] PROGMEM = {0, 1, 2, 3, 6, 12, 22, 40, 74, 138, 255};
 
-// PWM function using the above array.
-void PWM_log(uint8_t pin, uint8_t level) {
-	analogWrite(pin, pgm_read_byte_near(log_8bit + level));
-}
+// // PWM function using the above array.
+// void PWM_log(uint8_t pin, uint8_t level) {
+// 	analogWrite(pin, pgm_read_byte_near(log_8bit + level));
+// }
 
 // Pin mapping for the display
 const byte LCD_RS = 12;
@@ -26,11 +84,11 @@ const byte startingScreen = 2;
 
 // Button objects instantiation
 const bool pullup = true;
-Button left(4, pullup);
-Button right(5, pullup);
-Button up(6, pullup);
-Button down(12, pullup);
-Button enter(8, pullup);
+Button left(A0, pullup);
+Button right(7, pullup);
+Button up(8, pullup);
+Button down(9, pullup);
+Button enter(10, pullup);
 
 /*
  * An enumerator can be used for the callback functions. It sets the number
@@ -45,23 +103,15 @@ enum FunctionTypes {
 };
 
 // These are the pin definitions and variables for their PWM state.
-const byte redLed = 11;
-byte redLed_level = 0;
-
-const byte greenLed = 10;
-byte greenLed_level = 0;
-
-const byte blueLed = 9;
-byte blueLed_level = 0;
+const byte led = 6;
+byte led_level = 0;
 
 // Variables used for setting "preferences".
 bool isFading = false;
 char* isFading_text;
-//isFading_text = (char*)"OFF";
 unsigned int fadePeriod = 100;
 bool isBlinking = false;
 char* isBlinking_text;
-//isBlinking_text = (char*)"OFF";
 unsigned int blinkPeriod = 1000;
 
 
@@ -69,11 +119,9 @@ LiquidLine welcome_line1(1, 0, "LiquidMenu ", VERSION);
 LiquidLine welcome_line2(1, 1, "Functions ex.");
 LiquidScreen welcome_screen(welcome_line1, welcome_line2);
 
-LiquidLine rgbTitle_line(4, 0, "RGB LED");
-LiquidLine red_line(0, 1, "R ", redLed_level);
-LiquidLine green_line(5, 1, "G ", greenLed_level);
-LiquidLine blue_line(10, 1, "B ", blueLed_level);
-LiquidScreen rgb_screen(rgbTitle_line, red_line, green_line, blue_line);
+LiquidLine ledTitleLine(6, 0, "LED");
+LiquidLine led_line(4, 1, "Level: ", led_level);
+LiquidScreen led_screen(ledTitleLine, led_line);
 
 LiquidLine fade_line(0, 0, "Fade - ", isFading_text);
 LiquidLine fadePeriod_line(0, 1, "Period: ", fadePeriod, "ms");
@@ -86,62 +134,26 @@ LiquidScreen blink_screen(blink_line, blinkPeriod_line);
 LiquidMenu menu(lcd, startingScreen);
 
 // Callback functions
-void increase_red() {
-	if (redLed_level < 10) {
-		redLed_level++;
+void increase_led_level() {
+	if (led_level < 225) {
+		led_level += 25;
 	} else {
-		redLed_level = 0;
+		led_level = 0;
 	}
-	PWM_log(redLed, redLed_level);
+	analogWrite(led, led_level);
 }
 
-void decrease_red() {
-	if (redLed_level > 0) {
-		redLed_level--;
+void decrease_led_level() {
+	if (led_level > 25) {
+		led_level -= 25;
 	} else {
-		redLed_level = 10;
+		led_level = 250;
 	}
-	PWM_log(redLed, redLed_level);
-}
-
-void increase_green() {
-	if (greenLed_level < 10) {
-		greenLed_level++;
-	} else {
-		greenLed_level = 0;
-	}
-	PWM_log(greenLed, greenLed_level);
-}
-
-void decrease_green() {
-	if (greenLed_level > 0) {
-		greenLed_level--;
-	} else {
-		greenLed_level = 10;
-	}
-	PWM_log(greenLed, greenLed_level);
-}
-
-void increase_blue() {
-	if (blueLed_level < 10) {
-		blueLed_level++;
-	} else {
-		blueLed_level = 0;
-	}
-	PWM_log(blueLed, blueLed_level);
-}
-
-void decrease_blue() {
-	if (blueLed_level > 0) {
-		blueLed_level--;
-	} else {
-		blueLed_level = 10;
-	}
-	PWM_log(blueLed, blueLed_level);
+	analogWrite(led, led_level);
 }
 
 void fade_switch() {
-	zeroOutRgb();
+	led_off();
 	if (isFading == true) {
 		isFading = false;
 		isFading_text = (char*)"OFF";
@@ -166,7 +178,7 @@ void decrease_fadePeriod() {
 }
 
 void blink_switch() {
-	zeroOutRgb();
+	led_off();
 	if (isBlinking == true) {
 		isBlinking = false;
 		isBlinking_text = (char*)"OFF";
@@ -190,13 +202,9 @@ void decrease_blinkPeriod() {
 	}
 }
 
-void zeroOutRgb() {
-	redLed_level = 0;
-	greenLed_level = 0;
-	blueLed_level = 0;
-	PWM_log(redLed, redLed_level);
-	PWM_log(greenLed, greenLed_level);
-	PWM_log(blueLed, blueLed_level);
+void led_off() {
+	led_level = 0;
+	analogWrite(led, led_level);
 }
 
 // Checks all the buttons.
@@ -221,35 +229,57 @@ void buttonsCheck() {
 	}
 }
 
-// Function prototypes for blinking and fading the RGB LED.
-void blink();
-void fade();
+// The fading function.
+void fade() {
+	static bool goingUp = true;
+	if (goingUp) {
+		led_level += 25;
+	} else {
+		led_level -= 25;
+	}
+	if (led_level > 225) {
+		goingUp = false;
+    led_level = 250;
+	}
+	if (led_level < 25 && goingUp == false) {
+		goingUp = true;
+    led_level = 0;
+	}
+	analogWrite(led, led_level);
+}
+
+// The blinking function.
+void blink() {
+	static bool blinkState = LOW;
+	if (blinkState == LOW) {
+		blinkState = HIGH;
+		led_level = 255;
+	} else {
+		blinkState = LOW;
+		led_level = 0;
+	}
+	analogWrite(led, led_level);
+}
 
 void setup() {
 	Serial.begin(250000);
 
-	pinMode(redLed, OUTPUT);
-	pinMode(greenLed, OUTPUT);
-	pinMode(blueLed, OUTPUT);
+	pinMode(led, OUTPUT);
 
 	lcd.begin(16, 2);
 
 	// The increasing functions are attached with identification of 1.
 	/*
 	 * This function can later be called by pressing the 'UP' button
-	 * when 'red_line' is focused. If some other line is focused it's
+	 * when 'led_line' is focused. If some other line is focused it's
 	 * corresponding function will be called.
 	*/
-	red_line.attach_function(increase, increase_red);
+	led_line.attach_function(increase, increase_led_level);
 	// The decreasing functions are attached with identification of 2.
-	red_line.attach_function(decrease, decrease_red);
-	green_line.attach_function(increase, increase_green);
-	green_line.attach_function(decrease, decrease_green);
-	blue_line.attach_function(increase, increase_blue);
-	blue_line.attach_function(decrease, decrease_blue);
+	led_line.attach_function(decrease, decrease_led_level);
 
-    // Here the same function is attached with two different identifications.
-    // It will be called on 'UP' or 'DOWN' button press.
+	// Here the same function is attached with two different identifications.
+	// It will be called on 'UP' or 'DOWN' button press.
 	fade_line.attach_function(1, fade_switch);
 	fade_line.attach_function(2, fade_switch);
 	fadePeriod_line.attach_function(increase, increase_fadePeriod);
@@ -261,9 +291,12 @@ void setup() {
 	blinkPeriod_line.attach_function(decrease, decrease_blinkPeriod);
 
 	menu.add_screen(welcome_screen);
-	menu.add_screen(rgb_screen);
+	menu.add_screen(led_screen);
 	menu.add_screen(fade_screen);
 	menu.add_screen(blink_screen);
+
+	isFading_text = (char*)"OFF";
+	isBlinking_text = (char*)"OFF";
 
 	menu.update();
 }
