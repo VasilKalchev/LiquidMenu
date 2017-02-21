@@ -4,7 +4,7 @@
  * This example demonstrates the use of buttons, callback
  * functions and changing text variables.
  *
- * The example creates three screens. The first one displays static
+ * It creates three screens. The first one displays static
  * information. The second displays the analog reading and the
  * state of the LED on pin 13. And the third one displays the
  * PWM value applied on pin 3. The analog value is read periodically
@@ -15,7 +15,7 @@
  * "void pwm_up()" and "void pwm_down()". To call the functions
  * navigate to the third screen using the "left" or "right" buttons,
  * focus the line using the "enter" button and then click the "up" or
- * "down" buttons.
+ * "down" button.
  *
  * The circuit:
  * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/buttons_menu/buttons_menu.png
@@ -27,7 +27,7 @@
  * - LCD D7 pin to Arduino pin 2
  * - LCD R/W pin to ground
  * - LCD VSS pin to ground
- * - LCD VCC pin to  5V
+ * - LCD VCC pin to 5V
  * - 10k ohm potentiometer: ends to 5V and ground, wiper to LCD V0
  * - 150 ohm resistor from 5V to LCD Anode
  * - LCD Cathode to ground
@@ -37,7 +37,7 @@
  * - Button (up) to Arduino pin 8 and ground
  * - Button (down) to Arduino pin 9 and ground
  * - Button (enter) to Arduino pin 10 and ground
- * - A PWM controlled device (LED...) to Arduino pin 3
+ * - A PWM controlled device (LED...) to Arduino pin 6
  * - An LED to Arduino pin 13 (optional)
  * - some analog input to Arduino pin A5 (unconnected also works)
  *
@@ -91,7 +91,7 @@ Button enter(10, pullup);
  * call only the function for the focused line that is identified with
  * the number 2.
  */
-const byte pwmPin = 3;
+const byte pwmPin = 6;
 byte pwmLevel = 0;
 
 // Variables for controlling a pin and displaying the state with text.
