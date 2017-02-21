@@ -1,21 +1,21 @@
 /*
  * LiquidMenu library - focus_menu.ino
  *
- * This example demonstrates the use of buttons, callback
- * functions and changing text variables.
+ * This example demonstrates how to customize the focus indicator.
  *
- * The example creates three screens. The first one displays static
- * information. The second displays the analog reading and the
- * state of the LED on pin 13. And the third one displays the
- * PWM value applied on pin 3. The analog value is read periodically
- * and assigned to the attached variable "const short analogValue".
- * The LED on pin 13 is changing its state periodically and its
- * attached variable is changed also. The PWM output pin 3 is
- * controlled via the callback functions attached to its line:
- * "void pwm_up()" and "void pwm_down()". To call the functions
- * navigate to the third screen using the "left" or "right" buttons,
- * focus the line using the "enter" button and then click the "up" or
- * "down" buttons.
+ * The default focus indicator is an arrow symbol shown on the right of the
+ * focused line. The focus indicator position can be changed per line to be
+ * shown on the right, on the left or in a specified position. The focus
+ * symbol can also be changed, per position.
+ * In this example a custom focus symbol is defined (uint8_t rFocus[8]). Then
+ * it is configured to be the right focus indicator symbol using the
+ * bool LiquidMenu::set_focusSymbol(Position position, uint8_t symbol[8]) method.
+ * The focus position for the different lines is configured using the
+ * bool set_focusPosition(Position position, uint8_t column = 0, uint8_t row = 0)
+ * method. If the "position" is "Position::CUSTOM", the column and row parameters
+ * must be specified. The focus position can be specified for a single line, for
+ * the whole screen, for the whole menu or for the whole menu system using the
+ * respective objects.
  *
  * The circuit:
  * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/focus_menu/focus_menu.png
@@ -32,19 +32,15 @@
  * - 150 ohm resistor from 5V to LCD Anode
  * - LCD Cathode to ground
  * - ----
- * - Button (left) to Arduino pin 4
- * - Button (right) to Arduino pin 5
- * - Button (up) to Arduino pin 6
- * - Button (down) to Arduino pin 7
- * - Button (enter) to Arduino pin 8
- * - A PWM controlled device (LED...) to Arduino pin 3
- * - An LED to Arduino pin 13 (optional)
- * - some analog input to Arduino pin A5 (unconnected also works)
+ * - Button (left) to Arduino pin A0 and ground
+ * - Button (right) to Arduino pin 7 and ground
+ * - Button (enter) to Arduino pin 10 and ground
  *
  * Created July 24, 2016
  * by Vasil Kalchev
  *
  * https://github.com/VasilKalchev/LiquidMenu
+ * http://omerk.github.io/lcdchargen/ - for creating custom indicator symbol
  *
  */
 
@@ -65,9 +61,9 @@ LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 // Button objects instantiation
 const bool pullup = true;
-Button left(4, pullup);
-Button right(5, pullup);
-Button enter(8, pullup);
+Button left(A0, pullup);
+Button right(7, pullup);
+Button enter(10, pullup);
 
 LiquidLine welcome_line1(1, 0, "LiquidMenu ", VERSION);
 LiquidLine welcome_line2(1, 1, "Focus example");
@@ -154,5 +150,4 @@ void setup() {
 
 void loop() {
 	buttonsCheck();
-
 }
