@@ -2,7 +2,16 @@
  * LiquidMenu library - hello_menu.ino
  *
  * This is the get started example demonstrating how to create
- * a menu of 2 screens with dynamically changing information.
+ * a menu of two screens with dynamically changing information.
+ *
+ * The first screen shows some static text. The second screen
+ * shows the reading of analog pin A1. To display a changing
+ * variable on the LCD, simply put the variable in the LiquidLine
+ * constructor. In this case the LiquidLine object is "analogReading_ine"
+ * and the variable is "analogReading". This line is on the second
+ * screen. The value of the analog pin is read every second and if
+ * it has changed the display is updated with the new value. The
+ * menu cycles through its two screens every five seconds.
  *
  * The circuit:
  * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/hello_menu/hello_menu.png
@@ -20,7 +29,6 @@
  * - LCD Cathode to ground
  * - ----
  * - some analog input to Arduino pin A1 (unconnected also works)
- * - some analog input to Arduino pin A2 (unconnected also works)
  *
  * Created July 24, 2016
  * by Vasil Kalchev
@@ -46,27 +54,23 @@ const byte LCD_D7 = 2;
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 /*
- * Variables 'analogReading1' and 'analogReading2' are later configured to
- * be printed on the display. 'lastAnalogReading1' and 'lastAnalogReading2'
- * are used to check if the variable has changed.
+ * Variable 'analogReading' is later configured to
+ * be printed on the display. 'lastAnalogReading'
+ * is used to check if the variable has changed.
  */
-const byte analogPin1 = A1;
-unsigned short analogReading1 = 0;
-unsigned short lastAnalogReading1 = 0;
-
-const byte analogPin2 = A2;
-unsigned short analogReading2 = 0;
-unsigned short lastAnalogReading2 = 0;
+const byte analogPin = A1;
+unsigned short analogReading = 0;
+unsigned short lastAnalogReading = 0;
 
 /*
  * Variables used for periodic execution of code. The first one is the period
  * in milliseconds and the second one is the last time the code executed.
  */
-unsigned int period_check = 500;
+unsigned int period_check = 1000;
 unsigned long lastMs_check = 0;
 
-unsigned int period_next = 5000;
-unsigned long lastMs_next = 0;
+unsigned int period_nextScreen = 5000;
+unsigned long lastMs_nextScreen = 0;
 
 /*
  * LiquidLine objects represent a single line of text and/or variables
@@ -90,9 +94,8 @@ LiquidLine welcome_line2(3, 1, "Hello Menu");
 LiquidScreen welcome_screen(welcome_line1, welcome_line2);
 
 // Here there is not only a text string but also a changing integer variable.
-LiquidLine analog1_line(0, 0, "Analog 1: ", analogReading1);
-LiquidLine analog2_line(0, 1, "Analog 2: ", analogReading2);
-LiquidScreen secondary_screen(analog1_line, analog2_line);
+LiquidLine analogReading_line(0, 0, "Analog: ", analogReading);
+LiquidScreen secondary_screen(analogReading_line);
 
 /*
  * The LiquidMenu object combines the LiquidScreen objects to form the
@@ -106,8 +109,7 @@ LiquidMenu menu(lcd);
 void setup() {
   Serial.begin(250000);
 
-  pinMode(analogPin1, INPUT);
-  pinMode(analogPin2, INPUT);
+  pinMode(analogPin, INPUT);
 
   lcd.begin(16, 2);
 
@@ -117,24 +119,18 @@ void setup() {
 }
 
 void loop() {
-  /*
-   * Check if the analog values have changed
-   * and update the display if they have.
-   */
-  if (analogReading1 != lastAnalogReading1) {
-    lastAnalogReading1 = analogReading1;
-    menu.update();
-  }
-  if (analogReading2 != lastAnalogReading2) {
-    lastAnalogReading2 = analogReading2;
-    menu.update();
-  }
-
-  // Periodic reading of the analog pins.
+  // Periodic reading of the analog pin.
   if (millis() - lastMs_check > period_check) {
     lastMs_check = millis();
-    analogReading1 = analogRead(analogPin1);
-    analogReading2 = analogRead(analogPin2);
+    analogReading = analogRead(analogPin);
+    /*
+     * Check if the analog value have changed
+     * and update the display if it has.
+     */
+    if (analogReading != lastAnalogReading) {
+      lastAnalogReading = analogReading;
+      menu.update();
+    }
   }
 
   // Periodic switching to the next screen.
