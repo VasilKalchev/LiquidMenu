@@ -41,10 +41,13 @@
 LiquidMenu.ino
 
 *.sublime-project
+*.sublime-workspace
 *.sln
 *.vcxproj
 *.vcxproj.filters
 /__vm/*
+
+bfg-*
 
 # User-specific files
 *.suo
