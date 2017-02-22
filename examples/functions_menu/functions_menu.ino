@@ -5,11 +5,11 @@
  * "lines" in the menu.
  *
  * Attaching functions to the different "lines" in the menu makes it
- * possible to execute an action while browsing the menu (e.g. dimming
- * an LED, adjusting preferences...). To attach a function to a line
- * you need to create with signature "void functionName(void)". After
- * creating it, the function is ready to be attached to a line. To do
- * that call bool LiquidLine::attach_function(uint8_t number, void (*function)(void)).
+ * possible to execute an action through the menu (e.g. dimming an LED,
+ * adjusting preferences...). To attach a function to a line you need
+ * to create with signature "void functionName(void)". After creating it,
+ * the function is ready to be attached to a line. To dothat call bool
+ * LiquidLine::attach_function(uint8_t number, void (*function)(void)).
  * LiquidLine is the line object you wish to attach the function to,
  * number is the "id" of the function for that line, void (*function)(void)
  * is just the name of the function without the "()". The "id" of the function
@@ -60,14 +60,6 @@
 #include <LiquidMenu.h>
 #include "Button.h"
 
-// // An array holding linearized 8bit PWM values.
-// const uint8_t log_8bit[11] PROGMEM = {0, 1, 2, 3, 6, 12, 22, 40, 74, 138, 255};
-
-// // PWM function using the above array.
-// void PWM_log(uint8_t pin, uint8_t level) {
-// 	analogWrite(pin, pgm_read_byte_near(log_8bit + level));
-// }
-
 // Pin mapping for the display
 const byte LCD_RS = 12;
 const byte LCD_E = 11;
@@ -76,13 +68,19 @@ const byte LCD_D5 = 4;
 const byte LCD_D6 = 3;
 const byte LCD_D7 = 2;
 //LCD R/W pin to ground
-//10K potentiometer to VO
+//10K potentiometer wiper to VO
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 // This variable can be passed to the LiquidMenu object to set the starting screen.
 const byte startingScreen = 2;
 
 // Button objects instantiation
+/*
+ * The Button class is not a part of the LiquidMenu library. The first
+ * parameter is the button's pin, the second enables or disables the
+ * internal pullup resistor (not required) and the third is the debounce
+ * time (not required).
+ */
 const bool pullup = true;
 Button left(A0, pullup);
 Button right(7, pullup);
