@@ -18,10 +18,10 @@ const uint8_t MAX_FUNCTIONS = 8; ///< @note Default: 8
 const uint8_t MAX_LINES = 12; ///< @note Default: 12
 
 /// Configures the number of available screens per menu.
-const uint8_t MAX_SCREENS = 16; ///< @note Default: 16
+const uint8_t MAX_SCREENS = 14; ///< @note Default: 14
 
 /// Configures the number of available manus per menus system.
-const uint8_t MAX_MENUS = 12; ///< @note Defaul: 12
+const uint8_t MAX_MENUS = 8; ///< @note Defaul: 8
 
 // Turns the debugging messages on or off.
 #define DEBUGGING_MESSAGES false ///< @note Default: false
