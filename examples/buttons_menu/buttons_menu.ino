@@ -1,7 +1,7 @@
 /*
  * LiquidMenu library - buttons_menu.ino
  *
- * This example demonstrates the use of buttons, callback
+ * This example demonstrates how to use buttons, callback
  * functions and changing text variables.
  *
  * It creates three screens. The first one displays static
@@ -128,18 +128,18 @@ LiquidMenu menu(lcd);
  * writes it to the pin.
  */
 void pwm_up() {
-	if (pwmLevel <= 245) {
-		pwmLevel += 10;
+	if (pwmLevel < 225) {
+		pwmLevel += 25;
 	} else {
-		pwmLevel = 0;
+		pwmLevel = 250;
 	}
 	analogWrite(pwmPin, pwmLevel);
 }
 
 // Function to be attached to the pwm_line object.
 void pwm_down() {
-	if (pwmLevel >= 10) {
-		pwmLevel -= 10;
+	if (pwmLevel > 25) {
+		pwmLevel -= 25;
 	} else {
 		pwmLevel = 0;
 	}
