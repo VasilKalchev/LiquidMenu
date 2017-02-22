@@ -37,12 +37,12 @@
  *
  */
 
-// The official LCD library
+// The LCD library
 #include <LiquidCrystal.h>
-// This library
+// The menu wrapper library
 #include <LiquidMenu.h>
 
-// Pin mapping for the display
+// Pin mapping for the display:
 const byte LCD_RS = 12;
 const byte LCD_E = 11;
 const byte LCD_D4 = 5;
@@ -134,8 +134,8 @@ void loop() {
   }
 
   // Periodic switching to the next screen.
-  if (millis() - lastMs_next > period_next) {
-    lastMs_next = millis();
+  if (millis() - lastMs_nextScreen > period_nextScreen) {
+    lastMs_nextScreen = millis();
     menu.next_screen();
   }
 }
