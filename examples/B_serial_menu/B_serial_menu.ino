@@ -4,6 +4,8 @@
  * This example uses the serial communication to execute commands.
  *
  * The available commands will be printed on the serial monitor.
+ * This example uses attached callback functions which are explained
+ * in the functions_menu.ino example.
  *
  * The circuit:
  * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/serial_menu/serial_menu.png
@@ -58,14 +60,23 @@ LiquidScreen screen4(line41, type_line);
 
 LiquidMenu menu(lcd, welcome_screen, screen2, screen3, screen4);
 
+/*
+ * This function will be attached to one or more LiquidLine
+ * objects and will be called when the line is focused and
+ * bool LiquidMenu::call_function(byte number) is called with
+ * number - the number specified when attaching the function.
+ * More on this in the function_menu.ino example.
+*/
 void callback_function() {
   Serial.println("You called the callback function.");
 }
 
 void setup() {
   Serial.begin(250000);
+
   lcd.begin(16, 2);
 
+  // Here we attach the function defined earlier to four LiquidLine objects.
   line21.attach_function(1, callback_function);
   line31.attach_function(1, callback_function);
   line41.attach_function(1, callback_function);
@@ -83,6 +94,7 @@ void setup() {
 }
 
 void loop() {
+  // This handles the serial input.
   while (Serial.available() > 0) {
     String command = Serial.readStringUntil('\0');
     if (command == "menu.next_screen()") {
@@ -97,6 +109,7 @@ void loop() {
       // focus is used with functions (see 'functions_menu' example)
     } else if (command == "menu.call_function(1)") {
       Serial.println(command);
+      // The attached function is called.
       menu.call_function(1);
     } else if (command == "menu.set_focusPosition(Position::LEFT)") {
       Serial.println(command);
