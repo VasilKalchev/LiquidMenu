@@ -80,7 +80,7 @@ unsigned long lastMs_nextScreen = 0;
  */
 // Here the line is set to column 1, row 0 and will print the passed
 // string and the passed variable.
-LiquidLine welcome_line1(1, 0, "LiquidMenu ", VERSION);
+LiquidLine welcome_line1(1, 0, "LiquidMenu ", LIQUIDMENU_VERSION);
 // Here the column is 3, the row is 1 and the string is "Hello Menu".
 LiquidLine welcome_line2(3, 1, "Hello Menu");
 

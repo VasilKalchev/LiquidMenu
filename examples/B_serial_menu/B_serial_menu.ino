@@ -44,7 +44,7 @@ const byte LCD_D7 = 2;
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 
-LiquidLine welcome_line1(1, 0, "LiquidMenu ", VERSION);
+LiquidLine welcome_line1(1, 0, "LiquidMenu ", LIQUIDMENU_VERSION);
 LiquidLine welcome_line2(1, 1, "Serial example");
 LiquidScreen welcome_screen(welcome_line1, welcome_line2);
 
@@ -84,7 +84,7 @@ void setup() {
 
   menu.update();
 
-  Serial.print("LiquidMenu "); Serial.print(VERSION); Serial.println(" - Serial example:");
+  Serial.print("LiquidMenu "); Serial.print(LIQUIDMENU_VERSION); Serial.println(" - Serial example:");
   Serial.println("To navigate the menu type 'menu.next_screen()' or 'menu.previous_screen()'.");
   Serial.println("To switch focus type 'menu.switch_focus()'.");
   Serial.println("To call the callback function type 'menu.call_function(1)'.");

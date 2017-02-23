@@ -65,7 +65,7 @@ Button left(A0, pullup);
 Button right(7, pullup);
 Button enter(10, pullup);
 
-LiquidLine welcome_line1(1, 0, "LiquidMenu ", VERSION);
+LiquidLine welcome_line1(1, 0, "LiquidMenu ", LIQUIDMENU_VERSION);
 LiquidLine welcome_line2(1, 1, "Focus example");
 LiquidScreen welcome_screen(welcome_line1, welcome_line2);
 

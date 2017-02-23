@@ -76,7 +76,7 @@ const char text18[] PROGMEM = "agnis dis partur";
 const char text19[] PROGMEM = "ient montes, nas";
 const char text20[] PROGMEM = "cetur ridiculus ";
 
-LiquidLine welcome_line1(1, 0, "LiquidMenu ", VERSION);
+LiquidLine welcome_line1(1, 0, "LiquidMenu ", LIQUIDMENU_VERSION);
 LiquidLine welcome_line2(0, 1, "PROGMEM example");
 LiquidScreen welcome_screen(welcome_line1, welcome_line2);
 

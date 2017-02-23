@@ -108,7 +108,7 @@ const byte analogPin = A5;
 unsigned short analogValue = 0;
 
 
-LiquidLine welcome_line1(1, 0, "LiquidMenu ", VERSION);
+LiquidLine welcome_line1(1, 0, "LiquidMenu ", LIQUIDMENU_VERSION);
 LiquidLine welcome_line2(0, 1, "Buttons example");
 LiquidScreen welcome_screen(welcome_line1, welcome_line2);
 

@@ -28,7 +28,7 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.1.6
+@version 1.2.0
 @copyright The MIT License
 
 @todo: Change/Remove variables/screens/menus maybe
@@ -51,7 +51,7 @@ Include file for LiquidMenu library.
   #warning "LiquidCrystal library is required!"
 #endif
 
-const char VERSION[] = "1.1"; ///< The version of the library.
+const char LIQUIDMENU_VERSION[] = "1.2"; ///< The version of the library.
 
 /// Data type enum.
 /**
