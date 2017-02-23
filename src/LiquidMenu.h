@@ -33,7 +33,6 @@ Include file for LiquidMenu library.
 
 @todo: Change/Remove variables/screens/menus maybe
 @todo: screen wide glyphs
-@todo: Shorten the examples and add a set_asGlyph and set_asProgmem examples
 */
 
 #pragma once
@@ -46,10 +45,10 @@ Include file for LiquidMenu library.
 
 #include "LiquidMenu_config.h"
 
-#include "serial_debugging.h"
+#include "LiquidMenu_debugging.h"
 
 #ifndef LiquidCrystal_h
-#warning "LiquidCrystal library is required!"
+  #warning "LiquidCrystal library is required!"
 #endif
 
 const char VERSION[] = "1.1"; ///< The version of the library.
