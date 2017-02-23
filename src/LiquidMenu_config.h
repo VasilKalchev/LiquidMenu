@@ -3,7 +3,7 @@
 Configuration file for LiquidMenu library.
 
 Contains global constants the configure the size of some of the arrays
-used in the library, also configures the messages output.
+used in the library, also configures the debugging messages.
 */
 
 #pragma once

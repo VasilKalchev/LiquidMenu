@@ -44,11 +44,13 @@ Include file for LiquidMenu library.
 #include <stdlib.h>
 
 #include "LiquidMenu_config.h"
-
-#include "LiquidMenu_debugging.h"
+#include "LiquidMenu_debug.h"
 
 #ifndef LiquidCrystal_h
   #warning "LiquidCrystal library is required!"
+
+#if LIQUIDMENU_DEBUG
+  #warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
 const char LIQUIDMENU_VERSION[] = "1.2"; ///< The version of the library.

@@ -1,11 +1,5 @@
 #pragma once
 
-// If "LIQUIDMENU_DEBUG" is already defined - don't overwrite it.
-#ifndef LIQUIDMENU_DEBUG
-  /// Turns the debugging messages on or off.
-  #define LIQUIDMENU_DEBUG false ///< @note Default: false
-#endif
-
 #if LIQUIDMENU_DEBUG
   #ifdef ARDUINO_ARCH_AVR
     #include <Arduino.h>
