@@ -33,6 +33,8 @@ Include file for LiquidMenu library.
 
 @todo: Change/Remove variables/screens/menus maybe
 @todo: screen wide glyphs
+@todo: dynamic memory
+@todo: I2C
 */
 
 #pragma once
@@ -47,7 +49,8 @@ Include file for LiquidMenu library.
 #include "LiquidMenu_debug.h"
 
 #ifndef LiquidCrystal_h
-  #warning "LiquidCrystal library is required!"
+  #warning "LiquidMenu: LiquidCrystal library is required!"
+#endif
 
 #if LIQUIDMENU_DEBUG
   #warning "LiquidMenu: Debugging messages are enabled."
