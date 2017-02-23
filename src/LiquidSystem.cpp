@@ -1,3 +1,8 @@
+/**
+@file
+Contains the LiquidSystem class definition.
+*/
+
 /*
 The MIT License (MIT)
 

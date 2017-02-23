@@ -388,13 +388,13 @@ private:
   and prints it to the display.
 
   @param *p_liquidCrystal - pointer to the LiquidCrystal object
-  @param number - number identifeing the variable
+  @param number - number identifying the variable
   */
   void print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number);
 
   /// Calls an attached function specified by the number.
   /**
-  @param number - number identifeing the function
+  @param number - number identifying the function
   @returns true if there is a function at the specified number
 
   @note Function numbering starts from 1.
@@ -409,7 +409,7 @@ private:
   void (*_function[MAX_FUNCTIONS])(void); ///< Pointers to the functions
   const void *_variable[MAX_VARIABLES]; ///< Pointers to the variables
   DataType _variableType[MAX_VARIABLES]; ///< Data type of the variables
-  bool _focusable; ///< Determines wheter the line is focusable
+  bool _focusable; ///< Determines whether the line is focusable
 };
 
 
@@ -490,7 +490,7 @@ public:
   /// Sets the focus position for the whole screen at once.
   /**
   The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid
-  for this function because it needs individual colum and row for
+  for this function because it needs individual column and row for
   every line.
 
   @param position - `LEFT` or `RIGHT`
@@ -498,7 +498,7 @@ public:
   invalid
 
   @note The `Position` is enum class. Use `Position::(member)` when
-  specifeing the position.
+  specifying the position.
 
   @see Position
   */
@@ -509,7 +509,7 @@ public:
   Hiding a screen means that it will be skipped when cycling the
   screens.
 
-  @param hide - true for hidding and false for unhidding
+  @param hide - true for hiding and false for unhiding
 
   @note It can still be shown using the `change_screen` methods.
 
@@ -725,7 +725,7 @@ public:
   /// Sets the focus position for the whole menu at once.
   /**
   The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid
-  for this function because it needs individual colum and row for
+  for this function because it needs individual column and row for
   every line.
 
   @param position - `LEFT` or `RIGHT`
@@ -733,7 +733,7 @@ public:
   invalid
 
   @note The `Position` is enum class. Use `Position::(member)` when
-  specifeing the position.
+  specifying the position.
 
   @see Position
   */
@@ -799,7 +799,7 @@ private:
 A menu system is made up of LiquidMenu objects. It holds pointers to them
 and calls their functions depending on which one is active. This class is
 uses the same public methods as LiquidMenu with the addition of a method
-for adding a LiquidMenu object and a method for chaning the currently
+for adding a LiquidMenu object and a method for changing the currently
 active menu. This class is optional, it is used only if there is a need
 for multiple menus.
 
@@ -948,7 +948,7 @@ public:
   /// Sets the focus position for the whole menu at once.
   /**
   The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid
-  for this function because it needs individual colum and row for
+  for this function because it needs individual column and row for
   every line.
 
   @param position - `LEFT` or `RIGHT`
@@ -956,7 +956,7 @@ public:
   invalid
 
   @note The `Position` is enum class. Use `Position::(member)` when
-  specifeing the position.
+  specifying the position.
 
   @see Position
   */
@@ -972,7 +972,7 @@ public:
   invalid
 
   @note The `Position` is enum class. Use `Position::(member)` when
-  specifeing the position.
+  specifying the position.
 
   @see Position
   */

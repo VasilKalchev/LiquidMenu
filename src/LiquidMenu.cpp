@@ -1,3 +1,8 @@
+/**
+@file
+Contains the LiquidMenu class definition.
+*/
+
 /*
 The MIT License (MIT)
 

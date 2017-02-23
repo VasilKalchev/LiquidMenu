@@ -1,3 +1,8 @@
+/**
+@file
+Contains the LiquidScreen class definition.
+*/
+
 /*
 The MIT License (MIT)
 
