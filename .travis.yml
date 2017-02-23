@@ -30,9 +30,11 @@ install:
   - mkdir -p $HOME/Arduino/libraries
   - ln -s $PWD $HOME/Arduino/libraries/.
 script:
-  - buildExampleSketch hello_menu
-  - buildExampleSketch serial_menu
-  - buildExampleSketch buttons_menu
-  - buildExampleSketch functions_menu
-  - buildExampleSketch focus_menu
-  - buildExampleSketch system_menu
+  - buildExampleSketch A_hello_menu
+  - buildExampleSketch B_serial_menu
+  - buildExampleSketch C_functions_menu
+  - buildExampleSketch D_buttons_menu
+  - buildExampleSketch E_progmem_menu
+  - buildExampleSketch F_focus_menu
+  - buildExampleSketch G_glyph_menu
+  - buildExampleSketch H_system_menu
