@@ -148,7 +148,7 @@ More information
 ================
 [Documentation][docs_home]
 
-[More examples][docs_examples]
+[More examples][examples]
 
 
 License
@@ -178,4 +178,4 @@ SOFTWARE.
 [lc]: https://github.com/arduino-libraries/LiquidCrystal
 [docs_home]: https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html
 [docs_classes]: https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html
-[docs_examples]: https://vasilkalchev.github.io/LiquidMenu/doc/html/examples.html
+[examples]: https://github.com/VasilKalchev/LiquidMenu/tree/master/examples
