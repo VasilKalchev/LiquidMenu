@@ -1,3 +1,9 @@
+/**
+@file
+Contains the overloaded functions DataType recognizeType(... variable);
+ for LiquidMenu library.
+*/
+
 #include "LiquidMenu.h"
 
 DataType recognizeType(bool variable) {

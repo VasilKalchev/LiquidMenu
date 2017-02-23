@@ -1,3 +1,8 @@
+/**
+@file
+Contains debug macro definitions for LiquidMenu library.
+*/
+
 #pragma once
 
 #if LIQUIDMENU_DEBUG

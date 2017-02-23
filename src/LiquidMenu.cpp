@@ -23,16 +23,16 @@ SOFTWARE.
 */
 
 #include "LiquidMenu.h"
-#include "symbols.h"
+#include "glyphs.h"
 
 const uint8_t DIVISION_LINE_LENGTH = 40; ///< Sets the length of the division line.
 
 LiquidMenu::LiquidMenu(LiquidCrystal &liquidCrystal, uint8_t startingScreen)
 	: _p_liquidCrystal(&liquidCrystal), _screenCount(0),
 	  _currentScreen(startingScreen - 1) {
-	_p_liquidCrystal->createChar(15, symbol::rightFocus);
-	_p_liquidCrystal->createChar(14, symbol::leftFocus);
-	_p_liquidCrystal->createChar(13, symbol::customFocus);
+	_p_liquidCrystal->createChar(15, glyph::rightFocus);
+	_p_liquidCrystal->createChar(14, glyph::leftFocus);
+	_p_liquidCrystal->createChar(13, glyph::customFocus);
 }
 
 LiquidMenu::LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen,

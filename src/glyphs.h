@@ -1,7 +1,11 @@
+/**
+@file
+Contains glyph definitions for LiquidMenu library.
+*/
+
 #pragma once
 
-namespace symbol {
-
+namespace glyph {
 uint8_t rightFocus[8] = {
 	0b00000,
 	0b00100,
@@ -34,5 +38,4 @@ uint8_t customFocus[8] = {
 	0b00000,
 	0b00000
 };
-
-} //namespace symbol
+} //namespace glyph
