@@ -25,7 +25,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">LiquidMenu 1.1.6</a>
+                    <a class="navbar-brand">LiquidMenu 1.2.0</a>
                 </div>
             </div>
         </nav>
@@ -84,7 +84,7 @@ $(function() {
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_liquid_menu__config_8h_source.html">LiquidMenu_config.h</a>&quot;</code><br />
-<code>#include &quot;serial_debugging.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_liquid_menu__debug_8h_source.html">LiquidMenu_debug.h</a>&quot;</code><br />
 </div>
 <p><a href="_liquid_menu_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -172,19 +172,20 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a4fc6b3191f12c558fa2b775c61e4afca"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a4fc6b3191f12c558fa2b775c61e4afca">VERSION</a> [] = &quot;1.1&quot;</td></tr>
-<tr class="memdesc:a4fc6b3191f12c558fa2b775c61e4afca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The version of the library.  <a href="#a4fc6b3191f12c558fa2b775c61e4afca">More...</a><br /></td></tr>
-<tr class="separator:a4fc6b3191f12c558fa2b775c61e4afca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7189c07575adbb1070c89dcd0ab5e272"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a7189c07575adbb1070c89dcd0ab5e272">LIQUIDMENU_VERSION</a> [] = &quot;1.2&quot;</td></tr>
+<tr class="memdesc:a7189c07575adbb1070c89dcd0ab5e272"><td class="mdescLeft">&#160;</td><td class="mdescRight">The version of the library.  <a href="#a7189c07575adbb1070c89dcd0ab5e272">More...</a><br /></td></tr>
+<tr class="separator:a7189c07575adbb1070c89dcd0ab5e272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Include file for <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> library.</p>
 <dl class="section author"><dt>Author</dt><dd>Vasil Kalchev </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2016 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.1.5 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.2.0 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>The MIT License</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">: Change/Remove variables/screens/menus maybe </p>
 <p>: screen wide glyphs </p>
-<p class="enddd">: Shorten the examples and add a set_asGlyph and set_asProgmem examples </p>
+<p>: dynamic memory </p>
+<p class="enddd">: I2C </p>
 </dd></dl>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a75e7df7c4007df61cf3716ba2d3ed8e3"></a>
@@ -567,21 +568,20 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a4fc6b3191f12c558fa2b775c61e4afca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fc6b3191f12c558fa2b775c61e4afca">&sect;&nbsp;</a></span>VERSION</h2>
+<a id="a7189c07575adbb1070c89dcd0ab5e272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7189c07575adbb1070c89dcd0ab5e272">&sect;&nbsp;</a></span>LIQUIDMENU_VERSION</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char VERSION[] = &quot;1.1&quot;</td>
+          <td class="memname">const char LIQUIDMENU_VERSION[] = &quot;1.2&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The version of the library. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="buttons_menu_8ino-example.html#a1">buttons_menu.ino</a>, <a class="el" href="focus_menu_8ino-example.html#a1">focus_menu.ino</a>, <a class="el" href="functions_menu_8ino-example.html#a1">functions_menu.ino</a>, <a class="el" href="hello_menu_8ino-example.html#a1">hello_menu.ino</a>, <a class="el" href="serial_menu_8ino-example.html#a1">serial_menu.ino</a>, and <a class="el" href="system_menu_8ino-example.html#a1">system_menu.ino</a>.</dd>
-</dl>
+
 </div>
 </div>
 </div><!-- contents -->

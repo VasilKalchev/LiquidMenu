@@ -1,9 +1,0 @@
-digraph "LiquidSystem::next_screen"
-{
-  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
-  node [fontname="Helvetica",fontsize="11",shape=record];
-  rankdir="LR";
-  Node44 [label="LiquidSystem::next\l_screen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node44 -> Node45 [dir="back",color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
-  Node45 [label="LiquidSystem::operator++",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_system.html#a139b86202d2eb109a63ba630464d658a",tooltip="Switches to the next screen. "];
-}
