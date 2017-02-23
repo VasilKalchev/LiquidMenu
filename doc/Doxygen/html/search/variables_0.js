@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['liquidmenu_5fversion',['LIQUIDMENU_VERSION',['../_liquid_menu_8h.html#a7189c07575adbb1070c89dcd0ab5e272',1,'LiquidMenu.h']]]
+  ['customfocus',['customFocus',['../glyphs_8h.html#a5e05ec5a67cf3c9a6c0b7268d99d8988',1,'glyph']]]
 ];

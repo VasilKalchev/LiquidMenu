@@ -146,7 +146,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a collection of menus forming a menu system. </p>
-<p>A menu system is made up of <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> objects. It holds pointers to them and calls their functions depending on which one is active. This class is uses the same public methods as <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> with the addition of a method for adding a <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> object and a method for chaning the currently active menu. This class is optional, it is used only if there is a need for multiple menus.</p>
+<p>A menu system is made up of <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> objects. It holds pointers to them and calls their functions depending on which one is active. This class is uses the same public methods as <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> with the addition of a method for adding a <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> object and a method for changing the currently active menu. This class is optional, it is used only if there is a need for multiple menus.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad760efbb8dfa8bf3fa74c3ad55bcb8ce"></a>
@@ -365,7 +365,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The maximum amount of menus per menu system is specified in <a class="el" href="_liquid_menu__config_8h.html">LiquidMenu_config.h</a> as <code>MAX_MENUS</code>. The default is 12.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_liquid_menu__config_8h.html">LiquidMenu_config.h</a> </dd>
 <dd>
-<a class="el" href="_liquid_menu__config_8h.html#aaaae1f275043c460c78e2c76026f7654" title="Configures the number of available manus per menus system. ">MAX_MENUS</a> </dd></dl>
+<a class="el" href="_liquid_menu__config_8h.html#aaaae1f275043c460c78e2c76026f7654" title="Configures the number of available menus per menus system. ">MAX_MENUS</a> </dd></dl>
 
 </div>
 </div>
@@ -671,7 +671,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the focus position for the whole menu at once. </p>
-<p>The valid positions are <code>LEFT</code> and <code>RIGHT</code>. <code>CUSTOM</code> is not valid for this function because it needs individual colum and row for every line.</p>
+<p>The valid positions are <code>LEFT</code> and <code>RIGHT</code>. <code>CUSTOM</code> is not valid for this function because it needs individual column and row for every line.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">position</td><td>- <code>LEFT</code> or <code>RIGHT</code> </td></tr>
@@ -679,7 +679,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success and false if the position specified is invalid</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The <code>Position</code> is enum class. Use <code>Position::(member)</code> when specifeing the position.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <code>Position</code> is enum class. Use <code>Position::(member)</code> when specifying the position.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_liquid_menu_8h.html#a67752aed4021e5d9f292a38f9df18ab2" title="Position enum. ">Position</a> </dd></dl>
 
 </div>
@@ -720,7 +720,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success and false if the position specified is invalid</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The <code>Position</code> is enum class. Use <code>Position::(member)</code> when specifeing the position.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <code>Position</code> is enum class. Use <code>Position::(member)</code> when specifying the position.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_liquid_menu_8h.html#a67752aed4021e5d9f292a38f9df18ab2" title="Position enum. ">Position</a> </dd></dl>
 
 </div>
@@ -795,7 +795,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_liquid_menu_8h_source.html">LiquidMenu.h</a></li>
-<li>LiquidSystem.cpp</li>
+<li><a class="el" href="_liquid_system_8cpp.html">LiquidSystem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
