@@ -35,6 +35,7 @@ Include file for LiquidMenu library.
 @todo: screen wide glyphs
 @todo: dynamic memory
 @todo: I2C
+@todo: variadic templates
 */
 
 #pragma once
