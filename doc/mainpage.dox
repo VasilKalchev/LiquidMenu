@@ -16,43 +16,53 @@ _Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc]._
 */
 
 /**
-@example hello_menu.ino
+@example A_hello_menu.ino
 
-Simple example demonstrating the use of two screens printing
-text and variables. The screens change automatically every
-few seconds.
- */
-
-/**
-@example serial_menu.ino
-
-Demonstrates the usage of four screens which are controlled
-through serial.
- */
+This is the get started example demonstrating how to create
+a menu of two screens with dynamically changing information.
+*/
 
 /**
-@example buttons_menu.ino
+@example B_serial_menu.ino
 
-Demonstrates the use of buttons to cycle between screens
-and dynamically changing the text printed on the display.
- */
-
-/**
-@example functions_menu.ino
-
-Demonstrates how a function can be attached to a particular
-line and then called through a button press.
- */
+This example uses the serial communication to execute commands.
+*/
 
 /**
-@example focus_menu.ino
+@example C_functions_menu.ino
 
-Demonstrates how to change the position and symbol of the
-focus indicator.
- */
+This example demonstrates how to attach functions to the
+"lines" in the menu.
+*/
 
 /**
-@example system_menu.ino
+@example D_buttons_menu.ino
 
-Demonstrates how to implement a menu system.
- */
+This example demonstrates how to use buttons, callback
+functions and changing text variables.
+*/
+
+/**
+@example E_progmem_menu.ino
+
+This example demonstrates how to display a string stored in flash memory.
+*/
+
+/**
+@example F_focus_menu.ino
+
+This example demonstrates how to customize the focus indicator.
+*/
+
+/**
+@example G_glyph_menu.ino
+
+This example demonstrates how to create a custom character
+(glyph) and put it inside a LiquidLine object.
+*/
+
+/**
+@example H_system_menu.ino
+
+This example demonstrates the how to build a menu system.
+*/

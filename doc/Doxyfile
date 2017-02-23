@@ -226,7 +226,7 @@ SEPARATE_MEMBER_PAGES  = NO
 # uses this value to replace tabs by spaces in code fragments.
 # Minimum value: 1, maximum value: 16, default value: 4.
 
-TAB_SIZE               = 4
+TAB_SIZE               = 2
 
 # This tag can be used to specify a number of aliases that act as commands in
 # the documentation. An alias has the form:
@@ -1866,7 +1866,7 @@ COMPACT_RTF            = NO
 # The default value is: NO.
 # This tag requires that the tag GENERATE_RTF is set to YES.
 
-RTF_HYPERLINKS         = NO
+RTF_HYPERLINKS         = YES
 
 # Load stylesheet definitions from file. Syntax is similar to doxygen's config
 # file, i.e. a series of assignments. You only have to provide replacements,
@@ -1991,7 +1991,7 @@ DOCBOOK_OUTPUT         = docbook
 # The default value is: NO.
 # This tag requires that the tag GENERATE_DOCBOOK is set to YES.
 
-DOCBOOK_PROGRAMLISTING = NO
+DOCBOOK_PROGRAMLISTING = YES
 
 #---------------------------------------------------------------------------
 # Configuration options for the AutoGen Definitions output
