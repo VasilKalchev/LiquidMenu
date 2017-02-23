@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/logo.png)
+![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/Images/logo.png)
 
 *Menu creation Arduino library for LCDs, wraps [LiquidCrystal][lc].*
 
@@ -12,6 +12,13 @@
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
 
 
+Resources
+=========
+ - [API reference][doxygen classes]
+ - [Wiki][wiki]
+ - [Latest release][latest release]
+ 
+ 
 Features
 ========
  - Fast and easy menu creation.
@@ -35,9 +42,9 @@ The library uses hierarchically structured classes to represent the different el
 
 *Basic class hierarchy diagram:*
 
-![Basic class hierarchy diagram](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/basic_diagram.png "Basic class hierarchy diagram")
+![Basic class hierarchy diagram](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/Images/basic_diagram.png "Basic class hierarchy diagram")
 
-*Click [here](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/diagram.png) for a complete hierarchy diagram.*
+*Click [here](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/Images/diagram.png) for a complete hierarchy diagram.*
 
 The **LiquidLine** class represents a **line** of text/numbers on the display.
 To create a new **LiquidLine** object use its constructor:
@@ -176,6 +183,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [lc]: https://github.com/arduino-libraries/LiquidCrystal
-[docs_home]: https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html
-[docs_classes]: https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html
+[doxygen classes]: https://vasilkalchev.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
 [examples]: https://github.com/VasilKalchev/LiquidMenu/tree/master/examples
+[latest release]: https://github.com/VasilKalchev/LiquidMenu/releases/latest
+[wiki]: 404
