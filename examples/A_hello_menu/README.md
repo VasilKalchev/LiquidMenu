@@ -1,4 +1,4 @@
-hello_menu example
+Example 1: hello_menu
 ==================
 
 ![schematic](https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/A_hello_menu/hello_menu.png?raw=true)
