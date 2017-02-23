@@ -29,7 +29,7 @@ Features
 Requirements
 ============
  - The Arduino's [LiquidCrystal][lc] library.
- - LCD supported by <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> (*with Hitachi HD44780 or a compatible chipset*).
+ - LCD supported by [LiquidCrystal][lc] (*with Hitachi HD44780 or a compatible chipset*).
  - Arduino board or a compatible microcontroller.
  - Input device is recommended (*buttons, rotary encoder, etc.*).
 
@@ -175,7 +175,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[lc]: https://github.com/arduino-libraries/LiquidCrystal
+[lc]: https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal
 [doxygen classes]: https://vasilkalchev.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
 [examples]: https://github.com/VasilKalchev/LiquidMenu/tree/master/examples
 [latest release]: https://github.com/VasilKalchev/LiquidMenu/releases/latest
