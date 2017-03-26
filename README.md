@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/VasilKalchev/LiquidMenu.svg?branch=master)](https://travis-ci.org/VasilKalchev/LiquidMenu)
 [![release](https://img.shields.io/badge/release-1.2.0-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
-[![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/html/index.html)
+[![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/Doxygen/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
 
@@ -14,8 +14,8 @@ It simplifies the menu creation process by abstracting the elements of a menu in
 
 Resources
 =========
+ - [Examples][examples]
  - [API reference][doxygen classes]
- - [Wiki][wiki]
  - [Latest release][latest release]
  
  
@@ -29,7 +29,7 @@ Features
 Requirements
 ============
  - The Arduino's [LiquidCrystal][lc] library.
- - LCD supported by <a href="https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal"> LiquidCrystal</a> (*with Hitachi HD44780 or a compatible chipset*).
+ - LCD supported by [LiquidCrystal][lc] (*with Hitachi HD44780 or a compatible chipset*).
  - Arduino board or a compatible microcontroller.
  - Input device is recommended (*buttons, rotary encoder, etc.*).
 
@@ -44,7 +44,7 @@ The library uses hierarchically structured classes to represent the different el
 
 ![Basic class hierarchy diagram](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/Images/basic_diagram.png "Basic class hierarchy diagram")
 
-*Click [here](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/Images/diagram.png) for a complete hierarchy diagram.*
+*Click [here](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/Images/diagram.png?raw=true) for a complete hierarchy diagram.*
 
 The **LiquidLine** class represents a **line** of text/numbers on the display.
 To create a new **LiquidLine** object use its constructor:
@@ -151,13 +151,6 @@ void loop() {
 ```
 
 
-More information
-================
-[Documentation][docs_home]
-
-[More examples][examples]
-
-
 License
 =======
 The MIT License (MIT)
@@ -182,7 +175,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[lc]: https://github.com/arduino-libraries/LiquidCrystal
+[lc]: https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal
 [doxygen classes]: https://vasilkalchev.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
 [examples]: https://github.com/VasilKalchev/LiquidMenu/tree/master/examples
 [latest release]: https://github.com/VasilKalchev/LiquidMenu/releases/latest

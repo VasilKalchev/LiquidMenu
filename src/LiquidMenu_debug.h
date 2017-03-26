@@ -19,12 +19,12 @@ Contains debug macro definitions for LiquidMenu library.
     #define DEBUGLN2(x, y) std::cout << x << y << std::endl;
   #endif
 #else
-  /// Normal print
+  /// Debug print
   #define DEBUG(x)
-  /// Print with newline
+  /// Debug print with newline
   #define DEBUGLN(x)
-  /// Normal print with two parameters
+  /// Debug print two parameters
   #define DEBUG2(x, y)
-  /// Print two parameters with newline
+  /// Debug print two parameters with newline
   #define DEBUGLN2(x, y)
 #endif
