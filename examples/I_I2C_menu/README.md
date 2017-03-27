@@ -5,7 +5,7 @@ Example 9: I2C_menu
 This is the "hello_menu" example configured for I2C connection.
 
 
-To use an I2C connection you need to define I2C as "true" in the "LiquidMenu_config.h" file.
+**To use an I2C connection you need to define I2C as "true" in the "LiquidMenu_config.h" file.**
 
 Tested with [LiquidCrystal_I2C][lc_i2c].
 
