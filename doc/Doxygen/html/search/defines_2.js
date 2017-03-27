@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['print',['PRINT',['../messages_8h.html#ad61844ab25ea35139950e67e9693bc9f',1,'messages.h']]],
-  ['println',['PRINTLN',['../messages_8h.html#af1066d64ca1f5b865b189616551600dc',1,'messages.h']]]
+  ['liquidmenu_5fdebug',['LIQUIDMENU_DEBUG',['../_liquid_menu__config_8h.html#a11edb92ef250fa78df3d6627cf3f1658',1,'LiquidMenu_config.h']]]
 ];

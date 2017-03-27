@@ -8,6 +8,7 @@ var menudata={children:[
 {text:'a',url:'functions.html#index_a'},
 {text:'c',url:'functions.html#index_c'},
 {text:'h',url:'functions.html#index_h'},
+{text:'i',url:'functions.html#index_i'},
 {text:'l',url:'functions.html#index_l'},
 {text:'n',url:'functions.html#index_n'},
 {text:'o',url:'functions.html#index_o'},
@@ -18,6 +19,7 @@ var menudata={children:[
 {text:'a',url:'functions_func.html#index_a'},
 {text:'c',url:'functions_func.html#index_c'},
 {text:'h',url:'functions_func.html#index_h'},
+{text:'i',url:'functions_func.html#index_i'},
 {text:'l',url:'functions_func.html#index_l'},
 {text:'n',url:'functions_func.html#index_n'},
 {text:'o',url:'functions_func.html#index_o'},
@@ -29,6 +31,7 @@ var menudata={children:[
 {text:'File Members',url:'globals.html',children:[
 {text:'All',url:'globals.html',children:[
 {text:'d',url:'globals.html#index_d'},
+{text:'i',url:'globals.html#index_i'},
 {text:'l',url:'globals.html#index_l'},
 {text:'m',url:'globals.html#index_m'},
 {text:'p',url:'globals.html#index_p'},
