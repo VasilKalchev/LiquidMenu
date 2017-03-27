@@ -1,3 +1,5 @@
+_config.yml
+
 #Static analyzers
 #Cppcheck
 *.cppcheck
