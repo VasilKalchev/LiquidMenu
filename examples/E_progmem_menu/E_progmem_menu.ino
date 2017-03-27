@@ -17,7 +17,7 @@
  * and the second is a string stored in flash, "number" will be 2.
  *
  * The circuit:
- * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/progmem_menu/progmem_menu.png
+ * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/progmem_menu/E_progmem_menu.png
  * - LCD RS pin to Arduino pin 12
  * - LCD E pin to Arduino pin 11
  * - LCD D4 pin to Arduino pin 5

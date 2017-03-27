@@ -3,7 +3,7 @@
 *Menu creation Arduino library for LCDs, wraps [LiquidCrystal][lc].*
 
 [![Build Status](https://travis-ci.org/VasilKalchev/LiquidMenu.svg?branch=master)](https://travis-ci.org/VasilKalchev/LiquidMenu)
-[![release](https://img.shields.io/badge/release-1.2.0-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
+[![release](https://img.shields.io/badge/release-1.3.0-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
 [![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/Doxygen/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
@@ -17,18 +17,19 @@ Resources
  - [Examples][examples]
  - [API reference][doxygen classes]
  - [Latest release][latest release]
- 
- 
+
+
 Features
 ========
  - Fast and easy menu creation.
  - Selectable menu items.
  - Callback functions.
+ - I2C connection.
 
 
 Requirements
 ============
- - The Arduino's [LiquidCrystal][lc] library.
+ - The Arduino's [LiquidCrystal][lc] or similar library.
  - LCD supported by [LiquidCrystal][lc] (*with Hitachi HD44780 or a compatible chipset*).
  - Arduino board or a compatible microcontroller.
  - Input device is recommended (*buttons, rotary encoder, etc.*).

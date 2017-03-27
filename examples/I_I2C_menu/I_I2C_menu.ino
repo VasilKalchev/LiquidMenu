@@ -1,57 +1,38 @@
 /*
- * LiquidMenu library - hello_menu.ino
+ * LiquidMenu library - I2C_menu.ino
+ * IMPORTANT: To configure the library for I2C connection define I2C
+ * as "true" in the "LiquidMenu_config.h" file.
  *
- * This is the get started example demonstrating how to create
- * a menu of two screens with dynamically changing information.
+ * This is the "hello_menu" example configured for I2C connection.
  *
- * The first screen shows some static text. The second screen
- * shows the reading of analog pin A1. To display a changing
- * variable on the LCD, simply put the variable in the LiquidLine
- * constructor. In this case the LiquidLine object is "analogReading_ine"
- * and the variable is "analogReading". This line is on the second
- * screen. The value of the analog pin is read every second and if
- * it has changed the display is updated with the new value. The
- * menu cycles through its two screens every five seconds.
+ * The difference in using an I2C display library instead of the
+ * official LiquidCrystal library is that void LiquidMenu::init()
+ * method needs to be called in setup() after the I2C display library
+ * is initialized. The other difference is that I2C needs to be defined
+ * as "true" in the "LiquidMenu_config.h" file.
  *
  * The circuit:
- * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/A_hello_menu/hello_menu.png
- * - LCD RS pin to Arduino pin 12
- * - LCD E pin to Arduino pin 11
- * - LCD D4 pin to Arduino pin 5
- * - LCD D5 pin to Arduino pin 4
- * - LCD D6 pin to Arduino pin 3
- * - LCD D7 pin to Arduino pin 2
- * - LCD R/W pin to ground
- * - LCD VSS pin to ground
- * - LCD VCC pin to  5V
- * - 10k ohm potentiometer: ends to 5V and ground, wiper to LCD V0
- * - 150 ohm resistor from 5V to LCD Anode
- * - LCD Cathode to ground
- * - ----
- * - some analog input to Arduino pin A1 (unconnected also works)
+ * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/I_I2C_menu/hello_menu.png
+ * - PCF8574 module SDA to Arduino pin A5
+ * - PCF8574 module SDL to Arduino pin A4
+ * - PCF8574 module VCC to Arduino 5V
+ * - PCF8574 module GND to Arduino GND
  *
- * Created July 24, 2016
+ * Created March 27, 2017
  * by Vasil Kalchev
  *
  * https://github.com/VasilKalchev/LiquidMenu
  *
  */
 
-// The LCD library
-#include <LiquidCrystal.h>
+#include <Wire.h>
+// The I2C LCD library
+#include <LiquidCrystal_I2C.h>
 // The menu wrapper library
 #include <LiquidMenu.h>
 
-// Pin mapping for the display:
-const byte LCD_RS = 12;
-const byte LCD_E = 11;
-const byte LCD_D4 = 5;
-const byte LCD_D5 = 4;
-const byte LCD_D6 = 3;
-const byte LCD_D7 = 2;
-//LCD R/W pin to ground
-//10K potentiometer wiper to VO
-LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
+// The I2C LCD object
+LiquidCrystal_I2C lcd(0x3F, 16, 2);
 
 /*
  * Variable 'analogReading' is later configured to
@@ -82,7 +63,7 @@ unsigned long lastMs_nextScreen = 0;
 // string and the passed variable.
 LiquidLine welcome_line1(1, 0, "LiquidMenu ", LIQUIDMENU_VERSION);
 // Here the column is 3, the row is 1 and the string is "Hello Menu".
-LiquidLine welcome_line2(3, 1, "Hello Menu");
+LiquidLine welcome_line2(1, 1, "Hello Menu I2C");
 
 /*
  * LiquidScreen objects represent a single screen. A screen is made of
@@ -111,7 +92,12 @@ void setup() {
 
   pinMode(analogPin, INPUT);
 
-  lcd.begin(16, 2);
+  // This is the I2C LCD object initialization.
+  lcd.init();
+  lcd.backlight();
+
+  // This methid needs to be called when using an I2C display library.
+  menu.init();
 
   // This is the method used to add a screen object to the menu.
   menu.add_screen(welcome_screen);

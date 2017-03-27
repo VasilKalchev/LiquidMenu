@@ -8,7 +8,7 @@
  * in the functions_menu.ino example.
  *
  * The circuit:
- * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/serial_menu/serial_menu.png
+ * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/B_serial_menu/serial_menu.png
  * - LCD RS pin to Arduino pin 12
  * - LCD E pin to Arduino pin 11
  * - LCD D4 pin to Arduino pin 5
@@ -68,7 +68,7 @@ LiquidMenu menu(lcd, welcome_screen, screen2, screen3, screen4);
  * More on this in the function_menu.ino example.
 */
 void callback_function() {
-  Serial.println("You called the callback function.");
+  Serial.println(F("You called the callback function."));
 }
 
 void setup() {
@@ -84,13 +84,13 @@ void setup() {
 
   menu.update();
 
-  Serial.print("LiquidMenu "); Serial.print(LIQUIDMENU_VERSION); Serial.println(" - Serial example:");
-  Serial.println("To navigate the menu type 'menu.next_screen()' or 'menu.previous_screen()'.");
-  Serial.println("To switch focus type 'menu.switch_focus()'.");
-  Serial.println("To call the callback function type 'menu.call_function(1)'.");
-  Serial.println("To adjust the focus position type 'menu.set_focusPosition(Position::LEFT)'");
-  Serial.println("  or 'menu.set_focusPosition(Position::RIGHT)'.");
-  Serial.println("To update the display type 'menu.update()'."); Serial.println();
+  Serial.print(F("LiquidMenu ")); Serial.print(LIQUIDMENU_VERSION); Serial.println(F(" - Serial example:"));
+  Serial.println(F("To navigate the menu type 'menu.next_screen()' or 'menu.previous_screen()'."));
+  Serial.println(F("To switch focus type 'menu.switch_focus()'."));
+  Serial.println(F("To call the callback function type 'menu.call_function(1)'."));
+  Serial.println(F("To adjust the focus position type 'menu.set_focusPosition(Position::LEFT)'"));
+  Serial.println(F("  or 'menu.set_focusPosition(Position::RIGHT)'."));
+  Serial.println(F("To update the display type 'menu.update()'.")); Serial.println();
 }
 
 void loop() {
@@ -122,7 +122,7 @@ void loop() {
       Serial.println(command);
       menu.update();
     } else {
-      Serial.print(command); Serial.println(" - unknown command");
+      Serial.print(command); Serial.println(F(" - unknown command"));
     }
     menu.update();
   }

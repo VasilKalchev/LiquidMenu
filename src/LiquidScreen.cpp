@@ -86,7 +86,7 @@ void LiquidScreen::hide(bool hide) {
 	_hidden = hide;
 }
 
-void LiquidScreen::print(LiquidCrystal *p_liquidCrystal) const {
+void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 	for (uint8_t l = 0; l < _lineCount; l++) {
 		bool focus = true;
 		if (_focus != l) {

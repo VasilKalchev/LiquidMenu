@@ -8,6 +8,8 @@ used in the library, also configures the debugging messages.
 
 #pragma once
 
+/// Switches the communication method to I2C
+
 /// Configures the number of available variables per line.
 const uint8_t MAX_VARIABLES = 5; ///< @note Default: 5
 

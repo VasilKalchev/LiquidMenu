@@ -28,19 +28,17 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.2.0
+@version 1.3.0
 @copyright The MIT License
 
 @todo: Change/Remove variables/screens/menus maybe
 @todo: screen wide glyphs
 @todo: dynamic memory
-@todo: I2C
 @todo: variadic templates
 */
 
 #pragma once
 
-#include <LiquidCrystal.h>
 #include <inttypes.h>
 #include <avr/pgmspace.h>
 #include <stdio.h>
@@ -49,15 +47,21 @@ Include file for LiquidMenu library.
 #include "LiquidMenu_config.h"
 #include "LiquidMenu_debug.h"
 
-#ifndef LiquidCrystal_h
-  #warning "LiquidMenu: LiquidCrystal library is required!"
+#if I2C
+#include <LiquidCrystal_I2C.h>
+#define DisplayClass LiquidCrystal_I2C
+#warning "LiquidMenu: Configured for I2C. Edit 'LiquidMenu_config.h' file to change it."
+#else
+#include <LiquidCrystal.h>
+#define DisplayClass LiquidCrystal
+#warning "LiquidMenu: Configured for Parallel. Edit 'LiquidMenu_config.h' file to change it."
 #endif
 
 #if LIQUIDMENU_DEBUG
-  #warning "LiquidMenu: Debugging messages are enabled."
+#warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
-const char LIQUIDMENU_VERSION[] = "1.2"; ///< The version of the library.
+const char LIQUIDMENU_VERSION[] = "1.3"; ///< The version of the library.
 
 /// Data type enum.
 /**
@@ -349,7 +353,7 @@ public:
   /// Converts a byte variable into a glyph index.
   /**
   If a custom character (glyph) was created using
-  `LiquidCrystal::createChar(byte index, byte character[8])` it
+  `DisplayClass::createChar(byte index, byte character[8])` it
   can be displayed as a normal variable using this method.
 
   @param number - the variable number that will be converted to an index
@@ -374,23 +378,23 @@ private:
   /// Prints the line to the display.
   /**
   Sets the cursor to the starting position. Then goes through a loop
-  calling `print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number)`.
+  calling `print_variable(DisplayClass *p_liquidCrystal, uint8_t number)`.
   And finally displays the focus indicator if the line is focused.
 
-  @param *p_liquidCrystal - pointer to the LiquidCrystal object
+  @param *p_liquidCrystal - pointer to the DisplayClass object
   @param isFocused - true if this line is focused
   */
-  void print(LiquidCrystal *p_liquidCrystal, bool isFocused);
+  void print(DisplayClass *p_liquidCrystal, bool isFocused);
 
   /// Prints a variable to the display.
   /**
   Casts the variable pointer specified by the number to its data type
   and prints it to the display.
 
-  @param *p_liquidCrystal - pointer to the LiquidCrystal object
+  @param *p_liquidCrystal - pointer to the DisplayClass object
   @param number - number identifying the variable
   */
-  void print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number);
+  void print_variable(DisplayClass *p_liquidCrystal, uint8_t number);
 
   /// Calls an attached function specified by the number.
   /**
@@ -522,12 +526,12 @@ public:
 private:
   /// Prints the lines pointed by the screen.
   /**
-  Calls the `LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused)`
+  Calls the `LiquidLine::print(DisplayClass *p_liquidCrystal, bool isFocused)`
   for every line pointed by the screen.
 
-  @param *p_liquidCrystal - pointer to the LiquidCrystal object
+  @param *p_liquidCrystal - pointer to the DisplayClass object
   */
-  void print(LiquidCrystal *p_liquidCrystal) const;
+  void print(DisplayClass *p_liquidCrystal) const;
 
   /// Switches the focus
   /**
@@ -580,49 +584,49 @@ public:
   /**
   This is the main constructor that gets called every time.
 
-  @param &liquidCrystal - pointer to the LiquidCrystal object
+  @param &liquidCrystal - pointer to the DisplayClass object
   @param startingScreen - the number of the screen that will be shown
   first
   */
-  LiquidMenu(LiquidCrystal &liquidCrystal, uint8_t startingScreen = 1);
+  LiquidMenu(DisplayClass &liquidCrystal, uint8_t startingScreen = 1);
 
   /// Constructor for 1 LiquidScreen object.
   /**
-  @param &liquidCrystal - pointer to the LiquidCrystal object
+  @param &liquidCrystal - pointer to the DisplayClass object
   @param &liquidScreen - pointer to a LiquidScreen object
   @param startingScreen - the number of the screen that will be shown
   first
   */
-  LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen,
+  LiquidMenu(DisplayClass &liquidCrystal, LiquidScreen &liquidScreen,
              uint8_t startingScreen = 1);
 
   /// Constructor for 2 LiquidScreen objects.
   /**
-  @param &liquidCrystal - pointer to the LiquidCrystal object
+  @param &liquidCrystal - pointer to the DisplayClass object
   @param &liquidScreen1 - pointer to a LiquidScreen object
   @param &liquidScreen2 - pointer to a LiquidScreen object
   @param startingScreen - the number of the screen that will be shown
   first
   */
-  LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1,
+  LiquidMenu(DisplayClass &liquidCrystal, LiquidScreen &liquidScreen1,
              LiquidScreen &liquidScreen2, uint8_t startingScreen = 1);
 
   /// Constructor for 3 LiquidScreen objects.
   /**
-  @param &liquidCrystal - pointer to the LiquidCrystal object
+  @param &liquidCrystal - pointer to the DisplayClass object
   @param &liquidScreen1 - pointer to a LiquidScreen object
   @param &liquidScreen2 - pointer to a LiquidScreen object
   @param &liquidScreen3 - pointer to a LiquidScreen object
   @param startingScreen - the number of the screen that will be shown
   first
   */
-  LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1,
+  LiquidMenu(DisplayClass &liquidCrystal, LiquidScreen &liquidScreen1,
              LiquidScreen &liquidScreen2, LiquidScreen &liquidScreen3,
              uint8_t startingScreen = 1);
 
   /// Constructor for 4 LiquidScreen objects.
   /**
-  @param &liquidCrystal - pointer to the LiquidCrystal object
+  @param &liquidCrystal - pointer to the DisplayClass object
   @param &liquidScreen1 - pointer to a LiquidScreen object
   @param &liquidScreen2 - pointer to a LiquidScreen object
   @param &liquidScreen3 - pointer to a LiquidScreen object
@@ -630,7 +634,7 @@ public:
   @param startingScreen - the number of the screen that will be shown
   first
   */
-  LiquidMenu(LiquidCrystal &liquidCrystal, LiquidScreen &liquidScreen1,
+  LiquidMenu(DisplayClass &liquidCrystal, LiquidScreen &liquidScreen1,
              LiquidScreen &liquidScreen2, LiquidScreen &liquidScreen3,
              LiquidScreen &liquidScreen4, uint8_t startingScreen = 1);
 
@@ -784,10 +788,18 @@ public:
   */
   void softUpdate() const;
 
+  /// Initializes the menu object.
+  /**
+  Call this method to fully initialize the menu object.
+
+  @note Needed when using an I2C display library.
+  */
+  void init() const;
+
   ///@}
 
 private:
-  LiquidCrystal *_p_liquidCrystal; ///< Pointer to the LiquidCrystal object
+  DisplayClass *_p_liquidCrystal; ///< Pointer to the DisplayClass object
   LiquidScreen *_p_liquidScreen[MAX_SCREENS]; ///< The LiquidScreen objects
   uint8_t _screenCount; ///< Count of the LiquidScreen objects
   uint8_t _currentScreen;

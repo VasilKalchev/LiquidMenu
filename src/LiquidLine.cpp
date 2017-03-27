@@ -76,7 +76,7 @@ bool LiquidLine::set_asGlyph(uint8_t number) {
 		return true;
 	} else {
 		DEBUG(F("Setting variable ")); DEBUG(number);
-		DEBUGLN(F(" as glyph failed, the variable must be of 'byte' data type"))
+		DEBUGLN(F(" as glyph failed, the variable must be of 'byte' data type"));
 		return false;
 	}
 }
@@ -94,7 +94,7 @@ bool LiquidLine::set_asProgmem(uint8_t number) {
 	}
 }
 
-void LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused) {
+void LiquidLine::print(DisplayClass *p_liquidCrystal, bool isFocused) {
 	p_liquidCrystal->setCursor(_column, _row);
 	DEBUG(F(" (")); DEBUG(_column); DEBUG(F(", ")); DEBUG(_row); DEBUGLN(F(")"));
 
@@ -142,7 +142,7 @@ void LiquidLine::print(LiquidCrystal *p_liquidCrystal, bool isFocused) {
 	}
 }
 
-void LiquidLine::print_variable(LiquidCrystal *p_liquidCrystal, uint8_t number) {
+void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 	switch (_variableType[number]) {
 
 	case DataType::CONST_CHAR_PTR: {

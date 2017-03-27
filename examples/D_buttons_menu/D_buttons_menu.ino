@@ -18,7 +18,7 @@
  * "down" button.
  *
  * The circuit:
- * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/buttons_menu/buttons_menu.png
+ * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/D_buttons_menu/D_buttons_menu.png
  * - LCD RS pin to Arduino pin 12
  * - LCD E pin to Arduino pin 11
  * - LCD D4 pin to Arduino pin 5
@@ -168,25 +168,25 @@ void loop() {
 
 	// Check all the buttons
 	if (right.check() == LOW) {
-		Serial.println("RIGHT button clicked");
+		Serial.println(F("RIGHT button clicked"));
 		menu.next_screen();
 	}
 	if (left.check() == LOW) {
-		Serial.println("LEFT button clicked");
+		Serial.println(F("LEFT button clicked"));
 		menu.previous_screen();
 	}
 	if (up.check() == LOW) {
-		Serial.println("UP button clicked");
+		Serial.println(F("UP button clicked"));
 		// Calls the function identified with one
 		// for the focused line.
 		menu.call_function(1);
 	}
 	if (down.check() == LOW) {
-		Serial.println("DOWN button clicked");
+		Serial.println(F("DOWN button clicked"));
 		menu.call_function(2);
 	}
 	if (enter.check() == LOW) {
-		Serial.println("ENTER button clicked");
+		Serial.println(F("ENTER button clicked"));
 		// Switches focus to the next line.
 		menu.switch_focus();
 	}
