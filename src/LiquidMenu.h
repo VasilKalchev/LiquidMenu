@@ -50,11 +50,11 @@ Include file for LiquidMenu library.
 #if I2C
 #include <LiquidCrystal_I2C.h>
 #define DisplayClass LiquidCrystal_I2C
-#warning "LiquidMenu: Configured for I2C. Edit 'LiquidMenu_config.h' file to change it."
+#pragma message ("LiquidMenu: Configured for I2C. Edit 'LiquidMenu_config.h' file to change it.")
 #else
 #include <LiquidCrystal.h>
 #define DisplayClass LiquidCrystal
-#warning "LiquidMenu: Configured for Parallel. Edit 'LiquidMenu_config.h' file to change it."
+#pragma message ("LiquidMenu: Configured for Parallel. Edit 'LiquidMenu_config.h' file to change it.")
 #endif
 
 #if LIQUIDMENU_DEBUG
