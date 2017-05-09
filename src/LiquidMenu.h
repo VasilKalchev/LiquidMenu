@@ -296,7 +296,7 @@ public:
   */
   template <typename T>
   bool add_variable(T &variable) {
-    print_me((uintptr_t)this);
+    print_me(reinterpret_cast<uintptr_t>(this));
     if (_variableCount < MAX_VARIABLES) {
       _variable[_variableCount] = (void*)&variable;
       _variableType[_variableCount] = recognizeType(variable);

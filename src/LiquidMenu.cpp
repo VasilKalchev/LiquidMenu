@@ -70,7 +70,7 @@ LiquidMenu::LiquidMenu(DisplayClass &liquidCrystal, LiquidScreen &liquidScreen1,
 }
 
 bool LiquidMenu::add_screen(LiquidScreen &liquidScreen) {
-  print_me((uintptr_t)this);
+  print_me(reinterpret_cast<uintptr_t>(this));
   if (_screenCount < MAX_SCREENS) {
     _p_liquidScreen[_screenCount] = &liquidScreen;
     DEBUG(F("Added a new screen (")); DEBUG(_screenCount); DEBUGLN(F(")"));
@@ -143,7 +143,7 @@ bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
   // _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
   for (uint8_t s = 0; s < _screenCount; s++) {
     _p_liquidCrystal->clear();
-    if ((uintptr_t)&p_liquidScreen == (uintptr_t) & (*_p_liquidScreen[s])) {
+    if (reinterpret_cast<uintptr_t>(&p_liquidScreen) == reinterpret_cast<uintptr_t>(&(*_p_liquidScreen[s]))) {
       _currentScreen = s;
       update();
       DEBUG(F("Switched to screen ("));
@@ -152,7 +152,7 @@ bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
       return true;
     }
   }
-  DEBUG(F("Invalid request for screen change to ")); DEBUGLN((uintptr_t)&p_liquidScreen);
+  DEBUG(F("Invalid request for screen change to ")); DEBUGLN(reinterpret_cast<uintptr_t>(&p_liquidScreen));
   return false;
 }
 
@@ -171,7 +171,7 @@ void LiquidMenu::switch_focus(bool forward) {
 }
 
 bool LiquidMenu::set_focusPosition(Position position) {
-  print_me((uintptr_t)this);
+  print_me(reinterpret_cast<uintptr_t>(this));
   if (position == Position::CUSTOM) {
     DEBUGLN(F("Can't set a custom focus position for the whole menu at once"));
     return false;

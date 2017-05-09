@@ -37,7 +37,7 @@ void print_me(uintptr_t address) {
 
 
 bool LiquidLine::attach_function(uint8_t number, void (*function)(void)) {
-	print_me((uintptr_t)this);
+	print_me(reinterpret_cast<uintptr_t>(this));
 	if (number <= MAX_FUNCTIONS) {
 		_function[number - 1] = function;
 		DEBUG(F("Attached function ")); DEBUGLN(number);
@@ -51,7 +51,7 @@ bool LiquidLine::attach_function(uint8_t number, void (*function)(void)) {
 }
 
 bool LiquidLine::set_focusPosition(Position position, uint8_t column, uint8_t row) {
-	print_me((uintptr_t)this);
+	print_me(reinterpret_cast<uintptr_t>(this));
 	if (position <= Position::CUSTOM) {
 		_focusPosition = position;
 		_focusColumn = column;
