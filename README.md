@@ -1,10 +1,10 @@
-![logo](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/Images/logo.png)
+![logo](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/Images/logo.png)
 
 *Menu creation Arduino library for LCDs, wraps [LiquidCrystal][lc].*
 
-[![Build Status](https://travis-ci.org/VasilKalchev/LiquidMenu.svg?branch=master)](https://travis-ci.org/VasilKalchev/LiquidMenu)
-[![release](https://img.shields.io/badge/release-1.3.0-yellow.svg)](https://github.com/VasilKalchev/LiquidMenu/releases)
-[![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://vasilkalchev.github.io/LiquidMenu/doc/Doxygen/html/index.html)
+[![Build Status](https://travis-ci.org/VaSe7u/LiquidMenu.svg?branch=master)](https://travis-ci.org/VaSe7u/LiquidMenu)
+[![release](https://img.shields.io/badge/release-1.3.0-yellow.svg)](https://github.com/VaSe7u/LiquidMenu/releases)
+[![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
 
@@ -43,9 +43,9 @@ The library uses hierarchically structured classes to represent the different el
 
 *Basic class hierarchy diagram:*
 
-![Basic class hierarchy diagram](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/Images/basic_diagram.png "Basic class hierarchy diagram")
+![Basic class hierarchy diagram](https://github.com/VaSe7u/LiquidMenu/blob/master/doc/Images/basic_diagram.png "Basic class hierarchy diagram")
 
-*Click [here](https://github.com/VasilKalchev/LiquidMenu/blob/master/doc/Images/diagram.png?raw=true) for a complete hierarchy diagram.*
+*Click [here](https://github.com/VaSe7u/LiquidMenu/blob/master/doc/Images/diagram.png?raw=true) for a complete hierarchy diagram.*
 
 The **LiquidLine** class represents a **line** of text/numbers on the display.
 To create a new **LiquidLine** object use its constructor:
@@ -177,7 +177,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [lc]: https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal
-[doxygen classes]: https://vasilkalchev.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
-[examples]: https://github.com/VasilKalchev/LiquidMenu/tree/master/examples
-[latest release]: https://github.com/VasilKalchev/LiquidMenu/releases/latest
+[doxygen classes]: https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
+[examples]: https://github.com/VaSe7u/LiquidMenu/tree/master/examples
+[latest release]: https://github.com/VaSe7u/LiquidMenu/releases/latest
 [wiki]: 404
