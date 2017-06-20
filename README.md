@@ -151,6 +151,13 @@ void loop() {
 
 ```
 
+Contributing
+============
+See [CONTRIBUTING.md][contributing] for additional information.
+
+Code of conduct
+===============
+See [CODE_OF_CONDUCT.md][code_of_conduct] for additional information.
 
 License
 =======
@@ -180,4 +187,6 @@ SOFTWARE.
 [doxygen classes]: https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
 [examples]: https://github.com/VaSe7u/LiquidMenu/tree/master/examples
 [latest release]: https://github.com/VaSe7u/LiquidMenu/releases/latest
+[code_of_conduct]: https://github.com/VaSe7u/LiquidMenu/blob/master/CODE_OF_CONDUCT.md
+[contributing]: https://github.com/VaSe7u/LiquidMenu/blob/master/CONTRIBUTING.md
 [wiki]: 404
