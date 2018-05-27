@@ -90,7 +90,7 @@ bool LiquidLine::set_asProgmem(uint8_t number) {
 	else {
 		DEBUG(F("Setting variable ")); DEBUG(number);
 		DEBUGLN(F(" as PROG_CONST_CHAR failed, the variable must be of 'const char[]' data type"))
-			return false;
+		return false;
 	}
 }
 
@@ -152,7 +152,8 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 		break;
 	} //case CONST_CHAR_PTR
 	case DataType::CHAR_PTR: {
-		char* variable = *reinterpret_cast<char**>( const_cast<void*>(_variable[number]) );
+		// char* variable = *reinterpret_cast<char**>( const_cast<void*>(_variable[number]) );
+		char* variable = const_cast<char*>(reinterpret_cast<const char *>(_variable[number]));
 		DEBUG(F("(char*)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
