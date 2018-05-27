@@ -35,11 +35,12 @@ Include file for LiquidMenu library.
 @todo: screen wide glyphs
 @todo: dynamic memory
 @todo: variadic templates
+@todo: test LiquidLine.cpp 156 change
 */
 
 #pragma once
 
-#include <inttypes.h>
+#include <stdint.h>
 #include <avr/pgmspace.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -190,7 +191,7 @@ This is the lowest class in the hierarchy, it holds pointers to the
 variables/constants that will be printed, where the line is positioned,
 where the focus indicator is positioned and pointers to the callback
 functions. This classes' objects go into a LiquidScreen object which
-which controls them. The public methods are for configuration only.
+controls them. The public methods are for configuration only.
 */
 class LiquidLine {
   friend class LiquidScreen;
