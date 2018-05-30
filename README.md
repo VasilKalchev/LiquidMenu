@@ -183,10 +183,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[lc]: https://github.com/arduino/Arduino/tree/master/libraries/LiquidCrystal
+[lc]: https://github.com/arduino-libraries/LiquidCrystal
 [doxygen classes]: https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
-[examples]: https://github.com/VaSe7u/LiquidMenu/tree/master/examples
+[examples]: /examples
 [latest release]: https://github.com/VaSe7u/LiquidMenu/releases/latest
-[code_of_conduct]: https://github.com/VaSe7u/LiquidMenu/blob/master/CODE_OF_CONDUCT.md
-[contributing]: https://github.com/VaSe7u/LiquidMenu/blob/master/CONTRIBUTING.md
+[code_of_conduct]: /CODE_OF_CONDUCT.md
+[contributing]: /CONTRIBUTING.md
 [wiki]: 404
