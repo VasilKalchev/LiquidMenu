@@ -41,7 +41,9 @@ Include file for LiquidMenu library.
 #pragma once
 
 #include <stdint.h>
+#if defined(__AVR__)
 #include <avr/pgmspace.h>
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -218,6 +220,7 @@ public:
     for (uint8_t f = 0; f < MAX_FUNCTIONS; f++) {
       _function[f] = 0;
     }
+	_floatDecimalPlaces = 2;
   }
 
   /// Constructor for one variable/constant.
@@ -230,6 +233,7 @@ public:
   LiquidLine(uint8_t column, uint8_t row, A &variableA)
     : LiquidLine(column, row) {
     add_variable(variableA);
+	_floatDecimalPlaces = 2;
   }
 
   /// Constructor for two variables/constants.
@@ -244,6 +248,7 @@ public:
              A &variableA, B &variableB)
     : LiquidLine(column, row, variableA) {
     add_variable(variableB);
+	_floatDecimalPlaces = 2;
   }
 
   /// Constructor for three variables/constants.
@@ -259,6 +264,7 @@ public:
              A &variableA, B &variableB, C &variableC)
     : LiquidLine(column, row, variableA, variableB) {
     add_variable(variableC);
+	_floatDecimalPlaces = 2;
   }
 
   /// Constructor for four variables/constants.
@@ -275,6 +281,7 @@ public:
              A &variableA, B &variableB, C &variableC, D &variableD)
     : LiquidLine(column, row, variableA, variableB, variableC) {
     add_variable(variableD);
+	_floatDecimalPlaces = 2;
   }
 
   ///@}
@@ -330,6 +337,16 @@ public:
   @see bool LiquidMenu::call_function(uint8_t number) const
   */
   bool attach_function(uint8_t number, void (*function)(void));
+
+  /// Set floating point decimal places for line variables
+  /**
+  The number of decimal places to show on line for a float variable
+
+  @param number - number of decimal places to show for float variables
+  lines
+
+  */
+  void set_decimal_places(uint8_t number);
 
   /// Configures the focus indicator position for the line.
   /**
@@ -410,6 +427,7 @@ private:
 
   uint8_t _row, _column, _focusRow, _focusColumn;
   Position _focusPosition;
+  uint8_t _floatDecimalPlaces;
   uint8_t _variableCount; ///< Count of the variables
   void (*_function[MAX_FUNCTIONS])(void); ///< Pointers to the functions
   const void *_variable[MAX_VARIABLES]; ///< Pointers to the variables
@@ -509,6 +527,8 @@ public:
   */
   bool set_focusPosition(Position position);
 
+  void set_max_line_display(uint8_t lines);
+
   /// Hides the screen.
   /**
   Hiding a screen means that it will be skipped when cycling the
@@ -559,6 +579,7 @@ private:
   LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
   uint8_t _lineCount; ///< Count of the LiquidLine objects
   uint8_t _focus; ///< Number representing the focus position
+  uint8_t _maxLineDisplay;
   bool _hidden; ///< If hidden skips this screen when cycling
 };
 
