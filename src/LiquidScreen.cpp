@@ -35,23 +35,27 @@ LiquidScreen::LiquidScreen()
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine)
 	: LiquidScreen() {
 	add_line(liquidLine);
+	_maxLineDisplay = _lineCount;
 }
 
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2)
 	: LiquidScreen(liquidLine1) {
 	add_line(liquidLine2);
+	_maxLineDisplay = _lineCount;
 }
 
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
                            LiquidLine &liquidLine3)
 	: LiquidScreen(liquidLine1, liquidLine2) {
 	add_line(liquidLine3);
+	_maxLineDisplay = _lineCount;
 }
 
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
                            LiquidLine &liquidLine3, LiquidLine &liquidLine4)
 	: LiquidScreen(liquidLine1, liquidLine2, liquidLine3) {
 	add_line(liquidLine4);
+	_maxLineDisplay = _lineCount;
 }
 
 bool LiquidScreen::add_line(LiquidLine &liquidLine) {
