@@ -527,6 +527,13 @@ public:
   */
   bool set_focusPosition(Position position);
 
+  /// Sets the max line display for menus with more lines than display has
+  /**
+  When adding more menu lines then the display has this will set the max
+  number so that the remaining lines can scroll.
+
+  @param lines - max number of menu lines to display on the LCD
+  */
   void set_max_line_display(uint8_t lines);
 
   /// Hides the screen.

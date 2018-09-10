@@ -101,6 +101,8 @@ void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 	uint8_t lineDisplayCount = _maxLineDisplay;
 	if (lineDisplayCount == 0)
 		lineDisplayCount = _lineCount;
+	else if (lineDisplayCount > _lineCount)
+		lineDisplayCount = _lineCount;
 	DEBUG("MaxLine: ");
 	DEBUG(lineDisplayCount);
 	DEBUG("\n");
@@ -121,7 +123,8 @@ void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 			DEBUG(F("|   -->"));
 		}
 		DEBUG(F("\tLine ")); DEBUG(l);
-		_p_liquidLine[l]->_row = offsetRow;
+		if (lineDisplayCount < _lineCount)
+			_p_liquidLine[l]->_row = offsetRow;
 		_p_liquidLine[l]->print(p_liquidCrystal, focus);
 		offsetRow++;
 	}
