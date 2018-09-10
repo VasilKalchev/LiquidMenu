@@ -35,27 +35,27 @@ LiquidScreen::LiquidScreen()
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine)
 	: LiquidScreen() {
 	add_line(liquidLine);
-	_maxLineDisplay = _lineCount;
+	_maxLineDisplay = 1;
 }
 
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2)
 	: LiquidScreen(liquidLine1) {
 	add_line(liquidLine2);
-	_maxLineDisplay = _lineCount;
+	_maxLineDisplay = 2;
 }
 
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
                            LiquidLine &liquidLine3)
 	: LiquidScreen(liquidLine1, liquidLine2) {
 	add_line(liquidLine3);
-	_maxLineDisplay = _lineCount;
+	_maxLineDisplay = 3;
 }
 
 LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
                            LiquidLine &liquidLine3, LiquidLine &liquidLine4)
 	: LiquidScreen(liquidLine1, liquidLine2, liquidLine3) {
 	add_line(liquidLine4);
-	_maxLineDisplay = _lineCount;
+	_maxLineDisplay = 4;
 }
 
 bool LiquidScreen::add_line(LiquidLine &liquidLine) {
@@ -98,6 +98,9 @@ void LiquidScreen::hide(bool hide) {
 
 void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 	uint8_t lOffset = 0;
+	DEBUG("MaxLine: ");
+	DEBUG(_maxLineDisplay);
+	DEBUG("\n");
 	if (_focus >= _maxLineDisplay)
 	{
 		lOffset = (_focus - _maxLineDisplay) + 1;
