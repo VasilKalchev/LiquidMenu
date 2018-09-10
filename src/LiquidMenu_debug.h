@@ -13,11 +13,10 @@ Contains debug macro definitions for LiquidMenu library.
     #define DEBUG2(x, y) Serial.print(x, y);
     #define DEBUGLN2(x, y) Serial.println(x, y);
   #else
-	#include <Arduino.h>
-	#define DEBUG(x) Serial.print(x);
-	#define DEBUGLN(x) Serial.println(x);
-	#define DEBUG2(x, y) Serial.print(x, y);
-	#define DEBUGLN2(x, y) Serial.println(x, y);
+    #define DEBUG(x) std::cout << x;
+    #define DEBUGLN(x) std::cout << x << std::endl;
+    #define DEBUG2(x, y) std::cout << x << y;
+    #define DEBUGLN2(x, y) std::cout << x << y << std::endl;
   #endif
 #else
   /// Debug print
