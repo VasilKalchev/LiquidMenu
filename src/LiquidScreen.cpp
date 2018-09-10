@@ -98,17 +98,21 @@ void LiquidScreen::hide(bool hide) {
 
 void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 	uint8_t lOffset = 0;
+	uint8_t lineDisplayCount = _maxLineDisplay;
+	if (lineDisplayCount == 0)
+		lineDisplayCount = _lineCount;
 	DEBUG("MaxLine: ");
-	DEBUG(_maxLineDisplay);
+	DEBUG(lineDisplayCount);
 	DEBUG("\n");
-	if (_focus >= _maxLineDisplay)
+
+	if (_focus >= lineDisplayCount)
 	{
-		lOffset = (_focus - _maxLineDisplay) + 1;
-		if ((_maxLineDisplay + lOffset) > _lineCount)
-			lOffset = (_lineCount - _maxLineDisplay);
+		lOffset = (_focus - lineDisplayCount) + 1;
+		if ((lineDisplayCount + lOffset) > _lineCount)
+			lOffset = (_lineCount - lineDisplayCount);
 	}
 	uint8_t offsetRow = 0;
-	for (uint8_t l = lOffset; l < _maxLineDisplay + lOffset; l++) {
+	for (uint8_t l = lOffset; l < lineDisplayCount + lOffset; l++) {
 		bool focus = true;
 		if (_focus != l) {
 			focus = false;
