@@ -7,95 +7,95 @@
 ########################################
 
 # Enumerators
-DataType						KEYWORD1
-Position						KEYWORD1
+DataType	KEYWORD1
+Position	KEYWORD1
 
 # Classes
-LiquidLine						KEYWORD1
-LiquidScreen					KEYWORD1
-LiquidMenu						KEYWORD1
-LiquidSystem					KEYWORD1
+LiquidLine	KEYWORD1
+LiquidScreen	KEYWORD1
+LiquidMenu	KEYWORD1
+LiquidSystem	KEYWORD1
 
 ########################################
 # Methods and Functions (KEYWORD2)
 ########################################
 
 # Global functions
-# recognizeType					KEYWORD2
-# print_me						KEYWORD2
-DEBUG							KEYWORD2
-DEBUG2							KEYWORD2
-DEBUGLN							KEYWORD2
-DEBUGLN2						KEYWORD2
+# recognizeType	KEYWORD2
+# print_me	KEYWORD2
+DEBUG	KEYWORD2
+DEBUG2	KEYWORD2
+DEBUGLN	KEYWORD2
+DEBUGLN2	KEYWORD2
 
 # class LiquidLine
-add_variable					KEYWORD2
-attach_function					KEYWORD2
-set_focusPosition				KEYWORD2
-print							KEYWORD2
-call_function					KEYWORD2
-print_variable					KEYWORD2
-set_asGlyph						KEYWORD2
-set_asProgmem					KEYWORD2
+add_variable	KEYWORD2
+attach_function	KEYWORD2
+set_focusPosition	KEYWORD2
+print	KEYWORD2
+call_function	KEYWORD2
+print_variable	KEYWORD2
+set_asGlyph	KEYWORD2
+set_asProgmem	KEYWORD2
 
 # class LiquidScreen
-add_line						KEYWORD2
-set_focusPosition				KEYWORD2
-switch_focus					KEYWORD2
-hide							KEYWORD2
+add_line	KEYWORD2
+set_focusPosition	KEYWORD2
+switch_focus	KEYWORD2
+hide	KEYWORD2
 
 # class LiquidMenu
-add_screen						KEYWORD2
-next_screen						KEYWORD2
-previous_screen					KEYWORD2
-change_screen					KEYWORD2
-set_focusPosition				KEYWORD2
-set_focusSymbol					KEYWORD2
-call_function					KEYWORD2
-update							KEYWORD2
-softUpdate						KEYWORD2
-init							KEYWORD2
+add_screen	KEYWORD2
+next_screen	KEYWORD2
+previous_screen	KEYWORD2
+change_screen	KEYWORD2
+set_focusPosition	KEYWORD2
+set_focusSymbol	KEYWORD2
+call_function	KEYWORD2
+update	KEYWORD2
+softUpdate	KEYWORD2
+init	KEYWORD2
 
 # class LiquidSystem
-add_menu						KEYWORD2
-change_menu						KEYWORD2
+add_menu	KEYWORD2
+change_menu	KEYWORD2
 
 ########################################
 # Constants (LITERAL1)
 ########################################
 
 # enum DataType
-NOT_USED						LITERAL1
-BOOL							LITERAL1
-BOOLEAN							LITERAL1
-INT8_T							LITERAL1
-UINT8_T							LITERAL1
-INT16_T							LITERAL1
-UINT16_T						LITERAL1
-INT32_T							LITERAL1
-UINT32_T						LITERAL1
-FLOAT							LITERAL1
-DOUBLE							LITERAL1
-CHAR							LITERAL1
-CHAR_PTR						LITERAL1
-CONST_CHAR_PTR					LITERAL1
-GLYPH							LITERAL1
+NOT_USED	LITERAL1
+BOOL	LITERAL1
+BOOLEAN	LITERAL1
+INT8_T	LITERAL1
+UINT8_T	LITERAL1
+INT16_T	LITERAL1
+UINT16_T	LITERAL1
+INT32_T	LITERAL1
+UINT32_T	LITERAL1
+FLOAT	LITERAL1
+DOUBLE	LITERAL1
+CHAR	LITERAL1
+CHAR_PTR	LITERAL1
+CONST_CHAR_PTR	LITERAL1
+GLYPH	LITERAL1
 
 # enum Position
-NORMAL							LITERAL1
-RIGHT							LITERAL1
-LEFT							LITERAL1
-CUSTOM							LITERAL1
+NORMAL	LITERAL1
+RIGHT	LITERAL1
+LEFT	LITERAL1
+CUSTOM	LITERAL1
 
 # Global constants
-MAX_VARIABLES					LITERAL1
-MAX_FUNCTIONS					LITERAL1
-MAX_LINES						LITERAL1
-MAX_SCREENS						LITERAL1
-MAX_MENUS						LITERAL1
+MAX_VARIABLES	LITERAL1
+MAX_FUNCTIONS	LITERAL1
+MAX_LINES	LITERAL1
+MAX_SCREENS	LITERAL1
+MAX_MENUS	LITERAL1
 
-LIQUIDMENU_DEBUG				LITERAL1
+LIQUIDMENU_DEBUG	LITERAL1
 
-VERSION							LITERAL1
-MAX_VARIABLES					LITERAL1
-DIVISION_LINE_LENGTH			LITERAL1
+VERSION	LITERAL1
+MAX_VARIABLES	LITERAL1
+DIVISION_LINE_LENGTH	LITERAL1
