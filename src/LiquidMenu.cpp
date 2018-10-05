@@ -224,6 +224,18 @@ void LiquidMenu::update() const {
   softUpdate();
 }
 
+void LiquidMenu::updateIf(LiquidScreen &p_liquidScreen) {
+  if (&p_liquidScreen == _p_liquidScreen[_currentScreen] ) {
+    update();
+  }
+}
+
+void LiquidMenu::updateIf(uint8_t number){
+  if(number == _currentScreen) {
+    update();
+  }
+}
+
 void LiquidMenu::softUpdate() const {
   DEBUGLN(F("Updating the LCD"));
   for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++) {
@@ -236,6 +248,22 @@ void LiquidMenu::softUpdate() const {
     DEBUG(F("-"));
   }
   DEBUGLN("\n");
+}
+
+void LiquidMenu::softUpdateIf(LiquidScreen &p_liquidScreen) {
+  if(&p_liquidScreen == _p_liquidScreen[_currentScreen] ){
+    softUpdate();
+  }
+}
+
+void LiquidMenu::softUpdateIf(uint8_t number) {
+  if(number == _currentScreen){
+    softUpdate();
+  }
+}
+
+LiquidScreen * LiquidMenu::get_current_screen() {
+  return _p_liquidScreen[_currentScreen];
 }
 
 void LiquidMenu::init() const {

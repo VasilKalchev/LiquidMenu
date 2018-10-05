@@ -152,13 +152,14 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 
 	case DataType::CONST_CHAR_PTR: {
 		const char* variable = reinterpret_cast<const char*>(_variable[number]);
+
 		DEBUG(F("(const char*)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
 	} //case CONST_CHAR_PTR
 	case DataType::CHAR_PTR: {
-		// char* variable = *reinterpret_cast<char**>( const_cast<void*>(_variable[number]) );
-		char* variable = const_cast<char*>(reinterpret_cast<const char *>(_variable[number]));
+		char* variable = *reinterpret_cast<char**>( const_cast<void*>(_variable[number]) );
+		//char* variable = const_cast<char*>(reinterpret_cast<const char *>(_variable[number]));
 		DEBUG(F("(char*)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
@@ -243,6 +244,115 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 		break;
 	} //case PROG_CONST_CHAR_PTR
 
+	case DataType::CONST_CHAR_PTR_RET_FUNC:{
+		const constcharPtrFnPtr f = reinterpret_cast<constcharPtrFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			const char * variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::CHAR_PTR_RET_FUNC:{
+		const charPtrFnPtr f = reinterpret_cast<charPtrFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			char * variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::BOOL_RET_FUNC:{
+		const boolFnPtr f = reinterpret_cast<boolFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			bool variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::CHAR_RET_FUNC:{
+		const charFnPtr f = reinterpret_cast<charFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			char variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::INT8_T_RET_FUNC:{
+		const int8tFnPtr f = reinterpret_cast<int8tFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			int8_t variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::UINT8_T_RET_FUNC:{
+		const uint8tFnPtr f = reinterpret_cast<uint8tFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			uint8_t variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::INT16_T_RET_FUNC:{
+		const int16tFnPtr f = reinterpret_cast<int16tFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			int16_t variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::UINT16_T_RET_FUNC:{
+		const uint16tFnPtr f = reinterpret_cast<uint16tFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			uint16_t variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::INT32_T_RET_FUNC:{
+		const int32tFnPtr f = reinterpret_cast<int32tFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			int32_t variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::UINT32_T_RET_FUNC:{
+		const uint32tFnPtr f = reinterpret_cast<uint32tFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			uint32_t variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
+
+	case DataType::FLOAT_RET_FUNC:{
+		const floatFnPtr f = reinterpret_cast<floatFnPtr>(_variable[number]);
+		if(f != nullptr)
+		{
+			const float variable = (f)();
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	}
 	default: { break; }
 
 	} //switch (_variableType)

@@ -63,6 +63,21 @@ Include file for LiquidMenu library.
 #warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
+typedef bool (*boolFnPtr)();
+typedef int8_t (*int8tFnPtr)();
+typedef uint8_t (*uint8tFnPtr)();
+typedef int16_t (*int16tFnPtr)();
+typedef uint16_t (*uint16tFnPtr)();
+typedef int32_t (*int32tFnPtr)();
+typedef uint32_t (*uint32tFnPtr)();
+typedef float (*floatFnPtr)();
+typedef double (*doubleFnPtr)();
+typedef char (*charFnPtr)();
+typedef char * (*charPtrFnPtr)();
+typedef const char * (*constcharPtrFnPtr)();
+
+
+const char LIQUIDMENU_VERSION[] = "1.3"; ///< The version of the library.
 const char LIQUIDMENU_VERSION[] = "1.4"; ///< The version of the library.
 
 /// Data type enum.
@@ -84,6 +99,17 @@ enum class DataType : uint8_t {
   CONST_CHAR_PTR = 62,
   PROG_CONST_CHAR_PTR = 65,
   GLYPH = 70,
+  BOOL_RET_FUNC = 101, BOOLEAN_RET_FUNC = 101,
+  INT8_T_RET_FUNC = 108,
+  UINT8_T_RET_FUNC = 109, BYTE_RET_FUNC = 109,
+  INT16_T_RET_FUNC = 116,
+  UINT16_T_RET_FUNC = 117,
+  INT32_T_RET_FUNC = 132,
+  UINT32_T_RET_FUNC = 133,
+  FLOAT_RET_FUNC = 150, DOUBLE_RET_FUNC = 150,
+  CHAR_RET_FUNC = 160,
+  CHAR_PTR_RET_FUNC = 161,
+  CONST_CHAR_PTR_RET_FUNC = 165
 };
 
 /// Position enum.
@@ -174,7 +200,91 @@ DataType recognizeType(float variable);
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(double variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(boolFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int8tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint8tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int16tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint16tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int32tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint32tFnPtr varible);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(floatFnPtr variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(doubleFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(charFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(charPtrFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(constcharPtrFnPtr variable);
 ///@}
+
 
 
 /// Prints the number passed to it in a specific way.
@@ -303,11 +413,11 @@ public:
     if (_variableCount < MAX_VARIABLES) {
       _variable[_variableCount] = (void*)&variable;
       _variableType[_variableCount] = recognizeType(variable);
-      DEBUG(F("Added variable '")); DEBUG(variable); DEBUGLN(F("'"));
+      DEBUG(F("Added variable '")); //DEBUG(variable); DEBUGLN(F("'"));
       _variableCount++;
       return true;
     }
-    DEBUG(F("Adding variable ")); DEBUG(variable);
+    DEBUG(F("Adding variable ")); //DEBUG(variable);
     DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more variables"));
     return false;
   }
@@ -804,6 +914,26 @@ public:
   */
   void update() const;
 
+  /// Prints the screen argument only if it's the active one
+  /**
+  @param p_liquidScreen - pointer to the screen
+
+  @note If p_liquidScreen is the current one, update() method is called.
+
+  @see void update() const
+  */
+  void updateIf(LiquidScreen &p_liquidScreen);
+
+  /// Prints the screen argument only if it's the current one
+  /**
+  @param number - number of the screen
+
+  @note If number is equals to the current one screen, update() method is called.
+
+  @see void update() const
+  */
+  void updateIf(uint8_t number);
+
   /// Prints the current screen to the display (without clearing).
   /**
   Call this method when there is a change in some of the variable attached
@@ -812,6 +942,34 @@ public:
   @note This method doesn't clear the display.
   */
   void softUpdate() const;
+
+  /// Prints the screen argument only if it's the active one
+  /**
+  @param p_liquidScreen - pointer to the screen
+
+  @note If p_liquidScreen is the current one, softUpdate() method is called.
+
+  @see void softUpdate() const
+  */
+  void softUpdateIf(LiquidScreen &p_liquidScreen);
+
+  /// Prints the screen argument only if it's the current one
+  /**
+  @param number - number of the screen
+
+  @note If number is equals to the current one screen, softUpdate() method is called.
+
+  @see void softUpdate() const
+  */
+  void softUpdateIf(uint8_t number);
+
+
+  /// Get the current LiquidScreen
+  /**
+   * Call this method to obtain a reference to the current screen
+   */
+  LiquidScreen * get_current_screen();
+
 
   /// Initializes the menu object.
   /**
