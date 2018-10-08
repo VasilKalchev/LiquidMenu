@@ -151,6 +151,10 @@ void loop() {
 
 ```
 
+Contributors
+============
+[Richard Wardlow](https://github.com/circuitsforfun) - Scrolling lines and configuring the number decimal places.
+
 Contributing
 ============
 See [CONTRIBUTING.md][contributing] for additional information.
