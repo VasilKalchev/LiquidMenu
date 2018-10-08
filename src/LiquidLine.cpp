@@ -50,9 +50,9 @@ bool LiquidLine::attach_function(uint8_t number, void (*function)(void)) {
 	}
 }
 
-void LiquidLine::set_decimal_places(uint8_t number)
+void LiquidLine::set_decimalPlaces(uint8_t decimalPlaces)
 {
-	_floatDecimalPlaces = number;
+	_floatDecimalPlaces = decimalPlaces;
 }
 
 bool LiquidLine::set_focusPosition(Position position, uint8_t column, uint8_t row) {

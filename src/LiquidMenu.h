@@ -28,14 +28,13 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.3.0
+@version 1.4.0
 @copyright The MIT License
 
 @todo: Change/Remove variables/screens/menus maybe
 @todo: screen wide glyphs
 @todo: dynamic memory
 @todo: variadic templates
-@todo: test LiquidLine.cpp 156 change
 */
 
 #pragma once
@@ -64,7 +63,7 @@ Include file for LiquidMenu library.
 #warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
-const char LIQUIDMENU_VERSION[] = "1.3"; ///< The version of the library.
+const char LIQUIDMENU_VERSION[] = "1.4"; ///< The version of the library.
 
 /// Data type enum.
 /**
@@ -220,7 +219,7 @@ public:
     for (uint8_t f = 0; f < MAX_FUNCTIONS; f++) {
       _function[f] = 0;
     }
-	_floatDecimalPlaces = 2;
+	  _floatDecimalPlaces = 2;
   }
 
   /// Constructor for one variable/constant.
@@ -233,7 +232,6 @@ public:
   LiquidLine(uint8_t column, uint8_t row, A &variableA)
     : LiquidLine(column, row) {
     add_variable(variableA);
-	_floatDecimalPlaces = 2;
   }
 
   /// Constructor for two variables/constants.
@@ -248,7 +246,6 @@ public:
              A &variableA, B &variableB)
     : LiquidLine(column, row, variableA) {
     add_variable(variableB);
-	_floatDecimalPlaces = 2;
   }
 
   /// Constructor for three variables/constants.
@@ -264,7 +261,6 @@ public:
              A &variableA, B &variableB, C &variableC)
     : LiquidLine(column, row, variableA, variableB) {
     add_variable(variableC);
-	_floatDecimalPlaces = 2;
   }
 
   /// Constructor for four variables/constants.
@@ -281,7 +277,6 @@ public:
              A &variableA, B &variableB, C &variableC, D &variableD)
     : LiquidLine(column, row, variableA, variableB, variableC) {
     add_variable(variableD);
-	_floatDecimalPlaces = 2;
   }
 
   ///@}
@@ -338,15 +333,12 @@ public:
   */
   bool attach_function(uint8_t number, void (*function)(void));
 
-  /// Set floating point decimal places for line variables
+  /// Sets the decimal places for floating point variables.
   /**
-  The number of decimal places to show on line for a float variable
 
-  @param number - number of decimal places to show for float variables
-  lines
-
+  @param decimalPlaces - number of decimal places to show
   */
-  void set_decimal_places(uint8_t number);
+  void set_decimalPlaces(uint8_t decimalPlaces);
 
   /// Configures the focus indicator position for the line.
   /**
@@ -527,14 +519,18 @@ public:
   */
   bool set_focusPosition(Position position);
 
-  /// Sets the max line display for menus with more lines than display has
+  /// Specifies the line size of the display (required for scrolling).
   /**
-  When adding more menu lines then the display has this will set the max
-  number so that the remaining lines can scroll.
+  This is required when you want to add more lines (LiquidLine
+  objects) to a screen (LiquidScreen object) than the display's line
+  size. The lines will be scrolled.
 
-  @param lines - max number of menu lines to display on the LCD
+  @param lineCount - the line size of the display
+
+  @warning Set this after adding all the "lines" to the "screen"!
+  @warning Scrolling currently only works with "focusable" lines!
   */
-  void set_max_line_display(uint8_t lines);
+  void set_displayLineCount(uint8_t lineCount);
 
   /// Hides the screen.
   /**
@@ -561,7 +557,7 @@ private:
   */
   void print(DisplayClass *p_liquidCrystal) const;
 
-  /// Switches the focus
+  /// Switches the focus.
   /**
   Switches the focus to the next or previous line
   according to the passed parameter.
@@ -585,8 +581,8 @@ private:
 
   LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
   uint8_t _lineCount; ///< Count of the LiquidLine objects
-  uint8_t _focus; ///< Number representing the focus position
-  uint8_t _maxLineDisplay;
+  uint8_t _focus; ///< Index of the focused line
+  uint8_t _displayLineCount; ///< The number of lines the display supports
   bool _hidden; ///< If hidden skips this screen when cycling
 };
 
