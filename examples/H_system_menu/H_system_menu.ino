@@ -4,7 +4,7 @@
  * This example demonstrates the how to build a menu system.
  *
  * Menu system is a collection of menus. To build a menu system
- * you need put the menus into an object of class LiquidSystem.
+ * you need to put the menus into an object of class LiquidSystem.
  * The methods used on LiquidMenu should now be called directly
  * on the LiquidSystem object. To switch between menus use the
  * bool LiquidSystem::change_menu(LiquidMenu &p_liquidMenu) method.
