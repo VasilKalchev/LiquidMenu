@@ -28,20 +28,21 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.3.0
+@version 1.4.0
 @copyright The MIT License
 
 @todo: Change/Remove variables/screens/menus maybe
 @todo: screen wide glyphs
 @todo: dynamic memory
 @todo: variadic templates
-@todo: test LiquidLine.cpp 156 change
 */
 
 #pragma once
 
 #include <stdint.h>
+#if defined(__AVR__)
 #include <avr/pgmspace.h>
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -62,7 +63,7 @@ Include file for LiquidMenu library.
 #warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
-const char LIQUIDMENU_VERSION[] = "1.3"; ///< The version of the library.
+const char LIQUIDMENU_VERSION[] = "1.4"; ///< The version of the library.
 
 /// Data type enum.
 /**
@@ -218,6 +219,7 @@ public:
     for (uint8_t f = 0; f < MAX_FUNCTIONS; f++) {
       _function[f] = 0;
     }
+	  _floatDecimalPlaces = 2;
   }
 
   /// Constructor for one variable/constant.
@@ -331,6 +333,13 @@ public:
   */
   bool attach_function(uint8_t number, void (*function)(void));
 
+  /// Sets the decimal places for floating point variables.
+  /**
+
+  @param decimalPlaces - number of decimal places to show
+  */
+  void set_decimalPlaces(uint8_t decimalPlaces);
+
   /// Configures the focus indicator position for the line.
   /**
   The valid positions are `LEFT`, `RIGHT` and `CUSTOM`. The `CUSTOM`
@@ -410,6 +419,7 @@ private:
 
   uint8_t _row, _column, _focusRow, _focusColumn;
   Position _focusPosition;
+  uint8_t _floatDecimalPlaces;
   uint8_t _variableCount; ///< Count of the variables
   void (*_function[MAX_FUNCTIONS])(void); ///< Pointers to the functions
   const void *_variable[MAX_VARIABLES]; ///< Pointers to the variables
@@ -509,6 +519,19 @@ public:
   */
   bool set_focusPosition(Position position);
 
+  /// Specifies the line size of the display (required for scrolling).
+  /**
+  This is required when you want to add more lines (LiquidLine
+  objects) to a screen (LiquidScreen object) than the display's line
+  size. The lines will be scrolled.
+
+  @param lineCount - the line size of the display
+
+  @warning Set this after adding all the "lines" to the "screen"!
+  @warning Scrolling currently only works with "focusable" lines!
+  */
+  void set_displayLineCount(uint8_t lineCount);
+
   /// Hides the screen.
   /**
   Hiding a screen means that it will be skipped when cycling the
@@ -534,7 +557,7 @@ private:
   */
   void print(DisplayClass *p_liquidCrystal) const;
 
-  /// Switches the focus
+  /// Switches the focus.
   /**
   Switches the focus to the next or previous line
   according to the passed parameter.
@@ -558,7 +581,8 @@ private:
 
   LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
   uint8_t _lineCount; ///< Count of the LiquidLine objects
-  uint8_t _focus; ///< Number representing the focus position
+  uint8_t _focus; ///< Index of the focused line
+  uint8_t _displayLineCount; ///< The number of lines the display supports
   bool _hidden; ///< If hidden skips this screen when cycling
 };
 

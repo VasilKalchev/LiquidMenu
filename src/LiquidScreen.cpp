@@ -61,6 +61,12 @@ bool LiquidScreen::add_line(LiquidLine &liquidLine) {
 		DEBUG(F("Added a new line (")); DEBUG(_lineCount); DEBUGLN(F(")"));
 		_lineCount++;
 		_focus++;
+		// Naively set the number of lines the display has to the
+		// number of added LiquidLine objects. When adding more
+        // LiquidLine objects that the display's number of lines,
+        // void LiquidScreen::set_displayLineCount(uint8_t lines)
+        // must be used to set the number of lines the display has.
+	    _displayLineCount = _lineCount;
 		return true;
 	}
 	DEBUG(F("Adding line ")); DEBUG(_lineCount);
@@ -82,12 +88,34 @@ bool LiquidScreen::set_focusPosition(Position position) {
 	}
 }
 
+void LiquidScreen::set_displayLineCount(uint8_t lines)
+{
+	_displayLineCount = lines;
+}
+
 void LiquidScreen::hide(bool hide) {
 	_hidden = hide;
 }
 
 void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
-	for (uint8_t l = 0; l < _lineCount; l++) {
+	uint8_t lOffset = 0;
+	uint8_t displayLineCount = _displayLineCount;
+	if (displayLineCount == 0)
+		displayLineCount = _lineCount;
+	else if (displayLineCount > _lineCount)
+		displayLineCount = _lineCount;
+	DEBUG("MaxLine: ");
+	DEBUG(displayLineCount);
+	DEBUG("\n");
+
+	if (_focus >= displayLineCount)
+	{
+		lOffset = (_focus - displayLineCount) + 1;
+		if ((displayLineCount + lOffset) > _lineCount)
+			lOffset = (_lineCount - displayLineCount);
+	}
+	uint8_t offsetRow = 0;
+	for (uint8_t l = lOffset; l < displayLineCount + lOffset; l++) {
 		bool focus = true;
 		if (_focus != l) {
 			focus = false;
@@ -96,7 +124,10 @@ void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 			DEBUG(F("|   -->"));
 		}
 		DEBUG(F("\tLine ")); DEBUG(l);
+		if (displayLineCount < _lineCount)
+			_p_liquidLine[l]->_row = offsetRow;
 		_p_liquidLine[l]->print(p_liquidCrystal, focus);
+		offsetRow++;
 	}
 }
 

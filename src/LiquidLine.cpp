@@ -50,6 +50,11 @@ bool LiquidLine::attach_function(uint8_t number, void (*function)(void)) {
 	}
 }
 
+void LiquidLine::set_decimalPlaces(uint8_t decimalPlaces)
+{
+	_floatDecimalPlaces = decimalPlaces;
+}
+
 bool LiquidLine::set_focusPosition(Position position, uint8_t column, uint8_t row) {
 	print_me(reinterpret_cast<uintptr_t>(this));
 	if (position <= Position::CUSTOM) {
@@ -207,7 +212,7 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 	case DataType::FLOAT: {
 		const float variable = *static_cast<const float*>(_variable[number]);
 		DEBUG(F("(float)")); DEBUG(variable);
-		p_liquidCrystal->print(variable);
+		p_liquidCrystal->print(variable, _floatDecimalPlaces);
 		break;
 	} //case FLOAT
 
