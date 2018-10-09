@@ -158,8 +158,8 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 		break;
 	} //case CONST_CHAR_PTR
 	case DataType::CHAR_PTR: {
-		char* variable = *reinterpret_cast<char**>( const_cast<void*>(_variable[number]) );
-		//char* variable = const_cast<char*>(reinterpret_cast<const char *>(_variable[number]));
+		//char* variable = *reinterpret_cast<char**>( const_cast<void*>(_variable[number]) );
+		char* variable = const_cast<char*>(reinterpret_cast<const char *>(_variable[number]));
 		DEBUG(F("(char*)")); DEBUG(variable);
 		p_liquidCrystal->print(variable);
 		break;
