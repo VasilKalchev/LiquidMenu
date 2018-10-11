@@ -76,8 +76,6 @@ typedef char (*charFnPtr)();
 typedef char * (*charPtrFnPtr)();
 typedef const char * (*constcharPtrFnPtr)();
 
-
-const char LIQUIDMENU_VERSION[] = "1.3"; ///< The version of the library.
 const char LIQUIDMENU_VERSION[] = "1.4"; ///< The version of the library.
 
 /// Data type enum.
