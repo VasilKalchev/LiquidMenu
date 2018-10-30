@@ -90,10 +90,10 @@ void setup() {
 
     // Attaching a function to the lines is required for scrolling to work.
     line1.attach_function(1, blankFunction);
-    line1.attach_function(1, blankFunction);
-    line1.attach_function(1, blankFunction);
-    line1.attach_function(1, blankFunction);
-    line1.attach_function(1, blankFunction);
+    line2.attach_function(1, blankFunction);
+    line3.attach_function(1, blankFunction);
+    line4.attach_function(1, blankFunction);
+    line5.attach_function(1, blankFunction);
 
     // Set the number of lines the display has.
     /*
