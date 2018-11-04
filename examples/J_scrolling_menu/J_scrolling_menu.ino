@@ -21,7 +21,7 @@
  * - LCD D7 pin to Arduino pin 2
  * - LCD R/W pin to ground
  * - LCD VSS pin to ground
- * - LCD VCC pin to 5V
+ * - LCD VDD pin to 5V
  * - 10k ohm potentiometer: ends to 5V and ground, wiper to LCD V0
  * - 150 ohm resistor from 5V to LCD Anode
  * - LCD Cathode to ground
@@ -90,10 +90,10 @@ void setup() {
 
     // Attaching a function to the lines is required for scrolling to work.
     line1.attach_function(1, blankFunction);
-    line1.attach_function(1, blankFunction);
-    line1.attach_function(1, blankFunction);
-    line1.attach_function(1, blankFunction);
-    line1.attach_function(1, blankFunction);
+    line2.attach_function(1, blankFunction);
+    line3.attach_function(1, blankFunction);
+    line4.attach_function(1, blankFunction);
+    line5.attach_function(1, blankFunction);
 
     // Set the number of lines the display has.
     /*

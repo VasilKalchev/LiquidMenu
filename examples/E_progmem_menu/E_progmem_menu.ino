@@ -26,7 +26,7 @@
  * - LCD D7 pin to Arduino pin 2
  * - LCD R/W pin to ground
  * - LCD VSS pin to ground
- * - LCD VCC pin to 5V
+ * - LCD VDD pin to 5V
  * - 10k ohm potentiometer: ends to 5V and ground, wiper to LCD V0
  * - 150 ohm resistor from 5V to LCD Anode
  * - LCD Cathode to ground
