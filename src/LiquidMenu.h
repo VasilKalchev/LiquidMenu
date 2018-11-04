@@ -97,17 +97,17 @@ enum class DataType : uint8_t {
   CONST_CHAR_PTR = 62,
   PROG_CONST_CHAR_PTR = 65,
   GLYPH = 70,
-  BOOL_RET_FUNC = 101, BOOLEAN_RET_FUNC = 101,
-  INT8_T_RET_FUNC = 108,
-  UINT8_T_RET_FUNC = 109, BYTE_RET_FUNC = 109,
-  INT16_T_RET_FUNC = 116,
-  UINT16_T_RET_FUNC = 117,
-  INT32_T_RET_FUNC = 132,
-  UINT32_T_RET_FUNC = 133,
-  FLOAT_RET_FUNC = 150, DOUBLE_RET_FUNC = 150,
-  CHAR_RET_FUNC = 160,
-  CHAR_PTR_RET_FUNC = 161,
-  CONST_CHAR_PTR_RET_FUNC = 165
+  BOOL_GETTER = 201, BOOLEAN_GETTER = 201,
+  INT8_T_GETTER = 208,
+  UINT8_T_GETTER = 209, BYTE_GETTER = 209,
+  INT16_T_GETTER = 216,
+  UINT16_T_GETTER = 217,
+  INT32_T_GETTER = 232,
+  UINT32_T_GETTER = 233,
+  FLOAT_GETTER = 240, DOUBLE_GETTER = 240,
+  CHAR_GETTER = 250,
+  CHAR_PTR_GETTER = 251,
+  CONST_CHAR_PTR_GETTER = 252
 };
 
 /// Position enum.
@@ -804,6 +804,14 @@ public:
   */
   bool add_screen(LiquidScreen &liquidScreen);
 
+  /// Returns a reference to the current screen.
+  /**
+  Call this method to obtain a reference to the current screen.
+
+  @returns a reference to the current screen.
+  */
+  LiquidScreen* get_currentScreen() const;
+
   /// Switches to the next screen.
   void next_screen();
 
@@ -922,7 +930,7 @@ public:
 
   /// Prints the current screen to the display.
   /**
-  Call this method when there is a change in some of the variable attached.
+  Call this method when there is a change in some of the attached variables.
   */
   void update() const;
 
@@ -934,15 +942,6 @@ public:
   @note This method doesn't clear the display.
   */
   void softUpdate() const;
-
-
-
-  /// Get the current LiquidScreen
-  /**
-   * Call this method to obtain a reference to the current screen
-   */
-  LiquidScreen * get_current_screen();
-
 
   /// Initializes the menu object.
   /**
@@ -1043,6 +1042,14 @@ public:
   @returns true on success and false if the menu is not found
   */
   bool change_menu(LiquidMenu &p_liquidMenu);
+
+  /// Returns a reference to the current screen.
+  /**
+  Call this method to obtain a reference to the current screen.
+
+  @returns a reference to the current screen.
+  */
+  LiquidScreen* get_currentScreen() const;
 
   /// Switches to the next screen.
   void next_screen();
