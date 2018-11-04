@@ -82,6 +82,10 @@ bool LiquidMenu::add_screen(LiquidScreen &liquidScreen) {
   return false;
 }
 
+LiquidScreen* LiquidMenu::get_currentScreen() const {
+  return _p_liquidScreen[_currentScreen];
+}
+
 void LiquidMenu::next_screen() {
   _p_liquidCrystal->clear();
   do {
@@ -152,7 +156,7 @@ bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
       return true;
     }
   }
-  DEBUG(F("Invalid request for screen change to ")); DEBUGLN(reinterpret_cast<uintptr_t>(&p_liquidScreen));
+  DEBUG(F("Invalid request for screen change to 0x")); DEBUGLN(reinterpret_cast<uintptr_t>(&p_liquidScreen));
   return false;
 }
 
@@ -224,18 +228,6 @@ void LiquidMenu::update() const {
   softUpdate();
 }
 
-void LiquidMenu::updateIf(LiquidScreen &p_liquidScreen) {
-  if (&p_liquidScreen == _p_liquidScreen[_currentScreen] ) {
-    update();
-  }
-}
-
-void LiquidMenu::updateIf(uint8_t number){
-  if(number == _currentScreen) {
-    update();
-  }
-}
-
 void LiquidMenu::softUpdate() const {
   DEBUGLN(F("Updating the LCD"));
   for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++) {
@@ -248,22 +240,6 @@ void LiquidMenu::softUpdate() const {
     DEBUG(F("-"));
   }
   DEBUGLN("\n");
-}
-
-void LiquidMenu::softUpdateIf(LiquidScreen &p_liquidScreen) {
-  if(&p_liquidScreen == _p_liquidScreen[_currentScreen] ){
-    softUpdate();
-  }
-}
-
-void LiquidMenu::softUpdateIf(uint8_t number) {
-  if(number == _currentScreen){
-    softUpdate();
-  }
-}
-
-LiquidScreen * LiquidMenu::get_current_screen() {
-  return _p_liquidScreen[_currentScreen];
 }
 
 void LiquidMenu::init() const {

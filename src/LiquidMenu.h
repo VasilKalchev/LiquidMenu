@@ -912,26 +912,6 @@ public:
   */
   void update() const;
 
-  /// Prints the screen argument only if it's the active one
-  /**
-  @param p_liquidScreen - pointer to the screen
-
-  @note If p_liquidScreen is the current one, update() method is called.
-
-  @see void update() const
-  */
-  void updateIf(LiquidScreen &p_liquidScreen);
-
-  /// Prints the screen argument only if it's the current one
-  /**
-  @param number - number of the screen
-
-  @note If number is equals to the current one screen, update() method is called.
-
-  @see void update() const
-  */
-  void updateIf(uint8_t number);
-
   /// Prints the current screen to the display (without clearing).
   /**
   Call this method when there is a change in some of the variable attached
@@ -941,25 +921,6 @@ public:
   */
   void softUpdate() const;
 
-  /// Prints the screen argument only if it's the active one
-  /**
-  @param p_liquidScreen - pointer to the screen
-
-  @note If p_liquidScreen is the current one, softUpdate() method is called.
-
-  @see void softUpdate() const
-  */
-  void softUpdateIf(LiquidScreen &p_liquidScreen);
-
-  /// Prints the screen argument only if it's the current one
-  /**
-  @param number - number of the screen
-
-  @note If number is equals to the current one screen, softUpdate() method is called.
-
-  @see void softUpdate() const
-  */
-  void softUpdateIf(uint8_t number);
 
 
   /// Get the current LiquidScreen
