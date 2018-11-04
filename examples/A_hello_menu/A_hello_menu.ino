@@ -7,7 +7,7 @@
  * The first screen shows some static text. The second screen
  * shows the reading of analog pin A1. To display a changing
  * variable on the LCD, simply put the variable in the LiquidLine
- * constructor. In this case the LiquidLine object is "analogReading_ine"
+ * constructor. In this case the LiquidLine object is "analogReading_line"
  * and the variable is "analogReading". This line is on the second
  * screen. The value of the analog pin is read every second and if
  * it has changed the display is updated with the new value. The
