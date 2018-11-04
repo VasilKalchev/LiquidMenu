@@ -86,6 +86,10 @@ bool LiquidSystem::change_menu(LiquidMenu &p_liquidMenu) {
 	return false;
 }
 
+LiquidScreen* LiquidSystem::get_currentScreen() const {
+	return _p_liquidMenu[_currentMenu]->get_currentScreen();
+}
+
 void LiquidSystem::next_screen() {
 	_p_liquidMenu[_currentMenu]->next_screen();
 }
