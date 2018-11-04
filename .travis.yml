@@ -38,3 +38,4 @@ script:
   - buildExampleSketch F_focus_menu
   - buildExampleSketch G_glyph_menu
   - buildExampleSketch H_system_menu
+  - buildExampleSketch K_getters_menu
