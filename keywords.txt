@@ -6,6 +6,8 @@
 # Datatypes (KEYWORD1)
 ########################################
 
+LiquidMenu	KEYWORD1	LiquidMenu
+
 # Enumerators
 DataType	KEYWORD1
 Position	KEYWORD1
