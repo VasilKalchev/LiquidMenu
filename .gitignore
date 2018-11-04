@@ -301,3 +301,5 @@ paket-files/
 .idea/
 *.sln.iml
 *.ini
+
+\.vscode/

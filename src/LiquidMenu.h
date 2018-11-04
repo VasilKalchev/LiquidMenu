@@ -63,6 +63,19 @@ Include file for LiquidMenu library.
 #warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
+typedef bool (*boolFnPtr)();
+typedef int8_t (*int8tFnPtr)();
+typedef uint8_t (*uint8tFnPtr)();
+typedef int16_t (*int16tFnPtr)();
+typedef uint16_t (*uint16tFnPtr)();
+typedef int32_t (*int32tFnPtr)();
+typedef uint32_t (*uint32tFnPtr)();
+typedef float (*floatFnPtr)();
+typedef double (*doubleFnPtr)();
+typedef char (*charFnPtr)();
+typedef char * (*charPtrFnPtr)();
+typedef const char * (*constcharPtrFnPtr)();
+
 const char LIQUIDMENU_VERSION[] = "1.4"; ///< The version of the library.
 
 /// Data type enum.
@@ -84,6 +97,17 @@ enum class DataType : uint8_t {
   CONST_CHAR_PTR = 62,
   PROG_CONST_CHAR_PTR = 65,
   GLYPH = 70,
+  BOOL_GETTER = 201, BOOLEAN_GETTER = 201,
+  INT8_T_GETTER = 208,
+  UINT8_T_GETTER = 209, BYTE_GETTER = 209,
+  INT16_T_GETTER = 216,
+  UINT16_T_GETTER = 217,
+  INT32_T_GETTER = 232,
+  UINT32_T_GETTER = 233,
+  FLOAT_GETTER = 240, DOUBLE_GETTER = 240,
+  CHAR_GETTER = 250,
+  CHAR_PTR_GETTER = 251,
+  CONST_CHAR_PTR_GETTER = 252
 };
 
 /// Position enum.
@@ -174,7 +198,91 @@ DataType recognizeType(float variable);
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(double variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(boolFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int8tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint8tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int16tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint16tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(int32tFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(uint32tFnPtr varible);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(floatFnPtr variable);
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(doubleFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(charFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(charPtrFnPtr variable);
+
+
+/**
+@param variable - variable to be checked
+@returns the data type in `DataType` enum format
+*/
+DataType recognizeType(constcharPtrFnPtr variable);
 ///@}
+
 
 
 /// Prints the number passed to it in a specific way.
@@ -303,11 +411,25 @@ public:
     if (_variableCount < MAX_VARIABLES) {
       _variable[_variableCount] = (void*)&variable;
       _variableType[_variableCount] = recognizeType(variable);
-      DEBUG(F("Added variable '")); DEBUG(variable); DEBUGLN(F("'"));
+#     if LIQUIDMENU_DEBUG
+        DEBUG(F("Added variable "));
+        // Check if the variable is actually a getter functions
+        // and don't diplay it if so.
+        if ((uint8_t)_variableType[_variableCount] < 200) { // 200+ are getters
+          DEBUG(reinterpret_cast<uintptr_t>(variable)); DEBUGLN(F(""));
+        }
+#     endif
       _variableCount++;
       return true;
     }
-    DEBUG(F("Adding variable ")); DEBUG(variable);
+#   if LIQUIDMENU_DEBUG
+      DEBUG(F("Adding variable "));
+      // Check if the variable is actually a getter functions
+      // and don't diplay it if so.
+      if ((uint8_t)_variableType[_variableCount] < 200) { // 200+ are getters
+        DEBUG(reinterpret_cast<uintptr_t>(variable));
+      }
+#   endif
     DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more variables"));
     return false;
   }
@@ -682,6 +804,14 @@ public:
   */
   bool add_screen(LiquidScreen &liquidScreen);
 
+  /// Returns a reference to the current screen.
+  /**
+  Call this method to obtain a reference to the current screen.
+
+  @returns a reference to the current screen.
+  */
+  LiquidScreen* get_currentScreen() const;
+
   /// Switches to the next screen.
   void next_screen();
 
@@ -800,7 +930,7 @@ public:
 
   /// Prints the current screen to the display.
   /**
-  Call this method when there is a change in some of the variable attached.
+  Call this method when there is a change in some of the attached variables.
   */
   void update() const;
 
@@ -912,6 +1042,14 @@ public:
   @returns true on success and false if the menu is not found
   */
   bool change_menu(LiquidMenu &p_liquidMenu);
+
+  /// Returns a reference to the current screen.
+  /**
+  Call this method to obtain a reference to the current screen.
+
+  @returns a reference to the current screen.
+  */
+  LiquidScreen* get_currentScreen() const;
 
   /// Switches to the next screen.
   void next_screen();

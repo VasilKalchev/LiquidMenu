@@ -82,6 +82,10 @@ bool LiquidMenu::add_screen(LiquidScreen &liquidScreen) {
   return false;
 }
 
+LiquidScreen* LiquidMenu::get_currentScreen() const {
+  return _p_liquidScreen[_currentScreen];
+}
+
 void LiquidMenu::next_screen() {
   _p_liquidCrystal->clear();
   do {
@@ -152,7 +156,7 @@ bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
       return true;
     }
   }
-  DEBUG(F("Invalid request for screen change to ")); DEBUGLN(reinterpret_cast<uintptr_t>(&p_liquidScreen));
+  DEBUG(F("Invalid request for screen change to 0x")); DEBUGLN(reinterpret_cast<uintptr_t>(&p_liquidScreen));
   return false;
 }
 

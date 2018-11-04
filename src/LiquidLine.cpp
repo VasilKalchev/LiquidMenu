@@ -150,6 +150,7 @@ void LiquidLine::print(DisplayClass *p_liquidCrystal, bool isFocused) {
 void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 	switch (_variableType[number]) {
 
+    // Variables -----
 	case DataType::CONST_CHAR_PTR: {
 		const char* variable = reinterpret_cast<const char*>(_variable[number]);
 		DEBUG(F("(const char*)")); DEBUG(variable);
@@ -242,6 +243,119 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 		p_liquidCrystal->print(buffer);
 		break;
 	} //case PROG_CONST_CHAR_PTR
+    // ~Variables -----
+
+    // Getter functions -----
+	case DataType::CONST_CHAR_PTR_GETTER: {
+		const constcharPtrFnPtr getterFunction = reinterpret_cast<constcharPtrFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			const char * variable = (getterFunction)();
+		    DEBUG(F("(const char*)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case CONST_CHAR_PTR_GETTER
+
+	case DataType::CHAR_PTR_GETTER: {
+		const charPtrFnPtr getterFunction = reinterpret_cast<charPtrFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			char* variable = (getterFunction)();
+			DEBUG(F("(char*)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case CHAR_PTR_GETTER
+
+	case DataType::CHAR_GETTER: {
+		const charFnPtr getterFunction = reinterpret_cast<charFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			char variable = (getterFunction)();
+			DEBUG(F("(char)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case CHAR_GETTER
+
+	case DataType::INT8_T_GETTER: {
+		const int8tFnPtr getterFunction = reinterpret_cast<int8tFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			int8_t variable = (getterFunction)();
+			DEBUG(F("(int8_t)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case INT8_T_GETTER
+
+	case DataType::UINT8_T_GETTER: {
+		const uint8tFnPtr getterFunction = reinterpret_cast<uint8tFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			uint8_t variable = (getterFunction)();
+			DEBUG(F("(uint8_t)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case UINT8_T_GETTER
+
+	case DataType::INT16_T_GETTER: {
+		const int16tFnPtr getterFunction = reinterpret_cast<int16tFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			int16_t variable = (getterFunction)();
+			DEBUG(F("(int16_t)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case INT16_T_GETTER
+
+	case DataType::UINT16_T_GETTER: {
+		const uint16tFnPtr getterFunction = reinterpret_cast<uint16tFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			uint16_t variable = (getterFunction)();
+			DEBUG(F("(uint16_t)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case UINT16_T_GETTER
+
+	case DataType::INT32_T_GETTER: {
+		const int32tFnPtr getterFunction = reinterpret_cast<int32tFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			int32_t variable = (getterFunction)();
+			DEBUG(F("(int32_t)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case INT32_T_GETTER
+
+	case DataType::UINT32_T_GETTER: {
+		const uint32tFnPtr getterFunction = reinterpret_cast<uint32tFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			uint32_t variable = (getterFunction)();
+			DEBUG(F("(uint32_t)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case UINT32_T_GETTER
+
+	case DataType::FLOAT_GETTER: {
+		const floatFnPtr getterFunction = reinterpret_cast<floatFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			const float variable = (getterFunction)();
+			DEBUG(F("(float)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case FLOAT_GETTER
+
+	case DataType::BOOL_GETTER: {
+		const boolFnPtr getterFunction = reinterpret_cast<boolFnPtr>(_variable[number]);
+		if (getterFunction != nullptr) {
+			bool variable = (getterFunction)();
+			DEBUG(F("(bool)")); DEBUG(variable);
+			p_liquidCrystal->print(variable);
+		} 
+		break;
+	} // case BOOL_GETTER
+    // ~Getter functions -----
 
 	default: { break; }
 
