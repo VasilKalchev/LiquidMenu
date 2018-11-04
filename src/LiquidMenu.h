@@ -411,11 +411,25 @@ public:
     if (_variableCount < MAX_VARIABLES) {
       _variable[_variableCount] = (void*)&variable;
       _variableType[_variableCount] = recognizeType(variable);
-      DEBUG(F("Added variable '")); //DEBUG(variable); DEBUGLN(F("'"));
+#     if LIQUIDMENU_DEBUG
+        DEBUG(F("Added variable "));
+        // Check if the variable is actually a getter functions
+        // and don't diplay it if so.
+        if ((uint8_t)_variableType[_variableCount] < 200) { // 200+ are getters
+          DEBUG(reinterpret_cast<uintptr_t>(variable)); DEBUGLN(F(""));
+        }
+#     endif
       _variableCount++;
       return true;
     }
-    DEBUG(F("Adding variable ")); //DEBUG(variable);
+#   if LIQUIDMENU_DEBUG
+      DEBUG(F("Adding variable "));
+      // Check if the variable is actually a getter functions
+      // and don't diplay it if so.
+      if ((uint8_t)_variableType[_variableCount] < 200) { // 200+ are getters
+        DEBUG(reinterpret_cast<uintptr_t>(variable));
+      }
+#   endif
     DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more variables"));
     return false;
   }
