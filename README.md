@@ -191,6 +191,6 @@ SOFTWARE.
 [doxygen classes]: https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
 [examples]: /examples
 [latest release]: https://github.com/VaSe7u/LiquidMenu/releases/latest
-[code_of_conduct]: /CODE_OF_CONDUCT.md
-[contributing]: /CONTRIBUTING.md
+[code_of_conduct]: /.github/CODE_OF_CONDUCT.md
+[contributing]: /.github/CONTRIBUTING.md
 [wiki]: 404
