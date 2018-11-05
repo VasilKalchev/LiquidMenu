@@ -154,6 +154,7 @@ void loop() {
 Contributors
 ============
 [Richard Wardlow](https://github.com/circuitsforfun) - Scrolling lines and configuring the number decimal places.
+
 [Jose Manuel](https://github.com/jmpmscorp) - Getter functions in "lines".
 
 See [CONTRIBUTING.md][contributing] if you want to contribute.
