@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init',['init',['../class_liquid_menu.html#ac1afbdecb999988469894a8afd14f100',1,'LiquidMenu']]]
+  ['hide',['hide',['../class_liquid_screen.html#a99ca6b93fc5af199f50ce86421adbd49',1,'LiquidScreen']]]
 ];

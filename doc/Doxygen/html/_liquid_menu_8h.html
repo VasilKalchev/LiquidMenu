@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LiquidMenu
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Menu creation Arduino library for LCDs, wraps LiquidCrystal.</div>
   </td>
@@ -71,6 +71,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -79,7 +80,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &lt;avr/pgmspace.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_liquid_menu__config_8h_source.html">LiquidMenu_config.h</a>&quot;</code><br />
@@ -109,6 +109,45 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DisplayClass</b>&#160;&#160;&#160;LiquidCrystal</td></tr>
 <tr class="separator:af538ae0bcc823e1e6c93bb317664fa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ae137b45e90dec8b22fd4360f11d07a4c"><td class="memItemLeft" align="right" valign="top"><a id="ae137b45e90dec8b22fd4360f11d07a4c"></a>
+typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>boolFnPtr</b>) ()</td></tr>
+<tr class="separator:ae137b45e90dec8b22fd4360f11d07a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20bcd56095f6b97154cd6c0d74da7fa"><td class="memItemLeft" align="right" valign="top"><a id="af20bcd56095f6b97154cd6c0d74da7fa"></a>
+typedef int8_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>int8tFnPtr</b>) ()</td></tr>
+<tr class="separator:af20bcd56095f6b97154cd6c0d74da7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa324a84a2f5b0e8b7227a517c596c951"><td class="memItemLeft" align="right" valign="top"><a id="aa324a84a2f5b0e8b7227a517c596c951"></a>
+typedef uint8_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>uint8tFnPtr</b>) ()</td></tr>
+<tr class="separator:aa324a84a2f5b0e8b7227a517c596c951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a990453b68184fcd416065eb975599280"><td class="memItemLeft" align="right" valign="top"><a id="a990453b68184fcd416065eb975599280"></a>
+typedef int16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>int16tFnPtr</b>) ()</td></tr>
+<tr class="separator:a990453b68184fcd416065eb975599280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3306251f8bde43658e8b690ea8603ba"><td class="memItemLeft" align="right" valign="top"><a id="af3306251f8bde43658e8b690ea8603ba"></a>
+typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>uint16tFnPtr</b>) ()</td></tr>
+<tr class="separator:af3306251f8bde43658e8b690ea8603ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45a64e2ece400a5ad3e079c68fdf061"><td class="memItemLeft" align="right" valign="top"><a id="af45a64e2ece400a5ad3e079c68fdf061"></a>
+typedef int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>int32tFnPtr</b>) ()</td></tr>
+<tr class="separator:af45a64e2ece400a5ad3e079c68fdf061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc06c1291726c88aea8fd905b276d43"><td class="memItemLeft" align="right" valign="top"><a id="a2dc06c1291726c88aea8fd905b276d43"></a>
+typedef uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>uint32tFnPtr</b>) ()</td></tr>
+<tr class="separator:a2dc06c1291726c88aea8fd905b276d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a690eddf2d9ab8350ef14ab2075b3f2e8"><td class="memItemLeft" align="right" valign="top"><a id="a690eddf2d9ab8350ef14ab2075b3f2e8"></a>
+typedef float(*&#160;</td><td class="memItemRight" valign="bottom"><b>floatFnPtr</b>) ()</td></tr>
+<tr class="separator:a690eddf2d9ab8350ef14ab2075b3f2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861c56bea15ee08de0956c5e3c98e4ac"><td class="memItemLeft" align="right" valign="top"><a id="a861c56bea15ee08de0956c5e3c98e4ac"></a>
+typedef double(*&#160;</td><td class="memItemRight" valign="bottom"><b>doubleFnPtr</b>) ()</td></tr>
+<tr class="separator:a861c56bea15ee08de0956c5e3c98e4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d876cc8d1f928ec572ea05a7a8bef22"><td class="memItemLeft" align="right" valign="top"><a id="a4d876cc8d1f928ec572ea05a7a8bef22"></a>
+typedef char(*&#160;</td><td class="memItemRight" valign="bottom"><b>charFnPtr</b>) ()</td></tr>
+<tr class="separator:a4d876cc8d1f928ec572ea05a7a8bef22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c2c233d310cdbe16e796d727ccc8d6"><td class="memItemLeft" align="right" valign="top"><a id="a00c2c233d310cdbe16e796d727ccc8d6"></a>
+typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><b>charPtrFnPtr</b>) ()</td></tr>
+<tr class="separator:a00c2c233d310cdbe16e796d727ccc8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d7ccb7b747113958f8872b52798bdf"><td class="memItemLeft" align="right" valign="top"><a id="a63d7ccb7b747113958f8872b52798bdf"></a>
+typedef const char *(*&#160;</td><td class="memItemRight" valign="bottom"><b>constcharPtrFnPtr</b>) ()</td></tr>
+<tr class="separator:a63d7ccb7b747113958f8872b52798bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a75e7df7c4007df61cf3716ba2d3ed8e3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> : uint8_t { <br />
@@ -132,7 +171,24 @@ Enumerations</h2></td></tr>
 <b>CONST_CHAR_PTR</b> = 62, 
 <b>PROG_CONST_CHAR_PTR</b> = 65, 
 <br />
-&#160;&#160;<b>GLYPH</b> = 70
+&#160;&#160;<b>GLYPH</b> = 70, 
+<b>BOOL_GETTER</b> = 201, 
+<b>BOOLEAN_GETTER</b> = 201, 
+<b>INT8_T_GETTER</b> = 208, 
+<br />
+&#160;&#160;<b>UINT8_T_GETTER</b> = 209, 
+<b>BYTE_GETTER</b> = 209, 
+<b>INT16_T_GETTER</b> = 216, 
+<b>UINT16_T_GETTER</b> = 217, 
+<br />
+&#160;&#160;<b>INT32_T_GETTER</b> = 232, 
+<b>UINT32_T_GETTER</b> = 233, 
+<b>FLOAT_GETTER</b> = 240, 
+<b>DOUBLE_GETTER</b> = 240, 
+<br />
+&#160;&#160;<b>CHAR_GETTER</b> = 250, 
+<b>CHAR_PTR_GETTER</b> = 251, 
+<b>CONST_CHAR_PTR_GETTER</b> = 252
 <br />
  }</td></tr>
 <tr class="memdesc:a75e7df7c4007df61cf3716ba2d3ed8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type enum.  <a href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">More...</a><br /></td></tr>
@@ -175,10 +231,34 @@ Functions</h2></td></tr>
 <tr class="separator:ac45dd4bd5e786b832365672d132179c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e9c539165d3299e9323880679aed2b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a7e9c539165d3299e9323880679aed2b5">recognizeType</a> (double variable)</td></tr>
 <tr class="separator:a7e9c539165d3299e9323880679aed2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e732087f8418bc7ce6c2a88b0da487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a22e732087f8418bc7ce6c2a88b0da487">recognizeType</a> (boolFnPtr variable)</td></tr>
+<tr class="separator:a22e732087f8418bc7ce6c2a88b0da487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0976b50103aad9cd912db8cedf21f29c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a0976b50103aad9cd912db8cedf21f29c">recognizeType</a> (int8tFnPtr variable)</td></tr>
+<tr class="separator:a0976b50103aad9cd912db8cedf21f29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1982d5bfdd66dd11737938c95edb3eff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a1982d5bfdd66dd11737938c95edb3eff">recognizeType</a> (uint8tFnPtr variable)</td></tr>
+<tr class="separator:a1982d5bfdd66dd11737938c95edb3eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f85547f7c56d8f934516857a7fcb26c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a8f85547f7c56d8f934516857a7fcb26c">recognizeType</a> (int16tFnPtr variable)</td></tr>
+<tr class="separator:a8f85547f7c56d8f934516857a7fcb26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35073b4c8084615829a3ebdaf0d7d55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#ae35073b4c8084615829a3ebdaf0d7d55">recognizeType</a> (uint16tFnPtr variable)</td></tr>
+<tr class="separator:ae35073b4c8084615829a3ebdaf0d7d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e29be587e443a62149dccf5a9c6fba0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a2e29be587e443a62149dccf5a9c6fba0">recognizeType</a> (int32tFnPtr variable)</td></tr>
+<tr class="separator:a2e29be587e443a62149dccf5a9c6fba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac446d341ec789ea0d1ab34746dd30952"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#ac446d341ec789ea0d1ab34746dd30952">recognizeType</a> (uint32tFnPtr varible)</td></tr>
+<tr class="separator:ac446d341ec789ea0d1ab34746dd30952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1587a043c522306130e05b4bccce2d35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a1587a043c522306130e05b4bccce2d35">recognizeType</a> (floatFnPtr variable)</td></tr>
+<tr class="separator:a1587a043c522306130e05b4bccce2d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcfe310e880e9e3ddf2df60ab82b61c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#abcfe310e880e9e3ddf2df60ab82b61c4">recognizeType</a> (doubleFnPtr variable)</td></tr>
+<tr class="separator:abcfe310e880e9e3ddf2df60ab82b61c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec659c68089d52adfa9984f8887ff92f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#aec659c68089d52adfa9984f8887ff92f">recognizeType</a> (charFnPtr variable)</td></tr>
+<tr class="separator:aec659c68089d52adfa9984f8887ff92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a965ddcf167bf7ef15cbbb73e674996a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a965ddcf167bf7ef15cbbb73e674996a5">recognizeType</a> (charPtrFnPtr variable)</td></tr>
+<tr class="separator:a965ddcf167bf7ef15cbbb73e674996a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4879d8416ebee70b1b879f902a720f42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a4879d8416ebee70b1b879f902a720f42">recognizeType</a> (constcharPtrFnPtr variable)</td></tr>
+<tr class="separator:a4879d8416ebee70b1b879f902a720f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7189c07575adbb1070c89dcd0ab5e272"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a7189c07575adbb1070c89dcd0ab5e272">LIQUIDMENU_VERSION</a> [] = &quot;1.3&quot;</td></tr>
+<tr class="memitem:a7189c07575adbb1070c89dcd0ab5e272"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a7189c07575adbb1070c89dcd0ab5e272">LIQUIDMENU_VERSION</a> [] = &quot;1.4&quot;</td></tr>
 <tr class="memdesc:a7189c07575adbb1070c89dcd0ab5e272"><td class="mdescLeft">&#160;</td><td class="mdescRight">The version of the library.  <a href="#a7189c07575adbb1070c89dcd0ab5e272">More...</a><br /></td></tr>
 <tr class="separator:a7189c07575adbb1070c89dcd0ab5e272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -186,13 +266,12 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Include file for <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> library.</p>
 <dl class="section author"><dt>Author</dt><dd>Vasil Kalchev </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2016 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.3.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.4.0 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>The MIT License</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">: Change/Remove variables/screens/menus maybe </p>
 <p>: screen wide glyphs </p>
 <p>: dynamic memory </p>
-<p>: variadic templates </p>
-<p class="enddd">: test <a class="el" href="_liquid_line_8cpp.html">LiquidLine.cpp</a> 156 change </p>
+<p class="enddd">: variadic templates </p>
 </dd></dl>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a75e7df7c4007df61cf3716ba2d3ed8e3"></a>
@@ -273,7 +352,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a43ce352b01d201ddd165bd97a4f5ad2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43ce352b01d201ddd165bd97a4f5ad2b">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[1/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ce352b01d201ddd165bd97a4f5ad2b">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[1/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -300,7 +379,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a04d964a8d66ae28694ccf4b4c3ce52b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04d964a8d66ae28694ccf4b4c3ce52b0">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[2/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d964a8d66ae28694ccf4b4c3ce52b0">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[2/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,7 +404,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="aa1cf70f0b1bd9584524ef64ac8e66abf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1cf70f0b1bd9584524ef64ac8e66abf">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[3/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1cf70f0b1bd9584524ef64ac8e66abf">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[3/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,7 +429,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a74b608075d81d8abaa1fa7c5d48a4b10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74b608075d81d8abaa1fa7c5d48a4b10">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[4/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b608075d81d8abaa1fa7c5d48a4b10">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[4/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,7 +454,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="af634ebc6d070aa138e952d625461f820"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af634ebc6d070aa138e952d625461f820">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[5/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af634ebc6d070aa138e952d625461f820">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[5/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,7 +479,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a80e35c6f2aa93d5476c89b055f10b356"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80e35c6f2aa93d5476c89b055f10b356">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[6/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a80e35c6f2aa93d5476c89b055f10b356">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[6/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -425,7 +504,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a590e5c1f32ef83e61025727da3dbbb89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a590e5c1f32ef83e61025727da3dbbb89">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[7/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a590e5c1f32ef83e61025727da3dbbb89">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[7/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +529,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a526070ad4ab89c55b059779d3c662e53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a526070ad4ab89c55b059779d3c662e53">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[8/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a526070ad4ab89c55b059779d3c662e53">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[8/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,7 +554,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a6e8a58ac97c790bf7887bd2d1774d6d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e8a58ac97c790bf7887bd2d1774d6d8">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[9/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8a58ac97c790bf7887bd2d1774d6d8">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[9/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +579,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ad8aa1ec079d64386c5060acc2beed9a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8aa1ec079d64386c5060acc2beed9a7">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[10/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8aa1ec079d64386c5060acc2beed9a7">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[10/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -525,7 +604,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ac45dd4bd5e786b832365672d132179c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac45dd4bd5e786b832365672d132179c5">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[11/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45dd4bd5e786b832365672d132179c5">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[11/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -550,7 +629,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a7e9c539165d3299e9323880679aed2b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e9c539165d3299e9323880679aed2b5">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[12/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9c539165d3299e9323880679aed2b5">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[12/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -574,6 +653,306 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a22e732087f8418bc7ce6c2a88b0da487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e732087f8418bc7ce6c2a88b0da487">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[13/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">boolFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="a0976b50103aad9cd912db8cedf21f29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0976b50103aad9cd912db8cedf21f29c">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[14/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">int8tFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="a1982d5bfdd66dd11737938c95edb3eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1982d5bfdd66dd11737938c95edb3eff">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[15/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">uint8tFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="a8f85547f7c56d8f934516857a7fcb26c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f85547f7c56d8f934516857a7fcb26c">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[16/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">int16tFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="ae35073b4c8084615829a3ebdaf0d7d55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35073b4c8084615829a3ebdaf0d7d55">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[17/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">uint16tFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="a2e29be587e443a62149dccf5a9c6fba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e29be587e443a62149dccf5a9c6fba0">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[18/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">int32tFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="ac446d341ec789ea0d1ab34746dd30952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac446d341ec789ea0d1ab34746dd30952">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[19/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">uint32tFnPtr&#160;</td>
+          <td class="paramname"><em>varible</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="a1587a043c522306130e05b4bccce2d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1587a043c522306130e05b4bccce2d35">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[20/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">floatFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="abcfe310e880e9e3ddf2df60ab82b61c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcfe310e880e9e3ddf2df60ab82b61c4">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[21/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">doubleFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="aec659c68089d52adfa9984f8887ff92f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec659c68089d52adfa9984f8887ff92f">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[22/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">charFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="a965ddcf167bf7ef15cbbb73e674996a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a965ddcf167bf7ef15cbbb73e674996a5">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[23/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">charPtrFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
+<a id="a4879d8416ebee70b1b879f902a720f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4879d8416ebee70b1b879f902a720f42">&#9670;&nbsp;</a></span>recognizeType() <span class="overload">[24/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_liquid_menu_8h.html#a75e7df7c4007df61cf3716ba2d3ed8e3">DataType</a> recognizeType </td>
+          <td>(</td>
+          <td class="paramtype">constcharPtrFnPtr&#160;</td>
+          <td class="paramname"><em>variable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>- variable to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the data type in <code>DataType</code> enum format </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a7189c07575adbb1070c89dcd0ab5e272"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7189c07575adbb1070c89dcd0ab5e272">&#9670;&nbsp;</a></span>LIQUIDMENU_VERSION</h2>
@@ -582,7 +961,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char LIQUIDMENU_VERSION[] = &quot;1.3&quot;</td>
+          <td class="memname">const char LIQUIDMENU_VERSION[] = &quot;1.4&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

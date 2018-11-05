@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hide',['hide',['../class_liquid_screen.html#a99ca6b93fc5af199f50ce86421adbd49',1,'LiquidScreen']]]
+  ['get_5fcurrentscreen',['get_currentScreen',['../class_liquid_menu.html#a42e776202652464ed489f21120198a2a',1,'LiquidMenu::get_currentScreen()'],['../class_liquid_system.html#a3a9e2d16877a774dbda4586e090a4b9f',1,'LiquidSystem::get_currentScreen()']]]
 ];

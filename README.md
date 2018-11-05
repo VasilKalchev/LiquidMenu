@@ -3,7 +3,7 @@
 *Menu creation Arduino library for LCDs, wraps [LiquidCrystal][lc].*
 
 [![Build Status](https://travis-ci.org/VaSe7u/LiquidMenu.svg?branch=master)](https://travis-ci.org/VaSe7u/LiquidMenu)
-[![release](https://img.shields.io/badge/release-1.3.0-yellow.svg)](https://github.com/VaSe7u/LiquidMenu/releases)
+[![release](https://img.shields.io/badge/release-1.4.0-yellow.svg)](https://github.com/VaSe7u/LiquidMenu/releases)
 [![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 

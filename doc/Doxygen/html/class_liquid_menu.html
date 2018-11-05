@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LiquidMenu
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Menu creation Arduino library for LCDs, wraps LiquidCrystal.</div>
   </td>
@@ -99,6 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0f914fb4eb461b03d10fb3ce713512ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_menu.html#a0f914fb4eb461b03d10fb3ce713512ec">add_screen</a> (<a class="el" href="class_liquid_screen.html">LiquidScreen</a> &amp;liquidScreen)</td></tr>
 <tr class="memdesc:a0f914fb4eb461b03d10fb3ce713512ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="class_liquid_screen.html" title="Represents a screen shown on the display. ">LiquidScreen</a> object to the menu.  <a href="#a0f914fb4eb461b03d10fb3ce713512ec">More...</a><br /></td></tr>
 <tr class="separator:a0f914fb4eb461b03d10fb3ce713512ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e776202652464ed489f21120198a2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_liquid_screen.html">LiquidScreen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_menu.html#a42e776202652464ed489f21120198a2a">get_currentScreen</a> () const</td></tr>
+<tr class="memdesc:a42e776202652464ed489f21120198a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the current screen.  <a href="#a42e776202652464ed489f21120198a2a">More...</a><br /></td></tr>
+<tr class="separator:a42e776202652464ed489f21120198a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6046bb5792ad188b25a5b0e2d7e27fc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_menu.html#a6046bb5792ad188b25a5b0e2d7e27fc0">next_screen</a> ()</td></tr>
 <tr class="memdesc:a6046bb5792ad188b25a5b0e2d7e27fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches to the next screen.  <a href="#a6046bb5792ad188b25a5b0e2d7e27fc0">More...</a><br /></td></tr>
 <tr class="separator:a6046bb5792ad188b25a5b0e2d7e27fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -534,6 +537,27 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>LiquidSystem</b></td
 
 </div>
 </div>
+<a id="a42e776202652464ed489f21120198a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e776202652464ed489f21120198a2a">&#9670;&nbsp;</a></span>get_currentScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_liquid_screen.html">LiquidScreen</a> * LiquidMenu::get_currentScreen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the current screen. </p>
+<p>Call this method to obtain a reference to the current screen.</p>
+<dl class="section return"><dt>Returns</dt><dd>a reference to the current screen. </dd></dl>
+
+</div>
+</div>
 <a id="ac1afbdecb999988469894a8afd14f100"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac1afbdecb999988469894a8afd14f100">&#9670;&nbsp;</a></span>init()</h2>
 
@@ -864,7 +888,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>LiquidSystem</b></td
 </div><div class="memdoc">
 
 <p>Prints the current screen to the display. </p>
-<p>Call this method when there is a change in some of the variable attached. </p>
+<p>Call this method when there is a change in some of the attached variables. </p>
 
 </div>
 </div>

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LiquidMenu
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Menu creation Arduino library for LCDs, wraps LiquidCrystal.</div>
   </td>
@@ -102,6 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b025aaf4ba5d0749aa828a303e64415"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_screen.html#a6b025aaf4ba5d0749aa828a303e64415">set_focusPosition</a> (<a class="el" href="_liquid_menu_8h.html#a67752aed4021e5d9f292a38f9df18ab2">Position</a> position)</td></tr>
 <tr class="memdesc:a6b025aaf4ba5d0749aa828a303e64415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the focus position for the whole screen at once.  <a href="#a6b025aaf4ba5d0749aa828a303e64415">More...</a><br /></td></tr>
 <tr class="separator:a6b025aaf4ba5d0749aa828a303e64415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0b6ae610e7e4d30ceec10bb35442a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_screen.html#a6a0b6ae610e7e4d30ceec10bb35442a6">set_displayLineCount</a> (uint8_t lineCount)</td></tr>
+<tr class="memdesc:a6a0b6ae610e7e4d30ceec10bb35442a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the line size of the display (required for scrolling).  <a href="#a6a0b6ae610e7e4d30ceec10bb35442a6">More...</a><br /></td></tr>
+<tr class="separator:a6a0b6ae610e7e4d30ceec10bb35442a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99ca6b93fc5af199f50ce86421adbd49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_screen.html#a99ca6b93fc5af199f50ce86421adbd49">hide</a> (bool hide)</td></tr>
 <tr class="memdesc:a99ca6b93fc5af199f50ce86421adbd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides the screen.  <a href="#a99ca6b93fc5af199f50ce86421adbd49">More...</a><br /></td></tr>
 <tr class="separator:a99ca6b93fc5af199f50ce86421adbd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -363,6 +366,36 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>LiquidMenu</b></td><
 <dl class="section see"><dt>See also</dt><dd>LiquidMenu::change_screen(LiquidScreen p_liquidScreen) </dd>
 <dd>
 <a class="el" href="class_liquid_menu.html#aa2da4a0f2c4406befe7f214e98ba5a48" title="Switches to the specified screen. ">LiquidMenu::change_screen(uint8_t number)</a> </dd></dl>
+
+</div>
+</div>
+<a id="a6a0b6ae610e7e4d30ceec10bb35442a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0b6ae610e7e4d30ceec10bb35442a6">&#9670;&nbsp;</a></span>set_displayLineCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LiquidScreen::set_displayLineCount </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>lineCount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specifies the line size of the display (required for scrolling). </p>
+<p>This is required when you want to add more lines (<a class="el" href="class_liquid_line.html" title="Represents the individual lines printed on the display. ">LiquidLine</a> objects) to a screen (<a class="el" href="class_liquid_screen.html" title="Represents a screen shown on the display. ">LiquidScreen</a> object) than the display's line size. The lines will be scrolled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineCount</td><td>- the line size of the display</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Set this after adding all the "lines" to the "screen"! </dd>
+<dd>
+Scrolling currently only works with "focusable" lines! </dd></dl>
 
 </div>
 </div>
