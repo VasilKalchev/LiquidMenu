@@ -153,7 +153,7 @@ void loop() {
 
 Contributors
 ============
-[Richard Wardlow](https://github.com/circuitsforfun) - Scrolling lines and configuring the number decimal places.
+[Richard Wardlow](https://github.com/circuitsforfun) - Scrolling lines and configuring the number of digits shown after the decimal point.
 
 [Jose Manuel](https://github.com/jmpmscorp) - Getter functions in "lines".
 
