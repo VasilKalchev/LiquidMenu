@@ -60,7 +60,9 @@ LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 const bool pullup = true;
 Button enter(10, pullup);
 
-LiquidLine line1(0, 0, 3.14159265f);
+const float pi = 3.14159265f;
+
+LiquidLine line1(0, 0, pi);
 LiquidLine line2(0, 1, "Line 2");
 LiquidLine line3(0, 1, "Line 3");
 LiquidLine line4(0, 1, "Line 4");
