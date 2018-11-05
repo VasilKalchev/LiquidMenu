@@ -14,3 +14,5 @@ If it's relevant include some steps to reproduce the behavior.
 
 **Version of the library**
 Please include the version of the library.
+
+Remember to use the labels.
