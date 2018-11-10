@@ -7,33 +7,28 @@
 [![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
-
 **LiquidMenu** wraps the Arduino's [LiquidCrystal][lc] library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
 
-
 Resources
 =========
- - [Examples][examples]
- - [API reference][doxygen classes]
- - [Latest release][latest release]
-
+- [Examples][examples]
+- [API reference][doxygen classes]
+- [Latest release][latest release]
 
 Features
 ========
- - Fast and easy menu creation.
- - Selectable menu items.
- - Callback functions.
- - I2C connection.
-
+- Fast and easy menu creation.
+- Selectable menu items.
+- Callback functions.
+- I2C connection.
 
 Requirements
 ============
- - The Arduino's [LiquidCrystal][lc] or similar library.
- - LCD supported by [LiquidCrystal][lc] (*with Hitachi HD44780 or a compatible chipset*).
- - Arduino board or a compatible microcontroller.
- - Input device is recommended (*buttons, rotary encoder, etc.*).
-
+- The Arduino's [LiquidCrystal][lc] or similar library.
+- LCD supported by [LiquidCrystal][lc] (*with Hitachi HD44780 or a compatible chipset*).
+- Arduino board or a compatible microcontroller.
+- Input device is recommended (*buttons, rotary encoder, etc.*).
 
 Quick start
 ===========
@@ -55,7 +50,6 @@ The **LiquidScreen** class represents a collection of **lines** that are shown t
 The **LiquidMenu** class combines the **screens** to form a **menu**. This class is used for controlling the **menu** (_switching **screens**, selecting **lines**, calling functions etc._).
 
 The **LiquidSystem** is an optional class that combines **menus** to form a **menu system** (*e.g. Main menu, Settings, etc.*). It has the same public interface as **LiquidMenu**.
-
 
 ### Creating a menu
 Menu creation is all about structure. First there are variables/constants that go into the **LiquidLine** objects. Then the **LiquidLine** objects go into the **LiquidScreen** objects. Then **LiquidScreen** objects go into the **LiquidMenu** object/s. And optionally the **LiquidMenu** objects go into the **LiquidSystem** object.
@@ -102,7 +96,6 @@ void LiquidMenu::call_function(byte number);
 The `number` specifies which one of the attached functions should be called.
 
 _Similar functions can be attached under the same number to different **lines** and then called on a similar events. For example if we are printing on the display the state of four LEDs. The four LEDs are instantiated in four **LiquidLine** objects with their name and their state. The functions used to turn them on can be attached under number 1 and the functions for turning them off - under number 2. Then if we have 3 buttons, one can be used to switch the focus, the second (say 'UP') button can be used to call function 1 and the third (say 'DOWN') button can be used to call function 2._
-
 
 ### Basic example
 ```c++
@@ -189,4 +182,3 @@ SOFTWARE.
 [latest release]: https://github.com/VaSe7u/LiquidMenu/releases/latest
 [code_of_conduct]: /.github/CODE_OF_CONDUCT.md
 [contributing]: /.github/CONTRIBUTING.md
-[wiki]: 404
