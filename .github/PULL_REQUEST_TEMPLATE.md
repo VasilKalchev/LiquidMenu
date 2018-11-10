@@ -4,7 +4,7 @@
 Please include a summary of the new functionality or the change with relevant motivation and context.
 
 ### Checklist
- - [ ] Descriptive pull request title
+- [ ] Descriptive pull request title
 - [ ] Well structured commits
 - [ ] Consistent style (for new functionality)
 - [ ] An example snippet or a full example (for new functionality)
