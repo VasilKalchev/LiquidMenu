@@ -1,5 +1,5 @@
 <map id="LiquidSystem::switch_focus" name="LiquidSystem::switch_focus">
-<area shape="rect" id="node2" href="$class_liquid_menu.html#a558e3573fca7d6774ada70709c1dc2c3" title="Switches the focus. " alt="" coords="213,5,359,49"/>
-<area shape="rect" id="node3" href="$class_liquid_menu.html#a4e21a10d5a03ff62f6b4704078fbb61f" title="Prints the current screen to the display. " alt="" coords="407,13,553,41"/>
-<area shape="rect" id="node4" href="$class_liquid_menu.html#ab143b64e34133fb1c0f1691cb628077c" title="Prints the current screen to the display (without clearing). " alt="" coords="601,13,775,41"/>
+<area shape="rect" id="node2" href="$class_liquid_menu.html#a558e3573fca7d6774ada70709c1dc2c3" title="Switches the focus. " alt="" coords="200,5,333,47"/>
+<area shape="rect" id="node3" href="$class_liquid_menu.html#af6935b3a7c65918abaf5594e7742af70" title="Prints the current screen to the display. " alt="" coords="381,13,516,39"/>
+<area shape="rect" id="node4" href="$class_liquid_menu.html#a506aa5f8822031096a881aed7c6e45e5" title="Prints the current screen to the display (without clearing). " alt="" coords="564,13,723,39"/>
 </map>

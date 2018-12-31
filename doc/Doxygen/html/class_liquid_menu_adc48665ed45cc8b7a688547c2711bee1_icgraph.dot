@@ -1,9 +1,0 @@
-digraph "LiquidMenu::call_function"
-{
-  edge [fontname="Helvetica",fontsize="11",labelfontname="Helvetica",labelfontsize="11"];
-  node [fontname="Helvetica",fontsize="11",shape=record];
-  rankdir="LR";
-  Node25 [label="LiquidMenu::call_function",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node25 -> Node26 [dir="back",color="midnightblue",fontsize="11",style="solid",fontname="Helvetica"];
-  Node26 [label="LiquidSystem::call\l_function",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_liquid_system.html#a2e7e880c6329b8dca59d019b6ea7d10a",tooltip="Calls an attached function specified by the number. "];
-}

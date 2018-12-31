@@ -1,0 +1,6 @@
+<map id="LiquidSystem::call_function" name="LiquidSystem::call_function">
+<area shape="rect" id="node2" href="$class_liquid_menu.html#adc48665ed45cc8b7a688547c2711bee1" title="Calls an attached function specified by the number. " alt="" coords="183,5,351,32"/>
+<area shape="rect" id="node5" href="$class_liquid_system.html#a7731917ccc713c153cdcaf3af9894fd7" title="Prints the current screen to the display. " alt="" coords="193,56,341,83"/>
+<area shape="rect" id="node3" href="$class_liquid_menu.html#af6935b3a7c65918abaf5594e7742af70" title="Prints the current screen to the display. " alt="" coords="399,31,533,57"/>
+<area shape="rect" id="node4" href="$class_liquid_menu.html#a506aa5f8822031096a881aed7c6e45e5" title="Prints the current screen to the display (without clearing). " alt="" coords="581,31,740,57"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="LiquidSystem::update" name="LiquidSystem::update">
+<area shape="rect" id="node2" href="$class_liquid_menu.html#af6935b3a7c65918abaf5594e7742af70" title="Prints the current screen to the display. " alt="" coords="201,5,336,32"/>
+<area shape="rect" id="node3" href="$class_liquid_menu.html#a506aa5f8822031096a881aed7c6e45e5" title="Prints the current screen to the display (without clearing). " alt="" coords="384,5,543,32"/>
+</map>
