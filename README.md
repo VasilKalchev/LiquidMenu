@@ -1,11 +1,11 @@
-![logo](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/Images/logo.png)
+![Logo][logo]
 
 *Menu creation Arduino library for LCDs, wraps [LiquidCrystal][lc].*
 
+[![Download](https://img.shields.io/badge/download-1.4.1-blue.svg?style=flat&logo=github&logoColor=white)](https://github.com/VaSe7u/LiquidMenu/archive/v1.4.1.zip)
 [![Build Status](https://travis-ci.org/VaSe7u/LiquidMenu.svg?branch=master)](https://travis-ci.org/VaSe7u/LiquidMenu)
-[![release](https://img.shields.io/badge/release-1.4.0-yellow.svg)](https://github.com/VaSe7u/LiquidMenu/releases)
-[![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/index.html)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
+[![documentation](https://img.shields.io/badge/docs-doxygen-orange.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/index.html)
+[![documentation](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://opensource.org/licenses/mit-license.php)
 
 **LiquidMenu** wraps the Arduino's [LiquidCrystal][lc] library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
@@ -150,7 +150,7 @@ Contributors
 
 [Jose Manuel](https://github.com/jmpmscorp) - Getter functions in "lines".
 
-See [CONTRIBUTING.md][contributing] if you want to contribute.
+For more information, please refer to the [CONTRIBUTING][contributing] guide.
 
 License
 =======
@@ -176,6 +176,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[logo]: /doc/Images/logo.png
 [lc]: https://github.com/arduino-libraries/LiquidCrystal
 [doxygen classes]: https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
 [examples]: /examples
