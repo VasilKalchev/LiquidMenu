@@ -1,9 +1,9 @@
-![logo](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/Images/logo.png)
+![Logo][logo]
 
 *Menu creation Arduino library for LCDs, wraps [LiquidCrystal][lc].*
 
 [![Build Status](https://travis-ci.org/VaSe7u/LiquidMenu.svg?branch=master)](https://travis-ci.org/VaSe7u/LiquidMenu)
-[![release](https://img.shields.io/badge/release-1.4.0-yellow.svg)](https://github.com/VaSe7u/LiquidMenu/releases)
+[![release](https://img.shields.io/badge/download-1.4.1-blue.svg?style=flat&logo=github&logoColor=white)](https://github.com/VaSe7u/LiquidMenu/releases)
 [![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/index.html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
 
@@ -176,6 +176,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[logo]: /doc/Images/logo.png
 [lc]: https://github.com/arduino-libraries/LiquidCrystal
 [doxygen classes]: https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
 [examples]: /examples
