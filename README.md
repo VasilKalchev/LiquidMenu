@@ -4,8 +4,8 @@
 
 [![Build Status](https://travis-ci.org/VaSe7u/LiquidMenu.svg?branch=master)](https://travis-ci.org/VaSe7u/LiquidMenu)
 [![release](https://img.shields.io/badge/download-1.4.1-blue.svg?style=flat&logo=github&logoColor=white)](https://github.com/VaSe7u/LiquidMenu/releases)
-[![documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/index.html)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://opensource.org/licenses/mit-license.php)
+[![documentation](https://img.shields.io/badge/docs-doxygen-orange.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/index.html)
+[![documentation](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://opensource.org/licenses/mit-license.php)
 
 **LiquidMenu** wraps the Arduino's [LiquidCrystal][lc] library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
