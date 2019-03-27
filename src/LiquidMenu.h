@@ -58,6 +58,7 @@ Include file for LiquidMenu library.
 #   include <LiquidCrystal_I2C.h>
 #   define DisplayClass LiquidCrystal_I2C
 #   pragma message ("LiquidMenu: Configured for I2C. Edit 'LiquidMenu_config.h' file to change it.")
+#  endif
 #else
 #  include <LiquidCrystal.h>
 #  define DisplayClass LiquidCrystal
