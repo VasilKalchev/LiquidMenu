@@ -10,6 +10,7 @@ used in the library, also configures the debugging messages.
 
 /// Switches the communication method to I2C
 #define I2C false ///< @note Default: false
+#define LCD_RUS false  ///< @note Default: false
 
 /// Configures the number of available variables per line.
 const uint8_t MAX_VARIABLES = 5; ///< @note Default: 5
