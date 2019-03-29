@@ -43,7 +43,7 @@ The library uses hierarchically structured classes to represent the different el
 *Click [here](https://github.com/VaSe7u/LiquidMenu/blob/master/doc/Images/diagram.png?raw=true) for a complete hierarchy diagram.*
 
 The **LiquidLine** class represents a **line** of text/numbers on the display.
-To create a new **LiquidLine** object use its constructor:
+To create a new **LiquidLine** object use its constructor.
 
 The **LiquidScreen** class represents a collection of **lines** that are shown together at the same time on the display (*i.e. "the current screen"*).
 
