@@ -8,9 +8,30 @@ used in the library, also configures the debugging messages.
 
 #pragma once
 
-/// Switches the communication method to I2C
-#define I2C false ///< @note Default: false
-#define LCD_RUS false  ///< @note Default: false
+/// These defines are used for determining the compiler messages:
+#define LiquidCrystal_LIBRARY (1)
+#define LiquidCrystal_I2C_LIBRARY (2)
+
+
+/// Select a "LiquidCrystal" library:
+/// ---------------------------------
+
+/// Arduino's parallel "LiquidCrystal" library:
+#define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY
+#include <LiquidCrystal.h>
+#define DisplayClass LiquidCrystal
+
+/// I2C library (https://github.com/johnrickman/LiquidCrystal_I2C):
+// #define LIQUIDMENU_LIBRARY LiquidCrystal_I2C_LIBRARY
+// #include <LiquidCrystal_I2C.h>
+// #define DisplayClass LiquidCrystal_I2C
+
+/// Some other library:
+// #include <LIBRARY_HEADER.h>
+// #define DisplayClass LIBRARY_CONSTRUCTOR
+
+/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 /// Configures the number of available variables per line.
 const uint8_t MAX_VARIABLES = 5; ///< @note Default: 5
