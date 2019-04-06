@@ -8,29 +8,53 @@ used in the library, also configures the debugging messages.
 
 #pragma once
 
-/// These defines are used for determining the compiler messages:
+/*!
+ * @name "LiquidCrystal" libraries enumeration.
+ * These defines are used for determining the compiler messages.
+ * @{
+ */
 #define LiquidCrystal_LIBRARY (1)
 #define LiquidCrystal_I2C_LIBRARY (2)
+//!@}
 
 
-/// Select a "LiquidCrystal" library:
-/// ---------------------------------
+// Select a "LiquidCrystal" library:
+// ---------------------------------
 
-/// Arduino's parallel "LiquidCrystal" library:
+/*!
+ * @name Select a "LiquidCrystal" library
+ * @{
+ */
+
+/*!
+ * @name Arduino's parallel "LiquidCrystal" library
+ * @{
+ */
 #define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY
 #include <LiquidCrystal.h>
 #define DisplayClass LiquidCrystal
+//!@}
 
-/// I2C library (https://github.com/johnrickman/LiquidCrystal_I2C):
+/*!
+ * @name I2C library
+ * @see https://github.com/johnrickman/LiquidCrystal_I2C
+ * @{
+ */
 // #define LIQUIDMENU_LIBRARY LiquidCrystal_I2C_LIBRARY
 // #include <LiquidCrystal_I2C.h>
 // #define DisplayClass LiquidCrystal_I2C
+//!@}
 
-/// Some other library:
+/*!
+ * @name Some other library
+ * @{
+ */
 // #include <LIBRARY_HEADER.h>
 // #define DisplayClass LIBRARY_CONSTRUCTOR
+//!@}
+//!@}
 
-/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 /// Configures the number of available variables per line.

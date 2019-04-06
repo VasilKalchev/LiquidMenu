@@ -140,6 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adf9bc656e655c4deb098a334a09f53b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_system.html#adf9bc656e655c4deb098a334a09f53b8">set_focusSymbol</a> (<a class="el" href="_liquid_menu_8h.html#a67752aed4021e5d9f292a38f9df18ab2">Position</a> position, uint8_t symbol[8])</td></tr>
 <tr class="memdesc:adf9bc656e655c4deb098a334a09f53b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the focus indicator's symbol.  <a href="#adf9bc656e655c4deb098a334a09f53b8">More...</a><br /></td></tr>
 <tr class="separator:adf9bc656e655c4deb098a334a09f53b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159dfb1127b8ad06e15ee309676f4e1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_system.html#a159dfb1127b8ad06e15ee309676f4e1e">is_callable</a> (uint8_t number) const</td></tr>
+<tr class="memdesc:a159dfb1127b8ad06e15ee309676f4e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is an attached function at the specified number.  <a href="#a159dfb1127b8ad06e15ee309676f4e1e">More...</a><br /></td></tr>
+<tr class="separator:a159dfb1127b8ad06e15ee309676f4e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e7e880c6329b8dca59d019b6ea7d10a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_system.html#a2e7e880c6329b8dca59d019b6ea7d10a">call_function</a> (uint8_t number) const</td></tr>
 <tr class="memdesc:a2e7e880c6329b8dca59d019b6ea7d10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls an attached function specified by the number.  <a href="#a2e7e880c6329b8dca59d019b6ea7d10a">More...</a><br /></td></tr>
 <tr class="separator:a2e7e880c6329b8dca59d019b6ea7d10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -504,6 +507,35 @@ Public Member Functions</h2></td></tr>
 <p>Returns a reference to the current screen. </p>
 <p>Call this method to obtain a reference to the current screen.</p>
 <dl class="section return"><dt>Returns</dt><dd>a reference to the current screen. </dd></dl>
+
+</div>
+</div>
+<a id="a159dfb1127b8ad06e15ee309676f4e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159dfb1127b8ad06e15ee309676f4e1e">&#9670;&nbsp;</a></span>is_callable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LiquidSystem::is_callable </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if there is an attached function at the specified number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>- number of the function in the array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if there is a function at the specified number</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Function numbering starts from 1.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>bool <a class="el" href="class_liquid_line.html#a0d517f28006aa523b8c8753199d0bdac" title="Attaches a callback function to the line. ">LiquidLine::attach_function</a>(uint8_t number, void (*function)(void)) </dd></dl>
 
 </div>
 </div>

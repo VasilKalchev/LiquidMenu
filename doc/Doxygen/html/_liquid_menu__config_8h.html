@@ -75,16 +75,30 @@ $(function() {
 <div class="title">LiquidMenu_config.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;LiquidCrystal.h&gt;</code><br />
+</div>
 <p><a href="_liquid_menu__config_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a457a9aa93dbb216459873a30bdb4d84a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#a457a9aa93dbb216459873a30bdb4d84a">I2C</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:a457a9aa93dbb216459873a30bdb4d84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the communication method to I2C.  <a href="#a457a9aa93dbb216459873a30bdb4d84a">More...</a><br /></td></tr>
-<tr class="separator:a457a9aa93dbb216459873a30bdb4d84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11edb92ef250fa78df3d6627cf3f1658"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu__config_8h.html#a11edb92ef250fa78df3d6627cf3f1658">LIQUIDMENU_DEBUG</a>&#160;&#160;&#160;false</td></tr>
 <tr class="separator:a11edb92ef250fa78df3d6627cf3f1658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">"LiquidCrystal" libraries enumeration.</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>These defines are used for determining the compiler messages. </p>
+</div></td></tr>
+<tr class="memitem:a7af5476e358437291913f06a14ea4233"><td class="memItemLeft" align="right" valign="top"><a id="a7af5476e358437291913f06a14ea4233"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LiquidCrystal_LIBRARY</b>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:a7af5476e358437291913f06a14ea4233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfb23b89b18c0887d6a752f8f33e8c50"><td class="memItemLeft" align="right" valign="top"><a id="acfb23b89b18c0887d6a752f8f33e8c50"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LiquidCrystal_I2C_LIBRARY</b>&#160;&#160;&#160;(2)</td></tr>
+<tr class="separator:acfb23b89b18c0887d6a752f8f33e8c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Arduino's parallel "LiquidCrystal" library</div></td></tr>
+<tr class="memitem:a90d69f5d1d52a3aec1e64965498a82c7"><td class="memItemLeft" align="right" valign="top"><a id="a90d69f5d1d52a3aec1e64965498a82c7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LIQUIDMENU_LIBRARY</b>&#160;&#160;&#160;LiquidCrystal_LIBRARY</td></tr>
+<tr class="separator:a90d69f5d1d52a3aec1e64965498a82c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af538ae0bcc823e1e6c93bb317664fa3b"><td class="memItemLeft" align="right" valign="top"><a id="af538ae0bcc823e1e6c93bb317664fa3b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DisplayClass</b>&#160;&#160;&#160;LiquidCrystal</td></tr>
+<tr class="separator:af538ae0bcc823e1e6c93bb317664fa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -108,23 +122,6 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Configuration file for <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> library.</p>
 <p>Contains global constants the configure the size of some of the arrays used in the library, also configures the debugging messages. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a457a9aa93dbb216459873a30bdb4d84a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a457a9aa93dbb216459873a30bdb4d84a">&#9670;&nbsp;</a></span>I2C</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define I2C&#160;&#160;&#160;true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Switches the communication method to I2C. </p>
-<dl class="section note"><dt>Note</dt><dd>Default: false </dd></dl>
-
-</div>
-</div>
 <a id="a11edb92ef250fa78df3d6627cf3f1658"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11edb92ef250fa78df3d6627cf3f1658">&#9670;&nbsp;</a></span>LIQUIDMENU_DEBUG</h2>
 
