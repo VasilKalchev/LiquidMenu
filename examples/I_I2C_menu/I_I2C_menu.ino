@@ -96,7 +96,7 @@ void setup() {
   lcd.init();
   lcd.backlight();
 
-  // This methid needs to be called when using an I2C display library.
+  // Menu initialization.
   menu.init();
 
   // This is the method used to add a screen object to the menu.
