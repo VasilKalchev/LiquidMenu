@@ -143,6 +143,10 @@ bool LiquidSystem::set_focusSymbol(Position position, uint8_t symbol[8]) {
 }
 
 bool LiquidSystem::call_function(uint8_t number) const {
+	return _p_liquidMenu[_currentMenu]->call_function(number);
+}
+
+bool LiquidSystem::call_function(uint8_t number) const {
 	bool returnValue = _p_liquidMenu[_currentMenu]->call_function(number);
 	_p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
 	update();

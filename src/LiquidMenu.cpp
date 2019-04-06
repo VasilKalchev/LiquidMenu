@@ -212,6 +212,10 @@ bool LiquidMenu::set_focusSymbol(Position position, uint8_t symbol[8]) {
   return true;
 }
 
+bool LiquidMenu::is_callable(uint8_t number) const {
+  return _p_liquidScreen[_currentScreen]->is_callable(number);
+}
+
 bool LiquidMenu::call_function(uint8_t number) const {
   bool returnValue = _p_liquidScreen[_currentScreen]->call_function(number);
   update();

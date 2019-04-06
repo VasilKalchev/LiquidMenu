@@ -528,6 +528,17 @@ private:
   */
   void print_variable(DisplayClass *p_liquidCrystal, uint8_t number);
 
+  /// Check if there is an attached function at the specified number.
+  /**
+  @param number - number of the function in the array
+  @returns true if there is a function at the specified number
+
+  @note Function numbering starts from 1.
+
+  @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
+  */
+  bool is_callable(uint8_t number) const;
+
   /// Calls an attached function specified by the number.
   /**
   @param number - number identifying the function
@@ -688,6 +699,17 @@ private:
   */
   void switch_focus(bool forward = true);
 
+  /// Check if there is an attached function at the specified number.
+  /**
+  @param number - number of the function in the array
+  @returns true if there is a function at the specified number
+
+  @note Function numbering starts from 1.
+
+  @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
+  */
+  bool is_callable(uint8_t number) const;
+  
   /// Calls an attached function specified by the number.
   /**
   Calls the function specified by the number argument for the focused line.
@@ -913,6 +935,17 @@ public:
   @see Position
   */
   bool set_focusSymbol(Position position, uint8_t symbol[8]);
+
+  /// Check if there is an attached function at the specified number.
+  /**
+  @param number - number of the function in the array
+  @returns true if there is a function at the specified number
+
+  @note Function numbering starts from 1.
+
+  @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
+  */
+  bool is_callable(uint8_t number) const;
 
   /// Calls an attached function specified by the number.
   /**
@@ -1152,6 +1185,17 @@ public:
   @see Position
   */
   bool set_focusSymbol(Position position, uint8_t symbol[8]);
+
+  /// Check if there is an attached function at the specified number.
+  /**
+  @param number - number of the function in the array
+  @returns true if there is a function at the specified number
+
+  @note Function numbering starts from 1.
+
+  @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
+  */
+  bool is_callable(uint8_t number) const;
 
   /// Calls an attached function specified by the number.
   /**

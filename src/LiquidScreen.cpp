@@ -156,6 +156,13 @@ void LiquidScreen::switch_focus(bool forward) {
 	DEBUG(F("Focus switched to ")); DEBUGLN(_focus);
 }
 
+bool LiquidScreen::is_callable(uint8_t number) const {
+	if (_focus != _lineCount) {
+		return _p_liquidLine[_focus]->is_callable(number);
+	}
+	return false;
+}
+
 bool LiquidScreen::call_function(uint8_t number) const {
 	if (_focus != _lineCount) {
 		return _p_liquidLine[_focus]->call_function(number);
