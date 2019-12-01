@@ -138,7 +138,7 @@ bool LiquidSystem::set_focusedLine(uint8_t lineIndex) {
   return _p_liquidMenu[_currentMenu]->set_focusedLine(lineIndex);
 }
 
-uint8_t LiquidSystem::get_focusedLine() {
+uint8_t LiquidSystem::get_focusedLine() const {
   return _p_liquidMenu[_currentMenu]->get_focusedLine();
 }
 

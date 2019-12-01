@@ -173,7 +173,7 @@ bool LiquidMenu::set_focusedLine(uint8_t lineIndex) {
   return _p_liquidScreen[_currentScreen]->set_focusedLine(lineIndex);
 }
 
-uint8_t LiquidMenu::get_focusedLine() {
+uint8_t LiquidMenu::get_focusedLine() const {
   return _p_liquidScreen[_currentScreen]->get_focusedLine();
 }
 
