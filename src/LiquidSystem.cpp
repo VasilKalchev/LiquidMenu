@@ -134,6 +134,14 @@ void LiquidSystem::switch_focus(bool forward) {
 	_p_liquidMenu[_currentMenu]->switch_focus(forward);
 }
 
+bool LiquidSystem::set_focusedLine(uint8_t lineIndex) {
+  return _p_liquidMenu[_currentMenu]->set_focusedLine(lineIndex);
+}
+
+uint8_t LiquidSystem::get_focusedLine() {
+  return _p_liquidMenu[_currentMenu]->get_focusedLine();
+}
+
 bool LiquidSystem::set_focusPosition(Position position) {
 	return _p_liquidMenu[_currentMenu]->set_focusPosition(position);
 }

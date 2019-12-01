@@ -688,6 +688,19 @@ private:
   */
   void switch_focus(bool forward = true);
 
+  /// Directly select focused line.
+  /**
+  @param lineIndex - index of the focused line
+  @return true: on success, false: when the selected line doesn't exist or it isn't focusable
+  */
+  bool set_focusedLine(uint8_t lineIndex);
+
+  /// Get the index of the currently focused line.
+  /**
+  @returns the index of the currently focused line
+  */
+  uint8_t get_focusedLine();
+
   /// Calls an attached function specified by the number.
   /**
   Calls the function specified by the number argument for the focused line.
@@ -880,6 +893,19 @@ public:
   @param forward - true for forward, false for backward
   */
   void switch_focus(bool forward = true);
+  
+  /// Directly select focused line.
+  /**
+  @param lineIndex - index of the focused line
+  @return true: on success, false: when the selected line doesn't exist or it isn't focusable
+  */
+  bool set_focusedLine(uint8_t lineIndex);
+
+  /// Get the index of the currently focused line.
+  /**
+  @returns the index of the currently focused line
+  */
+  uint8_t get_focusedLine();
 
   /// Sets the focus position for the whole menu at once.
   /**
@@ -1120,6 +1146,19 @@ public:
   */
   void switch_focus(bool forward = true);
 
+  /// Directly select focused line.
+  /**
+  @param lineIndex - index of the focused line
+  @return true: on success, false: when the selected line doesn't exist or it isn't focusable
+  */
+  bool set_focusedLine(uint8_t lineIndex);
+
+  /// Get the index of the currently focused line.
+  /**
+  @returns the index of the currently focused line
+  */
+  uint8_t get_focusedLine();
+  
   /// Sets the focus position for the whole menu at once.
   /**
   The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid

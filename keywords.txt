@@ -44,6 +44,8 @@ set_asProgmem	KEYWORD2
 add_line	KEYWORD2
 set_focusPosition	KEYWORD2
 switch_focus	KEYWORD2
+set_focusedLine	KEYWORD2
+get_focusedLine	KEYWORD2
 hide	KEYWORD2
 
 # class LiquidMenu

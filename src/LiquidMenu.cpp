@@ -174,6 +174,14 @@ void LiquidMenu::switch_focus(bool forward) {
   update();
 }
 
+bool LiquidMenu::set_focusedLine(uint8_t lineIndex) {
+  return _p_liquidScreen[_currentScreen]->set_focusedLine(lineIndex);
+}
+
+uint8_t LiquidMenu::get_focusedLine() {
+  return _p_liquidScreen[_currentScreen]->get_focusedLine();
+}
+
 bool LiquidMenu::set_focusPosition(Position position) {
   print_me(reinterpret_cast<uintptr_t>(this));
   if (position == Position::CUSTOM) {
