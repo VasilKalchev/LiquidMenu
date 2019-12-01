@@ -363,6 +363,11 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 	DEBUG(F(" "));
 }
 
+bool LiquidLine::is_callable(uint8_t number) const {
+	if (_function[number - 1]) return true;
+	else return false;
+}
+
 bool LiquidLine::call_function(uint8_t number) const {
 	if (_function[number - 1]) {
 		(*_function[number - 1])();

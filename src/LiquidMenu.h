@@ -28,7 +28,7 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.4.0
+@version 1.5.0
 @copyright The MIT License
 
 @todo: Change/Remove variables/screens/menus maybe
@@ -49,19 +49,19 @@ Include file for LiquidMenu library.
 #include "LiquidMenu_config.h"
 #include "LiquidMenu_debug.h"
 
-#if I2C
-# include <LiquidCrystal_I2C.h>
-# define DisplayClass LiquidCrystal_I2C
-# pragma message ("LiquidMenu: Configured for I2C. Edit 'LiquidMenu_config.h' file to change it.")
+
+#if LIQUIDMENU_LIBRARY == LiquidCrystal_LIBRARY
+# pragma message ("LiquidMenu: Selected 'LiquidCrystal' (parallel) library. Edit 'LiquidMenu_config.h' file to change it.")
+#elif LIQUIDMENU_LIBRARY == LiquidCrystal_I2C_LIBRARY
+# pragma message ("LiquidMenu: Selected 'LiquidCrystal_I2C' (I2C) library. Edit 'LiquidMenu_config.h' file to change it.")
 #else
-# include <LiquidCrystal.h>
-# define DisplayClass LiquidCrystal
-# pragma message ("LiquidMenu: Configured for Parallel. Edit 'LiquidMenu_config.h' file to change it.")
+# pragma message ("LiquidMenu: Selected custom library. Edit 'LiquidMenu_config.h' file to change it.")
 #endif
 
 #if LIQUIDMENU_DEBUG
 # warning "LiquidMenu: Debugging messages are enabled."
 #endif
+
 
 typedef bool (*boolFnPtr)();
 typedef int8_t (*int8tFnPtr)();
@@ -76,7 +76,7 @@ typedef char (*charFnPtr)();
 typedef char * (*charPtrFnPtr)();
 typedef const char * (*constcharPtrFnPtr)();
 
-const char LIQUIDMENU_VERSION[] = "1.4"; ///< The version of the library.
+const char LIQUIDMENU_VERSION[] = "1.5"; ///< The version of the library.
 
 /// Data type enum.
 /**
@@ -86,7 +86,7 @@ enum class DataType : uint8_t {
   NOT_USED = 0,
   BOOL = 1, BOOLEAN = 1,
   INT8_T = 8,
-  UINT8_T = 9, BYTE = 9,
+  UINT8_T = 9,
   INT16_T = 16,
   UINT16_T = 17,
   INT32_T = 32,
@@ -528,6 +528,17 @@ private:
   */
   void print_variable(DisplayClass *p_liquidCrystal, uint8_t number);
 
+  /// Check if there is an attached function at the specified number.
+  /**
+  @param number - number of the function in the array
+  @returns true if there is a function at the specified number
+
+  @note Function numbering starts from 1.
+
+  @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
+  */
+  bool is_callable(uint8_t number) const;
+
   /// Calls an attached function specified by the number.
   /**
   @param number - number identifying the function
@@ -699,7 +710,18 @@ private:
   /**
   @returns the index of the currently focused line
   */
-  uint8_t get_focusedLine();
+  uint8_t get_focusedLine() const;
+
+  /// Check if there is an attached function at the specified number.
+  /**
+  @param number - number of the function in the array
+  @returns true if there is a function at the specified number
+
+  @note Function numbering starts from 1.
+
+  @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
+  */
+  bool is_callable(uint8_t number) const;
 
   /// Calls an attached function specified by the number.
   /**
@@ -905,7 +927,7 @@ public:
   /**
   @returns the index of the currently focused line
   */
-  uint8_t get_focusedLine();
+  uint8_t get_focusedLine() const;
 
   /// Sets the focus position for the whole menu at once.
   /**
@@ -939,6 +961,17 @@ public:
   @see Position
   */
   bool set_focusSymbol(Position position, uint8_t symbol[8]);
+
+  /// Check if there is an attached function at the specified number.
+  /**
+  @param number - number of the function in the array
+  @returns true if there is a function at the specified number
+
+  @note Function numbering starts from 1.
+
+  @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
+  */
+  bool is_callable(uint8_t number) const;
 
   /// Calls an attached function specified by the number.
   /**
@@ -1157,7 +1190,7 @@ public:
   /**
   @returns the index of the currently focused line
   */
-  uint8_t get_focusedLine();
+  uint8_t get_focusedLine() const;
   
   /// Sets the focus position for the whole menu at once.
   /**
@@ -1191,6 +1224,17 @@ public:
   @see Position
   */
   bool set_focusSymbol(Position position, uint8_t symbol[8]);
+
+  /// Check if there is an attached function at the specified number.
+  /**
+  @param number - number of the function in the array
+  @returns true if there is a function at the specified number
+
+  @note Function numbering starts from 1.
+
+  @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
+  */
+  bool is_callable(uint8_t number) const;
 
   /// Calls an attached function specified by the number.
   /**

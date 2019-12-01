@@ -165,8 +165,15 @@ bool LiquidScreen::set_focusedLine(uint8_t lineIndex) {
 	}
 }
 
-uint8_t LiquidScreen::get_focusedLine() {
+uint8_t LiquidScreen::get_focusedLine() const {
 	return _focus;
+}
+
+bool LiquidScreen::is_callable(uint8_t number) const {
+	if (_focus != _lineCount) {
+		return _p_liquidLine[_focus]->is_callable(number);
+	}
+	return false;
 }
 
 bool LiquidScreen::call_function(uint8_t number) const {

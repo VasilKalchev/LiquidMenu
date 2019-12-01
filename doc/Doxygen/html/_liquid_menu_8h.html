@@ -70,7 +70,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -84,7 +83,6 @@ $(function() {
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_liquid_menu__config_8h_source.html">LiquidMenu_config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_liquid_menu__debug_8h_source.html">LiquidMenu_debug.h</a>&quot;</code><br />
-<code>#include &lt;LiquidCrystal.h&gt;</code><br />
 </div>
 <p><a href="_liquid_menu_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -102,12 +100,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_liquid_system.html">LiquidSystem</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of menus forming a menu system.  <a href="class_liquid_system.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:af538ae0bcc823e1e6c93bb317664fa3b"><td class="memItemLeft" align="right" valign="top"><a id="af538ae0bcc823e1e6c93bb317664fa3b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DisplayClass</b>&#160;&#160;&#160;LiquidCrystal</td></tr>
-<tr class="separator:af538ae0bcc823e1e6c93bb317664fa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -157,37 +149,36 @@ Enumerations</h2></td></tr>
 <b>INT8_T</b> = 8, 
 <br />
 &#160;&#160;<b>UINT8_T</b> = 9, 
-<b>BYTE</b> = 9, 
 <b>INT16_T</b> = 16, 
 <b>UINT16_T</b> = 17, 
+<b>INT32_T</b> = 32, 
 <br />
-&#160;&#160;<b>INT32_T</b> = 32, 
-<b>UINT32_T</b> = 33, 
+&#160;&#160;<b>UINT32_T</b> = 33, 
 <b>FLOAT</b> = 50, 
 <b>DOUBLE</b> = 50, 
+<b>CHAR</b> = 60, 
 <br />
-&#160;&#160;<b>CHAR</b> = 60, 
-<b>CHAR_PTR</b> = 61, 
+&#160;&#160;<b>CHAR_PTR</b> = 61, 
 <b>CONST_CHAR_PTR</b> = 62, 
 <b>PROG_CONST_CHAR_PTR</b> = 65, 
+<b>GLYPH</b> = 70, 
 <br />
-&#160;&#160;<b>GLYPH</b> = 70, 
-<b>BOOL_GETTER</b> = 201, 
+&#160;&#160;<b>BOOL_GETTER</b> = 201, 
 <b>BOOLEAN_GETTER</b> = 201, 
 <b>INT8_T_GETTER</b> = 208, 
+<b>UINT8_T_GETTER</b> = 209, 
 <br />
-&#160;&#160;<b>UINT8_T_GETTER</b> = 209, 
-<b>BYTE_GETTER</b> = 209, 
+&#160;&#160;<b>BYTE_GETTER</b> = 209, 
 <b>INT16_T_GETTER</b> = 216, 
 <b>UINT16_T_GETTER</b> = 217, 
+<b>INT32_T_GETTER</b> = 232, 
 <br />
-&#160;&#160;<b>INT32_T_GETTER</b> = 232, 
-<b>UINT32_T_GETTER</b> = 233, 
+&#160;&#160;<b>UINT32_T_GETTER</b> = 233, 
 <b>FLOAT_GETTER</b> = 240, 
 <b>DOUBLE_GETTER</b> = 240, 
+<b>CHAR_GETTER</b> = 250, 
 <br />
-&#160;&#160;<b>CHAR_GETTER</b> = 250, 
-<b>CHAR_PTR_GETTER</b> = 251, 
+&#160;&#160;<b>CHAR_PTR_GETTER</b> = 251, 
 <b>CONST_CHAR_PTR_GETTER</b> = 252
 <br />
  }</td></tr>
@@ -258,7 +249,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7189c07575adbb1070c89dcd0ab5e272"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a7189c07575adbb1070c89dcd0ab5e272">LIQUIDMENU_VERSION</a> [] = &quot;1.4&quot;</td></tr>
+<tr class="memitem:a7189c07575adbb1070c89dcd0ab5e272"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_liquid_menu_8h.html#a7189c07575adbb1070c89dcd0ab5e272">LIQUIDMENU_VERSION</a> [] = &quot;1.5&quot;</td></tr>
 <tr class="memdesc:a7189c07575adbb1070c89dcd0ab5e272"><td class="mdescLeft">&#160;</td><td class="mdescRight">The version of the library.  <a href="#a7189c07575adbb1070c89dcd0ab5e272">More...</a><br /></td></tr>
 <tr class="separator:a7189c07575adbb1070c89dcd0ab5e272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -266,7 +257,7 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Include file for <a class="el" href="class_liquid_menu.html" title="Represents a collection of screens forming a menu. ">LiquidMenu</a> library.</p>
 <dl class="section author"><dt>Author</dt><dd>Vasil Kalchev </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2016 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.4.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.5.0 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>The MIT License</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">: Change/Remove variables/screens/menus maybe </p>
 <p>: screen wide glyphs </p>
@@ -961,7 +952,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char LIQUIDMENU_VERSION[] = &quot;1.4&quot;</td>
+          <td class="memname">const char LIQUIDMENU_VERSION[] = &quot;1.5&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

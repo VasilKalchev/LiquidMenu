@@ -2,10 +2,10 @@
 
 *Menu creation Arduino library for LCDs, wraps [LiquidCrystal][lc].*
 
-[![Download](https://img.shields.io/badge/download-1.4.1-blue.svg?style=flat&logo=github&logoColor=white)](https://github.com/VaSe7u/LiquidMenu/archive/v1.4.1.zip)
+[![Download](https://img.shields.io/badge/download-1.4.1-blue.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/VaSe7u/LiquidMenu/archive/v1.4.1.zip)
 [![Build Status](https://travis-ci.org/VaSe7u/LiquidMenu.svg?branch=master)](https://travis-ci.org/VaSe7u/LiquidMenu)
 [![documentation](https://img.shields.io/badge/docs-doxygen-orange.svg)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html)
-[![documentation](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://opensource.org/licenses/mit-license.php)
+[![license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://opensource.org/licenses/mit-license.php)
 
 **LiquidMenu** wraps the Arduino's [LiquidCrystal][lc] library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
@@ -43,7 +43,7 @@ The library uses hierarchically structured classes to represent the different el
 *Click [here](https://github.com/VaSe7u/LiquidMenu/blob/master/doc/Images/diagram.png?raw=true) for a complete hierarchy diagram.*
 
 The **LiquidLine** class represents a **line** of text/numbers on the display.
-To create a new **LiquidLine** object use its constructor:
+To create a new **LiquidLine** object use its constructor.
 
 The **LiquidScreen** class represents a collection of **lines** that are shown together at the same time on the display (*i.e. "the current screen"*).
 
