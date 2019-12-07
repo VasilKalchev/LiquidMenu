@@ -102,10 +102,9 @@ void setup() {
   menu.update();
   delay(1000);
   if (menu.get_currentScreen() == &welcome_screen) {
-    menu.change_screen(pot_screen);
+    menu.change_screen(&pot_screen);
     menu.update();
   }
-  menu.change_screen(&pot_screen);
 }
 
 void loop() {

@@ -118,7 +118,7 @@ bool LiquidSystem::change_screen(uint8_t number) {
 	return _p_liquidMenu[_currentMenu]->change_screen(number);
 }
 
-bool LiquidSystem::change_screen(LiquidScreen &p_liquidScreen) {
+bool LiquidSystem::change_screen(LiquidScreen *p_liquidScreen) {
 	return _p_liquidMenu[_currentMenu]->change_screen(p_liquidScreen);
 }
 
@@ -126,7 +126,7 @@ bool LiquidSystem::operator=(uint8_t number) {
 	return change_screen(number);
 }
 
-bool LiquidSystem::operator=(LiquidScreen &p_liquidScreen) {
+bool LiquidSystem::operator=(LiquidScreen *p_liquidScreen) {
 	return change_screen(p_liquidScreen);
 }
 

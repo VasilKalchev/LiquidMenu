@@ -843,7 +843,7 @@ public:
   /**
   Call this method to obtain a reference to the current screen.
 
-  @returns a reference to the current screen.
+  @returns a pointer to the current screen.
   */
   LiquidScreen* get_currentScreen() const;
 
@@ -882,7 +882,7 @@ public:
   @param *p_liquidScreen - pointer to the LiquidScreen object
   @returns true on success and false if the screen is not found
   */
-  bool change_screen(LiquidScreen &p_liquidScreen);
+  bool change_screen(LiquidScreen *p_liquidScreen);
 
   /// Switches to the specified screen.
   /**
@@ -897,7 +897,7 @@ public:
   @param &p_liquidScreen - pointer to the screen
   @returns true on success and false if the screen is not found
   */
-  bool operator=(LiquidScreen &p_liquidScreen);
+  bool operator=(LiquidScreen *p_liquidScreen);
 
   /// Switches to the specified screen.
   /**
@@ -1106,7 +1106,7 @@ public:
   /**
   Call this method to obtain a reference to the current screen.
 
-  @returns a reference to the current screen.
+  @returns a pointer to the current screen.
   */
   LiquidScreen* get_currentScreen() const;
 
@@ -1145,7 +1145,7 @@ public:
   @param *p_liquidScreen - pointer to the LiquidScreen object
   @returns true on success and false if the screen is not found
   */
-  bool change_screen(LiquidScreen &p_liquidScreen);
+  bool change_screen(LiquidScreen *p_liquidScreen);
 
   /// Switches to the specified screen.
   /**
@@ -1160,7 +1160,7 @@ public:
   @param &p_liquidScreen - pointer to the screen
   @returns true on success and false if the screen is not found
   */
-  bool operator=(LiquidScreen &p_liquidScreen);
+  bool operator=(LiquidScreen *p_liquidScreen);
 
   /// Switches to the specified screen.
   /**
