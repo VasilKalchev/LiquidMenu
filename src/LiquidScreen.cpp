@@ -136,9 +136,9 @@ void LiquidScreen::switch_focus(bool forward) {
 	print_me(reinterpret_cast<uintptr_t>(this));
 	do {
 		if (forward) {
-			if (_focus < _lineCount) {
+			if (_focus < _lineCount - 1) {
 				_focus++;
-				if (_focus == _lineCount) {
+				if (_focus == _lineCount - 1) {
 					break;
 				}
 			} else {
@@ -146,7 +146,7 @@ void LiquidScreen::switch_focus(bool forward) {
 			}
 		} else { //else (forward)
 			if (_focus == 0) {
-				_focus = _lineCount;
+				_focus = _lineCount - 1;
 				break;
 			} else {
 				_focus--;
