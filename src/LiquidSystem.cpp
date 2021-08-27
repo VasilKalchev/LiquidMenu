@@ -143,10 +143,16 @@ uint8_t LiquidSystem::get_focusedLine() const {
 }
 
 bool LiquidSystem::set_focusPosition(Position position) {
+    for(uint8_t m=0; m<_menuCount; m++) {
+        _p_liquidMenu[m]->set_focusPosition(position);
+    }
 	return _p_liquidMenu[_currentMenu]->set_focusPosition(position);
 }
 
 bool LiquidSystem::set_focusSymbol(Position position, uint8_t symbol[8]) {
+    for(uint8_t m=0; m<_menuCount; m++) {
+        _p_liquidMenu[m]->set_focusSymbol(position, symbol);
+    }
 	return _p_liquidMenu[_currentMenu]->set_focusSymbol(position, symbol);
 }
 
