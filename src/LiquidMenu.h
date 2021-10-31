@@ -694,6 +694,10 @@ private:
   /**
   Switches the focus to the next or previous line
   according to the passed parameter.
+  
+  @note After one iteration through the focusable lines is completed, the focus
+  indicator will hide for one step. To disable this behavior set
+  `LM_FOCUS_INDICATOR_GHOSTING` to false in `LiquiMenu_config.h`
 
   @param forward - true for forward, false for backward
   */

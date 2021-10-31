@@ -72,5 +72,15 @@ const uint8_t MAX_SCREENS = 14; ///< @note Default: 14
 /// Configures the number of available menus per menus system.
 const uint8_t MAX_MENUS = 8; ///< @note Default: 8
 
+/*!
+ * Enable/disable hiding the focus indicator.
+ * 
+ * When enabled the focus indicator will disappear for one step after
+ * completing an iteration through the focusable lines. When disabled the focus
+ * indicator will go from the last focusable line directly to the first
+ * focusable line without disappearing (i.e. it will be always visible).
+ */
+#define LM_FOCUS_INDICATOR_GHOSTING true ///< @note Default: true
+
 // Turns the debugging messages on or off.
 #define LIQUIDMENU_DEBUG false ///< @note Default: false
