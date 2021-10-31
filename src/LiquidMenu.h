@@ -989,7 +989,7 @@ public:
 
   @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
   */
-  bool call_function(uint8_t number) const;
+  bool call_function(uint8_t number, bool refresh = true) const;
 
   /// Prints the current screen to the display.
   /**

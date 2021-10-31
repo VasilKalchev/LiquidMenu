@@ -225,9 +225,11 @@ bool LiquidMenu::is_callable(uint8_t number) const {
   return _p_liquidScreen[_currentScreen]->is_callable(number);
 }
 
-bool LiquidMenu::call_function(uint8_t number) const {
+bool LiquidMenu::call_function(uint8_t number, bool refresh) const {
   bool returnValue = _p_liquidScreen[_currentScreen]->call_function(number);
-  update();
+  if (refresh) {
+    update();
+  }
   return returnValue;
 }
 
