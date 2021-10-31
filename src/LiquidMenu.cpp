@@ -138,11 +138,12 @@ bool LiquidMenu::change_screen(uint8_t number) {
   }
 }
 
-bool LiquidMenu::change_screen(LiquidScreen &p_liquidScreen) {
+bool LiquidMenu::change_screen(LiquidScreen *p_liquidScreen) {
   // _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
   for (uint8_t s = 0; s < _screenCount; s++) {
     _p_liquidCrystal->clear();
-    if (reinterpret_cast<uintptr_t>(&p_liquidScreen) == reinterpret_cast<uintptr_t>(&(*_p_liquidScreen[s]))) {
+    if (p_liquidScreen == _p_liquidScreen[s]) {
+    // if (reinterpret_cast<uintptr_t>(&p_liquidScreen) == reinterpret_cast<uintptr_t>(&(*_p_liquidScreen[s]))) {
       _currentScreen = s;
       update();
       DEBUG(F("Switched to screen ("));
@@ -159,7 +160,7 @@ bool LiquidMenu::operator=(uint8_t number) {
   return change_screen(number);
 }
 
-bool LiquidMenu::operator=(LiquidScreen &p_liquidScreen) {
+bool LiquidMenu::operator=(LiquidScreen *p_liquidScreen) {
   return change_screen(p_liquidScreen);
 }
 
@@ -167,6 +168,14 @@ void LiquidMenu::switch_focus(bool forward) {
   _p_liquidCrystal->clear();
   _p_liquidScreen[_currentScreen]->switch_focus(forward);
   update();
+}
+
+bool LiquidMenu::set_focusedLine(uint8_t lineIndex) {
+  return _p_liquidScreen[_currentScreen]->set_focusedLine(lineIndex);
+}
+
+uint8_t LiquidMenu::get_focusedLine() const {
+  return _p_liquidScreen[_currentScreen]->get_focusedLine();
 }
 
 bool LiquidMenu::set_focusPosition(Position position) {

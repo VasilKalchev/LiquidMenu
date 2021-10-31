@@ -694,10 +694,27 @@ private:
   /**
   Switches the focus to the next or previous line
   according to the passed parameter.
+  
+  @note After one iteration through the focusable lines is completed, the focus
+  indicator will hide for one step. To disable this behavior set
+  `LM_FOCUS_INDICATOR_GHOSTING` to false in `LiquiMenu_config.h`
 
   @param forward - true for forward, false for backward
   */
   void switch_focus(bool forward = true);
+
+  /// Directly select focused line.
+  /**
+  @param lineIndex - index of the focused line
+  @return true: on success, false: when the selected line doesn't exist or it isn't focusable
+  */
+  bool set_focusedLine(uint8_t lineIndex);
+
+  /// Get the index of the currently focused line.
+  /**
+  @returns the index of the currently focused line
+  */
+  uint8_t get_focusedLine() const;
 
   /// Check if there is an attached function at the specified number.
   /**
@@ -709,7 +726,7 @@ private:
   @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
   */
   bool is_callable(uint8_t number) const;
-  
+
   /// Calls an attached function specified by the number.
   /**
   Calls the function specified by the number argument for the focused line.
@@ -830,7 +847,7 @@ public:
   /**
   Call this method to obtain a reference to the current screen.
 
-  @returns a reference to the current screen.
+  @returns a pointer to the current screen.
   */
   LiquidScreen* get_currentScreen() const;
 
@@ -869,7 +886,7 @@ public:
   @param *p_liquidScreen - pointer to the LiquidScreen object
   @returns true on success and false if the screen is not found
   */
-  bool change_screen(LiquidScreen &p_liquidScreen);
+  bool change_screen(LiquidScreen *p_liquidScreen);
 
   /// Switches to the specified screen.
   /**
@@ -884,7 +901,7 @@ public:
   @param &p_liquidScreen - pointer to the screen
   @returns true on success and false if the screen is not found
   */
-  bool operator=(LiquidScreen &p_liquidScreen);
+  bool operator=(LiquidScreen *p_liquidScreen);
 
   /// Switches to the specified screen.
   /**
@@ -902,6 +919,19 @@ public:
   @param forward - true for forward, false for backward
   */
   void switch_focus(bool forward = true);
+  
+  /// Directly select focused line.
+  /**
+  @param lineIndex - index of the focused line
+  @return true: on success, false: when the selected line doesn't exist or it isn't focusable
+  */
+  bool set_focusedLine(uint8_t lineIndex);
+
+  /// Get the index of the currently focused line.
+  /**
+  @returns the index of the currently focused line
+  */
+  uint8_t get_focusedLine() const;
 
   /// Sets the focus position for the whole menu at once.
   /**
@@ -1080,7 +1110,7 @@ public:
   /**
   Call this method to obtain a reference to the current screen.
 
-  @returns a reference to the current screen.
+  @returns a pointer to the current screen.
   */
   LiquidScreen* get_currentScreen() const;
 
@@ -1119,7 +1149,7 @@ public:
   @param *p_liquidScreen - pointer to the LiquidScreen object
   @returns true on success and false if the screen is not found
   */
-  bool change_screen(LiquidScreen &p_liquidScreen);
+  bool change_screen(LiquidScreen *p_liquidScreen);
 
   /// Switches to the specified screen.
   /**
@@ -1134,7 +1164,7 @@ public:
   @param &p_liquidScreen - pointer to the screen
   @returns true on success and false if the screen is not found
   */
-  bool operator=(LiquidScreen &p_liquidScreen);
+  bool operator=(LiquidScreen *p_liquidScreen);
 
   /// Switches to the specified screen.
   /**
@@ -1153,6 +1183,19 @@ public:
   */
   void switch_focus(bool forward = true);
 
+  /// Directly select focused line.
+  /**
+  @param lineIndex - index of the focused line
+  @return true: on success, false: when the selected line doesn't exist or it isn't focusable
+  */
+  bool set_focusedLine(uint8_t lineIndex);
+
+  /// Get the index of the currently focused line.
+  /**
+  @returns the index of the currently focused line
+  */
+  uint8_t get_focusedLine() const;
+  
   /// Sets the focus position for the whole menu at once.
   /**
   The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid

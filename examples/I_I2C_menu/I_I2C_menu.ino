@@ -13,8 +13,8 @@
  *
  * The circuit:
  * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/I_I2C_menu/hello_menu.png
- * - PCF8574 module SDA to Arduino pin A5
- * - PCF8574 module SDL to Arduino pin A4
+ * - PCF8574 module SCL to Arduino pin A5
+ * - PCF8574 module SDA to Arduino pin A4
  * - PCF8574 module VCC to Arduino 5V
  * - PCF8574 module GND to Arduino GND
  *

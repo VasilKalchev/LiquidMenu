@@ -29,6 +29,14 @@ SOFTWARE.
 
 #include "LiquidMenu.h"
 
+#if LM_FOCUS_INDICATOR_GHOSTING == true
+	#define LM_LINE_COUNT_SUBTRAHEND (0)
+#elif LM_FOCUS_INDICATOR_GHOSTING == false
+	#define LM_LINE_COUNT_SUBTRAHEND (1)
+#else  // default to "ghosting"
+	#define LM_LINE_COUNT_SUBTRAHEND (0)
+#endif
+
 LiquidScreen::LiquidScreen()
 	: _lineCount(0), _focus(0), _hidden(false) {}
 
@@ -60,7 +68,11 @@ bool LiquidScreen::add_line(LiquidLine &liquidLine) {
 		_p_liquidLine[_lineCount] = &liquidLine;
 		DEBUG(F("Added a new line (")); DEBUG(_lineCount); DEBUGLN(F(")"));
 		_lineCount++;
+
+		// set the focus indicator equal to the amount of lines, which
+		// effectively makes it invisible on first run
 		_focus++;
+
 		// Naively set the number of lines the display has to the
 		// number of added LiquidLine objects. When adding more
         // LiquidLine objects that the display's number of lines,
@@ -134,11 +146,16 @@ void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 
 void LiquidScreen::switch_focus(bool forward) {
 	print_me(reinterpret_cast<uintptr_t>(this));
+
+	// LM_LINE_COUNT_SUBTRAHEND:
+	// 0 - "ghosting" is enabled
+	// 1 - "ghosting" is disabled
+	
 	do {
 		if (forward) {
-			if (_focus < _lineCount) {
+			if (_focus < (_lineCount - LM_LINE_COUNT_SUBTRAHEND)) {
 				_focus++;
-				if (_focus == _lineCount) {
+				if (_focus == (_lineCount - LM_LINE_COUNT_SUBTRAHEND)) {
 					break;
 				}
 			} else {
@@ -146,14 +163,28 @@ void LiquidScreen::switch_focus(bool forward) {
 			}
 		} else { //else (forward)
 			if (_focus == 0) {
-				_focus = _lineCount;
+				_focus = (_lineCount - LM_LINE_COUNT_SUBTRAHEND);
 				break;
 			} else {
 				_focus--;
 			}
 		} //else (forward)
 	} while (_p_liquidLine[_focus]->_focusable == false);
+
 	DEBUG(F("Focus switched to ")); DEBUGLN(_focus);
+}
+
+bool LiquidScreen::set_focusedLine(uint8_t lineIndex) {
+	if (lineIndex < _lineCount && _p_liquidLine[lineIndex]->_focusable == true) {
+		_focus = lineIndex;
+		return true;
+	} else {
+		return false;
+	}
+}
+
+uint8_t LiquidScreen::get_focusedLine() const {
+	return _focus;
 }
 
 bool LiquidScreen::is_callable(uint8_t number) const {
