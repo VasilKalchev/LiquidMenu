@@ -1,0 +1,15 @@
+on: [push, pull_request]
+  workflow_dispatch: true
+  repository_dispatch: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Lint
+        uses: arduino/arduino-lint-action@v1
+        with:
+          library-manager: update
+          compliance: strict

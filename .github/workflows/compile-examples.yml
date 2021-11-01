@@ -1,8 +1,16 @@
 name: "compile examples"
 
 on:
-  - push
-  - pull_request
+  push:
+    paths:
+      - ".github/workflows/compile-examples.yml"
+      - "examples/**"
+      - "src/**"
+  pull_request:
+    paths:
+      - ".github/workflows/compile-examples.yml"
+      - "examples/**"
+      - "src/**"
 
   - workflow_dispatch
 
@@ -47,10 +55,11 @@ jobs:
             - source-path: ./
             - name: LiquidCrystal
 
-#       - uses: actions/upload-artifact@v2
-#         with:
-#           name: sketches-reports
-#           path: sketches-reports
+      - name: Report
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sketches-reports
+          path: sketches-reports
         
   compile-i2c-examples:
     runs-on: ubuntu-latest
