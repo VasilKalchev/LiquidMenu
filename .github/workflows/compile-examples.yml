@@ -1,0 +1,28 @@
+name: "compile examples"
+
+on:
+  - push
+  - pull_request
+
+  - workflow_dispatch
+
+jobs:
+  compile-examples:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        fqbn:
+          - arduino:avr:uno
+          - arduino:avr:leonardo
+          
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: ${{ matrix.fqbn }}
+          sketch-paths: |
+            - ./examples/
+          libraries: |
+            - name: LiquidCrystal
