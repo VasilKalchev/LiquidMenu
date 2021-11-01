@@ -22,8 +22,16 @@ jobs:
       - uses: arduino/compile-sketches@v1
         with:
           fqbn: ${{ matrix.fqbn }}
+          enable-deltas-report: true
+          enable-warnings-report: true
           sketch-paths: |
             - ./examples/
           libraries: |
+            - source-path: ./
             - name: LiquidCrystal
-            - name: LiquidMenu
+            - name: LiquidCrystal_I2C.h
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: sketches-reports
+#           path: sketches-reports
+        
