@@ -31,7 +31,7 @@ jobs:
           
           cli-compile-flags: |
             - --build-property
-            - build.extra_flags="-DDisplayClass=\"LiquidCrystal_I2C\"" -DLIQUIDMENU_LIBRARY=2
+            - build.extra_flags=-DDisplayClass=LiquidCrystal_I2C -DLIQUIDMENU_LIBRARY=2
 #            - build.extra_flags="-DDisplayClass="LiquidCrystal_I2C""
 #            - compiler.cpp.extra_flags="-DDisplayClass="LiquidCrystal_I2C""
 #             "compiler.cpp.extra_flags=\"-DSSID=\"hello world\"\""
