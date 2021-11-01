@@ -8,15 +8,6 @@ used in the library, also configures the debugging messages.
 
 #pragma once
 
-/*!
- * @name "LiquidCrystal" libraries enumeration.
- * These defines are used for determining the compiler messages.
- * @{
- */
-#define LiquidCrystal_LIBRARY (1)
-#define LiquidCrystal_I2C_LIBRARY (2)
-//!@}
-
 
 // Select a "LiquidCrystal" library:
 // ---------------------------------
