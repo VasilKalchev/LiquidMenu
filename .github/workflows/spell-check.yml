@@ -16,5 +16,5 @@ jobs:
         uses: codespell-project/actions-codespell@master
         with:
           skip: ./doc/Doxygen/**,./doc/Doxygen/*
-          exclude_file: "./examples/E_progmem_menu/E_progmem_menu.ino:73"
-#          ignore_words_list: varius
+#          exclude_file: "./examples/E_progmem_menu/E_progmem_menu.ino"
+          ignore_words_list: varius
