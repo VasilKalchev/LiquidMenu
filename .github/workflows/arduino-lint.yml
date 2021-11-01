@@ -1,8 +1,16 @@
-on: 
-  - push
-  - pull_request
-  - workflow_dispatch
-  - repository_dispatch
+on:
+  push:
+    paths:
+      - ".github/workflows/compile-examples.yml"
+      - "examples/**"
+      - "src/**"
+  pull_request:
+    paths:
+      - ".github/workflows/compile-examples.yml"
+      - "examples/**"
+      - "src/**"
+  workflow_dispatch:
+  repository_dispatch:
 
 jobs:
   lint:
