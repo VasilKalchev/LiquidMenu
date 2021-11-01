@@ -33,7 +33,6 @@ jobs:
             - --build-property
             - build.extra_flags=-DDisplayClass=LiquidCrystal -DLIQUIDMENU_LIBRARY=1
           sketch-paths: |
-#            - ./examples/
             - ./examples/A_hello_menu
             - ./examples/B_serial_menu
             - ./examples/C_functions_menu
@@ -83,3 +82,4 @@ jobs:
           libraries: |
             - source-path: ./
             - source-url: https://github.com/johnrickman/LiquidCrystal_I2C.git
+            - name: LiquidCrystal
