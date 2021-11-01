@@ -26,3 +26,4 @@ jobs:
             - ./examples/
           libraries: |
             - name: LiquidCrystal
+            - name: LiquidMenu
