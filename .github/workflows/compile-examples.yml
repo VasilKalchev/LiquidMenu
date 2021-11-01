@@ -1,0 +1,60 @@
+name: "compile examples"
+
+on:
+  - push
+  - pull_request
+
+  - workflow_dispatch
+
+jobs:
+  compile-examples:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        fqbn:
+          - arduino:avr:uno
+#           - arduino:avr:leonardo
+#           - arduino:avr:mega:cpu=atmega2560
+          
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Compile
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: ${{ matrix.fqbn }}
+          enable-deltas-report: true
+          enable-warnings-report: true
+          cli-compile-flags: |
+            - --build-property
+            - build.extra_flags="-DDisplayClass="LiquidCrystal_I2C""
+#            - compiler.cpp.extra_flags="-DDisplayClass="LiquidCrystal_I2C""
+#             "compiler.cpp.extra_flags=\"-DSSID=\"hello world\"\""
+# arduino-cli compile -b arduino:avr:uno --build-property "build.extra_flags=\"-DMY_DEFINE=\"hello world\"\"" /home/user/Arduino/MySketch
+# arduino-cli compile -b arduino:avr:uno --build-property "build.extra_flags=-DPIN=2 \"-DMY_DEFINE=\"hello world\"\"" /home/user/Arduino/MySketch
+# arduino-cli compile -b arduino:avr:uno --build-property build.extra_flags=-DPIN=2 --build-property "compiler.cpp.extra_flags=\"-DSSID=\"hello world\"\"" /home/user/Arduino/MySketch
+#            - "build.extra_flags=\"-DDisplayClass=LiquidCrystal_I2C\""
+          sketch-paths: |
+            - ./examples/
+#            - buildExampleSketch A_hello_menu
+#            - buildExampleSketch B_serial_menu
+#            - buildExampleSketch C_functions_menu
+#            - buildExampleSketch D_buttons_menu
+#            - buildExampleSketch E_progmem_menu
+#            - buildExampleSketch F_focus_menu
+#            - buildExampleSketch G_glyph_menu
+#            - buildExampleSketch H_system_menu
+#            - buildExampleSketch J_scrolling_menu
+#            - buildExampleSketch K_getters_menu
+          libraries: |
+            - source-path: ./
+            - name: LiquidCrystal
+            - source-url: https://github.com/johnrickman/LiquidCrystal_I2C.git
+            
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: sketches-reports
+#           path: sketches-reports
+        
