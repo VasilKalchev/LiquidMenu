@@ -1,3 +1,5 @@
+name: Arduino lint
+
 on:
   push:
     paths:
