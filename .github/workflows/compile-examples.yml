@@ -29,7 +29,7 @@ jobs:
           libraries: |
             - source-path: ./
             - name: LiquidCrystal
-            - name: LiquidCrystal_I2C.h
+            - name: LiquidCrystal_I2C
 #       - uses: actions/upload-artifact@v2
 #         with:
 #           name: sketches-reports
