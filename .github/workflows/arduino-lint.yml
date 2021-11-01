@@ -1,6 +1,8 @@
-on: [push, pull_request]
-  workflow_dispatch: true
-  repository_dispatch: true
+on: 
+  - push
+  - pull_request
+  - workflow_dispatch
+  - repository_dispatch
 
 jobs:
   lint:
