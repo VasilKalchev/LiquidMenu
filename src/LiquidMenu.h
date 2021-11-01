@@ -248,7 +248,7 @@ DataType recognizeType(int32tFnPtr variable);
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
-DataType recognizeType(uint32tFnPtr varible);
+DataType recognizeType(uint32tFnPtr variable);
 
 
 /**
@@ -289,7 +289,7 @@ DataType recognizeType(constcharPtrFnPtr variable);
 
 /// Prints the number passed to it in a specific way.
 /**
-Used for convenience when printing the class's address for indentification.
+Used for convenience when printing the class's address for identification.
 
 @param address - number to be printed
 */
@@ -416,7 +416,7 @@ public:
 #     if LIQUIDMENU_DEBUG
         DEBUG(F("Added variable "));
         // Check if the variable is actually a getter functions
-        // and don't diplay it if so.
+        // and don't display it if so.
         if ((uint8_t)_variableType[_variableCount] < 200) { // 200+ are getters
           DEBUG(reinterpret_cast<uintptr_t>(variable)); DEBUGLN(F(""));
         }
