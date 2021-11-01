@@ -8,6 +8,7 @@ used in the library, also configures the debugging messages.
 
 #pragma once
 
+#include "LiquidMenu_const.h"
 
 // Select a "LiquidCrystal" library:
 // ---------------------------------
@@ -21,8 +22,10 @@ used in the library, also configures the debugging messages.
  * @name Arduino's parallel "LiquidCrystal" library
  * @{
  */
+#ifndef LIQUIDMENU_LIBRARY
 #define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY
-#include <LiquidCrystal.h>
+#endif
+// #include <LiquidCrystal.h>
 #ifndef DisplayClass
     #define DisplayClass LiquidCrystal
 #endif
@@ -33,7 +36,9 @@ used in the library, also configures the debugging messages.
  * @see https://github.com/johnrickman/LiquidCrystal_I2C
  * @{
  */
+// #ifndef LIQUIDMENU_LIBRARY
 // #define LIQUIDMENU_LIBRARY LiquidCrystal_I2C_LIBRARY
+// #endif
 // #include <LiquidCrystal_I2C.h>
 // #ifndef DisplayClass
 //     #define DisplayClass LiquidCrystal_I2C
