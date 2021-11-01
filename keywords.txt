@@ -42,7 +42,6 @@ set_asProgmem	KEYWORD2
 
 # class LiquidScreen
 add_line	KEYWORD2
-set_focusPosition	KEYWORD2
 switch_focus	KEYWORD2
 set_focusedLine	KEYWORD2
 get_focusedLine	KEYWORD2
@@ -53,9 +52,7 @@ add_screen	KEYWORD2
 next_screen	KEYWORD2
 previous_screen	KEYWORD2
 change_screen	KEYWORD2
-set_focusPosition	KEYWORD2
 set_focusSymbol	KEYWORD2
-call_function	KEYWORD2
 update	KEYWORD2
 softUpdate	KEYWORD2
 init	KEYWORD2
