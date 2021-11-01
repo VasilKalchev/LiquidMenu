@@ -427,7 +427,7 @@ public:
 #   if LIQUIDMENU_DEBUG
       DEBUG(F("Adding variable "));
       // Check if the variable is actually a getter functions
-      // and don't diplay it if so.
+      // and don't display it if so.
       if ((uint8_t)_variableType[_variableCount] < 200) { // 200+ are getters
         DEBUG(reinterpret_cast<uintptr_t>(variable));
       }
