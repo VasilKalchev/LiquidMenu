@@ -24,6 +24,9 @@ jobs:
           fqbn: ${{ matrix.fqbn }}
           enable-deltas-report: true
           enable-warnings-report: true
+          cli-compile-flags: |
+            - "-DDisplayClass=LiquidCrystal_I2C"
+            - "build.extra_flags=\"-DDisplayClass=\"LiquidCrystal_I2C\"\""
           sketch-paths: |
             - ./examples/
           libraries: |
