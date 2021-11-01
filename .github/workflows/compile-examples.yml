@@ -14,24 +14,39 @@ jobs:
       matrix:
         fqbn:
           - arduino:avr:uno
-          - arduino:avr:leonardo
+#           - arduino:avr:leonardo
+#           - arduino:avr:mega:cpu=atmega2560
           
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: arduino/compile-sketches@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Compile
+        uses: arduino/compile-sketches@v1
         with:
           fqbn: ${{ matrix.fqbn }}
           enable-deltas-report: true
           enable-warnings-report: true
           cli-compile-flags: |
-            - "build.extra_flags=\"-DDisplayClass=\"LiquidCrystal_I2C\"\""
+            - compiler.cpp.extra_flags="-DDisplayClass="LiquidCrystal_I2C""
+#            - "build.extra_flags=\"-DDisplayClass=LiquidCrystal_I2C\""
           sketch-paths: |
             - ./examples/
+#            - buildExampleSketch A_hello_menu
+#            - buildExampleSketch B_serial_menu
+#            - buildExampleSketch C_functions_menu
+#            - buildExampleSketch D_buttons_menu
+#            - buildExampleSketch E_progmem_menu
+#            - buildExampleSketch F_focus_menu
+#            - buildExampleSketch G_glyph_menu
+#            - buildExampleSketch H_system_menu
+#            - buildExampleSketch J_scrolling_menu
+#            - buildExampleSketch K_getters_menu
           libraries: |
             - source-path: ./
             - name: LiquidCrystal
             - source-url: https://github.com/johnrickman/LiquidCrystal_I2C.git
+            
 #       - uses: actions/upload-artifact@v2
 #         with:
 #           name: sketches-reports
