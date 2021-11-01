@@ -15,6 +15,4 @@ jobs:
       - name: Spell check
         uses: codespell-project/actions-codespell@master
         with:
-          skip:
-            ./doc/Doxygen/**
-            ./doc/Doxygen/*
+          skip: ./doc/Doxygen/**,./doc/Doxygen/*
