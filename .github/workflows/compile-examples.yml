@@ -1,4 +1,4 @@
-name: "compile examples"
+name: Compile examples
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
       - "examples/**"
       - "src/**"
 
-  - workflow_dispatch
+      - workflow_dispatch
 
 jobs:
   compile-parallel-examples:
