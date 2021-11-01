@@ -14,8 +14,8 @@ jobs:
       matrix:
         fqbn:
           - arduino:avr:uno
-          - arduino:avr:leonardo
-          - arduino:avr:mega:cpu=atmega2560
+#           - arduino:avr:leonardo
+#           - arduino:avr:mega:cpu=atmega2560
 
     steps:
       - name: Checkout
@@ -59,8 +59,8 @@ jobs:
       matrix:
         fqbn:
           - arduino:avr:uno
-          - arduino:avr:leonardo
-          - arduino:avr:mega:cpu=atmega2560
+#           - arduino:avr:leonardo
+#           - arduino:avr:mega:cpu=atmega2560
 
     steps:
       - name: Checkout
@@ -81,5 +81,5 @@ jobs:
             - ./examples/I_I2C_menu
           libraries: |
             - source-path: ./
-            - name: LiquidCrystal
             - source-url: https://github.com/johnrickman/LiquidCrystal_I2C.git
+            - name: LiquidCrystal
