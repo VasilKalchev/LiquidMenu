@@ -146,9 +146,11 @@ void loop() {
 
 Contributors
 ============
-[Richard Wardlow](https://github.com/circuitsforfun) - Scrolling lines and configuring the number of digits shown after the decimal point.
-
-[Jose Manuel](https://github.com/jmpmscorp) - Getter functions in "lines".
+ - [Richard Wardlow](https://github.com/circuitsforfun) - Scrolling lines and configuring the number of digits shown after the decimal point.
+ - [Jose Manuel](https://github.com/jmpmscorp) - Getter functions in "lines".
+ - [RobotGrrl](https://github.com/RobotGrrl) - Fixing bugs in `LiquidSystem`.
+ - [thijstriemstra](https://github.com/thijstriemstra) and [DarioMaechler](https://github.com/DarioMaechler) - Configurable focus indicator "ghosting".
+ - [per1234](https://github.com/per1234)
 
 For more information, please refer to the [CONTRIBUTING][contributing] guide.
 
