@@ -2,10 +2,11 @@
 
 *Menu creation Arduino library for LCDs, wraps [LiquidCrystal][lc].*
 
-[![download](https://img.shields.io/badge/download-1.5.1-blue.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/VaSe7u/LiquidMenu/archive/v1.5.1.zip)
+[![download](https://img.shields.io/badge/download-1.5.1-blue.svg?style=flat-square&logo=github&logoColor=white&color=1cb3e4)](https://github.com/VaSe7u/LiquidMenu/archive/v1.5.1.zip)
+[![documentation](https://img.shields.io/badge/docs-doxygen-blue.svg?style=flat-square)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html)
 [![gh_workflow](https://img.shields.io/github/workflow/status/vase7u/LiquidMenu/compile%20examples?label=build%20examples&style=flat-square)](https://github.com/VaSe7u/LiquidMenu/actions/workflows/compile-examples.yml)
-[![documentation](https://img.shields.io/badge/docs-doxygen-orange.svg?style=flat-square)](https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html)
-[![license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://opensource.org/licenses/mit-license.php)
+![lines of code](https://img.shields.io/tokei/lines/github.com/vase7u/liquidmenu?style=flat-square&color=orange)
+[![license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://choosealicense.com/licenses/mit/)
 
 **LiquidMenu** wraps the Arduino's [LiquidCrystal][lc] library with the ability to create menus.
 It simplifies the menu creation process by abstracting the elements of a menu into hierarchically organized classes.
