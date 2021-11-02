@@ -83,8 +83,12 @@ byte pinA5_value = 0;
 unsigned short sample_period = 2;
 
 // Text used for indication for the save lines.
-char* input_saved;
-char* output_saved;
+char input_saved[3];
+char output_saved[3];
+
+char string_saved[] = " *";
+char string_notSaved[] = "  ";
+
 
 enum FunctionTypes {
   increase = 1,
@@ -178,7 +182,7 @@ void increase_pin6() {
     pin6_level = 250;
   }
   analogWrite(pin6, pin6_level);
-  output_saved = (char*)"  ";
+  strncpy(output_saved, string_notSaved, sizeof(string_notSaved));
 }
 
 void decrease_pin6() {
@@ -188,30 +192,30 @@ void decrease_pin6() {
     pin6_level = 0;
   }
   analogWrite(pin6, pin6_level);
-  output_saved = (char*)"  ";
+  strncpy(output_saved, string_notSaved, sizeof(string_notSaved));
 }
 
 void save_input() {
   EEPROM.put(11, sample_period);
-  input_saved = (char*)" *";
+  strncpy(input_saved, string_saved, sizeof(string_saved));
 }
 
 void save_output() {
   EEPROM.put(9, pin6_level);
-  output_saved = (char*)" *";
+  strncpy(output_saved, string_saved, sizeof(string_saved));
 }
 
 void increase_samplePeriod() {
   if (sample_period < 10) {
     sample_period++;
-    input_saved = (char*)"  ";
+    strncpy(input_saved, string_notSaved, sizeof(string_notSaved));
   }
 }
 
 void decrease_samplePeriod() {
   if (sample_period > 0) {
     sample_period--;
-    input_saved = (char*)"  ";
+    strncpy(input_saved, string_notSaved, sizeof(string_notSaved));
   }
 }
 
@@ -247,8 +251,8 @@ void setup() {
   iSample_line.attach_function(increase, increase_samplePeriod);
   iSample_line.attach_function(decrease, decrease_samplePeriod);
 
-  input_saved = (char*)" *";
-  output_saved = (char*)" *";
+  strncpy(input_saved, string_saved, sizeof(string_saved));
+  strncpy(output_saved, string_saved, sizeof(string_saved));
 
   menu_system.update();
 }

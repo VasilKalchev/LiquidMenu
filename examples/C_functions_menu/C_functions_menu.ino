@@ -106,11 +106,14 @@ byte led_level = 0;
 
 // Variables used for setting "preferences".
 bool isFading = false;
-char* isFading_text;
+char isFading_text[4];  // {'O', 'F', 'F', '\0'}
 unsigned int fadePeriod = 100;
 bool isBlinking = false;
-char* isBlinking_text;
+char isBlinking_text[4];
 unsigned int blinkPeriod = 1000;
+
+char string_on[] = "ON";
+char string_off[] = "OFF";
 
 
 LiquidLine welcome_line1(1, 0, "LiquidMenu ", LIQUIDMENU_VERSION);
@@ -154,12 +157,12 @@ void fade_switch() {
 	led_off();
 	if (isFading == true) {
 		isFading = false;
-		isFading_text = (char*)"OFF";
+		strncpy(isFading_text, string_off, sizeof(string_off));
 	} else {
 		isFading = true;
-		isFading_text = (char*)"ON";
+		strncpy(isFading_text, string_on, sizeof(string_on));
 		isBlinking = false;
-		isBlinking_text = (char*)"OFF";
+		strncpy(isBlinking_text, string_off, sizeof(string_off));
 	}
 }
 
@@ -179,12 +182,12 @@ void blink_switch() {
 	led_off();
 	if (isBlinking == true) {
 		isBlinking = false;
-		isBlinking_text = (char*)"OFF";
+		strncpy(isBlinking_text, string_off, sizeof(string_off));
 	} else {
 		isBlinking = true;
-		isBlinking_text = (char*)"ON";
+		strncpy(isBlinking_text, string_on, sizeof(string_on));
 		isFading = false;
-		isFading_text = (char*)"OFF";
+		strncpy(isFading_text, string_off, sizeof(string_off));
 	}
 }
 
@@ -293,8 +296,8 @@ void setup() {
 	menu.add_screen(fade_screen);
 	menu.add_screen(blink_screen);
 
-	isFading_text = (char*)"OFF";
-	isBlinking_text = (char*)"OFF";
+	strncpy(isFading_text, string_off, sizeof(string_off));
+	strncpy(isBlinking_text, string_off, sizeof(string_off));
 
 	menu.update();
 }
