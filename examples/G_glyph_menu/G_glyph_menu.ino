@@ -114,7 +114,7 @@ byte thermometer_glyphIndex = 2;
 byte celsiusSymbol_glyphIndex = 3;
 
 LiquidLine welcome_line1(1, 0, "LiquidMenu ", LIQUIDMENU_VERSION);
-LiquidLine welcome_line2(0, 1, "PROGMEM example");
+LiquidLine welcome_line2(1, 1, "Glyphs example");
 LiquidScreen welcome_screen(welcome_line1, welcome_line2);
 
 LiquidLine line1(1, 1, fan_glyphIndex);

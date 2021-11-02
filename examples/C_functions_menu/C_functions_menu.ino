@@ -8,7 +8,7 @@
  * possible to execute an action through the menu (e.g. dimming an LED,
  * adjusting preferences...). To attach a function to a line you need
  * to create with signature "void functionName(void)". After creating it,
- * the function is ready to be attached to a line. To dothat call bool
+ * the function is ready to be attached to a line. To do that call bool
  * LiquidLine::attach_function(uint8_t number, void (*function)(void)).
  * LiquidLine is the line object you wish to attach the function to,
  * number is the "id" of the function for that line, void (*function)(void)
