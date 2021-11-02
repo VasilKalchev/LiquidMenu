@@ -99,6 +99,7 @@ enum class DataType : uint8_t {
   CONST_CHAR_PTR = 62,
   PROG_CONST_CHAR_PTR = 65,
   GLYPH = 70,
+  FIRST_GETTER = 200,
   BOOL_GETTER = 201, BOOLEAN_GETTER = 201,
   INT8_T_GETTER = 208,
   UINT8_T_GETTER = 209, BYTE_GETTER = 209,
@@ -410,30 +411,31 @@ public:
   template <typename T>
   bool add_variable(T &variable) {
     print_me(reinterpret_cast<uintptr_t>(this));
+
+    DataType varType = recognizeType(variable);
+
+    #if LIQUIDMENU_DEBUG
+    DEBUG(F("Add "));
+    if ((uint8_t)varType < (uint8_t)DataType::FIRST_GETTER) {
+      DEBUG(F("variable \""));
+      DEBUG(variable);
+    } else {
+      DEBUG(F("getter \"N/A"));
+    }
+    DEBUG(F("\" of DataType("));
+    DEBUG((uint8_t)varType); DEBUG(F(")"));
+    #endif
+
     if (_variableCount < MAX_VARIABLES) {
       _variable[_variableCount] = (void*)&variable;
-      _variableType[_variableCount] = recognizeType(variable);
-#     if LIQUIDMENU_DEBUG
-        DEBUG(F("Added variable "));
-        // Check if the variable is actually a getter functions
-        // and don't display it if so.
-        if ((uint8_t)_variableType[_variableCount] < 200) { // 200+ are getters
-          DEBUG(reinterpret_cast<uintptr_t>(variable)); DEBUGLN(F(""));
-        }
-#     endif
+      _variableType[_variableCount] = varType;
       _variableCount++;
+      DEBUGLN(F(""));
       return true;
+    } else {
+      DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more variables"));
+      return false;
     }
-#   if LIQUIDMENU_DEBUG
-      DEBUG(F("Adding variable "));
-      // Check if the variable is actually a getter functions
-      // and don't diplay it if so.
-      if ((uint8_t)_variableType[_variableCount] < 200) { // 200+ are getters
-        DEBUG(reinterpret_cast<uintptr_t>(variable));
-      }
-#   endif
-    DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more variables"));
-    return false;
   }
 
   /// Attaches a callback function to the line.
