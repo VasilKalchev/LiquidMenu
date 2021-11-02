@@ -63,10 +63,13 @@ LiquidScreen::LiquidScreen(LiquidLine &liquidLine1, LiquidLine &liquidLine2,
 }
 
 bool LiquidScreen::add_line(LiquidLine &liquidLine) {
-	print_me(reinterpret_cast<uintptr_t>(this));
+	DEBUG(F("LScreen ")); print_me(reinterpret_cast<uintptr_t>(this));
+
+	DEBUG(F("Add line (0x")); DEBUG((uintptr_t)&liquidLine);
+	DEBUG(F(") count(")) DEBUG(_lineCount); DEBUG(F(")"));
+
 	if (_lineCount < MAX_LINES) {
 		_p_liquidLine[_lineCount] = &liquidLine;
-		DEBUG(F("Added a new line (")); DEBUG(_lineCount); DEBUGLN(F(")"));
 		_lineCount++;
 
 		// set the focus indicator equal to the amount of lines, which
@@ -79,15 +82,19 @@ bool LiquidScreen::add_line(LiquidLine &liquidLine) {
         // void LiquidScreen::set_displayLineCount(uint8_t lines)
         // must be used to set the number of lines the display has.
 	    _displayLineCount = _lineCount;
+
+		DEBUGLN(F(""));
 		return true;
+	} else {
+		DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more lines"));
+		return false;
 	}
-	DEBUG(F("Adding line ")); DEBUG(_lineCount);
-	DEBUG(F(" failed, edit LiquidMenu_config.h to allow for more lines"));
-	return false;
+
 }
 
 bool LiquidScreen::set_focusPosition(Position position) {
-	print_me(reinterpret_cast<uintptr_t>(this));
+	DEBUG(F("LScreen ")); print_me(reinterpret_cast<uintptr_t>(this));
+
 	if (position == Position::CUSTOM) {
 		DEBUGLN(F("Can't set focus position to 'CUSTOM' for the whole screen at once"));
 		return false;
@@ -116,9 +123,6 @@ void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 	} else if (displayLineCount > _lineCount) {
 		displayLineCount = _lineCount;
 	}
-	DEBUG("MaxLine: ");
-	DEBUG(displayLineCount);
-	DEBUG("\n");
 
 	if (_focus >= displayLineCount) {
 		lOffset = (_focus - displayLineCount) + 1;
@@ -145,7 +149,7 @@ void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 }
 
 void LiquidScreen::switch_focus(bool forward) {
-	print_me(reinterpret_cast<uintptr_t>(this));
+	DEBUG(F("LScreen ")); print_me(reinterpret_cast<uintptr_t>(this));
 
 	// LM_LINE_COUNT_SUBTRAHEND:
 	// 0 - "ghosting" is enabled

@@ -64,6 +64,7 @@ Include file for LiquidMenu library.
 # warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
+const char LIQUIDMENU_VERSION[] = "1.5"; ///< The version of the library.
 
 typedef bool (*boolFnPtr)();
 typedef int8_t (*int8tFnPtr)();
@@ -77,8 +78,6 @@ typedef double (*doubleFnPtr)();
 typedef char (*charFnPtr)();
 typedef char * (*charPtrFnPtr)();
 typedef const char * (*constcharPtrFnPtr)();
-
-const char LIQUIDMENU_VERSION[] = "1.5"; ///< The version of the library.
 
 /// Data type enum.
 /**
@@ -322,15 +321,16 @@ public:
   LiquidLine(uint8_t column, uint8_t row)
     : _row(row), _column(column), _focusRow(row - 1),
       _focusColumn(column - 1), _focusPosition(Position::NORMAL),
-      _variableCount(0), _focusable(false) {
+      _floatDecimalPlaces(2), _variableCount(0), _focusable(false) {
+
     for (uint8_t i = 0; i < MAX_VARIABLES; i++) {
       _variable[i] = nullptr;
       _variableType[i] = DataType::NOT_USED;
     }
+
     for (uint8_t f = 0; f < MAX_FUNCTIONS; f++) {
       _function[f] = 0;
     }
-	  _floatDecimalPlaces = 2;
   }
 
   /// Constructor for one variable/constant.
@@ -410,7 +410,7 @@ public:
   */
   template <typename T>
   bool add_variable(T &variable) {
-    print_me(reinterpret_cast<uintptr_t>(this));
+    DEBUG(F("LLine ")); print_me(reinterpret_cast<uintptr_t>(this));
 
     DataType varType = recognizeType(variable);
 
@@ -430,6 +430,7 @@ public:
       _variable[_variableCount] = (void*)&variable;
       _variableType[_variableCount] = varType;
       _variableCount++;
+      
       DEBUGLN(F(""));
       return true;
     } else {

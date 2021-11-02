@@ -56,15 +56,18 @@ LiquidSystem::LiquidSystem(LiquidMenu &liquidMenu1, LiquidMenu &liquidMenu2,
 
 
 bool LiquidSystem::add_menu(LiquidMenu &liquidMenu) {
-	// print_me((uintptr_t)this);
-	print_me(reinterpret_cast<uintptr_t>(this));
+	DEBUG(F("LMenu ")); print_me(reinterpret_cast<uintptr_t>(this));
+
+  DEBUG(F("Add menu (0x")); DEBUG((uintptr_t)&liquidMenu);
+  DEBUG(F(") count(")) DEBUG(_menuCount); DEBUG(F(")"));
+
 	if (_menuCount < MAX_MENUS) {
 		_p_liquidMenu[_menuCount] = &liquidMenu;
-		DEBUG(F("Added a new menu (")); DEBUG(_menuCount); DEBUGLN(F(")"));
 		_menuCount++;
+
+		DEBUG(F(""));
 		return true;
 	}
-	DEBUG(F("Adding menu ")); DEBUG(_menuCount);
 	DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more menus"));
 	return false;
 }
@@ -143,14 +146,14 @@ uint8_t LiquidSystem::get_focusedLine() const {
 }
 
 bool LiquidSystem::set_focusPosition(Position position) {
-    for(uint8_t m=0; m<_menuCount; m++) {
+    for(uint8_t m = 0; m < _menuCount; ++m) {
         _p_liquidMenu[m]->set_focusPosition(position);
     }
 	return _p_liquidMenu[_currentMenu]->set_focusPosition(position);
 }
 
 bool LiquidSystem::set_focusSymbol(Position position, uint8_t symbol[8]) {
-    for(uint8_t m=0; m<_menuCount; m++) {
+    for(uint8_t m = 0; m < _menuCount; ++m) {
         _p_liquidMenu[m]->set_focusSymbol(position, symbol);
     }
 	return _p_liquidMenu[_currentMenu]->set_focusSymbol(position, symbol);

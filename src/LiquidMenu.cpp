@@ -30,6 +30,13 @@ Contains the LiquidMenu class definition.
 #include "LiquidMenu.h"
 #include "glyphs.h"
 
+
+void print_me(uintptr_t address) {
+  DEBUG(F("(0x")); DEBUG2(address, OCT); DEBUG(F("): "));
+  return;
+  // address = address;
+}
+
 const uint8_t DIVISION_LINE_LENGTH = 40; ///< Sets the length of the division line.
 
 LiquidMenu::LiquidMenu(DisplayClass &liquidCrystal, uint8_t startingScreen)
@@ -65,14 +72,18 @@ LiquidMenu::LiquidMenu(DisplayClass &liquidCrystal, LiquidScreen &liquidScreen1,
 }
 
 bool LiquidMenu::add_screen(LiquidScreen &liquidScreen) {
-  print_me(reinterpret_cast<uintptr_t>(this));
+  DEBUG(F("LMenu ")); print_me(reinterpret_cast<uintptr_t>(this));
+
+  DEBUG(F("Add screen (0x")); DEBUG((uintptr_t)&liquidScreen);
+  DEBUG(F(") count(")) DEBUG(_screenCount); DEBUG(F(")"));
+
   if (_screenCount < MAX_SCREENS) {
     _p_liquidScreen[_screenCount] = &liquidScreen;
-    DEBUG(F("Added a new screen (")); DEBUG(_screenCount); DEBUGLN(F(")"));
     _screenCount++;
+
+    DEBUGLN(F(""));
     return true;
   }
-  DEBUG(F("Adding screen ")); DEBUG(_screenCount);
   DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more screens"));
   return false;
 }
@@ -179,7 +190,8 @@ uint8_t LiquidMenu::get_focusedLine() const {
 }
 
 bool LiquidMenu::set_focusPosition(Position position) {
-  print_me(reinterpret_cast<uintptr_t>(this));
+  DEBUG(F("LMenu ")); print_me(reinterpret_cast<uintptr_t>(this));
+
   if (position == Position::CUSTOM) {
     DEBUGLN(F("Can't set a custom focus position for the whole menu at once"));
     return false;

@@ -29,34 +29,32 @@ Contains the LiquidLine class definition.
 
 #include "LiquidMenu.h"
 
-void print_me(uintptr_t address) {
-	DEBUG(F("Line (0x")); DEBUG2(address, OCT); DEBUG(F("): "));
-	return;
-	address = address;
-}
-
 
 bool LiquidLine::attach_function(uint8_t number, void (*function)(void)) {
-	print_me(reinterpret_cast<uintptr_t>(this));
+	DEBUG(F("LLine ")); print_me(reinterpret_cast<uintptr_t>(this));
+
+	DEBUG(F("Attach function ")); DEBUG(number);
+
 	if (number <= MAX_FUNCTIONS) {
 		_function[number - 1] = function;
-		DEBUG(F("Attached function ")); DEBUGLN(number);
 		_focusable = true;
+
+		DEBUGLN(F(""));
 		return true;
 	} else {
-		DEBUG(F("Attaching function ")); DEBUG(number);
 		DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more functions"));
 		return false;
 	}
 }
 
-void LiquidLine::set_decimalPlaces(uint8_t decimalPlaces)
-{
+void LiquidLine::set_decimalPlaces(uint8_t decimalPlaces) {
 	_floatDecimalPlaces = decimalPlaces;
 }
 
-bool LiquidLine::set_focusPosition(Position position, uint8_t column, uint8_t row) {
-	print_me(reinterpret_cast<uintptr_t>(this));
+bool LiquidLine::set_focusPosition(Position position,
+								   uint8_t column, uint8_t row) {
+	DEBUG(F("LLine ")); print_me(reinterpret_cast<uintptr_t>(this));
+
 	if (position <= Position::CUSTOM) {
 		_focusPosition = position;
 		_focusColumn = column;
@@ -91,8 +89,7 @@ bool LiquidLine::set_asProgmem(uint8_t number) {
 	if ((index < MAX_VARIABLES) && (_variableType[index] == DataType::CONST_CHAR_PTR)) {
 		_variableType[index] = DataType::PROG_CONST_CHAR_PTR;
 		return true;
-	}
-	else {
+	} else {
 		DEBUG(F("Setting variable ")); DEBUG(number);
 		DEBUGLN(F(" as PROG_CONST_CHAR failed, the variable must be of 'const char[]' data type"))
 		return false;
