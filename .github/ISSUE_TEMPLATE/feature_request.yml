@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest an idea
+labels: ["type: feature request", "status: triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to share your idea.
+
+  - type: checkboxes
+    attributes:
+      label: Is there an existing "feature request" issue for this?
+      description: |
+        Search tip: `label:"type: feature request"`
+      options:
+        - label: I have searched the existing issues.
+          required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature description
+      placeholder: |
+        Is this feature related to a problem?
+        Are there alternative solutions you've considered?
+        ...
+    validations:
+      required: true
