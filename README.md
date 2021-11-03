@@ -38,9 +38,9 @@ Quick start
 The library uses hierarchically structured classes to represent the different elements of a menu.
 
 #### Basic class hierarchy diagram:
-![Basic class hierarchy diagram](https://github.com/VaSe7u/LiquidMenu/blob/master/doc/Images/basic_diagram.png "Basic class hierarchy diagram")
+![Basic class hierarchy diagram](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/classes%20structure%20(menu).png "Basic class hierarchy diagram")
 
-*Click [here](https://github.com/VaSe7u/LiquidMenu/blob/master/doc/Images/diagram.png?raw=true) for a complete hierarchy diagram.*
+*Click [here](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/classes%20structure%20(system).png) for a complete hierarchy diagram.*
 
 The `LiquidLine` class represents a *line* of text/numbers on the display.
 To create a new `LiquidLine` object use its constructor.
