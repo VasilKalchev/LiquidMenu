@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions
+    url: https://github.com/VaSe7u/LiquidMenu/discussions/categories/q-a
+    about: Please ask questions in the discussions.
+  - name: Feature requests and ideas
+    url: https://github.com/VaSe7u/LiquidMenu/discussions/categories/ideas
+    about: Please propose features and ideas in the discussions.

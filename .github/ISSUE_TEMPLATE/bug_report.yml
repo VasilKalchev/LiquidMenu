@@ -5,11 +5,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to fill out this bug report.
 
   - type: checkboxes
     attributes:
-      label: Is there an existing "bug" issue for this?
+      label: Is there an existing issue for this?
       description: |
         Search tip: `label:"type: bug"`
       options:
@@ -21,11 +21,11 @@ body:
     attributes:
       label: Library version
       description: |
-        Have you updated to the latest version of the library and from where?
+        Have you updated to the latest release of the library and from where?
       options:
-        - Arduino library manager
-        - GitHub master branch
-        - other
+        - Yes, from Arduino library manager.
+        - Yes, from GitHub's "master" branch.
+        - I'm using an unreleased branch or a beta release.
     validations:
       required: true
 
@@ -45,5 +45,5 @@ body:
     id: compiler-output
     attributes:
       label: Compiler output
-      description: If applicable, paste the compiler's output here
+      description: If applicable, paste the compiler's output here.
       render: shell
