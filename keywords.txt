@@ -13,6 +13,7 @@ DataType	KEYWORD1
 Position	KEYWORD1
 
 # Classes
+DisplayClass	KEYWORD1
 LiquidLine	KEYWORD1
 LiquidScreen	KEYWORD1
 LiquidMenu	KEYWORD1
