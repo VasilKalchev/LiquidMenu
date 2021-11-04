@@ -41,8 +41,8 @@ Use _Arduino's library manager_ (recommended) or download it directly from [here
 ### Classes organization
 The library uses hierarchically structured classes to represent the different elements of a menu.
 
-Basic classes structure diagram:
-![basic classes structure diagram](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/classes%20structure%20(menu).png "Basic classes structure diagram")
+#### Basic classes structure diagram:
+![basic classes structure diagram](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/classes-structure/menu.png "Basic classes structure diagram")
 
 The `LiquidLine` class represents a *line* of text/numbers on the display.
 
@@ -50,7 +50,7 @@ The `LiquidScreen` class represents a collection of *lines* that are shown toget
 
 The `LiquidMenu` class combines the *screens* to form a *menu*. This class is used for controlling the *menu* (switching between *screens*, selecting *lines*, calling functions etc...).
 
-If your structure consists of multiple different *menus*, for example a "Main menu" that displays sensor information on multiple screens and a "Settings" menu for configuring the sensors, you can combine the different *menus* inside a `LiquidSystem` class. That way, you can browse the screens of just the *menu* you are currently on. `LiquidSystem` has the same public interface as `LiquidMenu`. Sub-menus [classes structure diagram](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/classes%20structure%20(system).png).
+If your structure consists of multiple different *menus*, for example a "Main menu" that displays sensor information on multiple screens and a "Settings" menu for configuring the sensors, you can combine the different *menus* inside a `LiquidSystem` class. That way, you can browse the screens of just the *menu* you are currently on. `LiquidSystem` has the same public interface as `LiquidMenu`. Sub-menus [classes structure diagram](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/classes-structure/system.png).
 
 
 ### Creating a menu
