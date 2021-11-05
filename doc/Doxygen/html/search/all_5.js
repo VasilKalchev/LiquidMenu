@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['init',['init',['../class_liquid_menu.html#ac1afbdecb999988469894a8afd14f100',1,'LiquidMenu']]],
-  ['is_5fcallable',['is_callable',['../class_liquid_menu.html#a5474ecee1611687d7128644c2cf858a5',1,'LiquidMenu::is_callable()'],['../class_liquid_system.html#a159dfb1127b8ad06e15ee309676f4e1e',1,'LiquidSystem::is_callable()']]]
+  ['get_5fcurrentscreen_22',['get_currentScreen',['../class_liquid_menu.html#a42e776202652464ed489f21120198a2a',1,'LiquidMenu::get_currentScreen()'],['../class_liquid_system.html#a3a9e2d16877a774dbda4586e090a4b9f',1,'LiquidSystem::get_currentScreen()']]],
+  ['get_5ffocusedline_23',['get_focusedLine',['../class_liquid_menu.html#ae150b50e58e84b234d21425e4f04d2d5',1,'LiquidMenu::get_focusedLine()'],['../class_liquid_system.html#aa0107d05025c34039262d7976eeaea65',1,'LiquidSystem::get_focusedLine()']]],
+  ['glyphs_2eh_24',['glyphs.h',['../glyphs_8h.html',1,'']]]
 ];
