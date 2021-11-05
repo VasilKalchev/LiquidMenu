@@ -23,10 +23,11 @@ used in the library, also configures the debugging messages.
  * @{
  */
 #ifndef LIQUIDMENU_LIBRARY
-#define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY
+    /// Wrapped library ID
+    #define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY
 #endif
-// #include <LiquidCrystal.h>
 #ifndef DisplayClass
+    /// Name of wrapped library's class
     #define DisplayClass LiquidCrystal
 #endif
 //!@}
@@ -37,9 +38,8 @@ used in the library, also configures the debugging messages.
  * @{
  */
 // #ifndef LIQUIDMENU_LIBRARY
-// #define LIQUIDMENU_LIBRARY LiquidCrystal_I2C_LIBRARY
+//     #define LIQUIDMENU_LIBRARY LiquidCrystal_I2C_LIBRARY
 // #endif
-// #include <LiquidCrystal_I2C.h>
 // #ifndef DisplayClass
 //     #define DisplayClass LiquidCrystal_I2C
 // #endif

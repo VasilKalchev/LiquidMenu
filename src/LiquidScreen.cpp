@@ -29,13 +29,23 @@ SOFTWARE.
 
 #include "LiquidMenu.h"
 
+
+/// Line count subtrahend for comparison during focus iteration
+/**
+0 - "ghosting" is enabled
+1 - "ghosting" is disabled
+*/
+#define LM_LINE_COUNT_SUBTRAHEND (0)
+
 #if LM_FOCUS_INDICATOR_GHOSTING == true
+	#undef LM_LINE_COUNT_SUBTRAHEND
 	#define LM_LINE_COUNT_SUBTRAHEND (0)
 #elif LM_FOCUS_INDICATOR_GHOSTING == false
+	#undef LM_LINE_COUNT_SUBTRAHEND
 	#define LM_LINE_COUNT_SUBTRAHEND (1)
-#else  // default to "ghosting"
-	#define LM_LINE_COUNT_SUBTRAHEND (0)
 #endif
+
+
 
 LiquidScreen::LiquidScreen()
 	: _lineCount(0), _focus(0), _hidden(false) {}

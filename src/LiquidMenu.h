@@ -287,7 +287,7 @@ DataType recognizeType(constcharPtrFnPtr variable);
 
 
 
-/// Prints the number passed to it in a specific way.
+/// Debug prints an address
 /**
 Used for convenience when printing the class's address for identification.
 
@@ -988,6 +988,7 @@ public:
   screen and for the focused line.
 
   @param number - number of the function in the array
+  @param refresh - enable/disable updating the display
   @returns true if there is a function at the specified number
 
   @note Function numbering starts from 1.
@@ -1251,13 +1252,14 @@ public:
   screen and for the focused line.
 
   @param number - number of the function in the array
+  @param refresh - enable/disable updating the display
   @returns true if there is a function at the specified number
 
   @note Function numbering starts from 1.
 
   @see bool LiquidLine::attach_function(uint8_t number, void (*function)(void))
   */
-  bool call_function(uint8_t number) const;
+  bool call_function(uint8_t number, bool refresh = true) const;
 
   /// Prints the current screen to the display.
   /**
