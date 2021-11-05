@@ -3,13 +3,11 @@
 
 _Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc]._
 
-[Class documentation](https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html)
+[Class documentation](https://vase7u.github.io/LiquidMenu/doc/html/annotated.html)
 
-[Examples](https://vasilkalchev.github.io/LiquidMenu/doc/html/examples.html)
+[Examples](https://vase7u.github.io/LiquidMenu/doc/html/examples.html)
 
-[Git page](https://github.com/VasilKalchev/LiquidMenu)
-
-[Web page](https://vasilkalchev.github.io/LiquidMenu/)
+[GitHub page](https://github.com/VaSe7u/LiquidMenu)
 
 
 [lc]: https://github.com/arduino-libraries/LiquidCrystal
@@ -65,4 +63,22 @@ This example demonstrates how to create a custom character
 @example H_system_menu.ino
 
 This example demonstrates the how to build a menu system.
+*/
+
+/**
+@example I_I2C_menu.ino
+
+A_hello_menu.ino, but configured for I2C.
+*/
+
+/**
+@example J_scrolling_menu.ino
+
+Demonstrates how to use scrolling lines.
+*/
+
+/**
+@example K_getters_menu.ino
+
+Demonastrates how to use getter functions instead of variables in "LiquidScreen" objects.
 */
