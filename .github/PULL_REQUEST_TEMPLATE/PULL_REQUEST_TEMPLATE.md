@@ -19,10 +19,8 @@ Resolves #(issue_number)
 ## How have you tested it?
 > Please describe the manual tests that you did to verify your changes. Please also list any relevant details for your test configuration.
 
-* Arduino IDE: 1.8.13
-
 - [ ] Test A - example `<example_name>`
-I ran the example to verify that string literals are correctly displayed.
+Ran the example to verify that string literals are correctly displayed.
 
 - [ ] Test B - example `<example_name>`
 
@@ -33,3 +31,4 @@ I ran the example to verify that string literals are correctly displayed.
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
 - [ ] (if applicable) I have added a new example
+- [ ] I updated `doc/changelog.md`
