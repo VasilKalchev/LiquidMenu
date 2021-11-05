@@ -195,7 +195,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-[logo-img]: /doc/Images/logo.png
+[logo-img]: /doc/img/logo/logo.png
 [LiquidCrystal-lib]: https://github.com/arduino-libraries/LiquidCrystal
 [doxygen-doc]: https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
 [examples-dir]: /examples
