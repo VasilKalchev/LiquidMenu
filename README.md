@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/VaSe7u/LiquidMenu/archive/v1.5.1.zip"><img alt="Download" src="https://img.shields.io/badge/download-1.5.1-blue.svg?style=flat-square&logo=github&logoColor=white&color=1cb3e4" /></a>
+  <a href="https://github.com/VaSe7u/LiquidMenu/archive/v1.6.0.zip"><img alt="Download" src="https://img.shields.io/badge/download-1.6.0-blue.svg?style=flat-square&logo=github&logoColor=white&color=1cb3e4" /></a>
   <a href="https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html"><img alt="Documentation" src="https://img.shields.io/badge/docs-doxygen-blue.svg?style=flat-square" /></a>
   <a href="https://github.com/VaSe7u/LiquidMenu/actions/workflows/compile-examples.yml"><img alt="GitHub workflow - compile examples" src="https://img.shields.io/github/workflow/status/vase7u/LiquidMenu/compile%20examples?label=build%20examples&style=flat-square" /></a>
   <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github.com/vase7u/liquidmenu?style=flat-square&color=orange" /></a>
@@ -193,6 +193,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 
 [logo-img]: /doc/Images/logo.png
 [LiquidCrystal-lib]: https://github.com/arduino-libraries/LiquidCrystal

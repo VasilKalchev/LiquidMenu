@@ -28,11 +28,9 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.5.0
+@version 1.6.0
 @copyright The MIT License
 
-@todo: Change/Remove variables/screens/menus maybe
-@todo: screen wide glyphs
 @todo: dynamic memory
 @todo: variadic templates
 */
@@ -64,20 +62,41 @@ Include file for LiquidMenu library.
 # warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
-const char LIQUIDMENU_VERSION[] = "1.5"; ///< The version of the library.
+const char LIQUIDMENU_VERSION[] = "1.6"; ///< The version of the library.
 
+
+
+/// @name Getter function typedefs
+/**
+
+*/
+///@{
+/// bool
 typedef bool (*boolFnPtr)();
+/// int8_t
 typedef int8_t (*int8tFnPtr)();
+/// uint8_t
 typedef uint8_t (*uint8tFnPtr)();
+/// int16_t
 typedef int16_t (*int16tFnPtr)();
+/// `uint16_t`
 typedef uint16_t (*uint16tFnPtr)();
+/// `int32_t`
 typedef int32_t (*int32tFnPtr)();
+/// `uint32_t`
 typedef uint32_t (*uint32tFnPtr)();
+/// `float`
 typedef float (*floatFnPtr)();
+/// `double`
 typedef double (*doubleFnPtr)();
+/// `char`
 typedef char (*charFnPtr)();
+/// `char*`
 typedef char * (*charPtrFnPtr)();
+/// `const char*`
 typedef const char * (*constcharPtrFnPtr)();
+///@}
+
 
 /// Data type enum.
 /**

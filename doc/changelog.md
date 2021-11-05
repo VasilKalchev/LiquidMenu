@@ -1,9 +1,6 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 
 <!--
 [x.y.z] - YYYY-MM-DD
@@ -15,12 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security (to invite users to upgrade in case of vulnerabilities)
 -->
 
+<!-- ## [Unreleased] -->
 
-## [Unreleased]
+## [1.6.0] - 2021-11-05
 ### Added
  - ability to call a function without updating the display
  - ability to configure focus indicator "ghosting"
- - `LiquidCrystal` as a dependancy in *Arduino's library manager*
+ - `LiquidCrystal` as a dependency in *Arduino's library manager*
 ### Changed
  - dynamic text is now achieved through a `char[]` instead of from a `char*`
 ### Fixed
