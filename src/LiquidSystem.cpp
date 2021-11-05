@@ -163,10 +163,8 @@ bool LiquidSystem::is_callable(uint8_t number) const {
 	return _p_liquidMenu[_currentMenu]->is_callable(number);
 }
 
-bool LiquidSystem::call_function(uint8_t number) const {
-	bool returnValue = _p_liquidMenu[_currentMenu]->call_function(number);
-	_p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
-	update();
+bool LiquidSystem::call_function(uint8_t number, bool refresh) const {
+	bool returnValue = _p_liquidMenu[_currentMenu]->call_function(number, refresh);
 	return returnValue;
 }
 
