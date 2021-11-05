@@ -34,7 +34,6 @@ Contains the LiquidMenu class definition.
 void print_me(uintptr_t address) {
   DEBUG(F("(0x")); DEBUG2(address, OCT); DEBUG(F("): "));
   return;
-  // address = address;
 }
 
 const uint8_t DIVISION_LINE_LENGTH = 40; ///< Sets the length of the division line.
