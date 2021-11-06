@@ -13,13 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Doxygen
-        run: sudo apt install -y doxygen
-
       - name: Generate
-        run: |
-          cd doc/Doxygen
-          doxygen Doxyfile
+        uses: mattnotmitt/doxygen-action@v1.1.0
+        with:
+            doxyfile-path: ./doc/Doxygen/Doxyfile
+            working-directory: ./doc/Doxygen
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
