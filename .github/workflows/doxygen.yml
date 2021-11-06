@@ -1,0 +1,19 @@
+name: doxygen
+
+on:
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate
+        run: |
+          sudo apt install -y doxygen
+          doxygen doc/Doxygen/Doxyfile
