@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  generate-deploy:
     runs-on: ubuntu-latest
 
     steps:
