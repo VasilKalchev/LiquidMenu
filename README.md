@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/VaSe7u/LiquidMenu/archive/v1.6.0.zip"><img alt="Download" src="https://img.shields.io/badge/download-1.6.0-blue.svg?style=flat-square&logo=github&logoColor=white&color=1cb3e4" /></a>
-  <a href="https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html"><img alt="Documentation" src="https://img.shields.io/badge/docs-doxygen-blue.svg?style=flat-square" /></a>
+  <a href="https://vase7u.github.io/LiquidMenu/annotated.html"><img alt="Documentation" src="https://img.shields.io/badge/docs-doxygen-blue.svg?style=flat-square" /></a>
   <a href="https://github.com/VaSe7u/LiquidMenu/discussions"><img alt="Documentation" src="https://img.shields.io/github/discussions/vase7u/liquidmenu?style=flat-square&color=blueviolet" /></a>
   <a href="https://github.com/VaSe7u/LiquidMenu/actions/workflows/compile-examples.yml"><img alt="GitHub workflow - compile examples" src="https://img.shields.io/github/workflow/status/vase7u/LiquidMenu/compile%20examples?label=build%20examples&style=flat-square" /></a>
   <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github.com/vase7u/liquidmenu?style=flat-square&color=orange" /></a>
@@ -197,9 +197,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-[logo-img]: /doc/img/logo/logo.png
+<!-- [logo-img]: https://github.com/VaSe7u/LiquidMenu/blob/65ef1aa297d14bff1a26df25bd7a97d059a8a0a8/doc/img/logo/logo.png -->
+[logo-img]: https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/logo/logo.png
 [LiquidCrystal-lib]: https://github.com/arduino-libraries/LiquidCrystal
-[doxygen-doc]: https://VaSe7u.github.io/LiquidMenu/doc/Doxygen/html/annotated.html
+[doxygen-doc]: https://vase7u.github.io/LiquidMenu/annotated.html
 [examples-dir]: /examples
 [disc]: https://github.com/VaSe7u/LiquidMenu/discussions
 [q&a-disc]: https://github.com/VaSe7u/LiquidMenu/discussions/categories/q-a
