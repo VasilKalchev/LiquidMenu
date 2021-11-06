@@ -19,4 +19,4 @@ jobs:
       - name: Generate
         run: |
           cd doc/Doxygen
-          doxygen doc/Doxygen/Doxyfile
+          doxygen Doxyfile
