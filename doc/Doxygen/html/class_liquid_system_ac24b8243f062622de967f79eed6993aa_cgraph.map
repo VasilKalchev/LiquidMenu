@@ -1,6 +1,0 @@
-<map id="LiquidSystem::operator++" name="LiquidSystem::operator++">
-<area shape="rect" id="node2" href="$class_liquid_system.html#ae48a34e80b56c097a16d90741ede20bd" title="Switches to the next screen. " alt="" coords="225,5,360,47"/>
-<area shape="rect" id="node3" href="$class_liquid_menu.html#a6046bb5792ad188b25a5b0e2d7e27fc0" title="Switches to the next screen. " alt="" coords="408,13,575,39"/>
-<area shape="rect" id="node4" href="$class_liquid_menu.html#af6935b3a7c65918abaf5594e7742af70" title="Prints the current screen to the display. " alt="" coords="623,13,757,39"/>
-<area shape="rect" id="node5" href="$class_liquid_menu.html#a506aa5f8822031096a881aed7c6e45e5" title="Prints the current screen to the display (without clearing). " alt="" coords="805,13,964,39"/>
-</map>

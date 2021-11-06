@@ -1,5 +1,0 @@
-<map id="LiquidMenu::next_screen" name="LiquidMenu::next_screen">
-<area shape="rect" id="node2" href="$class_liquid_system.html#ae48a34e80b56c097a16d90741ede20bd" title="Switches to the next screen. " alt="" coords="232,5,367,47"/>
-<area shape="rect" id="node4" href="$class_liquid_menu.html#a12b1b75ac4d82d992213b7d66a73ba63" title="Switches to the next screen. " alt="" coords="220,71,379,98"/>
-<area shape="rect" id="node3" href="$class_liquid_system.html#a139b86202d2eb109a63ba630464d658a" title="Switches to the next screen. " alt="" coords="427,13,599,39"/>
-</map>

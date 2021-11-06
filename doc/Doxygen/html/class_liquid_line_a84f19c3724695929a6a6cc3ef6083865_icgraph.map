@@ -1,6 +1,0 @@
-<map id="LiquidLine::set_focusPosition" name="LiquidLine::set_focusPosition">
-<area shape="rect" id="node2" href="$class_liquid_screen.html#a6b025aaf4ba5d0749aa828a303e64415" title="Sets the focus position for the whole screen at once. " alt="" coords="264,32,495,60"/>
-<area shape="rect" id="node3" href="$class_liquid_menu.html#acdce4caf01ad04fcbb8b7bbc91db98b2" title="Sets the focus position for the whole menu at once. " alt="" coords="543,5,761,33"/>
-<area shape="rect" id="node5" href="$class_liquid_line.html#a58fa9ef1d59c5cf852aa0e5d834f2365" title="Adds a variable to the line. " alt="" coords="563,57,741,85"/>
-<area shape="rect" id="node4" href="$class_liquid_system.html#af261a981d86b320ba57c392bd1b65432" title="Sets the focus position for the whole menu at once. " alt="" coords="809,5,1044,33"/>
-</map>
