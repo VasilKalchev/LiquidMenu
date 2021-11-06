@@ -1,1 +1,1 @@
-![example](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/Images/example.gif)
+![example](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/sch/examples.gif)
