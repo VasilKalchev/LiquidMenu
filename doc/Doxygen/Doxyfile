@@ -51,7 +51,7 @@ PROJECT_BRIEF          = "Menu creation Arduino library for LCDs, wraps LiquidCr
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = D:/workspace/Arduino/libraries/LiquidMenu/doc/img/logo/logo-small.png
+PROJECT_LOGO           = ../img/logo/logo-small.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
