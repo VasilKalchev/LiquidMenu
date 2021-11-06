@@ -16,7 +16,7 @@ jobs:
       - name: Generate
         uses: mattnotmitt/doxygen-action@v1.1.0
         with:
-            doxyfile-path: ./doc/Doxygen/Doxyfile
+            doxyfile-path: ./Doxyfile
             working-directory: ./doc/Doxygen
 
       - name: Deploy
