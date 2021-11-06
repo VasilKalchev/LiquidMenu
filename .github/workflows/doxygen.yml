@@ -16,14 +16,14 @@ jobs:
       - name: Generate
         uses: mattnotmitt/doxygen-action@v1
         with:
-            doxyfile-path: ./doxyfile
-            working-directory: ./doc/doxygen
+            doxyfile-path: ./Doxyfile
+            working-directory: ./doc/Doxygen
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./doc/doxygen/html
+          publish_dir: ./doc/Doxygen/html
           enable_jekyll: true
           allow_empty_commit: false
           force_orphan: true
