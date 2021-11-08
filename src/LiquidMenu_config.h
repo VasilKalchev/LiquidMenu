@@ -23,12 +23,10 @@ used in the library, also configures the debugging messages.
  * @{
  */
 #ifndef LIQUIDMENU_LIBRARY
-    /// Wrapped library ID
-    #define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY
+    #define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY ///< wrapped library ID
 #endif
 #ifndef DisplayClass
-    /// Name of wrapped library's class
-    #define DisplayClass LiquidCrystal
+    #define DisplayClass LiquidCrystal ///< name of wrapped library's class
 #endif
 //!@}
 
