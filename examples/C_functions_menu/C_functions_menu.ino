@@ -28,7 +28,7 @@
  * that allow a fade or blink loop to be turned ON/OFF and configured.
  *
  * The circuit:
- * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/functions_menu/C_functions_menu.png
+ * https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/examples/C_functions_menu/functions_menu.png
  * - LCD RS pin to Arduino pin 12
  * - LCD E pin to Arduino pin 11
  * - LCD D4 pin to Arduino pin 5

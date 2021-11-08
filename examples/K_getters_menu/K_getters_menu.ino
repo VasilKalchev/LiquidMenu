@@ -11,7 +11,7 @@
  * no parameters (e.g. bool getButtonState(), int getPosition()...).
  * 
  * The circuit:
- * https://github.com/VasilKalchev/LiquidMenu/blob/master/examples/K_getters_menu/getters_menu.png
+ * https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/examples/K_getters_menu/getters_menu.png
  * - LCD RS pin to Arduino pin 12
  * - LCD E pin to Arduino pin 11
  * - LCD D4 pin to Arduino pin 5
