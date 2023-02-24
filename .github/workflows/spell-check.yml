@@ -17,4 +17,4 @@ jobs:
         with:
           skip: ./doc/Doxygen/**,./doc/Doxygen/*
 #          exclude_file: "./examples/E_progmem_menu/E_progmem_menu.ino"
-          ignore_words_list: varius
+          ignore_words_list: varius ridiculus
