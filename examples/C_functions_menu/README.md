@@ -1,6 +1,6 @@
 Example 3: functions_menu
 ==================
-his example demonstrates how to attach functions to the
+This example demonstrates how to attach functions to the
  "lines" in the menu.
  *
  Attaching functions to the different "lines" in the menu makes it
