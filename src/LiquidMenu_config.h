@@ -22,12 +22,12 @@ used in the library, also configures the debugging messages.
  * @name Arduino's parallel "LiquidCrystal" library
  * @{
  */
-#ifndef LIQUIDMENU_LIBRARY
-    #define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY ///< wrapped library ID
-#endif
-#ifndef DisplayClass
-    #define DisplayClass LiquidCrystal ///< name of wrapped library's class
-#endif
+// #ifndef LIQUIDMENU_LIBRARY
+//     #define LIQUIDMENU_LIBRARY LiquidCrystal_LIBRARY ///< wrapped library ID
+// #endif
+// #ifndef DisplayClass
+//     #define DisplayClass LiquidCrystal ///< name of wrapped library's class
+// #endif
 //!@}
 
 /*!
@@ -44,13 +44,15 @@ used in the library, also configures the debugging messages.
 //!@}
 
 /*!
- * @name Some other library
+ * @name DFRobot_RGBLCD1602
  * @{
  */
-// #include <LIBRARY_HEADER.h>
-// #ifndef DisplayClass
-// #define DisplayClass LIBRARY_CONSTRUCTOR
-// #endif
+#ifndef LIQUIDMENU_LIBRARY
+    #define LIQUIDMENU_LIBRARY LiquidCrystal_I2C_LIBRARY
+#endif
+#ifndef DisplayClass
+    #define DisplayClass LiquidCrystal_I2C
+#endif
 //!@}
 //!@}
 
@@ -64,7 +66,7 @@ const uint8_t MAX_VARIABLES = 5; ///< @note Default: 5
 const uint8_t MAX_FUNCTIONS = 8; ///< @note Default: 8
 
 /// Configures the number of available lines per screen.
-const uint8_t MAX_LINES = 12; ///< @note Default: 12
+const uint8_t MAX_LINES = 2; ///< @note Default: 12
 
 /// Configures the number of available screens per menu.
 const uint8_t MAX_SCREENS = 14; ///< @note Default: 14
