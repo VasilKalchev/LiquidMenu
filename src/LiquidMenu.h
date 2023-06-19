@@ -52,10 +52,10 @@ Include file for LiquidMenu library.
 # pragma message ("LiquidMenu: Selected 'LiquidCrystal' (parallel) library. Edit 'LiquidMenu_config.h' file to change it.")
 #include <LiquidCrystal.h>
 #elif LIQUIDMENU_LIBRARY == LiquidCrystal_I2C_LIBRARY
-# pragma message ("LiquidMenu: Selected 'LiquidCrystal_I2C' (I2C) library. Edit 'LiquidMenu_config.h' file to change it.")
+// # pragma message ("LiquidMenu: Selected 'LiquidCrystal_I2C' (I2C) library. Edit 'LiquidMenu_config.h' file to change it.")
 #include <LiquidCrystal_I2C.h>
 #else
-# pragma message ("LiquidMenu: Selected custom library. Edit 'LiquidMenu_config.h' file to change it.")
+// # pragma message ("LiquidMenu: Selected custom library. Edit 'LiquidMenu_config.h' file to change it.")
 #endif
 
 #if LIQUIDMENU_DEBUG
