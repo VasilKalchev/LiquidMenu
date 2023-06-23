@@ -9,7 +9,6 @@ used in the library, also configures the debugging messages.
 #pragma once
 
 #include "LiquidMenu_const.h"
-
 // Select a "LiquidCrystal" library:
 // ---------------------------------
 

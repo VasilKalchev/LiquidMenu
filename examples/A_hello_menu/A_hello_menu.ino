@@ -38,7 +38,7 @@
  */
 
 // The LCD library
-#include <LiquidCrystal.h>
+#include <DFRobot_RGBLCD1602.h>
 // The menu wrapper library
 #include <LiquidMenu.h>
 
@@ -51,7 +51,7 @@ const byte LCD_D6 = 3;
 const byte LCD_D7 = 2;
 //LCD R/W pin to ground
 //10K potentiometer wiper to VO
-LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
+DFRobot_RGBLCD1602 lcd(0x68);
 
 /*
  * Variable 'analogReading' is later configured to
