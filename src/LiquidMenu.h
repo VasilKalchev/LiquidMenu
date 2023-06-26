@@ -1041,8 +1041,8 @@ public:
 
   ///@}
 
+  DisplayClass *_p_liquidCrystal; ///< Pointer to the DisplayClass object FIXME
 private:
-  DisplayClass *_p_liquidCrystal; ///< Pointer to the DisplayClass object
   LiquidScreen *_p_liquidScreen[MAX_SCREENS]; ///< The LiquidScreen objects
   uint8_t _screenCount; ///< Count of the LiquidScreen objects
   uint8_t _currentScreen;
