@@ -1129,7 +1129,7 @@ public:
   @param *p_liquidMenu - pointer to the LiquidMenu object
   @returns true on success and false if the menu is not found
   */
-  bool change_menu(LiquidMenu &p_liquidMenu);
+  bool change_menu(LiquidMenu &p_liquidMenu, bool refresh = true);
 
   /// Returns a reference to the current screen.
   /**

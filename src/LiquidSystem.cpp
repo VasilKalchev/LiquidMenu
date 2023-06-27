@@ -73,14 +73,16 @@ bool LiquidSystem::add_menu(LiquidMenu &liquidMenu) {
 }
 
 
-bool LiquidSystem::change_menu(LiquidMenu &p_liquidMenu) {
+bool LiquidSystem::change_menu(LiquidMenu &p_liquidMenu, bool refresh) {
 	// _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
 	for (uint8_t m = 0; m < _menuCount; m++) {
 		// if ((uintptr_t)&p_liquidMenu == (uintptr_t) & (*_p_liquidMenu[m])) {
 		if (reinterpret_cast<uintptr_t>(&p_liquidMenu) == reinterpret_cast<uintptr_t>(&(*_p_liquidMenu[m]))) {
 			_currentMenu = m;
 			DEBUG(F("Menu changed to ")); DEBUGLN(_currentMenu);
-			update();
+			if (refresh) {
+				update();
+			}
 			return true;
 		}
 	}
@@ -164,7 +166,10 @@ bool LiquidSystem::is_callable(uint8_t number) const {
 }
 
 bool LiquidSystem::call_function(uint8_t number, bool refresh) const {
-	bool returnValue = _p_liquidMenu[_currentMenu]->call_function(number, refresh);
+	bool returnValue = _p_liquidMenu[_currentMenu]->call_function(number, false);
+	if (refresh) {
+		update();
+	}
 	return returnValue;
 }
 
