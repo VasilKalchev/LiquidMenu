@@ -95,6 +95,16 @@ LiquidScreen* LiquidSystem::get_currentScreen() const {
 	return _p_liquidMenu[_currentMenu]->get_currentScreen();
 }
 
+uint8_t LiquidSystem::get_currentScreenNumber() const
+{
+	return _p_liquidMenu[_currentMenu]->get_currentScreenNumber();
+}
+
+uint8_t LiquidSystem::get_currentMenuNumber() const
+{
+	return _currentMenu;
+}
+
 void LiquidSystem::next_screen() {
 	_p_liquidMenu[_currentMenu]->next_screen();
 }

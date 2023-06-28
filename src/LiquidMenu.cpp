@@ -92,7 +92,13 @@ LiquidScreen* LiquidMenu::get_currentScreen() const {
   return _p_liquidScreen[_currentScreen];
 }
 
-void LiquidMenu::next_screen() {
+uint8_t LiquidMenu::get_currentScreenNumber() const
+{
+  return _currentScreen;
+}
+
+void LiquidMenu::next_screen()
+{
   _p_liquidCrystal->clear();
   do {
     if (_currentScreen < _screenCount - 1)  {
@@ -159,7 +165,7 @@ bool LiquidMenu::change_screen(LiquidScreen *p_liquidScreen) {
       update();
       DEBUG(F("Switched to screen ("));
       DEBUG(_currentScreen); DEBUGLN(F(")"));
-      update();
+      // update(); No reason for two calls to update
       return true;
     }
   }

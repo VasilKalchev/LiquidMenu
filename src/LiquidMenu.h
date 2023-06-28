@@ -704,6 +704,13 @@ public:
   void hide(bool hide);
   ///@}
 
+  /// Directly select focused line.
+  /**
+  @param lineIndex - index of the focused line
+  @return true: on success, false: when the selected line doesn't exist or it isn't focusable
+  */
+  bool set_focusedLine(uint8_t lineIndex);
+
 private:
   /// Prints the lines pointed by the screen.
   /**
@@ -726,13 +733,6 @@ private:
   @param forward - true for forward, false for backward
   */
   void switch_focus(bool forward = true);
-
-  /// Directly select focused line.
-  /**
-  @param lineIndex - index of the focused line
-  @return true: on success, false: when the selected line doesn't exist or it isn't focusable
-  */
-  bool set_focusedLine(uint8_t lineIndex);
 
   /// Get the index of the currently focused line.
   /**
@@ -874,6 +874,8 @@ public:
   @returns a pointer to the current screen.
   */
   LiquidScreen* get_currentScreen() const;
+
+  uint8_t get_currentScreenNumber() const;
 
   /// Switches to the next screen.
   void next_screen();
@@ -1042,12 +1044,12 @@ public:
   ///@}
 
   DisplayClass *_p_liquidCrystal; ///< Pointer to the DisplayClass object FIXME
+
 private:
   LiquidScreen *_p_liquidScreen[MAX_SCREENS]; ///< The LiquidScreen objects
-  uint8_t _screenCount; ///< Count of the LiquidScreen objects
-  uint8_t _currentScreen;
+  uint8_t _screenCount;                       ///< Count of the LiquidScreen objects
+  uint8_t _currentScreen;                     // FIXME DEBUG should be private
 };
-
 
 /// Represents a collection of menus forming a menu system.
 /**
@@ -1131,6 +1133,8 @@ public:
   */
   bool change_menu(LiquidMenu &p_liquidMenu, bool refresh = true);
 
+  uint8_t get_currentMenuNumber() const;
+
   /// Returns a reference to the current screen.
   /**
   Call this method to obtain a reference to the current screen.
@@ -1138,6 +1142,8 @@ public:
   @returns a pointer to the current screen.
   */
   LiquidScreen* get_currentScreen() const;
+
+  uint8_t get_currentScreenNumber() const;
 
   /// Switches to the next screen.
   void next_screen();
@@ -1297,8 +1303,9 @@ public:
 
   ///@}
 
+
 private:
   LiquidMenu *_p_liquidMenu[MAX_MENUS]; ///< The LiquidMenu objects
-  uint8_t _menuCount; ///< Count of the LiquidMenu objects
-  uint8_t _currentMenu;
+  uint8_t _menuCount;                   ///< Count of the LiquidMenu objects
+  uint8_t _currentMenu;                 // FIXME should be private
 };
