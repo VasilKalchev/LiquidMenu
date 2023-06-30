@@ -156,6 +156,7 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 		case DataType::CHAR_PTR: {
 			char* variable = const_cast<char*>(reinterpret_cast<const char *>(_variable[number]));
 			DEBUG(F("(char*)")); DEBUG(variable);
+			ESP_LOGD("LiquidLine", "print_variable(char*):%s", variable);
 			p_liquidCrystal->print(variable);
 			break;
 		} //case CHAR_PTR
@@ -175,6 +176,7 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 		case DataType::UINT8_T: {
 			const uint8_t variable = *static_cast<const uint8_t*>(_variable[number]);
 			DEBUG(F("(uint8_t)")); DEBUG(variable);
+			ESP_LOGD("LiquidLine", "print_variable(uint8_t):%i", variable);
 			p_liquidCrystal->print(variable);
 			break;
 		} //case UINT8_T
