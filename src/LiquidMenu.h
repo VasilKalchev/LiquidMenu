@@ -1133,7 +1133,14 @@ public:
   */
   bool change_menu(LiquidMenu &p_liquidMenu, bool refresh = true);
 
-  uint8_t get_currentMenuNumber() const;
+  /**
+   * @brief return a reference to the current menu
+   * 
+   * @return pointer to menu
+   */
+  LiquidMenu * get_currentMenu() const;
+
+    uint8_t get_currentMenuNumber() const;
 
   /// Returns a reference to the current screen.
   /**

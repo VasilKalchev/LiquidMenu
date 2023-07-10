@@ -100,6 +100,11 @@ uint8_t LiquidSystem::get_currentScreenNumber() const
 	return _p_liquidMenu[_currentMenu]->get_currentScreenNumber();
 }
 
+LiquidMenu *LiquidSystem::get_currentMenu() const // TEST
+{
+	return _p_liquidMenu[_currentMenu];
+}
+
 uint8_t LiquidSystem::get_currentMenuNumber() const
 {
 	return _currentMenu;
