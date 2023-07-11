@@ -711,6 +711,9 @@ public:
   */
   bool set_focusedLine(uint8_t lineIndex);
 
+  LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
+  uint8_t get_lineCount() const;
+  
 private:
   /// Prints the lines pointed by the screen.
   /**
@@ -764,7 +767,6 @@ private:
   */
   bool call_function(uint8_t number) const;
 
-  LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
   uint8_t _lineCount; ///< Count of the LiquidLine objects
   uint8_t _focus; ///< Index of the focused line
   uint8_t _displayLineCount; ///< The number of lines the display supports
@@ -1045,10 +1047,11 @@ public:
 
   DisplayClass *_p_liquidCrystal; ///< Pointer to the DisplayClass object FIXME
   LiquidScreen *_p_liquidScreen[MAX_SCREENS]; ///< The LiquidScreen objects
+  uint8_t get_screenCount() const;
 
 private:
-  uint8_t _screenCount;                       ///< Count of the LiquidScreen objects
-  uint8_t _currentScreen;                     // FIXME DEBUG should be private
+  uint8_t _screenCount;   ///< Count of the LiquidScreen objects
+  uint8_t _currentScreen; // FIXME DEBUG should be private
 };
 
 /// Represents a collection of menus forming a menu system.
