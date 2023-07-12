@@ -68,6 +68,7 @@ bool LiquidSystem::add_menu(LiquidMenu &liquidMenu) {
 		DEBUG(F(""));
 		return true;
 	}
+	ESP_LOGE("LiquidSystem", "failed, edit LiquidMenu_config.h to allow for more menus");
 	DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more menus"));
 	return false;
 }
@@ -79,6 +80,7 @@ bool LiquidSystem::change_menu(LiquidMenu &p_liquidMenu, bool refresh) {
 		// if ((uintptr_t)&p_liquidMenu == (uintptr_t) & (*_p_liquidMenu[m])) {
 		if (reinterpret_cast<uintptr_t>(&p_liquidMenu) == reinterpret_cast<uintptr_t>(&(*_p_liquidMenu[m]))) {
 			_currentMenu = m;
+			ESP_LOGD("LiquidSystem", "Menu changed to: %d", _currentMenu);
 			DEBUG(F("Menu changed to ")); DEBUGLN(_currentMenu);
 			if (refresh) {
 				update();
@@ -189,6 +191,7 @@ bool LiquidSystem::call_function(uint8_t number, bool refresh) const {
 }
 
 void LiquidSystem::update() const {
+	ESP_LOGD("LiquidSystem", "Updating menu:%d, pointer:%p", _currentMenu, _p_liquidMenu[_currentMenu]);
 	_p_liquidMenu[_currentMenu]->update();
 }
 

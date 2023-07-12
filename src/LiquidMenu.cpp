@@ -167,13 +167,16 @@ bool LiquidMenu::change_screen(LiquidScreen *p_liquidScreen) {
     if (p_liquidScreen == _p_liquidScreen[s]) {
     // if (reinterpret_cast<uintptr_t>(&p_liquidScreen) == reinterpret_cast<uintptr_t>(&(*_p_liquidScreen[s]))) {
       _currentScreen = s;
+      
       update();
+      ESP_LOGD("LiquidMenu", "Switched to screen:%d pointer:%p", _currentScreen, p_liquidScreen)
       DEBUG(F("Switched to screen ("));
       DEBUG(_currentScreen); DEBUGLN(F(")"));
       // update(); No reason for two calls to update
       return true;
     }
   }
+  ESP_LOGD("LiquidMenu", "Invalid request for screen change to %p", p_liquidScreen);
   DEBUG(F("Invalid request for screen change to 0x")); DEBUGLN(reinterpret_cast<uintptr_t>(&p_liquidScreen));
   return false;
 }
@@ -250,13 +253,15 @@ bool LiquidMenu::is_callable(uint8_t number) const {
 
 bool LiquidMenu::call_function(uint8_t number, bool refresh) const {
   bool returnValue = _p_liquidScreen[_currentScreen]->call_function(number);
-  if (refresh) {
+  if (refresh)
+  {
     update();
   }
   return returnValue;
 }
 
 void LiquidMenu::update() const {
+  ESP_LOGV("LiquidMenu", "Updating screen:%d, _p_liquidCrystal:%p", _currentScreen, _p_liquidCrystal);
   _p_liquidCrystal->clear();
   softUpdate();
 }
@@ -269,6 +274,8 @@ void LiquidMenu::softUpdate() const {
    * Will be removed for version 2.0.0 when `LiquidMenu::init()` will
    * become mandatory.
    */
+  ESP_LOGV("LiquidMenu", "Soft updating screen:%d, pointer:%p", _currentScreen, _p_liquidScreen[_currentScreen]);
+  // _p_liquidCrystal->clear(); Isn't the point of softUpdate() no clear()?
   static bool firstRun = true;
   if (firstRun) {
     firstRun = false;
