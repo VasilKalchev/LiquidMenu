@@ -530,6 +530,10 @@ public:
   bool set_asProgmem(uint8_t number);
   ///@}
 
+  // public for debugging convenience
+  const void *_variable[MAX_VARIABLES]; ///< Pointers to the variables
+  DataType _variableType[MAX_VARIABLES]; ///< Data type of the variables
+
 private:
   /// Prints the line to the display.
   /**
@@ -579,8 +583,6 @@ private:
   uint8_t _floatDecimalPlaces;
   uint8_t _variableCount; ///< Count of the variables
   void (*_function[MAX_FUNCTIONS])(void); ///< Pointers to the functions
-  const void *_variable[MAX_VARIABLES]; ///< Pointers to the variables
-  DataType _variableType[MAX_VARIABLES]; ///< Data type of the variables
   bool _focusable; ///< Determines whether the line is focusable
 };
 

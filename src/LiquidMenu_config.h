@@ -65,13 +65,13 @@ const uint8_t MAX_VARIABLES = 5; ///< @note Default: 5
 const uint8_t MAX_FUNCTIONS = 4; ///< @note Default: 8
 
 /// Configures the number of available lines per screen.
-const uint8_t MAX_LINES = 2; ///< @note Default: 12
+const uint8_t MAX_LINES = 3; ///< @note Default: 12
 
 /// Configures the number of available screens per menu.
 const uint8_t MAX_SCREENS = 10; ///< @note Default: 14
 
 /// Configures the number of available menus per menus system.
-const uint8_t MAX_MENUS = 12; ///< @note Default: 8
+const uint8_t MAX_MENUS = 15; ///< @note Default: 8
 
 /*!
  * Enable/disable hiding the focus indicator.
