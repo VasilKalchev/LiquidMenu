@@ -20,6 +20,9 @@ Contains debug macro definitions for LiquidMenu library.
   #endif
 #else
   /// Debug print
+  #ifdef DEBUG
+  #undef DEBUG
+  #endif
   #define DEBUG(x)
   /// Debug print with newline
   #define DEBUGLN(x)
