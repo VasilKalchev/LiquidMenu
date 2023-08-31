@@ -47,16 +47,15 @@ used in the library, also configures the debugging messages.
  * @{
  */
 #ifndef LIQUIDMENU_LIBRARY
-    #define LIQUIDMENU_LIBRARY LiquidCrystal_I2C_LIBRARY
+#define LIQUIDMENU_LIBRARY LiquidCrystal_I2C_LIBRARY
 #endif
 #ifndef DisplayClass
-    #define DisplayClass LiquidCrystal_I2C
+#define DisplayClass LiquidCrystal_I2C
 #endif
 //!@}
 //!@}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 /// Configures the number of available variables per line.
 const uint8_t MAX_VARIABLES = 5; ///< @note Default: 5
@@ -71,11 +70,11 @@ const uint8_t MAX_LINES = 3; ///< @note Default: 12
 const uint8_t MAX_SCREENS = 10; ///< @note Default: 14
 
 /// Configures the number of available menus per menus system.
-const uint8_t MAX_MENUS = 15; ///< @note Default: 8
+const uint8_t MAX_MENUS = 20; ///< @note Default: 8
 
 /*!
  * Enable/disable hiding the focus indicator.
- * 
+ *
  * When enabled the focus indicator will disappear for one step after
  * completing an iteration through the focusable lines. When disabled the focus
  * indicator will go from the last focusable line directly to the first
