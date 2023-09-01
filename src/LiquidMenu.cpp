@@ -278,19 +278,19 @@ bool LiquidMenu::set_focusSymbol(Position position, uint8_t symbol[8])
   {
   case Position::RIGHT:
   {
-    _p_liquidCrystal->createChar(15, symbol);
+    _p_liquidCrystal->createChar(7, symbol);
     DEBUG(F("Right"));
     break;
   } // case RIGHT
   case Position::LEFT:
   {
-    _p_liquidCrystal->createChar(14, symbol);
+    _p_liquidCrystal->createChar(6, symbol);
     DEBUG(F("Left"));
     break;
   } // case LEFT
   case Position::CUSTOM:
   {
-    _p_liquidCrystal->createChar(13, symbol);
+    _p_liquidCrystal->createChar(5, symbol);
     DEBUG(F("Custom"));
     break;
   } // case CUSTOM
@@ -341,35 +341,34 @@ void LiquidMenu::softUpdate() const
    */
   ESP_LOGV("LiquidMenu", "Soft updating screen:%d, pointer:%p", _currentScreen, _p_liquidScreen[_currentScreen]);
   // _p_liquidCrystal->clear(); Isn't the point of softUpdate() no clear()?
+  static bool firstRun = true;
+  if (firstRun)
+  {
+    firstRun = false;
+    _p_liquidCrystal->createChar(7, glyph::rightFocus);
+    _p_liquidCrystal->createChar(6, glyph::leftFocus);
+    _p_liquidCrystal->createChar(5, glyph::customFocus);
+  }
 
-  /*This is not needed because 13,14,15 are predefined*/
-  // static bool firstRun = true;
-  // if (firstRun) {
-  //   firstRun = false;
-  //   _p_liquidCrystal->createChar(15, glyph::rightFocus);
-  //   _p_liquidCrystal->createChar(14, glyph::leftFocus);
-  //   _p_liquidCrystal->createChar(13, glyph::customFocus);
-// }
-
-DEBUGLN(F("Updating the LCD"));
-for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++)
-{
-  DEBUG(F("-"));
-}
-DEBUGLN();
-DEBUG(F("|Screen "));
-DEBUGLN(_currentScreen);
-_p_liquidScreen[_currentScreen]->print(_p_liquidCrystal);
-for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++)
-{
-  DEBUG(F("-"));
-}
-DEBUGLN("\n");
+  DEBUGLN(F("Updating the LCD"));
+  for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++)
+  {
+    DEBUG(F("-"));
+  }
+  DEBUGLN();
+  DEBUG(F("|Screen "));
+  DEBUGLN(_currentScreen);
+  _p_liquidScreen[_currentScreen]->print(_p_liquidCrystal);
+  for (uint8_t b = 0; b < DIVISION_LINE_LENGTH; b++)
+  {
+    DEBUG(F("-"));
+  }
+  DEBUGLN("\n");
 }
 
 void LiquidMenu::init() const
 {
-  _p_liquidCrystal->createChar(15, glyph::rightFocus);
-  _p_liquidCrystal->createChar(14, glyph::leftFocus);
-  _p_liquidCrystal->createChar(13, glyph::customFocus);
+  _p_liquidCrystal->createChar(7, glyph::rightFocus);
+  _p_liquidCrystal->createChar(6, glyph::leftFocus);
+  _p_liquidCrystal->createChar(5, glyph::customFocus);
 }
