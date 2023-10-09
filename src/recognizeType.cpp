@@ -91,7 +91,7 @@ DataType recognizeType(int16tFnPtr variable) {
 }
 
 DataType recognizeType(uint16tFnPtr variable) {
-	return DataType::UINT8_T_GETTER;
+	return DataType::UINT16_T_GETTER;
 	variable = variable;
 }
 
