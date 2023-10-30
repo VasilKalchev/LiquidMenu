@@ -39,7 +39,7 @@ Include file for LiquidMenu library.
 
 #include <stdint.h>
 #if defined(__AVR__)
-# include <avr/pgmspace.h>
+#include <avr/pgmspace.h>
 #endif
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,9 +47,8 @@ Include file for LiquidMenu library.
 #include "LiquidMenu_config.h"
 #include "LiquidMenu_debug.h"
 
-
 #if LIQUIDMENU_LIBRARY == LiquidCrystal_LIBRARY
-# pragma message ("LiquidMenu: Selected 'LiquidCrystal' (parallel) library. Edit 'LiquidMenu_config.h' file to change it.")
+#pragma message("LiquidMenu: Selected 'LiquidCrystal' (parallel) library. Edit 'LiquidMenu_config.h' file to change it.")
 #include <LiquidCrystal.h>
 #elif LIQUIDMENU_LIBRARY == LiquidCrystal_I2C_LIBRARY
 // # pragma message ("LiquidMenu: Selected 'LiquidCrystal_I2C' (I2C) library. Edit 'LiquidMenu_config.h' file to change it.")
@@ -59,12 +58,10 @@ Include file for LiquidMenu library.
 #endif
 
 #if LIQUIDMENU_DEBUG
-# warning "LiquidMenu: Debugging messages are enabled."
+#warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
 const char LIQUIDMENU_VERSION[] = "1.6"; ///< The version of the library.
-
-
 
 /// @name Getter function typedefs
 /**
@@ -92,40 +89,45 @@ typedef double (*doubleFnPtr)();
 /// `char`
 typedef char (*charFnPtr)();
 /// `char*`
-typedef char * (*charPtrFnPtr)();
+typedef char *(*charPtrFnPtr)();
 /// `const char*`
-typedef const char * (*constcharPtrFnPtr)();
+typedef const char *(*constcharPtrFnPtr)();
 ///@}
-
 
 /// Data type enum.
 /**
 Used to store the data type of `void*` so that they can be cast back later.
 */
-enum class DataType : uint8_t {
+enum class DataType : uint8_t
+{
   NOT_USED = 0,
-  BOOL = 1, BOOLEAN = 1,
+  BOOL = 1,
+  BOOLEAN = 1,
   INT8_T = 8,
   UINT8_T = 9,
   INT16_T = 16,
   UINT16_T = 17,
   INT32_T = 32,
   UINT32_T = 33,
-  FLOAT = 50, DOUBLE = 50,
+  FLOAT = 50,
+  DOUBLE = 50,
   CHAR = 60,
   CHAR_PTR = 61,
   CONST_CHAR_PTR = 62,
   PROG_CONST_CHAR_PTR = 65,
   GLYPH = 70,
   FIRST_GETTER = 200,
-  BOOL_GETTER = 201, BOOLEAN_GETTER = 201,
+  BOOL_GETTER = 201,
+  BOOLEAN_GETTER = 201,
   INT8_T_GETTER = 208,
-  UINT8_T_GETTER = 209, BYTE_GETTER = 209,
+  UINT8_T_GETTER = 209,
+  BYTE_GETTER = 209,
   INT16_T_GETTER = 216,
   UINT16_T_GETTER = 217,
   INT32_T_GETTER = 232,
   UINT32_T_GETTER = 233,
-  FLOAT_GETTER = 240, DOUBLE_GETTER = 240,
+  FLOAT_GETTER = 240,
+  DOUBLE_GETTER = 240,
   CHAR_GETTER = 250,
   CHAR_PTR_GETTER = 251,
   CONST_CHAR_PTR_GETTER = 252
@@ -135,8 +137,10 @@ enum class DataType : uint8_t {
 /*
 Used to store and set the relative or absolute position of the focus indicator.
 */
-enum class Position : uint8_t {
-  RIGHT = 1, NORMAL = 1,
+enum class Position : uint8_t
+{
+  RIGHT = 1,
+  NORMAL = 1,
   LEFT = 2,
   CUSTOM = 3,
 };
@@ -164,13 +168,13 @@ DataType recognizeType(char variable);
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
-DataType recognizeType(char* variable);
+DataType recognizeType(char *variable);
 
 /**
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
-DataType recognizeType(const char* variable);
+DataType recognizeType(const char *variable);
 
 /**
 @param variable - variable to be checked
@@ -220,13 +224,11 @@ DataType recognizeType(float variable);
 */
 DataType recognizeType(double variable);
 
-
 /**
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(boolFnPtr variable);
-
 
 /**
 @param variable - variable to be checked
@@ -234,13 +236,11 @@ DataType recognizeType(boolFnPtr variable);
 */
 DataType recognizeType(int8tFnPtr variable);
 
-
 /**
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(uint8tFnPtr variable);
-
 
 /**
 @param variable - variable to be checked
@@ -248,13 +248,11 @@ DataType recognizeType(uint8tFnPtr variable);
 */
 DataType recognizeType(int16tFnPtr variable);
 
-
 /**
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(uint16tFnPtr variable);
-
 
 /**
 @param variable - variable to be checked
@@ -262,13 +260,11 @@ DataType recognizeType(uint16tFnPtr variable);
 */
 DataType recognizeType(int32tFnPtr variable);
 
-
 /**
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(uint32tFnPtr variable);
-
 
 /**
 @param variable - variable to be checked
@@ -282,13 +278,11 @@ DataType recognizeType(floatFnPtr variable);
 */
 DataType recognizeType(doubleFnPtr variable);
 
-
 /**
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(charFnPtr variable);
-
 
 /**
 @param variable - variable to be checked
@@ -296,15 +290,12 @@ DataType recognizeType(charFnPtr variable);
 */
 DataType recognizeType(charPtrFnPtr variable);
 
-
 /**
 @param variable - variable to be checked
 @returns the data type in `DataType` enum format
 */
 DataType recognizeType(constcharPtrFnPtr variable);
 ///@}
-
-
 
 /// Debug prints an address
 /**
@@ -314,6 +305,9 @@ Used for convenience when printing the class's address for identification.
 */
 void print_me(uintptr_t address);
 
+class LiquidLine;
+class LiquidScreen;
+class LiquidMenu;
 
 /// Represents the individual lines printed on the display.
 /**
@@ -323,7 +317,8 @@ where the focus indicator is positioned and pointers to the callback
 functions. This classes' objects go into a LiquidScreen object which
 controls them. The public methods are for configuration only.
 */
-class LiquidLine {
+class LiquidLine
+{
   friend class LiquidScreen;
 
 public:
@@ -338,16 +333,19 @@ public:
   @param row - the row at which the line is printed
   */
   LiquidLine(uint8_t column, uint8_t row)
-    : _row(row), _column(column), _focusRow(row - 1),
-      _focusColumn(column - 1), _focusPosition(Position::NORMAL),
-      _floatDecimalPlaces(2), _variableCount(0), _focusable(false) {
+      : _row(row), _column(column), _focusRow(row - 1),
+        _focusColumn(column - 1), _focusPosition(Position::NORMAL),
+        _floatDecimalPlaces(2), _variableCount(0), _focusable(false)
+  {
 
-    for (uint8_t i = 0; i < MAX_VARIABLES; i++) {
+    for (uint8_t i = 0; i < MAX_VARIABLES; i++)
+    {
       _variable[i] = nullptr;
       _variableType[i] = DataType::NOT_USED;
     }
 
-    for (uint8_t f = 0; f < MAX_FUNCTIONS; f++) {
+    for (uint8_t f = 0; f < MAX_FUNCTIONS; f++)
+    {
       _function[f] = 0;
     }
   }
@@ -360,7 +358,8 @@ public:
   */
   template <typename A>
   LiquidLine(uint8_t column, uint8_t row, A &variableA)
-    : LiquidLine(column, row) {
+      : LiquidLine(column, row)
+  {
     add_variable(variableA);
   }
 
@@ -374,7 +373,8 @@ public:
   template <typename A, typename B>
   LiquidLine(uint8_t column, uint8_t row,
              A &variableA, B &variableB)
-    : LiquidLine(column, row, variableA) {
+      : LiquidLine(column, row, variableA)
+  {
     add_variable(variableB);
   }
 
@@ -389,7 +389,8 @@ public:
   template <typename A, typename B, typename C>
   LiquidLine(uint8_t column, uint8_t row,
              A &variableA, B &variableB, C &variableC)
-    : LiquidLine(column, row, variableA, variableB) {
+      : LiquidLine(column, row, variableA, variableB)
+  {
     add_variable(variableC);
   }
 
@@ -405,12 +406,12 @@ public:
   template <typename A, typename B, typename C, typename D>
   LiquidLine(uint8_t column, uint8_t row,
              A &variableA, B &variableB, C &variableC, D &variableD)
-    : LiquidLine(column, row, variableA, variableB, variableC) {
+      : LiquidLine(column, row, variableA, variableB, variableC)
+  {
     add_variable(variableD);
   }
 
   ///@}
-
 
   /// @name Public methods
   ///@{
@@ -428,31 +429,40 @@ public:
   @see MAX_VARIABLES
   */
   template <typename T>
-  bool add_variable(T &variable) {
-    DEBUG(F("LLine ")); print_me(reinterpret_cast<uintptr_t>(this));
+  bool add_variable(T &variable)
+  {
+    DEBUG(F("LLine "));
+    print_me(reinterpret_cast<uintptr_t>(this));
 
     DataType varType = recognizeType(variable);
 
-    #if LIQUIDMENU_DEBUG
+#if LIQUIDMENU_DEBUG
     DEBUG(F("Add "));
-    if ((uint8_t)varType < (uint8_t)DataType::FIRST_GETTER) {
+    if ((uint8_t)varType < (uint8_t)DataType::FIRST_GETTER)
+    {
       DEBUG(F("variable \""));
       DEBUG(variable);
-    } else {
+    }
+    else
+    {
       DEBUG(F("getter \"N/A"));
     }
     DEBUG(F("\" of DataType("));
-    DEBUG((uint8_t)varType); DEBUG(F(")"));
-    #endif
+    DEBUG((uint8_t)varType);
+    DEBUG(F(")"));
+#endif
 
-    if (_variableCount < MAX_VARIABLES) {
-      _variable[_variableCount] = (void*)&variable;
+    if (_variableCount < MAX_VARIABLES)
+    {
+      _variable[_variableCount] = (void *)&variable;
       _variableType[_variableCount] = varType;
       _variableCount++;
-      
+
       DEBUGLN(F(""));
       return true;
-    } else {
+    }
+    else
+    {
       DEBUGLN(F(" failed, edit LiquidMenu_config.h to allow for more variables"));
       return false;
     }
@@ -531,7 +541,7 @@ public:
   ///@}
 
   // public for debugging convenience
-  const void *_variable[MAX_VARIABLES]; ///< Pointers to the variables
+  const void *_variable[MAX_VARIABLES];  ///< Pointers to the variables
   DataType _variableType[MAX_VARIABLES]; ///< Data type of the variables
 
 private:
@@ -581,11 +591,10 @@ private:
   uint8_t _row, _column, _focusRow, _focusColumn;
   Position _focusPosition;
   uint8_t _floatDecimalPlaces;
-  uint8_t _variableCount; ///< Count of the variables
+  uint8_t _variableCount;                 ///< Count of the variables
   void (*_function[MAX_FUNCTIONS])(void); ///< Pointers to the functions
-  bool _focusable; ///< Determines whether the line is focusable
+  bool _focusable;                        ///< Determines whether the line is focusable
 };
-
 
 /// Represents a screen shown on the display.
 /**
@@ -596,11 +605,11 @@ them. The public methods are for configuration only.
 
 @see LiquidLine
 */
-class LiquidScreen {
+class LiquidScreen
+{
   friend class LiquidMenu;
 
 public:
-
   /// @name Constructors
   ///@{
 
@@ -715,8 +724,26 @@ public:
 
   LiquidLine *_p_liquidLine[MAX_LINES]; ///< The LiquidLine objects
   uint8_t get_lineCount() const;
-  
+
+  /*An array of functions to allow us to not run long if else statements*/
+  void set_special_case(bool val);
+  bool is_special_case();
+  void set_prev_menu(LiquidMenu *prev);
+  LiquidMenu *get_prev_menu();
+  void set_prev_screen(LiquidScreen *prev);
+  LiquidScreen *get_prev_screen();
+  void set_next_menu(LiquidMenu *next);
+  LiquidMenu *get_next_menu();
+  void set_next_screen(LiquidScreen *next);
+  LiquidScreen *get_next_screen();
+
 private:
+  LiquidMenu *nextMenu;
+  LiquidScreen *nextScreen = NULL;
+  LiquidMenu *prevMenu;
+  LiquidScreen *prevScreen = NULL;
+  bool specialCase = false;
+
   /// Prints the lines pointed by the screen.
   /**
   Calls the `LiquidLine::print(DisplayClass *p_liquidCrystal, bool isFocused)`
@@ -730,7 +757,7 @@ private:
   /**
   Switches the focus to the next or previous line
   according to the passed parameter.
-  
+
   @note After one iteration through the focusable lines is completed, the focus
   indicator will hide for one step. To disable this behavior set
   `LM_FOCUS_INDICATOR_GHOSTING` to false in `LiquiMenu_config.h`
@@ -769,12 +796,11 @@ private:
   */
   bool call_function(uint8_t number) const;
 
-  uint8_t _lineCount; ///< Count of the LiquidLine objects
-  uint8_t _focus; ///< Index of the focused line
+  uint8_t _lineCount;        ///< Count of the LiquidLine objects
+  uint8_t _focus;            ///< Index of the focused line
   uint8_t _displayLineCount; ///< The number of lines the display supports
-  bool _hidden; ///< If hidden skips this screen when cycling
+  bool _hidden;              ///< If hidden skips this screen when cycling
 };
-
 
 /// Represents a collection of screens forming a menu.
 /**
@@ -786,11 +812,11 @@ the same public methods.
 
 @see LiquidScreen
 */
-class LiquidMenu {
+class LiquidMenu
+{
   friend class LiquidSystem;
 
 public:
-
   /// @name Constructors
   ///@{
 
@@ -877,7 +903,7 @@ public:
 
   @returns a pointer to the current screen.
   */
-  LiquidScreen* get_currentScreen() const;
+  LiquidScreen *get_currentScreen() const;
 
   uint8_t get_currentScreenNumber() const;
 
@@ -949,7 +975,7 @@ public:
   @param forward - true for forward, false for backward
   */
   void switch_focus(bool forward = true);
-  
+
   /// Directly select focused line.
   /**
   @param lineIndex - index of the focused line
@@ -1047,7 +1073,7 @@ public:
 
   ///@}
 
-  DisplayClass *_p_liquidCrystal; ///< Pointer to the DisplayClass object FIXME
+  DisplayClass *_p_liquidCrystal;             ///< Pointer to the DisplayClass object FIXME
   LiquidScreen *_p_liquidScreen[MAX_SCREENS]; ///< The LiquidScreen objects
   uint8_t get_screenCount() const;
 
@@ -1067,9 +1093,9 @@ for multiple menus.
 
 @see LiquidMenu
 */
-class LiquidSystem {
+class LiquidSystem
+{
 public:
-
   /// @name Constructors
   ///@{
 
@@ -1140,12 +1166,12 @@ public:
 
   /**
    * @brief return a reference to the current menu
-   * 
+   *
    * @return pointer to menu
    */
-  LiquidMenu * get_currentMenu() const;
+  LiquidMenu *get_currentMenu() const;
 
-    uint8_t get_currentMenuNumber() const;
+  uint8_t get_currentMenuNumber() const;
 
   /// Returns a reference to the current screen.
   /**
@@ -1153,7 +1179,7 @@ public:
 
   @returns a pointer to the current screen.
   */
-  LiquidScreen* get_currentScreen() const;
+  LiquidScreen *get_currentScreen() const;
 
   uint8_t get_currentScreenNumber() const;
 
@@ -1238,7 +1264,7 @@ public:
   @returns the index of the currently focused line
   */
   uint8_t get_focusedLine() const;
-  
+
   /// Sets the focus position for the whole menu at once.
   /**
   The valid positions are `LEFT` and `RIGHT`. `CUSTOM` is not valid
@@ -1314,7 +1340,6 @@ public:
   void softUpdate() const;
 
   ///@}
-
 
 private:
   LiquidMenu *_p_liquidMenu[MAX_MENUS]; ///< The LiquidMenu objects
