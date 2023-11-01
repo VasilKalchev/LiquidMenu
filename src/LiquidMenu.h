@@ -738,9 +738,9 @@ public:
   LiquidScreen *get_next_screen();
 
 private:
-  LiquidMenu *nextMenu;
+  LiquidMenu *nextMenu = NULL;
   LiquidScreen *nextScreen = NULL;
-  LiquidMenu *prevMenu;
+  LiquidMenu *prevMenu = NULL;
   LiquidScreen *prevScreen = NULL;
   bool specialCase = false;
 
