@@ -1186,6 +1186,12 @@ public:
   /// Switches to the next screen.
   void next_screen();
 
+  /**
+   * @brief Change to the next screen
+   * @return Whether we change the screen correctly or not
+   */
+  bool changeToNextScreen();
+
   /// Switches to the next screen.
   /**
   @note Prefix increment operator overloading.

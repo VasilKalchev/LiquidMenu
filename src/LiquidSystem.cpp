@@ -116,6 +116,27 @@ void LiquidSystem::next_screen() {
 	_p_liquidMenu[_currentMenu]->next_screen();
 }
 
+bool LiquidSystem::changeToNextScreen()
+{
+	LiquidScreen *currentScreen = _p_liquidMenu[_currentMenu]->get_currentScreen();
+	if (currentScreen->get_next_screen() == NULL)
+	{
+		if (currentScreen->get_next_menu())
+		{
+			change_menu(*currentScreen->get_next_menu(), true);
+			return true;
+		}
+	}
+	else
+	{
+		change_menu(*currentScreen->get_next_menu(), false);
+		change_screen(currentScreen->get_next_screen());
+		return true;
+	}
+
+	return false;
+}
+
 void LiquidSystem::operator++() {
 	next_screen();
 }
