@@ -3,16 +3,19 @@ name: Arduino lint
 on:
   push:
     paths:
-      - ".github/workflows/compile-examples.yml"
+      - ".github/workflows/arduino-lint.yml"
       - "examples/**"
       - "src/**"
   pull_request:
     paths:
-      - ".github/workflows/compile-examples.yml"
+      - ".github/workflows/arduino-lint.yml"
       - "examples/**"
       - "src/**"
   workflow_dispatch:
   repository_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   lint:
