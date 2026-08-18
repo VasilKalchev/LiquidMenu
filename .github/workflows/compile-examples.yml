@@ -61,9 +61,9 @@ jobs:
       - name: Report
         uses: actions/upload-artifact@v4
         with:
-          name: sketches-reports
+          name: sketches-reports-avr
           path: sketches-reports
-        
+
   compile-i2c-examples:
     runs-on: ubuntu-latest
     
@@ -95,3 +95,92 @@ jobs:
             - source-path: ./
             - source-url: https://github.com/johnrickman/LiquidCrystal_I2C.git
             - name: LiquidCrystal
+
+      - name: Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sketches-reports-i2c
+          path: sketches-reports
+
+  compile-esp32-examples:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        fqbn:
+          - esp32:esp32:esp32
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: ${{ matrix.fqbn }}
+
+          platforms: |
+            - name: esp32:esp32
+              source-url: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+          enable-deltas-report: true
+          enable-warnings-report: true
+
+          cli-compile-flags: |
+            - --build-property
+            - build.extra_flags=-DDisplayClass=LiquidCrystal -DLIQUIDMENU_LIBRARY=1
+          # Only the simplest example is compiled here to keep the library's
+          # ESP32 build portable and to smoke-test the core on that target.
+          # The rest of the examples are written and wired for AVR boards and
+          # aren't meant to double as portability demos.
+          sketch-paths: |
+            - ./examples/A_hello_menu
+          libraries: |
+            - source-path: ./
+            - name: LiquidCrystal
+
+      - name: Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sketches-reports-esp32
+          path: sketches-reports
+
+  compile-esp32-i2c-examples:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        fqbn:
+          - esp32:esp32:esp32
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: ${{ matrix.fqbn }}
+
+          platforms: |
+            - name: esp32:esp32
+              source-url: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+          enable-deltas-report: true
+          enable-warnings-report: true
+
+          cli-compile-flags: |
+            - --build-property
+            - build.extra_flags=-DDisplayClass=LiquidCrystal_I2C -DLIQUIDMENU_LIBRARY=2
+          sketch-paths: |
+            - ./examples/I_I2C_menu
+          libraries: |
+            - source-path: ./
+            - source-url: https://github.com/johnrickman/LiquidCrystal_I2C.git
+            - name: LiquidCrystal
+
+      - name: Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sketches-reports-esp32-i2c
+          path: sketches-reports
