@@ -212,6 +212,13 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 			break;
 		} //case FLOAT
 
+		case DataType::DOUBLE: {
+			const double variable = *static_cast<const double*>(_variable[number]);
+			DEBUG(F("(double)")); DEBUG(variable);
+			p_liquidCrystal->print(variable, _floatDecimalPlaces);
+			break;
+		} //case DOUBLE
+
 		case DataType::BOOL: {
 			const bool variable = *static_cast<const bool*>(_variable[number]);
 			DEBUG(F("(bool)")); DEBUG(variable);
@@ -337,9 +344,19 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 				const float variable = (getterFunction)();
 				DEBUG(F("(float)")); DEBUG(variable);
 				p_liquidCrystal->print(variable);
-			} 
+			}
 			break;
 		} // case FLOAT_GETTER
+
+		case DataType::DOUBLE_GETTER: {
+			const doubleFnPtr getterFunction = reinterpret_cast<doubleFnPtr>(_variable[number]);
+			if (getterFunction != nullptr) {
+				const double variable = (getterFunction)();
+				DEBUG(F("(double)")); DEBUG(variable);
+				p_liquidCrystal->print(variable);
+			}
+			break;
+		} // case DOUBLE_GETTER
 
 		case DataType::BOOL_GETTER: {
 			const boolFnPtr getterFunction = reinterpret_cast<boolFnPtr>(_variable[number]);
