@@ -1,8 +1,15 @@
 name: Size delta PR
 
 on:
-  schedule:
-    - cron: '*/10 * * * *'
+  workflow_run:
+    workflows: [ "Compile examples" ]
+    types: [ completed ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: write
 
 jobs:
   report:
