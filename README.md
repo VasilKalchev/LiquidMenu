@@ -5,10 +5,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/VaSe7u/LiquidMenu/archive/v1.6.3.zip"><img alt="Download" src="https://img.shields.io/badge/download-1.6.3-blue.svg?style=flat-square&logo=github&logoColor=white&color=1cb3e4" /></a>
+  <a href="https://github.com/VasilKalchev/LiquidMenu/archive/v1.6.3.zip"><img alt="Download" src="https://img.shields.io/badge/download-1.6.3-blue.svg?style=flat-square&logo=github&logoColor=white&color=1cb3e4" /></a>
   <a href="https://vasilkalchev.github.io/LiquidMenu/annotated.html"><img alt="Documentation" src="https://img.shields.io/badge/docs-doxygen-blue.svg?style=flat-square" /></a>
-  <a href="https://github.com/VaSe7u/LiquidMenu/discussions"><img alt="Documentation" src="https://img.shields.io/github/discussions/vase7u/liquidmenu?style=flat-square&color=blueviolet" /></a>
-  <a href="https://github.com/VaSe7u/LiquidMenu/actions/workflows/compile-examples.yml"><img alt="GitHub workflow - compile examples" src="https://img.shields.io/github/actions/workflow/status/VaSe7u/LiquidMenu/compile-examples.yml?color=orange&label=build%20examples&style=flat-square" /></a>
+  <a href="https://github.com/VasilKalchev/LiquidMenu/discussions"><img alt="Documentation" src="https://img.shields.io/github/discussions/vasilkalchev/liquidmenu?style=flat-square&color=blueviolet" /></a>
+  <a href="https://github.com/VasilKalchev/LiquidMenu/actions/workflows/compile-examples.yml"><img alt="GitHub workflow - compile examples" src="https://img.shields.io/github/actions/workflow/status/VasilKalchev/LiquidMenu/compile-examples.yml?color=orange&label=build%20examples&style=flat-square" /></a>
   <a href="https://choosealicense.com/licenses/mit/"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square" /></a>
 </p>
 
@@ -43,7 +43,7 @@ Use _Arduino's library manager_ (recommended) or download it directly from [here
 The library uses hierarchically structured classes to represent the different elements of a menu.
 
 #### Basic classes structure diagram:
-![basic classes structure diagram](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/classes-structure/menu.png "Basic classes structure diagram")
+![basic classes structure diagram](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/img/classes-structure/menu.png "Basic classes structure diagram")
 
 The `LiquidLine` class represents a *line* of text/numbers on the display.
 
@@ -51,7 +51,7 @@ The `LiquidScreen` class represents a collection of *lines* that are shown toget
 
 The `LiquidMenu` class combines the *screens* to form a *menu*. This class is used for controlling the *menu* (switching between *screens*, selecting *lines*, calling functions etc...).
 
-If your structure consists of multiple different *menus*, for example a "Main menu" that displays sensor information on multiple screens and a "Settings" menu for configuring the sensors, you can combine the different *menus* inside a `LiquidSystem` class. That way, you can browse the screens of just the *menu* you are currently on. `LiquidSystem` has the same public interface as `LiquidMenu`. Sub-menus [classes structure diagram](https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/classes-structure/system.png).
+If your structure consists of multiple different *menus*, for example a "Main menu" that displays sensor information on multiple screens and a "Settings" menu for configuring the sensors, you can combine the different *menus* inside a `LiquidSystem` class. That way, you can browse the screens of just the *menu* you are currently on. `LiquidSystem` has the same public interface as `LiquidMenu`. Sub-menus [classes structure diagram](https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/img/classes-structure/system.png).
 
 
 ### Creating a menu
@@ -196,16 +196,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-<!-- [logo-img]: https://github.com/VaSe7u/LiquidMenu/blob/65ef1aa297d14bff1a26df25bd7a97d059a8a0a8/doc/img/logo/logo.png -->
-[logo-img]: https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/doc/img/logo/logo.png
+<!-- [logo-img]: https://github.com/VasilKalchev/LiquidMenu/blob/65ef1aa297d14bff1a26df25bd7a97d059a8a0a8/doc/img/logo/logo.png -->
+[logo-img]: https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/doc/img/logo/logo.png
 [LiquidCrystal-lib]: https://github.com/arduino-libraries/LiquidCrystal
-[doxygen-doc]: https://vase7u.github.io/LiquidMenu/annotated.html
+[doxygen-doc]: https://vasilkalchev.github.io/LiquidMenu/annotated.html
 [examples-dir]: /examples
-[disc]: https://github.com/VaSe7u/LiquidMenu/discussions
-[q&a-disc]: https://github.com/VaSe7u/LiquidMenu/discussions/categories/q-a
-[ideas-disc]: https://github.com/VaSe7u/LiquidMenu/discussions/categories/ideas
-[show&tell-disc]: https://github.com/VaSe7u/LiquidMenu/discussions/categories/show-tell
-[issues]: https://github.com/VaSe7u/LiquidMenu/issues/new/choose
-[latest_release]: https://github.com/VaSe7u/LiquidMenu/releases/latest
+[disc]: https://github.com/VasilKalchev/LiquidMenu/discussions
+[q&a-disc]: https://github.com/VasilKalchev/LiquidMenu/discussions/categories/q-a
+[ideas-disc]: https://github.com/VasilKalchev/LiquidMenu/discussions/categories/ideas
+[show&tell-disc]: https://github.com/VasilKalchev/LiquidMenu/discussions/categories/show-tell
+[issues]: https://github.com/VasilKalchev/LiquidMenu/issues/new/choose
+[latest_release]: https://github.com/VasilKalchev/LiquidMenu/releases/latest
 [code_of_conduct-doc]: /.github/CODE_OF_CONDUCT.md
 [contributing-doc]: /.github/CONTRIBUTING.md
