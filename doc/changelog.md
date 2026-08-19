@@ -12,7 +12,16 @@ All notable changes to this project will be documented in this file.
 ### Security (to invite users to upgrade in case of vulnerabilities)
 -->
 
-<!-- ## [Unreleased] -->
+## [Unreleased]
+### Added
+ - ESP32 examples, in their own `examples/ESP32` folder
+ - examples for a rotary encoder with an edit mode and for showing/hiding screens at runtime
+ - a Wokwi `diagram.json` for every example, so they can be run without hardware
+### Changed
+ - the examples are grouped by board (`examples/Arduino`, `examples/ESP32`) and rewritten
+ - the `functions_menu` and `buttons_menu` examples are merged into `C_buttons_menu`
+### Removed
+ - the Fritzing (`.fzz`) schematics, replaced by the Wokwi diagrams
 
 ## [1.6.0] - 2021-11-05
 ### Added

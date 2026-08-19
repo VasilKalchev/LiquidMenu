@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "author": "LiquidMenu",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 130,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -110,
+      "left": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "contrast",
+      "top": 20,
+      "left": -200,
+      "attrs": {
+        "value": "25"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "signal",
+      "top": 250,
+      "left": -200,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "esp:GND.1",
+      "lcd:VSS",
+      "black",
+      []
+    ],
+    [
+      "esp:5V",
+      "lcd:VDD",
+      "red",
+      []
+    ],
+    [
+      "contrast:SIG",
+      "lcd:V0",
+      "green",
+      []
+    ],
+    [
+      "esp:13",
+      "lcd:RS",
+      "blue",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "lcd:RW",
+      "black",
+      []
+    ],
+    [
+      "esp:14",
+      "lcd:E",
+      "blue",
+      []
+    ],
+    [
+      "esp:27",
+      "lcd:D4",
+      "violet",
+      []
+    ],
+    [
+      "esp:26",
+      "lcd:D5",
+      "violet",
+      []
+    ],
+    [
+      "esp:25",
+      "lcd:D6",
+      "violet",
+      []
+    ],
+    [
+      "esp:33",
+      "lcd:D7",
+      "violet",
+      []
+    ],
+    [
+      "esp:5V",
+      "lcd:A",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "lcd:K",
+      "black",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "contrast:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:5V",
+      "contrast:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.2",
+      "signal:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:3V3",
+      "signal:VCC",
+      "red",
+      []
+    ],
+    [
+      "signal:SIG",
+      "esp:34",
+      "orange",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

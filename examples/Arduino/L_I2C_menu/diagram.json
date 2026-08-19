@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "author": "LiquidMenu",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 130,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -100,
+      "left": 100,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "signal",
+      "top": 250,
+      "left": -200,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "uno:GND.1",
+      "lcd:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "lcd:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:A4",
+      "lcd:SDA",
+      "green",
+      []
+    ],
+    [
+      "uno:A5",
+      "lcd:SCL",
+      "yellow",
+      []
+    ],
+    [
+      "uno:GND.2",
+      "signal:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "signal:VCC",
+      "red",
+      []
+    ],
+    [
+      "signal:SIG",
+      "uno:A1",
+      "orange",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

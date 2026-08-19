@@ -23,7 +23,7 @@ It simplifies the menu creation process by abstracting the elements of a menu in
 - parallel or I2C connection
 
 ## Resources
- - [Examples][examples-dir]
+ - [Examples][examples-dir] - for Arduino and ESP32, each one runnable in the [Wokwi][wokwi] simulator
  - [API reference][doxygen-doc]
  - [Discussions][disc]
 
@@ -99,7 +99,7 @@ void LiquidMenu::call_function(byte number);
 ```
 The `number` specifies which one of the attached functions should be called.
 
-> Conceptionally similar functions should be attached under the same number to the different *lines*. For example if we are printing the state of four LEDs. Each LEDis instantiated in a `LiquidLine` object with their name and their state. The functions used to turn them on can be attached under number *1* and the functions for turning them off - under number *2*. Then if we have 3 buttons, one can be used to switch the focus, the second (say 'UP') button can be used to call function *1* and the third (say 'DOWN') button can be used to call function *2*.
+> Conceptually similar functions should be attached under the same number to the different *lines*. For example if we are printing the state of four LEDs. Each LEDis instantiated in a `LiquidLine` object with their name and their state. The functions used to turn them on can be attached under number *1* and the functions for turning them off - under number *2*. Then if we have 3 buttons, one can be used to switch the focus, the second (say 'UP') button can be used to call function *1* and the third (say 'DOWN') button can be used to call function *2*.
 
 ### Basic example
 ```c++
@@ -201,6 +201,7 @@ SOFTWARE.
 [LiquidCrystal-lib]: https://github.com/arduino-libraries/LiquidCrystal
 [doxygen-doc]: https://vasilkalchev.github.io/LiquidMenu/annotated.html
 [examples-dir]: /examples
+[wokwi]: https://wokwi.com
 [disc]: https://github.com/VasilKalchev/LiquidMenu/discussions
 [q&a-disc]: https://github.com/VasilKalchev/LiquidMenu/discussions/categories/q-a
 [ideas-disc]: https://github.com/VasilKalchev/LiquidMenu/discussions/categories/ideas

@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "author": "LiquidMenu",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 130,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -110,
+      "left": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "contrast",
+      "top": 20,
+      "left": -200,
+      "attrs": {
+        "value": "25"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "signal",
+      "top": 250,
+      "left": -200,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "uno:GND.1",
+      "lcd:VSS",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "lcd:VDD",
+      "red",
+      []
+    ],
+    [
+      "contrast:SIG",
+      "lcd:V0",
+      "green",
+      []
+    ],
+    [
+      "uno:12",
+      "lcd:RS",
+      "blue",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "lcd:RW",
+      "black",
+      []
+    ],
+    [
+      "uno:11",
+      "lcd:E",
+      "blue",
+      []
+    ],
+    [
+      "uno:5",
+      "lcd:D4",
+      "violet",
+      []
+    ],
+    [
+      "uno:4",
+      "lcd:D5",
+      "violet",
+      []
+    ],
+    [
+      "uno:3",
+      "lcd:D6",
+      "violet",
+      []
+    ],
+    [
+      "uno:2",
+      "lcd:D7",
+      "violet",
+      []
+    ],
+    [
+      "uno:5V",
+      "lcd:A",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "lcd:K",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "contrast:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "contrast:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.2",
+      "signal:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "signal:VCC",
+      "red",
+      []
+    ],
+    [
+      "signal:SIG",
+      "uno:A1",
+      "orange",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

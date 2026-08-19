@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "author": "LiquidMenu",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 130,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -110,
+      "left": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "contrast",
+      "top": 20,
+      "left": -200,
+      "attrs": {
+        "value": "25"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnLeft",
+      "top": 330,
+      "left": -230,
+      "attrs": {
+        "color": "green",
+        "label": "LEFT"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnRight",
+      "top": 330,
+      "left": -130,
+      "attrs": {
+        "color": "green",
+        "label": "RIGHT"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnUp",
+      "top": 390,
+      "left": -230,
+      "attrs": {
+        "color": "blue",
+        "label": "UP"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnDown",
+      "top": 390,
+      "left": -130,
+      "attrs": {
+        "color": "blue",
+        "label": "DOWN"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnEnter",
+      "top": 450,
+      "left": -230,
+      "attrs": {
+        "color": "red",
+        "label": "ENTER"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 240,
+      "left": 300,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rLed",
+      "top": 300,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "signal",
+      "top": 250,
+      "left": -200,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "uno:GND.1",
+      "lcd:VSS",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "lcd:VDD",
+      "red",
+      []
+    ],
+    [
+      "contrast:SIG",
+      "lcd:V0",
+      "green",
+      []
+    ],
+    [
+      "uno:12",
+      "lcd:RS",
+      "blue",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "lcd:RW",
+      "black",
+      []
+    ],
+    [
+      "uno:11",
+      "lcd:E",
+      "blue",
+      []
+    ],
+    [
+      "uno:5",
+      "lcd:D4",
+      "violet",
+      []
+    ],
+    [
+      "uno:4",
+      "lcd:D5",
+      "violet",
+      []
+    ],
+    [
+      "uno:3",
+      "lcd:D6",
+      "violet",
+      []
+    ],
+    [
+      "uno:2",
+      "lcd:D7",
+      "violet",
+      []
+    ],
+    [
+      "uno:5V",
+      "lcd:A",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "lcd:K",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "contrast:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "contrast:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:A0",
+      "btnLeft:1.l",
+      "green",
+      []
+    ],
+    [
+      "uno:GND.3",
+      "btnLeft:2.l",
+      "black",
+      []
+    ],
+    [
+      "uno:7",
+      "btnRight:1.l",
+      "green",
+      []
+    ],
+    [
+      "uno:GND.3",
+      "btnRight:2.l",
+      "black",
+      []
+    ],
+    [
+      "uno:8",
+      "btnUp:1.l",
+      "blue",
+      []
+    ],
+    [
+      "uno:GND.3",
+      "btnUp:2.l",
+      "black",
+      []
+    ],
+    [
+      "uno:9",
+      "btnDown:1.l",
+      "blue",
+      []
+    ],
+    [
+      "uno:GND.3",
+      "btnDown:2.l",
+      "black",
+      []
+    ],
+    [
+      "uno:10",
+      "btnEnter:1.l",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.3",
+      "btnEnter:2.l",
+      "black",
+      []
+    ],
+    [
+      "uno:6",
+      "rLed:1",
+      "orange",
+      []
+    ],
+    [
+      "rLed:2",
+      "led:A",
+      "orange",
+      []
+    ],
+    [
+      "led:C",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.2",
+      "signal:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "signal:VCC",
+      "red",
+      []
+    ],
+    [
+      "signal:SIG",
+      "uno:A1",
+      "orange",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

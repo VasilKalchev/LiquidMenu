@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "author": "LiquidMenu",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 130,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -100,
+      "left": 100,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnLeft",
+      "top": 330,
+      "left": -230,
+      "attrs": {
+        "color": "green",
+        "label": "LEFT"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnRight",
+      "top": 330,
+      "left": -130,
+      "attrs": {
+        "color": "green",
+        "label": "RIGHT"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnUp",
+      "top": 390,
+      "left": -230,
+      "attrs": {
+        "color": "blue",
+        "label": "UP"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnDown",
+      "top": 390,
+      "left": -130,
+      "attrs": {
+        "color": "blue",
+        "label": "DOWN"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnEnter",
+      "top": 450,
+      "left": -230,
+      "attrs": {
+        "color": "red",
+        "label": "ENTER"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 240,
+      "left": 300,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rLed",
+      "top": 300,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:GND.1",
+      "lcd:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:5V",
+      "lcd:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:21",
+      "lcd:SDA",
+      "green",
+      []
+    ],
+    [
+      "esp:22",
+      "lcd:SCL",
+      "yellow",
+      []
+    ],
+    [
+      "esp:32",
+      "btnLeft:1.l",
+      "green",
+      []
+    ],
+    [
+      "esp:GND.3",
+      "btnLeft:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:33",
+      "btnRight:1.l",
+      "green",
+      []
+    ],
+    [
+      "esp:GND.3",
+      "btnRight:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:25",
+      "btnUp:1.l",
+      "blue",
+      []
+    ],
+    [
+      "esp:GND.3",
+      "btnUp:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:26",
+      "btnDown:1.l",
+      "blue",
+      []
+    ],
+    [
+      "esp:GND.3",
+      "btnDown:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:27",
+      "btnEnter:1.l",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.3",
+      "btnEnter:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:4",
+      "rLed:1",
+      "orange",
+      []
+    ],
+    [
+      "rLed:2",
+      "led:A",
+      "orange",
+      []
+    ],
+    [
+      "led:C",
+      "esp:GND.2",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

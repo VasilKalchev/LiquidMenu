@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "author": "LiquidMenu",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-nano",
+      "id": "nano",
+      "top": 150,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -110,
+      "left": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "contrast",
+      "top": 20,
+      "left": -200,
+      "attrs": {
+        "value": "25"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnEnter",
+      "top": 330,
+      "left": -230,
+      "attrs": {
+        "color": "red",
+        "label": "ENTER"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "nano:GND.1",
+      "lcd:VSS",
+      "black",
+      []
+    ],
+    [
+      "nano:5V",
+      "lcd:VDD",
+      "red",
+      []
+    ],
+    [
+      "contrast:SIG",
+      "lcd:V0",
+      "green",
+      []
+    ],
+    [
+      "nano:12",
+      "lcd:RS",
+      "blue",
+      []
+    ],
+    [
+      "nano:GND.1",
+      "lcd:RW",
+      "black",
+      []
+    ],
+    [
+      "nano:11",
+      "lcd:E",
+      "blue",
+      []
+    ],
+    [
+      "nano:5",
+      "lcd:D4",
+      "violet",
+      []
+    ],
+    [
+      "nano:4",
+      "lcd:D5",
+      "violet",
+      []
+    ],
+    [
+      "nano:3",
+      "lcd:D6",
+      "violet",
+      []
+    ],
+    [
+      "nano:2",
+      "lcd:D7",
+      "violet",
+      []
+    ],
+    [
+      "nano:5V",
+      "lcd:A",
+      "red",
+      []
+    ],
+    [
+      "nano:GND.1",
+      "lcd:K",
+      "black",
+      []
+    ],
+    [
+      "nano:GND.1",
+      "contrast:GND",
+      "black",
+      []
+    ],
+    [
+      "nano:5V",
+      "contrast:VCC",
+      "red",
+      []
+    ],
+    [
+      "nano:10",
+      "btnEnter:1.l",
+      "red",
+      []
+    ],
+    [
+      "nano:GND.2",
+      "btnEnter:2.l",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

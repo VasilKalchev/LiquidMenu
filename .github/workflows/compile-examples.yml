@@ -18,13 +18,14 @@ permissions:
   contents: read
 
 jobs:
-  compile-parallel-examples:
+  compile-avr-parallel-examples:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         fqbn:
           - arduino:avr:uno
+          - arduino:avr:nano
 #           - arduino:avr:leonardo
 #           - arduino:avr:mega:cpu=atmega2560
 
@@ -44,16 +45,17 @@ jobs:
             - --build-property
             - build.extra_flags=-DDisplayClass=LiquidCrystal -DLIQUIDMENU_LIBRARY=1
           sketch-paths: |
-            - ./examples/A_hello_menu
-            - ./examples/B_serial_menu
-            - ./examples/C_functions_menu
-            - ./examples/D_buttons_menu
-            - ./examples/E_progmem_menu
-            - ./examples/F_focus_menu
-            - ./examples/G_glyph_menu
-            - ./examples/H_system_menu
-            - ./examples/J_scrolling_menu
-            - ./examples/K_getters_menu
+            - ./examples/Arduino/A_hello_menu
+            - ./examples/Arduino/B_serial_menu
+            - ./examples/Arduino/C_buttons_menu
+            - ./examples/Arduino/D_encoder_menu
+            - ./examples/Arduino/E_focus_menu
+            - ./examples/Arduino/F_glyph_menu
+            - ./examples/Arduino/G_scrolling_menu
+            - ./examples/Arduino/H_getters_menu
+            - ./examples/Arduino/I_progmem_menu
+            - ./examples/Arduino/J_dynamic_menu
+            - ./examples/Arduino/K_system_menu
           libraries: |
             - source-path: ./
             - name: LiquidCrystal
@@ -61,18 +63,16 @@ jobs:
       - name: Report
         uses: actions/upload-artifact@v4
         with:
-          name: sketches-reports-avr
+          name: sketches-reports-avr-${{ strategy.job-index }}
           path: sketches-reports
 
-  compile-i2c-examples:
+  compile-avr-i2c-examples:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         fqbn:
           - arduino:avr:uno
-#           - arduino:avr:leonardo
-#           - arduino:avr:mega:cpu=atmega2560
 
     steps:
       - name: Checkout
@@ -90,7 +90,7 @@ jobs:
             - --build-property
             - build.extra_flags=-DDisplayClass=LiquidCrystal_I2C -DLIQUIDMENU_LIBRARY=2
           sketch-paths: |
-            - ./examples/I_I2C_menu
+            - ./examples/Arduino/L_I2C_menu
           libraries: |
             - source-path: ./
             - source-url: https://github.com/johnrickman/LiquidCrystal_I2C.git
@@ -99,10 +99,10 @@ jobs:
       - name: Report
         uses: actions/upload-artifact@v4
         with:
-          name: sketches-reports-i2c
+          name: sketches-reports-avr-i2c
           path: sketches-reports
 
-  compile-esp32-examples:
+  compile-esp32-parallel-examples:
     runs-on: ubuntu-latest
 
     strategy:
@@ -129,12 +129,8 @@ jobs:
           cli-compile-flags: |
             - --build-property
             - build.extra_flags=-DDisplayClass=LiquidCrystal -DLIQUIDMENU_LIBRARY=1
-          # Only the simplest example is compiled here to keep the library's
-          # ESP32 build portable and to smoke-test the core on that target.
-          # The rest of the examples are written and wired for AVR boards and
-          # aren't meant to double as portability demos.
           sketch-paths: |
-            - ./examples/A_hello_menu
+            - ./examples/ESP32/A_hello_menu
           libraries: |
             - source-path: ./
             - name: LiquidCrystal
@@ -173,7 +169,9 @@ jobs:
             - --build-property
             - build.extra_flags=-DDisplayClass=LiquidCrystal_I2C -DLIQUIDMENU_LIBRARY=2
           sketch-paths: |
-            - ./examples/I_I2C_menu
+            - ./examples/ESP32/B_I2C_menu
+            - ./examples/ESP32/C_buttons_menu
+            - ./examples/ESP32/D_system_menu
           libraries: |
             - source-path: ./
             - source-url: https://github.com/johnrickman/LiquidCrystal_I2C.git
@@ -187,9 +185,9 @@ jobs:
 
   merge-reports:
     needs:
-      - compile-parallel-examples
-      - compile-i2c-examples
-      - compile-esp32-examples
+      - compile-avr-parallel-examples
+      - compile-avr-i2c-examples
+      - compile-esp32-parallel-examples
       - compile-esp32-i2c-examples
     runs-on: ubuntu-latest
 
