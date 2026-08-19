@@ -53,6 +53,7 @@ add_screen	KEYWORD2
 next_screen	KEYWORD2
 previous_screen	KEYWORD2
 change_screen	KEYWORD2
+get_currentScreen	KEYWORD2
 set_focusSymbol	KEYWORD2
 update	KEYWORD2
 softUpdate	KEYWORD2
@@ -61,6 +62,7 @@ init	KEYWORD2
 # class LiquidSystem
 add_menu	KEYWORD2
 change_menu	KEYWORD2
+get_currentMenu	KEYWORD2
 
 ########################################
 # Constants (LITERAL1)
@@ -78,6 +80,7 @@ INT32_T	LITERAL1
 UINT32_T	LITERAL1
 FLOAT	LITERAL1
 DOUBLE	LITERAL1
+DOUBLE_GETTER	LITERAL1
 CHAR	LITERAL1
 CHAR_PTR	LITERAL1
 CONST_CHAR_PTR	LITERAL1
