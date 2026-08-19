@@ -91,7 +91,6 @@ LiquidScreen* LiquidMenu::get_currentScreen() const {
 }
 
 void LiquidMenu::next_screen() {
-  _p_liquidCrystal->clear();
   do {
     if (_currentScreen < _screenCount - 1)  {
       _currentScreen++;
@@ -112,7 +111,6 @@ void LiquidMenu::operator++(int) {
 }
 
 void LiquidMenu::previous_screen() {
-  _p_liquidCrystal->clear();
   do {
     if (_currentScreen > 0) {
       _currentScreen--;
@@ -135,7 +133,6 @@ void LiquidMenu::operator--(int) {
 bool LiquidMenu::change_screen(uint8_t number) {
   uint8_t index = number - 1;
   if (index <= _screenCount) {
-    _p_liquidCrystal->clear();
     _currentScreen = index;
     update();
     DEBUG(F("Switched to screen ("));
@@ -148,16 +145,12 @@ bool LiquidMenu::change_screen(uint8_t number) {
 }
 
 bool LiquidMenu::change_screen(LiquidScreen *p_liquidScreen) {
-  // _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
   for (uint8_t s = 0; s < _screenCount; s++) {
-    _p_liquidCrystal->clear();
     if (p_liquidScreen == _p_liquidScreen[s]) {
-    // if (reinterpret_cast<uintptr_t>(&p_liquidScreen) == reinterpret_cast<uintptr_t>(&(*_p_liquidScreen[s]))) {
       _currentScreen = s;
       update();
       DEBUG(F("Switched to screen ("));
       DEBUG(_currentScreen); DEBUGLN(F(")"));
-      update();
       return true;
     }
   }
@@ -174,7 +167,6 @@ bool LiquidMenu::operator=(LiquidScreen *p_liquidScreen) {
 }
 
 void LiquidMenu::switch_focus(bool forward) {
-  _p_liquidCrystal->clear();
   _p_liquidScreen[_currentScreen]->switch_focus(forward);
   update();
 }
