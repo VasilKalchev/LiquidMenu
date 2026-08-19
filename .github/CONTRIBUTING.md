@@ -24,5 +24,5 @@ Thank you for considering contributing to the project.
 2. Make your changes.
 3. Open a pull request.
 
-[issues]: https://github.com/VaSe7u/LiquidMenu/issues
-[ideas-disc]: https://github.com/VaSe7u/LiquidMenu/discussions/categories/ideas
+[issues]: https://github.com/VasilKalchev/LiquidMenu/issues
+[ideas-disc]: https://github.com/VasilKalchev/LiquidMenu/discussions/categories/ideas

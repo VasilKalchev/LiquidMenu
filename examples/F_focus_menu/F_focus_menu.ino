@@ -18,7 +18,7 @@
  * respective objects.
  *
  * The circuit:
- * https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/examples/F_focus_menu/focus_menu.png
+ * https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/examples/F_focus_menu/focus_menu.png
  * - LCD RS pin to Arduino pin 12
  * - LCD E pin to Arduino pin 11
  * - LCD D4 pin to Arduino pin 5

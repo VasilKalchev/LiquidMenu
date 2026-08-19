@@ -3,11 +3,11 @@
 
 _Menu creation Arduino library for LCDs, extends [LiquidCrystal][lc]._
 
-[Class documentation](https://vase7u.github.io/LiquidMenu/doc/html/annotated.html)
+[Class documentation](https://vasilkalchev.github.io/LiquidMenu/doc/html/annotated.html)
 
-[Examples](https://vase7u.github.io/LiquidMenu/doc/html/examples.html)
+[Examples](https://vasilkalchev.github.io/LiquidMenu/doc/html/examples.html)
 
-[GitHub page](https://github.com/VaSe7u/LiquidMenu)
+[GitHub page](https://github.com/VasilKalchev/LiquidMenu)
 
 
 [lc]: https://github.com/arduino-libraries/LiquidCrystal

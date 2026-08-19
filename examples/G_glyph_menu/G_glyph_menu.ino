@@ -23,7 +23,7 @@
  * shown on the display will overwrite the old.
  *
  * The circuit:
- * https://raw.githubusercontent.com/VaSe7u/LiquidMenu/master/examples/G_glyph_menu/glyph_menu.png
+ * https://raw.githubusercontent.com/VasilKalchev/LiquidMenu/master/examples/G_glyph_menu/glyph_menu.png
  * - LCD RS pin to Arduino pin 12
  * - LCD E pin to Arduino pin 11
  * - LCD D4 pin to Arduino pin 5
