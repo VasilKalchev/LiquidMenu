@@ -16,3 +16,13 @@ Constants file for LiquidMenu library.
 /// https://github.com/johnrickman/LiquidCrystal_I2C library (I2C)
 #define LiquidCrystal_I2C_LIBRARY (2)
 //!@}
+
+/*!
+ * @name Focus indicator custom character slots.
+ * The character generator RAM slots used for the built-in focus glyphs.
+ * @{
+ */
+#define LM_FOCUS_GLYPH_CUSTOM (13)
+#define LM_FOCUS_GLYPH_LEFT (14)
+#define LM_FOCUS_GLYPH_RIGHT (15)
+//!@}

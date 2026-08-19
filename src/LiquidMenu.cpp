@@ -205,17 +205,17 @@ bool LiquidMenu::set_focusPosition(Position position) {
 bool LiquidMenu::set_focusSymbol(Position position, uint8_t symbol[8]) {
   switch (position) {
   case Position::RIGHT: {
-    _p_liquidCrystal->createChar(15, symbol);
+    _p_liquidCrystal->createChar(LM_FOCUS_GLYPH_RIGHT, symbol);
     DEBUG(F("Right"));
     break;
   } //case RIGHT
   case Position::LEFT: {
-    _p_liquidCrystal->createChar(14, symbol);
+    _p_liquidCrystal->createChar(LM_FOCUS_GLYPH_LEFT, symbol);
     DEBUG(F("Left"));
     break;
   } //case LEFT
   case Position::CUSTOM: {
-    _p_liquidCrystal->createChar(13, symbol);
+    _p_liquidCrystal->createChar(LM_FOCUS_GLYPH_CUSTOM, symbol);
     DEBUG(F("Custom"));
     break;
   } //case CUSTOM
@@ -259,9 +259,7 @@ void LiquidMenu::softUpdate() const {
   static bool firstRun = true;
   if (firstRun) {
     firstRun = false;
-    _p_liquidCrystal->createChar(15, glyph::rightFocus);
-    _p_liquidCrystal->createChar(14, glyph::leftFocus);
-    _p_liquidCrystal->createChar(13, glyph::customFocus);
+    init();
   }
 
   DEBUGLN(F("Updating the LCD"));
@@ -278,7 +276,7 @@ void LiquidMenu::softUpdate() const {
 }
 
 void LiquidMenu::init() const {
-  _p_liquidCrystal->createChar(15, glyph::rightFocus);
-  _p_liquidCrystal->createChar(14, glyph::leftFocus);
-  _p_liquidCrystal->createChar(13, glyph::customFocus);
+  _p_liquidCrystal->createChar(LM_FOCUS_GLYPH_RIGHT, glyph::rightFocus);
+  _p_liquidCrystal->createChar(LM_FOCUS_GLYPH_LEFT, glyph::leftFocus);
+  _p_liquidCrystal->createChar(LM_FOCUS_GLYPH_CUSTOM, glyph::customFocus);
 }
