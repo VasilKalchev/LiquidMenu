@@ -101,7 +101,7 @@ void LiquidLine::print(DisplayClass *p_liquidCrystal, bool isFocused) {
 	DEBUG(F(" (")); DEBUG(_column); DEBUG(F(", ")); DEBUG(_row); DEBUGLN(F(")"));
 
 	DEBUG(F("|\t"));
-	for (uint8_t v = 0; v < MAX_VARIABLES; v++) {
+	for (uint8_t v = 0; v < _variableCount; v++) {
 		print_variable(p_liquidCrystal, v);
 	}
 	DEBUGLN();
