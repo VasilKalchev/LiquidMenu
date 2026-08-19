@@ -35,15 +35,7 @@ SOFTWARE.
 0 - "ghosting" is enabled
 1 - "ghosting" is disabled
 */
-#define LM_LINE_COUNT_SUBTRAHEND (0)
-
-#if LM_FOCUS_INDICATOR_GHOSTING == true
-	#undef LM_LINE_COUNT_SUBTRAHEND
-	#define LM_LINE_COUNT_SUBTRAHEND (0)
-#elif LM_FOCUS_INDICATOR_GHOSTING == false
-	#undef LM_LINE_COUNT_SUBTRAHEND
-	#define LM_LINE_COUNT_SUBTRAHEND (1)
-#endif
+#define LM_LINE_COUNT_SUBTRAHEND (LM_FOCUS_INDICATOR_GHOSTING ? 0 : 1)
 
 
 
@@ -128,9 +120,7 @@ void LiquidScreen::hide(bool hide) {
 void LiquidScreen::print(DisplayClass *p_liquidCrystal) const {
 	uint8_t lOffset = 0;
 	uint8_t displayLineCount = _displayLineCount;
-	if (displayLineCount == 0) {
-		displayLineCount = _lineCount;
-	} else if (displayLineCount > _lineCount) {
+	if (displayLineCount == 0 || displayLineCount > _lineCount) {
 		displayLineCount = _lineCount;
 	}
 
