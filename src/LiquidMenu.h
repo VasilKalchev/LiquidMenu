@@ -472,6 +472,9 @@ public:
   @note Function numbering starts from 1.
   @note The maximum amount of functions per line is specified in
   LiquidMenu_config.h as `MAX_FUNCTIONS`. The default is 8.
+  @note This is also what makes the line focusable. A line with no
+  attached function (not even a no-op one) is skipped by switch_focus()
+  and rejected by set_focusedLine().
 
   @see LiquidMenu_config.h
   @see MAX_FUNCTIONS
@@ -722,6 +725,10 @@ private:
   @note After one iteration through the focusable lines is completed, the focus
   indicator will hide for one step. To disable this behavior set
   `LM_FOCUS_INDICATOR_GHOSTING` to false in `LiquiMenu_config.h`
+  @note Only lines that have had a function attached via
+  `LiquidLine::attach_function()` are focusable. If no line on the
+  screen is focusable, the focus indicator stays hidden and this call
+  has no visible effect.
 
   @param forward - true for forward, false for backward
   */
@@ -729,6 +736,10 @@ private:
 
   /// Directly select focused line.
   /**
+  @note A line only becomes focusable after `LiquidLine::attach_function()`
+  has been called on it, even with a no-op function used purely to
+  enable focus (see `examples/F_focus_menu`).
+
   @param lineIndex - index of the focused line
   @return true: on success, false: when the selected line doesn't exist or it isn't focusable
   */
@@ -940,12 +951,21 @@ public:
   Switches the focus to the next or previous line
   according to the passed parameter.
 
+  @note Only lines that have had a function attached via
+  `LiquidLine::attach_function()` are focusable. If no line on the
+  current screen is focusable, the focus indicator stays hidden and
+  this call has no visible effect.
+
   @param forward - true for forward, false for backward
   */
   void switch_focus(bool forward = true);
   
   /// Directly select focused line.
   /**
+  @note A line only becomes focusable after `LiquidLine::attach_function()`
+  has been called on it, even with a no-op function used purely to
+  enable focus (see `examples/F_focus_menu`).
+
   @param lineIndex - index of the focused line
   @return true: on success, false: when the selected line doesn't exist or it isn't focusable
   */
@@ -1204,12 +1224,21 @@ public:
   Switches the focus to the next or previous line
   according to the passed parameter.
 
+  @note Only lines that have had a function attached via
+  `LiquidLine::attach_function()` are focusable. If no line on the
+  current screen is focusable, the focus indicator stays hidden and
+  this call has no visible effect.
+
   @param forward - true for forward, false for backward
   */
   void switch_focus(bool forward = true);
 
   /// Directly select focused line.
   /**
+  @note A line only becomes focusable after `LiquidLine::attach_function()`
+  has been called on it, even with a no-op function used purely to
+  enable focus (see `examples/F_focus_menu`).
+
   @param lineIndex - index of the focused line
   @return true: on success, false: when the selected line doesn't exist or it isn't focusable
   */
