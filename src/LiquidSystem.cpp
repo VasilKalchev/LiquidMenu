@@ -74,17 +74,14 @@ bool LiquidSystem::add_menu(LiquidMenu &liquidMenu) {
 
 
 bool LiquidSystem::change_menu(LiquidMenu &p_liquidMenu) {
-	// _p_liquidMenu[_currentMenu]->_p_liquidCrystal->clear();
 	for (uint8_t m = 0; m < _menuCount; m++) {
-		// if ((uintptr_t)&p_liquidMenu == (uintptr_t) & (*_p_liquidMenu[m])) {
-		if (reinterpret_cast<uintptr_t>(&p_liquidMenu) == reinterpret_cast<uintptr_t>(&(*_p_liquidMenu[m]))) {
+		if (&p_liquidMenu == _p_liquidMenu[m]) {
 			_currentMenu = m;
 			DEBUG(F("Menu changed to ")); DEBUGLN(_currentMenu);
 			update();
 			return true;
 		}
 	}
-	// DEBUG(F("Invalid request for menu change to ")); DEBUGLN((uintptr_t)&p_liquidMenu);
 	DEBUG(F("Invalid request for menu change to ")); DEBUGLN(reinterpret_cast<intptr_t>(&p_liquidMenu));
 	return false;
 }
