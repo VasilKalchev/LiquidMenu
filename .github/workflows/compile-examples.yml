@@ -184,3 +184,19 @@ jobs:
         with:
           name: sketches-reports-esp32-i2c
           path: sketches-reports
+
+  merge-reports:
+    needs:
+      - compile-parallel-examples
+      - compile-i2c-examples
+      - compile-esp32-examples
+      - compile-esp32-i2c-examples
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Merge reports
+        uses: actions/upload-artifact/merge@v4
+        with:
+          name: sketches-reports
+          pattern: sketches-reports-*
+          delete-merged: true
