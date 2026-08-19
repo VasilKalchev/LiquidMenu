@@ -53,12 +53,20 @@ const byte LCD_D7 = 2;
 //10K potentiometer wiper to VO
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
+// The "A1" alias used in the wiring diagram above is an AVR (Uno,
+// Nano, ...) convention. On boards without it, e.g. ESP32, use any
+// ADC-capable GPIO instead.
+#if defined(ARDUINO_ARCH_AVR)
+const byte analogPin = A1;
+#else
+const byte analogPin = 34;
+#endif
+
 /*
  * Variable 'analogReading' is later configured to
  * be printed on the display. 'lastAnalogReading'
  * is used to check if the variable has changed.
  */
-const byte analogPin = A1;
 unsigned short analogReading = 0;
 unsigned short lastAnalogReading = 0;
 

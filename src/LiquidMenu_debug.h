@@ -6,7 +6,7 @@ Contains debug macro definitions for LiquidMenu library.
 #pragma once
 
 #if LIQUIDMENU_DEBUG
-  #ifdef ARDUINO_ARCH_AVR
+  #ifdef ARDUINO
     #include <Arduino.h>
     #define DEBUG(x) Serial.print(x);
     #define DEBUGLN(x) Serial.println(x);
