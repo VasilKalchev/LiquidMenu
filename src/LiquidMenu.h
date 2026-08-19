@@ -1159,6 +1159,14 @@ public:
   */
   LiquidScreen* get_currentScreen() const;
 
+  /// Returns a pointer to the current menu.
+  /**
+  Call this method to obtain a pointer to the current menu.
+
+  @returns a pointer to the current menu.
+  */
+  LiquidMenu* get_currentMenu() const;
+
   /// Switches to the next screen.
   void next_screen();
 
