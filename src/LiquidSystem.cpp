@@ -164,7 +164,16 @@ bool LiquidSystem::is_callable(uint8_t number) const {
 }
 
 bool LiquidSystem::call_function(uint8_t number, bool refresh) const {
-	bool returnValue = _p_liquidMenu[_currentMenu]->call_function(number, refresh);
+	// The callback (called below) may call change_menu(), which switches
+	// _currentMenu and redraws it immediately. If that happens, refreshing
+	// again afterwards would redraw the already up-to-date menu, so only
+	// refresh here when the callback didn't already change (and redraw)
+	// the current menu itself.
+	uint8_t menuBeforeCall = _currentMenu;
+	bool returnValue = _p_liquidMenu[menuBeforeCall]->call_function(number, false);
+	if (refresh && _currentMenu == menuBeforeCall) {
+		_p_liquidMenu[_currentMenu]->update();
+	}
 	return returnValue;
 }
 
