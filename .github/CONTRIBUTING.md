@@ -4,8 +4,11 @@ Thank you for considering contributing to the project.
 ## Branching model
 The repository has two long-lived branches:
 
-- **`master`** - the released library. Every commit on it is a release and
-  carries a `vX.Y.Z` tag. Nothing is committed here directly.
+- **`master`** - the released library. Almost every commit on it is a release
+  and carries a `vX.Y.Z` tag. Nothing that touches `src/` is committed here
+  directly; small corrections that cannot break a build - a typo, a dead link,
+  a README wording fix - may be, and should then be merged back down into
+  `develop` so it does not fall behind.
 - **`develop`** - the next release. Everything is merged here first, and it is
   the branch you start from and target.
 
