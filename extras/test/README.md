@@ -101,12 +101,15 @@ crash rather than fail.
 make asan
 ```
 
-rebuilds with `-fsanitize=address,undefined`. Most of this library's open
-bugs are memory bugs - a buffer written one past its end, an index that is
-not bounds checked - and the host is the only place they can be caught
-automatically rather than by reading the code. This needs the sanitizer
-runtimes installed (`libasan`, `libubsan`); it is expected to report the
-known bounds bugs until they are fixed.
+rebuilds with `-fsanitize=address,undefined`, and needs the sanitizer
+runtimes installed (`libasan`, `libubsan`).
+
+This is not optional extra credit - it is the only check that can see a
+whole class of this library's bugs. A write one past the end of a buffer
+produces correct output on the host and on a microcontroller alike, right
+up until the corrupted byte happens to matter, so neither the plain test
+run nor a board will tell you about it. The sanitizers name the file and
+the line. Both `make` and `make asan` run in CI and both must pass.
 
 ## In CI
 

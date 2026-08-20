@@ -27,9 +27,11 @@ jobs:
 
   sanitizers:
     runs-on: ubuntu-latest
-    # Expected to report the known bounds bugs in LiquidLine until they are
-    # fixed, so it informs rather than blocks.
-    continue-on-error: true
+    # Blocking, now that it is clean. It is the only check that can see a
+    # bug like a write one past the end of a buffer: on a microcontroller
+    # nothing objects, and the plain test run above cannot tell either -
+    # the output is correct right up until the moment the corrupted byte
+    # matters.
     steps:
       - uses: actions/checkout@v4
 
