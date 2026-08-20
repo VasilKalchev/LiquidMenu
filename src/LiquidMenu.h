@@ -28,7 +28,7 @@ Include file for LiquidMenu library.
 
 @author Vasil Kalchev
 @date 2016
-@version 1.6.0
+@version 1.6.3
 @copyright The MIT License
 
 @todo: dynamic memory
@@ -62,7 +62,7 @@ Include file for LiquidMenu library.
 # warning "LiquidMenu: Debugging messages are enabled."
 #endif
 
-const char LIQUIDMENU_VERSION[] = "1.6"; ///< The version of the library.
+const char LIQUIDMENU_VERSION[] = "1.6.3"; ///< The version of the library.
 
 
 

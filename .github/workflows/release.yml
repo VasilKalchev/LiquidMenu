@@ -1,0 +1,105 @@
+name: Release
+
+# Cuts a release from develop:
+#   version strings -> changelog -> commit -> merge to master -> tag -> GitHub Release
+#
+# Run it from the Actions tab with "Run workflow" and pick what to bump.
+# Everything the release touches is derived from tools/version.sh, so the
+# version can never end up different in different files.
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: "Which part of the version to increase"
+        required: true
+        type: choice
+        default: patch
+        options: [ patch, minor, major, exact ]
+      version:
+        description: "Exact x.y.z version (only used when bump = exact)"
+        required: false
+        type: string
+      dry_run:
+        description: "Show what would happen without pushing anything"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Fail early if develop is behind master
+        run: |
+          git fetch origin master:master
+          if ! git merge-base --is-ancestor master develop; then
+            echo "::error::develop is missing commits from master; merge master into develop first."
+            exit 1
+          fi
+
+      - name: Work out the new version
+        id: version
+        run: |
+          if [ "${{ inputs.bump }}" = "exact" ]; then
+            [ -n "${{ inputs.version }}" ] || { echo "::error::bump = exact needs a version"; exit 1; }
+            ./tools/version.sh release "${{ inputs.version }}"
+          else
+            current=$(./tools/version.sh get)
+            IFS=. read -r major minor patch <<<"$current"
+            case "${{ inputs.bump }}" in
+              major) next="$((major + 1)).0.0" ;;
+              minor) next="$major.$((minor + 1)).0" ;;
+              patch) next="$major.$minor.$((patch + 1))" ;;
+            esac
+            ./tools/version.sh release "$next"
+          fi
+          version=$(./tools/version.sh get)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Releasing $version"
+
+      - name: Show the release diff
+        run: git --no-pager diff
+
+      - name: Stop here on a dry run
+        if: inputs.dry_run
+        run: |
+          echo "### Dry run: would release v${{ steps.version.outputs.version }}" >> "$GITHUB_STEP_SUMMARY"
+          ./tools/version.sh notes >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the version bump on develop
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Release v${{ steps.version.outputs.version }}"
+          git push origin develop
+
+      - name: Merge into master and tag
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git checkout master
+          git merge --no-ff develop -m "Release v${{ steps.version.outputs.version }}"
+          git tag -a "v${{ steps.version.outputs.version }}" -m "v${{ steps.version.outputs.version }}"
+          git push origin master
+          git push origin "v${{ steps.version.outputs.version }}"
+
+      - name: Publish the GitHub Release
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ./tools/version.sh notes > release-notes.md
+          gh release create "v${{ steps.version.outputs.version }}" \
+            --title "v${{ steps.version.outputs.version }}" \
+            --notes-file release-notes.md \
+            --verify-tag

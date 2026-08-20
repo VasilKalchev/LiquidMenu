@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 ### Security (to invite users to upgrade in case of vulnerabilities)
 -->
 
-<!-- ## [Unreleased] -->
+## [Unreleased]
 
 ## [1.6.0] - 2021-11-05
 ### Added
