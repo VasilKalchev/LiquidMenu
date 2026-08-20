@@ -1,0 +1,22 @@
+name: Version consistency
+
+# The version number lives in five places that cannot reference each other.
+# This guards against them drifting apart, which has happened before.
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check that every version string matches library.properties
+        run: ./tools/version.sh check

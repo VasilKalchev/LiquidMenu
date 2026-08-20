@@ -31,4 +31,6 @@ Ran the example to verify that string literals are correctly displayed.
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
 - [ ] (if applicable) I have added a new example
-- [ ] I updated `doc/changelog.md`
+- [ ] I updated `doc/changelog.md`, under `## [Unreleased]`
+- [ ] This pull request targets `develop`, not `master`
+- [ ] I did **not** change the version number (releases do that, see [CONTRIBUTING](../CONTRIBUTING.md#releasing))
