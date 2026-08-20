@@ -17,7 +17,11 @@ Resolves #(issue_number)
 
 
 ## How have you tested it?
-> Please describe the manual tests that you did to verify your changes. Please also list any relevant details for your test configuration.
+- [ ] `cd extras/test && make` passes
+- [ ] I added a test case covering this change (a bug fix should fail without it)
+
+> Please also describe the manual tests that you did on hardware, and list
+> any relevant details for your test configuration.
 
 - [ ] Test A - example `<example_name>`
 Ran the example to verify that string literals are correctly displayed.
