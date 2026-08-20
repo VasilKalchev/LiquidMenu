@@ -1,6 +1,6 @@
 # Host build of LiquidMenu's test suite. No board and no Arduino
 # installation involved - the library is compiled for this machine against
-# the fake display in FakeLCD.h.
+# the fake display in LiquidCrystal_fake.h.
 #
 #   make            build and run
 #   make asan       the same, with the address/UB sanitizers
@@ -22,12 +22,12 @@ WARNINGS := -Wall -Wextra
 # The library's only tie to a display is the DisplayClass macro; pointing it
 # at the fake is the whole of the substitution. Mock_LIBRARY suppresses the
 # #include of a real "LiquidCrystal" header.
-DEFINES  := -DLIQUIDMENU_LIBRARY=Mock_LIBRARY -DDisplayClass=FakeLCD
+DEFINES  := -DLIQUIDMENU_LIBRARY=Mock_LIBRARY -DDisplayClass=LiquidCrystal_fake
 INCLUDES := -I. -I$(SRC_DIR)
 
 # The library headers name DisplayClass and the AVR flash macros before any
 # test file gets a chance to include something, so both are forced in first.
-FORCED   := -include arduino_compat.h -include FakeLCD.h
+FORCED   := -include arduino_compat.h -include LiquidCrystal_fake.h
 
 CXXFLAGS := -std=$(CXXSTD) $(WARNINGS) -g -O0 $(DEFINES) $(INCLUDES) $(FORCED)
 

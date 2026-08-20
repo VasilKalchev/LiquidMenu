@@ -17,7 +17,7 @@ namespace {
 /// Builds a one line, one variable menu and returns what row 0 shows.
 template <typename T>
 std::string render(T &variable, uint8_t decimalPlaces = 2) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, variable);
   line.set_decimalPlaces(decimalPlaces);
   LiquidScreen screen(line);
@@ -44,7 +44,7 @@ const char *constCharPtrGetter() { return "cget"; }
 // ~ Text ~
 
 TEST(string_literal_prints_the_string) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "literal");
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);

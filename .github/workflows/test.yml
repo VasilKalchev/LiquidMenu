@@ -4,9 +4,11 @@ name: Tests
 # so this is the only job that reports whether it still behaves - the others
 # only report whether it still builds. See extras/test/README.md.
 
+# Every branch, not just master and develop: the point of a test suite is
+# to tell you about a change while you are still working on it. It takes
+# seconds and needs no board, so it is not filtered by path either.
 on:
   push:
-    branches: [ master, develop ]
   pull_request:
   workflow_dispatch:
 

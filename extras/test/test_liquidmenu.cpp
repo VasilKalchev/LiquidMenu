@@ -19,7 +19,7 @@ uint8_t customSymbol[8] = {0, 1, 2, 3, 4, 5, 6, 7};
 } //namespace
 
 TEST(add_screen_stops_at_MAX_SCREENS) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidMenu menu(lcd);
   LiquidScreen screen;
 
@@ -30,7 +30,7 @@ TEST(add_screen_stops_at_MAX_SCREENS) {
 }
 
 TEST(the_starting_screen_can_be_chosen) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "first");
   LiquidLine secondLine(0, 0, "second");
   LiquidScreen first(firstLine), second(secondLine);
@@ -41,7 +41,7 @@ TEST(the_starting_screen_can_be_chosen) {
 }
 
 TEST(next_and_previous_screen_wrap_around) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "first");
   LiquidLine secondLine(0, 0, "second");
   LiquidScreen first(firstLine), second(secondLine);
@@ -60,7 +60,7 @@ TEST(next_and_previous_screen_wrap_around) {
 }
 
 TEST(the_increment_and_decrement_operators_change_screens) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "first");
   LiquidLine secondLine(0, 0, "second");
   LiquidScreen first(firstLine), second(secondLine);
@@ -78,7 +78,7 @@ TEST(the_increment_and_decrement_operators_change_screens) {
 }
 
 TEST(change_screen_by_number_is_one_based) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "first");
   LiquidLine secondLine(0, 0, "second");
   LiquidScreen first(firstLine), second(secondLine);
@@ -104,7 +104,7 @@ with the other bounds fixes, and this comment is the reminder.
 */
 
 TEST(change_screen_by_pointer_finds_the_screen) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "first");
   LiquidLine secondLine(0, 0, "second");
   LiquidScreen first(firstLine), second(secondLine);
@@ -120,7 +120,7 @@ TEST(change_screen_by_pointer_finds_the_screen) {
 }
 
 TEST(the_assignment_operator_changes_screens_too) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "first");
   LiquidLine secondLine(0, 0, "second");
   LiquidScreen first(firstLine), second(secondLine);
@@ -135,7 +135,7 @@ TEST(the_assignment_operator_changes_screens_too) {
 // ~ What reaches the display ~
 
 TEST(update_clears_the_display_but_softUpdate_does_not) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "text");
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);
@@ -150,7 +150,7 @@ TEST(update_clears_the_display_but_softUpdate_does_not) {
 }
 
 TEST(init_creates_the_three_focus_symbols) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "text");
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);
@@ -162,7 +162,7 @@ TEST(init_creates_the_three_focus_symbols) {
 }
 
 TEST(set_focusSymbol_replaces_one_of_them) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "text");
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);
@@ -176,7 +176,7 @@ TEST(set_focusSymbol_replaces_one_of_them) {
 }
 
 TEST(set_focusPosition_applies_to_every_screen_but_rejects_custom) {
-  FakeLCD lcd(16, 4);
+  LiquidCrystal_fake lcd(16, 4);
   LiquidLine firstLine(2, 0, "first");
   LiquidLine secondLine(2, 0, "second");
   firstLine.attach_function(1, noop);
@@ -196,7 +196,7 @@ TEST(set_focusPosition_applies_to_every_screen_but_rejects_custom) {
 }
 
 TEST(call_function_refreshes_the_display_unless_told_not_to) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "text");
   line.attach_function(1, countingCallback);
   LiquidScreen screen(line);
@@ -217,7 +217,7 @@ TEST(call_function_refreshes_the_display_unless_told_not_to) {
 }
 
 TEST(get_currentScreen_follows_the_navigation) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "first");
   LiquidLine secondLine(0, 0, "second");
   LiquidScreen first(firstLine), second(secondLine);

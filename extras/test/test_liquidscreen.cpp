@@ -24,7 +24,7 @@ TEST(add_line_stops_at_MAX_LINES) {
 }
 
 TEST(lines_print_in_the_order_they_were_added) {
-  FakeLCD lcd(16, 4);
+  LiquidCrystal_fake lcd(16, 4);
   LiquidLine first(0, 0, "first");
   LiquidLine second(0, 1, "second");
   LiquidLine third(0, 2, "third");
@@ -41,7 +41,7 @@ TEST(lines_print_in_the_order_they_were_added) {
 // ~ Focus cycling ~
 
 TEST(switch_focus_visits_every_focusable_line_then_ghosts) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine first(0, 0, "one");
   LiquidLine second(0, 1, "two");
   first.attach_function(1, noop);
@@ -66,7 +66,7 @@ TEST(switch_focus_visits_every_focusable_line_then_ghosts) {
 }
 
 TEST(switch_focus_backwards_walks_the_other_way) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine first(0, 0, "one");
   LiquidLine second(0, 1, "two");
   first.attach_function(1, noop);
@@ -83,7 +83,7 @@ TEST(switch_focus_backwards_walks_the_other_way) {
 }
 
 TEST(switch_focus_skips_lines_without_a_function) {
-  FakeLCD lcd(16, 4);
+  LiquidCrystal_fake lcd(16, 4);
   LiquidLine title(0, 0, "title");
   LiquidLine first(0, 1, "one");
   LiquidLine second(0, 2, "two");
@@ -99,7 +99,7 @@ TEST(switch_focus_skips_lines_without_a_function) {
 }
 
 TEST(set_focusedLine_accepts_only_focusable_lines) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine title(0, 0, "title");
   LiquidLine item(0, 1, "item");
   item.attach_function(1, noop);
@@ -116,7 +116,7 @@ TEST(set_focusedLine_accepts_only_focusable_lines) {
 // ~ Hiding ~
 
 TEST(a_hidden_screen_is_skipped_when_changing_screens) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "first");
   LiquidLine secondLine(0, 0, "second");
   LiquidLine thirdLine(0, 0, "third");
@@ -135,7 +135,7 @@ TEST(a_hidden_screen_is_skipped_when_changing_screens) {
 // ~ Scrolling ~
 
 TEST(set_displayLineCount_scrolls_the_focused_line_into_view) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine one(0, 0, "one");
   LiquidLine two(0, 1, "two");
   LiquidLine three(0, 2, "three");

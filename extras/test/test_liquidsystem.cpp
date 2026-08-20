@@ -15,7 +15,7 @@ void countingCallback() { callCount++; }
 } //namespace
 
 TEST(add_menu_stops_at_MAX_MENUS) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidMenu menu(lcd);
   LiquidSystem system;
 
@@ -26,7 +26,7 @@ TEST(add_menu_stops_at_MAX_MENUS) {
 }
 
 TEST(the_system_shows_the_current_menu) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "menu one");
   LiquidLine secondLine(0, 0, "menu two");
   LiquidScreen firstScreen(firstLine), secondScreen(secondLine);
@@ -45,7 +45,7 @@ TEST(the_system_shows_the_current_menu) {
 }
 
 TEST(change_menu_rejects_a_menu_that_was_not_added) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "menu one");
   LiquidLine secondLine(0, 0, "menu two");
   LiquidScreen firstScreen(firstLine), secondScreen(secondLine);
@@ -58,7 +58,7 @@ TEST(change_menu_rejects_a_menu_that_was_not_added) {
 }
 
 TEST(screen_navigation_is_delegated_to_the_current_menu) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine firstLine(0, 0, "one");
   LiquidLine secondLine(0, 0, "two");
   LiquidScreen first(firstLine), second(secondLine);
@@ -86,7 +86,7 @@ TEST(screen_navigation_is_delegated_to_the_current_menu) {
 }
 
 TEST(focus_and_callbacks_are_delegated_to_the_current_menu) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "item");
   line.attach_function(1, countingCallback);
   LiquidScreen screen(line);

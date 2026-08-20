@@ -19,7 +19,7 @@ uint8_t glyphIndex = 3;
 } //namespace
 
 TEST(a_line_prints_at_its_column_and_row) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(4, 1, "here");
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);
@@ -30,7 +30,7 @@ TEST(a_line_prints_at_its_column_and_row) {
 }
 
 TEST(the_constructor_takes_up_to_four_variables) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, one, two, three, four);
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);
@@ -40,7 +40,7 @@ TEST(the_constructor_takes_up_to_four_variables) {
 }
 
 TEST(add_variable_appends_and_stops_at_MAX_VARIABLES) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, one, two, three, four);
 
   TRUE(line.add_variable(five));   // the fifth slot, MAX_VARIABLES is 5
@@ -53,7 +53,7 @@ TEST(add_variable_appends_and_stops_at_MAX_VARIABLES) {
 }
 
 TEST(text_past_the_last_column_is_dropped_not_wrapped) {
-  FakeLCD lcd(8, 2);
+  LiquidCrystal_fake lcd(8, 2);
   LiquidLine line(4, 0, "abcdefgh");
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);
@@ -72,7 +72,7 @@ TEST(text_past_the_last_column_is_dropped_not_wrapped) {
 // people, so they are pinned down first.
 
 TEST(nothing_is_focused_until_switch_focus_is_called) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "text");
   line.attach_function(1, countingCallback);
   LiquidScreen screen(line);
@@ -84,7 +84,7 @@ TEST(nothing_is_focused_until_switch_focus_is_called) {
 }
 
 TEST(a_line_without_a_function_can_never_be_focused) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "text");
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);
@@ -96,7 +96,7 @@ TEST(a_line_without_a_function_can_never_be_focused) {
 }
 
 TEST(the_focused_line_gets_the_right_focus_symbol_by_default) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "text");
   line.attach_function(1, countingCallback);
   LiquidScreen screen(line);
@@ -110,7 +110,7 @@ TEST(the_focused_line_gets_the_right_focus_symbol_by_default) {
 }
 
 TEST(focus_position_left_puts_the_symbol_before_the_line) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(4, 0, "text");
   line.attach_function(1, countingCallback);
   TRUE(line.set_focusPosition(Position::LEFT));
@@ -123,7 +123,7 @@ TEST(focus_position_left_puts_the_symbol_before_the_line) {
 }
 
 TEST(focus_position_custom_puts_the_symbol_where_asked) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "text");
   line.attach_function(1, countingCallback);
   TRUE(line.set_focusPosition(Position::CUSTOM, 10, 1));
@@ -137,7 +137,7 @@ TEST(focus_position_custom_puts_the_symbol_where_asked) {
 }
 
 TEST(an_unfocused_line_gets_no_symbol) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine first(0, 0, "one");
   LiquidLine second(0, 1, "two");
   first.attach_function(1, countingCallback);
@@ -153,7 +153,7 @@ TEST(an_unfocused_line_gets_no_symbol) {
 // ~ Callbacks ~
 
 TEST(attach_function_makes_a_line_callable) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "call");
   TRUE(line.attach_function(1, countingCallback));
 
@@ -179,7 +179,7 @@ TEST(attach_function_rejects_a_number_past_MAX_FUNCTIONS) {
 }
 
 TEST(a_line_without_a_function_is_not_callable) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "plain");
   LiquidScreen screen(line);
   LiquidMenu menu(lcd, screen);
@@ -193,7 +193,7 @@ TEST(a_line_without_a_function_is_not_callable) {
 // ~ The two variable modifiers ~
 
 TEST(set_asGlyph_writes_the_index_as_a_character) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, "g:", glyphIndex);
   TRUE(line.set_asGlyph(2));
   LiquidScreen screen(line);
@@ -210,7 +210,7 @@ TEST(set_asGlyph_rejects_a_slot_that_is_not_a_byte) {
 }
 
 TEST(set_asProgmem_reads_the_string_from_flash) {
-  FakeLCD lcd(16, 2);
+  LiquidCrystal_fake lcd(16, 2);
   LiquidLine line(0, 0, progmemText);
   TRUE(line.set_asProgmem(1));
   LiquidScreen screen(line);

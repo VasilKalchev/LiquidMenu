@@ -22,13 +22,15 @@ A non-zero exit status means something broke. That is the whole purpose:
 
 LiquidMenu reaches a "LiquidCrystal" library through exactly one name, the
 `DisplayClass` macro in [`LiquidMenu_config.h`](../../src/LiquidMenu_config.h).
-The test build points that macro at [`FakeLCD.h`](FakeLCD.h) instead - a
-class with the same `print` / `write` / `createChar` / `clear` / `setCursor`
-surface that renders into a character buffer. A test can then assert on what
+The test build points that macro at
+[`LiquidCrystal_fake`](LiquidCrystal_fake.h) instead - a third choice
+alongside `LiquidCrystal` and `LiquidCrystal_I2C`, with the same `print` /
+`write` / `createChar` / `clear` / `setCursor` surface, rendering into a
+character buffer. A test can then assert on what
 the display would show:
 
 ```cpp
-FakeLCD lcd(16, 2);
+LiquidCrystal_fake lcd(16, 2);
 uint16_t count = 7;
 LiquidLine line(0, 0, "N: ", count);
 LiquidScreen screen(line);
@@ -43,7 +45,7 @@ is included, and [`arduino_compat.h`](arduino_compat.h) supplies the handful
 of AVR flash macros (`PROGMEM`, `strlen_P`, `pgm_read_byte_near`) that the
 host does not have - the same emulation other cores provide.
 
-`FakeLCD`'s `print()` overloads and its number and float formatting are
+`LiquidCrystal_fake`'s `print()` overloads and its number and float formatting are
 copied from Arduino's `Print` class rather than written from scratch. That
 matters: `Print` rounds a float by adding 0.5/10^digits and truncating,
 which does not always agree with `printf("%.*f")`. A fake that formatted
@@ -109,6 +111,7 @@ known bounds bugs until they are fixed.
 ## In CI
 
 [`.github/workflows/test.yml`](../../.github/workflows/test.yml) runs `make`
-on every push and pull request. It takes seconds and needs no board, so
-unlike the compile and lint jobs it can actually tell you whether the
-library still *works*.
+on every push, on every branch, and on every pull request - so a change
+gets checked while you are still working on it, and again when it is merged.
+It takes seconds and needs no board, so unlike the compile and lint jobs it
+can actually tell you whether the library still *works*.

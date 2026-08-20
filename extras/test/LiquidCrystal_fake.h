@@ -1,11 +1,13 @@
 /**
 @file
-A fake character display, used as `DisplayClass` in the host test build.
+A fake "LiquidCrystal" library, used as `DisplayClass` in the host test
+build - a third choice alongside `LiquidCrystal` and `LiquidCrystal_I2C`,
+hence the name.
 
-It offers the same call surface LiquidMenu uses from a "LiquidCrystal"
-library (`print`, `write`, `createChar`, `clear`, `setCursor`) but renders
-into a character buffer the tests can read back, so an assertion can be
-written against what the display would actually show.
+It offers the same call surface LiquidMenu uses from a real one (`print`,
+`write`, `createChar`, `clear`, `setCursor`) but renders into a character
+buffer the tests can read back, so an assertion can be written against what
+the display would actually show.
 
 The `print()` overloads and the number/float formatting are copied from
 Arduino's `Print` class on purpose. Formatting differences are exactly the
@@ -29,9 +31,9 @@ truncating, which does not always agree with `printf("%.*f")`.
 #define BIN 2
 
 /// A character display that renders into a buffer instead of onto glass.
-class FakeLCD {
+class LiquidCrystal_fake {
 public:
-  FakeLCD(uint8_t columns = 16, uint8_t rows = 2)
+  LiquidCrystal_fake(uint8_t columns = 16, uint8_t rows = 2)
     : _columns(columns), _rows(rows) {
     clear();
     for (uint8_t i = 0; i < 8; i++) {
