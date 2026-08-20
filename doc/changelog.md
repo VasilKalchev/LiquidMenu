@@ -16,6 +16,11 @@ All notable changes to this project will be documented in this file.
 ### Added
  - a test suite that runs on the host, against a fake display, in `extras/test`
  - `Mock_LIBRARY` as a `LIQUIDMENU_LIBRARY` selection, used by that test build
+### Fixed
+ - a `PROGMEM` string was copied into a stack buffer one byte too small, and that buffer was sized from the string itself
+ - `LiquidLine::attach_function(0, ...)` wrote outside the function array
+ - `LiquidLine::is_callable()` and `call_function()` did not check the function number
+ - `LiquidMenu::change_screen(uint8_t)` accepted one screen past the last
 
 ## [1.6.0] - 2021-11-05
 ### Added

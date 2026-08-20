@@ -94,14 +94,23 @@ TEST(change_screen_by_number_is_one_based) {
   EQUAL(lcd.trimmedRow(0), "first");
 }
 
-/*
-`change_screen(uint8_t)` compares `index <= _screenCount` where `index` is
-`number - 1`, so a number one past the last screen is accepted and sets
-`_currentScreen` to `_screenCount`. `_p_liquidScreen` is never initialised,
-so the update that follows dereferences whatever was on the stack. That
-cannot be exercised here without crashing the suite - the guard belongs
-with the other bounds fixes, and this comment is the reminder.
-*/
+TEST(change_screen_rejects_a_number_past_the_last_screen) {
+  LiquidCrystal_fake lcd(16, 2);
+  LiquidLine firstLine(0, 0, "first");
+  LiquidLine secondLine(0, 0, "second");
+  LiquidScreen first(firstLine), second(secondLine);
+  LiquidMenu menu(lcd, first, second);
+  menu.update();
+
+  // The bound used to be `index <= _screenCount`, so this was accepted and
+  // the update that followed read past the end of an array that is never
+  // initialised.
+  FALSE(menu.change_screen(3));
+  EQUAL(menu.get_currentScreen(), &first);
+
+  FALSE(menu.change_screen(200));
+  EQUAL(menu.get_currentScreen(), &first);
+}
 
 TEST(change_screen_by_pointer_finds_the_screen) {
   LiquidCrystal_fake lcd(16, 2);

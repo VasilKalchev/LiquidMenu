@@ -136,7 +136,7 @@ void LiquidMenu::operator--(int) {
 
 bool LiquidMenu::change_screen(uint8_t number) {
   uint8_t index = number - 1;
-  if (index <= _screenCount) {
+  if (index < _screenCount) {
     _p_liquidCrystal->clear();
     _currentScreen = index;
     update();

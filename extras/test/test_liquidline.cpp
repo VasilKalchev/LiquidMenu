@@ -14,6 +14,7 @@ unsigned callCount = 0;
 void countingCallback() { callCount++; }
 
 const char progmemText[] PROGMEM = "flash";
+const char longProgmemText[] PROGMEM = "a rather longer string than the display";
 uint8_t glyphIndex = 3;
 
 } //namespace
@@ -173,9 +174,32 @@ TEST(attach_function_makes_a_line_callable) {
   EQUAL(callCount, before + 1);
 }
 
-TEST(attach_function_rejects_a_number_past_MAX_FUNCTIONS) {
+TEST(attach_function_rejects_a_number_outside_the_slots) {
   LiquidLine line(0, 0, "call");
+
   FALSE(line.attach_function(MAX_FUNCTIONS + 1, countingCallback));
+
+  // Functions are numbered from 1. Number 0 used to pass the upper-bound
+  // check and then write to _function[255].
+  FALSE(line.attach_function(0, countingCallback));
+}
+
+TEST(is_callable_and_call_function_reject_a_number_outside_the_slots) {
+  LiquidCrystal_fake lcd(16, 2);
+  LiquidLine line(0, 0, "call");
+  line.attach_function(1, countingCallback);
+  LiquidScreen screen(line);
+  LiquidMenu menu(lcd, screen);
+  menu.switch_focus();
+
+  unsigned before = callCount;
+
+  FALSE(menu.is_callable(0));
+  FALSE(menu.call_function(0));
+  FALSE(menu.is_callable(MAX_FUNCTIONS + 1));
+  FALSE(menu.call_function(MAX_FUNCTIONS + 1));
+
+  EQUAL(callCount, before);
 }
 
 TEST(a_line_without_a_function_is_not_callable) {
@@ -218,6 +242,18 @@ TEST(set_asProgmem_reads_the_string_from_flash) {
   menu.update();
 
   EQUAL(lcd.trimmedRow(0), "flash");
+}
+
+TEST(set_asProgmem_handles_a_string_longer_than_the_display) {
+  LiquidCrystal_fake lcd(16, 2);
+  LiquidLine line(0, 0, longProgmemText);
+  TRUE(line.set_asProgmem(1));
+  LiquidScreen screen(line);
+  LiquidMenu menu(lcd, screen);
+  menu.update();
+
+  EQUAL(lcd.row(0), "a rather longer ");
+  EQUAL(lcd.overflows(), 23u);
 }
 
 TEST(set_asProgmem_rejects_a_slot_that_is_not_a_string) {

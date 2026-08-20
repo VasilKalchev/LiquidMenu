@@ -35,7 +35,7 @@ bool LiquidLine::attach_function(uint8_t number, void (*function)(void)) {
 
 	DEBUG(F("Attach function ")); DEBUG(number);
 
-	if (number <= MAX_FUNCTIONS) {
+	if (number >= 1 && number <= MAX_FUNCTIONS) {
 		_function[number - 1] = function;
 		_focusable = true;
 
@@ -235,14 +235,20 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 
 		case DataType::PROG_CONST_CHAR_PTR: {
 			const char* variable = reinterpret_cast<const char*>(_variable[number]);
-			volatile const int len = strlen_P(variable);
-			char buffer[len];
-			for (uint8_t i = 0; i < len; i++) {
-				buffer[i] = pgm_read_byte_near(variable + i);
+			DEBUG(F("(const char*)"));
+			/* Printed straight from flash, one character at a time. The
+			previous version copied into a stack buffer sized from the string's
+			own length, which wrote one byte past the end of that buffer and, on
+			a part with a 2 KB stack, put the whole stack at the mercy of how
+			long the string happened to be. */
+			for (const char* p = variable; ; p++) {
+				const char character = (char)pgm_read_byte_near(p);
+				if (character == '\0') {
+					break;
+				}
+				DEBUG(character);
+				p_liquidCrystal->print(character);
 			}
-			buffer[len] = '\0';
-			DEBUG(F("(const char*)")); DEBUG(buffer);
-			p_liquidCrystal->print(buffer);
 			break;
 		} //case PROG_CONST_CHAR_PTR
 	    // ~Variables -----
@@ -376,12 +382,14 @@ void LiquidLine::print_variable(DisplayClass *p_liquidCrystal, uint8_t number) {
 }
 
 bool LiquidLine::is_callable(uint8_t number) const {
-	if (_function[number - 1]) return true;
-	else return false;
+	if (number < 1 || number > MAX_FUNCTIONS) {
+		return false;
+	}
+	return _function[number - 1] != 0;
 }
 
 bool LiquidLine::call_function(uint8_t number) const {
-	if (_function[number - 1]) {
+	if (is_callable(number)) {
 		(*_function[number - 1])();
 		return true;
 	} else {
