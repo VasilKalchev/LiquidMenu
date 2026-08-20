@@ -13,6 +13,9 @@ All notable changes to this project will be documented in this file.
 -->
 
 ## [Unreleased]
+### Added
+ - a test suite that runs on the host, against a fake display, in `extras/test`
+ - `Mock_LIBRARY` as a `LIQUIDMENU_LIBRARY` selection, used by that test build
 
 ## [1.6.0] - 2021-11-05
 ### Added

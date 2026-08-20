@@ -15,4 +15,11 @@ Constants file for LiquidMenu library.
 
 /// https://github.com/johnrickman/LiquidCrystal_I2C library (I2C)
 #define LiquidCrystal_I2C_LIBRARY (2)
+
+/// The test fake used by the host build (see extras/test)
+/**
+Selecting this includes no display header at all - `DisplayClass` is
+expected to be a class that is already in scope. Only the tests use it.
+*/
+#define Mock_LIBRARY (255)
 //!@}

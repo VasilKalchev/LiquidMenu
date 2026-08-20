@@ -31,6 +31,20 @@ A release is cut when `develop` has accumulated enough changes - see
 [Releasing](#releasing). Individual pull requests **do not** touch the version
 number.
 
+## Tests
+The library has a test suite that runs on your own machine - no board, no
+Arduino installation, nothing to install:
+
+```sh
+cd extras/test
+make
+```
+
+Run it before opening a pull request. It exists to catch a change that
+breaks something elsewhere, so it is worth extending whenever you fix a bug
+or add behaviour: a bug fix should come with a case that fails without it.
+See [`extras/test/README.md`][tests] for how it works and how to add one.
+
 ## Bug fix
 1. Check for open [issues][issues] or create a new one.
 2. Fork the repository.
@@ -38,6 +52,7 @@ number.
 4. Make your changes.
    - use consistent style
    - use descriptive commit messages
+   - add a test that fails without the fix, see [Tests](#tests)
    - add an entry under `## [Unreleased]` in [`doc/changelog.md`][changelog]
 5. Open a pull request **against `develop`**.
 
@@ -49,6 +64,7 @@ number.
    - use consistent style
    - use descriptive commit messages
    - add Doxygen documentation
+   - add tests for the new behaviour, see [Tests](#tests)
    - if applicable add an example
    - add an entry under `## [Unreleased]` in [`doc/changelog.md`][changelog]
 5. Open a pull request **against `develop`**.
@@ -103,5 +119,6 @@ break existing sketches.
 [issues]: https://github.com/VasilKalchev/LiquidMenu/issues
 [ideas-disc]: https://github.com/VasilKalchev/LiquidMenu/discussions/categories/ideas
 [changelog]: ../doc/changelog.md
+[tests]: ../extras/test/README.md
 [version-sh]: ../tools/version.sh
 [semver]: https://semver.org/

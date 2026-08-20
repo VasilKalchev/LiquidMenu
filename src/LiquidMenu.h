@@ -54,6 +54,9 @@ Include file for LiquidMenu library.
 #elif LIQUIDMENU_LIBRARY == LiquidCrystal_I2C_LIBRARY
 # pragma message ("LiquidMenu: Selected 'LiquidCrystal_I2C' (I2C) library. Edit 'LiquidMenu_config.h' file to change it.")
 #include <LiquidCrystal_I2C.h>
+#elif LIQUIDMENU_LIBRARY == Mock_LIBRARY
+// Host test build - 'DisplayClass' is the fake display, already in scope.
+// No header is included and no message is printed, see extras/test.
 #else
 # pragma message ("LiquidMenu: Selected custom library. Edit 'LiquidMenu_config.h' file to change it.")
 #endif

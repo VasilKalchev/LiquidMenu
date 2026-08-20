@@ -1,0 +1,38 @@
+name: Tests
+
+# The library compiled for the runner and exercised against a fake display,
+# so this is the only job that reports whether it still behaves - the others
+# only report whether it still builds. See extras/test/README.md.
+
+# Every branch, not just master and develop: the point of a test suite is
+# to tell you about a change while you are still working on it. It takes
+# seconds and needs no board, so it is not filtered by path either.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run the test suite
+        working-directory: extras/test
+        run: make
+
+  sanitizers:
+    runs-on: ubuntu-latest
+    # Expected to report the known bounds bugs in LiquidLine until they are
+    # fixed, so it informs rather than blocks.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run the test suite under the address and UB sanitizers
+        working-directory: extras/test
+        run: make asan
